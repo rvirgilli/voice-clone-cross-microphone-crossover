@@ -101,10 +101,12 @@ path.
 \textbf{Prompt transfer and nuisance information.} Prompt-conditioned systems
 preserve prosody and environment \cite{restyletts2026,noiserobust2024,icl2026};
 prompt cosine is also a standard synthesis metric \cite{simo}. Concurrent work
-separates prompt environment from identity \cite{promptenv2026}. These results
-motivate recording-level leakage, but do not make it identifiable: the same
-speaker and session can support both candidates. Our design targets the
-\emph{choice between A and B}, not a generic clone--prompt resemblance.
+separates prompt environment from identity \cite{promptenv2026}, while prosody
+representations can remain dependent on reference speaker and text
+\cite{sigurgeirsson23prosody}. These results motivate recording-level leakage,
+but do not make it identifiable: the same speaker and session can support both
+candidates. Our design targets the \emph{choice between A and B}, not a generic
+clone--prompt resemblance.
 
 \section{Cross-microphone crossover}
 \subsection{Task and design}
@@ -270,9 +272,11 @@ mic2$\rightarrow$mic1 & ECAPA & \textbf{.907 [.881,.931]} & \textbf{.805 [.780,.
 
 \subsection{The signal crosses generator and output text}
 The clone-to-clone extension contains 31,104 comparisons: each query and both
-candidates share speaker and event labels but use opposite prompt microphones,
-different generators, different output texts and therefore different
-text-indexed generation seeds. ECAPA gives .805 in both directions; WavLM gives
+candidates share a speaker; the correct candidate shares the query event,
+whereas the incorrect candidate uses the other event. Query and candidates use
+opposite prompt microphones, and query versus candidates use different
+generators, output texts and therefore text-indexed generation seeds. ECAPA gives
+.805 in both directions; WavLM gives
 .610 and .612. All four lower endpoints exceed chance, and both readouts clear
 their frozen material point bars. The signal is therefore not dependent on
 comparing a clone with real candidate audio, nor on query and candidate sharing

@@ -304,12 +304,12 @@
     "sha256": "8689aaf5089f4515306ff3c6e3893faf807e695a8aaa05674c64b6b3d8b071e6"
   },
   "paper/F2/main.pdf": {
-    "bytes": 157011,
-    "sha256": "7e78af85d6954e57af6e150f1e01ecd15a4ddc18cf427dd0d7bab01a9e6ea12a"
+    "bytes": 157195,
+    "sha256": "e1e363151d3c364c8877b8c1b71a0bda85a90bf67ebe8a441190f7a41425b793"
   },
   "paper/F2/main.tex": {
-    "bytes": 24019,
-    "sha256": "0f5394afba763b19b5893857ae48d14cdc94d230775a5fa47699cb3dad1294d5"
+    "bytes": 24246,
+    "sha256": "81b0cf4d451c58b8b1254fe9260d03604a47fe70c1c6d85cb1cdb2f38fa3b8c7"
   },
   "paper/F2/make_exp205_figure.py": {
     "bytes": 2511,
@@ -320,8 +320,8 @@
     "sha256": "5feac05af3cba9aa756addd0a8a0a2e29b2cc8bf1ce7834174f5107da5d4494d"
   },
   "paper/F2/refs.bib": {
-    "bytes": 11537,
-    "sha256": "9988c303c152a5ef0811be29a0c6407699096b1cd396a96e12047603da598c54"
+    "bytes": 11726,
+    "sha256": "2a2a3f4bf7102181ca0f3eda6177a74e9a2e23d0095a507bde424deca23ce530"
   },
   "paper/F2/spconf.sty": {
     "bytes": 8798,
