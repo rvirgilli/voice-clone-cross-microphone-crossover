@@ -1,0 +1,12 @@
+[project]
+name = "voice-clone-cross-microphone-crossover"
+version = "0.1.0"
+description = "Reproducibility package for a balanced cross-microphone voice-clone crossover"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "matplotlib>=3.10,<3.11",
+  "numpy==2.4.6",
+]
+
+[tool.uv]
+package = false

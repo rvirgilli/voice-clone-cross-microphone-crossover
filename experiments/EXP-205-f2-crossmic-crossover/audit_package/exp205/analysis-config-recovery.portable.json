@@ -1,0 +1,25 @@
+{
+  "execution_config": {
+    "path": "experiment/execution-config.json",
+    "sha256": "c82586074c5e7ec6aad9b21a101968f213f4849f35624492400041be1d2bd294"
+  },
+  "execution_receipt": {
+    "path": "runtime/execution-receipt.json",
+    "sha256": "aae8c2d3dda873f4f72ae2458d8983b5e9a3b2328c4d28b452530e7ead8e55ad"
+  },
+  "manifest": {
+    "path": "experiment/selection-manifest.json",
+    "resolved_path": "experiment/selection-manifest.json",
+    "sha256": "4b879491f02badf252365aa4d2b3caa22402c04301c60ed5e02bd06d43f19b2d"
+  },
+  "output": "runtime/sealed/scientific-result.json",
+  "scores": {
+    "path": "runtime/scores.tsv",
+    "sha256": "fe3633f063ab8be6716553ad6bda3d311e97c6351d25dfd5735600367fb9c54e"
+  },
+  "verdict": {
+    "path": "experiment/verdict.py",
+    "resolved_path": "experiment/verdict.py",
+    "sha256": "8b12a6b94366c1f7d08436397b83b1c64fadcb4085ca490cb9b7a593802380be"
+  }
+}

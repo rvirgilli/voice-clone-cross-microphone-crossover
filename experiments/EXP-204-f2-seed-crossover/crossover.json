@@ -1,0 +1,59 @@
+{
+ "f5": {
+  "follow_rate": 0.887,
+  "ci95": [
+   0.821,
+   0.946
+  ],
+  "n_trials": 240,
+  "n_speakers": 30,
+  "verdict": "CONFIRM"
+ },
+ "xtts": {
+  "follow_rate": 0.683,
+  "ci95": [
+   0.621,
+   0.746
+  ],
+  "n_trials": 240,
+  "n_speakers": 30,
+  "verdict": "AMBIGUOUS"
+ },
+ "cosy": {
+  "follow_rate": 0.846,
+  "ci95": [
+   0.779,
+   0.908
+  ],
+  "n_trials": 240,
+  "n_speakers": 30,
+  "verdict": "CONFIRM"
+ },
+ "seedvc": {
+  "follow_rate": 0.808,
+  "ci95": [
+   0.746,
+   0.863
+  ],
+  "n_trials": 240,
+  "n_speakers": 30,
+  "verdict": "CONFIRM"
+ },
+ "POOLED": {
+  "follow_rate": 0.806,
+  "ci95": [
+   0.757,
+   0.854
+  ],
+  "n_trials": 960,
+  "n_speakers": 30,
+  "null": 0.5,
+  "bar_ci_lower_above": 0.7,
+  "VERDICT": "CONFIRM",
+  "gate_conditioning": {
+   "pairs_considered": 105,
+   "pairs_rejected": 16,
+   "note": "the claim is conditioned on seed pairs being distinguishable; reference population matched to the candidate population"
+  }
+ }
+}

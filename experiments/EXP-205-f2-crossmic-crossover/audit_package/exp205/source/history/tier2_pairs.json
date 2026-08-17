@@ -1,0 +1,880 @@
+{
+ "p262": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p262/p262_210_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p262/p262_236_mic1.flac",
+   "dose": 0.1789,
+   "text_A": "The proposals are to be debated on Monday by city councillors.",
+   "text_B": "The Home Office would not release any further details about the group."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p262/p262_098_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p262/p262_127_mic1.flac",
+   "dose": 0.4307,
+   "text_A": "However, the intensive care unit at the Southern General Hospital was full.",
+   "text_B": "On Friday, the headteacher and deputy headteacher appeared at the door."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p262/p262_006_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p262/p262_008_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p262/p262_022_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p262/p262_040_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p262/p262_098_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p262/p262_127_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p262/p262_178_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p262/p262_210_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p262/p262_236_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p262/p262_274_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p262/p262_340_mic1.flac"
+  ]
+ },
+ "p263": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p263/p263_007_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p263/p263_009_mic1.flac",
+   "dose": 0.1681,
+   "text_A": "The rainbow is a division of white light into many beautiful colors.",
+   "text_B": "There is , according to legend, a boiling pot of gold at one end."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p263/p263_009_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p263/p263_215_mic1.flac",
+   "dose": 0.4162,
+   "text_A": "There is , according to legend, a boiling pot of gold at one end.",
+   "text_B": "This decision was taken with the full support of Scottish ministers."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p263/p263_007_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p263/p263_009_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p263/p263_014_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p263/p263_018_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p263/p263_037_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p263/p263_055_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p263/p263_215_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p263/p263_262_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p263/p263_331_mic1.flac"
+  ]
+ },
+ "p264": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p264/p264_019_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p264/p264_379_mic1.flac",
+   "dose": 0.1953,
+   "text_A": "Since then physicists have found that it is not reflection, but refraction by the raindrops which causes the rainbows.",
+   "text_B": "He had wanted to play, but we had to be responsible about the decision we took."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p264/p264_021_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p264/p264_081_mic1.flac",
+   "dose": 0.4227,
+   "text_A": "The difference in the rainbow depends considerably upon the size of the drops, and the width of the colored band increases as the size of the drops increases.",
+   "text_B": "Over one million people have been forced from their homes."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_004_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_019_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_021_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_046_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_081_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_172_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_236_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_299_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_379_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_394_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_459_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p264/p264_469_mic1.flac"
+  ]
+ },
+ "p265": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p265/p265_159_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p265/p265_345_mic1.flac",
+   "dose": 0.1949,
+   "text_A": "It's too early to say whether a public inquiry would be appropriate.",
+   "text_B": "We have to create a climate of trust, which is not easy."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p265/p265_069_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p265/p265_192_mic1.flac",
+   "dose": 0.3819,
+   "text_A": "Mr Irvine said Mr Rafferty was now in good spirits.",
+   "text_B": "The tickets will be on sale today at the ticket office."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_004_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_013_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_051_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_065_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_069_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_080_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_103_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_115_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_133_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_145_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_159_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_160_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_168_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_185_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_192_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_216_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_240_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_255_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_262_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_303_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_339_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p265/p265_345_mic1.flac"
+  ]
+ },
+ "p266": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p266/p266_270_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p266/p266_273_mic1.flac",
+   "dose": 0.1834,
+   "text_A": "It depends on the internal discussions in the Ministry of Defence.",
+   "text_B": "Jim Wallace, justice minister, has refused to hold an inquiry."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p266/p266_004_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p266/p266_212_mic1.flac",
+   "dose": 0.4232,
+   "text_A": "We also need a small plastic snake and a big toy frog for the kids.",
+   "text_B": "The workers do not want to read about their futures in newspapers."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p266/p266_004_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p266/p266_095_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p266/p266_108_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p266/p266_212_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p266/p266_238_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p266/p266_270_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p266/p266_273_mic1.flac"
+  ]
+ },
+ "p268": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p268/p268_017_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p268/p268_018_mic1.flac",
+   "dose": 0.166,
+   "text_A": "Others have tried to explain the phenomenon physically.",
+   "text_B": "Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p268/p268_018_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p268/p268_339_mic1.flac",
+   "dose": 0.3972,
+   "text_A": "Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain.",
+   "text_B": "Dancing will help his ankles and his feet."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_017_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_018_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_056_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_081_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_119_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_149_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_189_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_226_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_283_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_317_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_339_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_356_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_378_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_382_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p268/p268_401_mic1.flac"
+  ]
+ },
+ "p269": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p269/p269_214_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p269/p269_357_mic1.flac",
+   "dose": 0.1813,
+   "text_A": "We have the experience, the courses, and an abundance of confidence.",
+   "text_B": "Sex offender programmes to be retained by public sector."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p269/p269_013_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p269/p269_097_mic1.flac",
+   "dose": 0.383,
+   "text_A": "Some have accepted it as a miracle without physical explanation.",
+   "text_B": "Previously, they were raised in the European Court of Human Rights."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_005_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_006_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_013_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_020_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_029_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_054_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_097_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_214_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_228_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_275_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_332_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_357_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_370_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p269/p269_377_mic1.flac"
+  ]
+ },
+ "p270": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p270/p270_011_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p270/p270_017_mic1.flac",
+   "dose": 0.1489,
+   "text_A": "When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.",
+   "text_B": "Others have tried to explain the phenomenon physically."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p270/p270_011_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p270/p270_389_mic1.flac",
+   "dose": 0.4077,
+   "text_A": "When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.",
+   "text_B": "The parties include the Scottish Executive."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p270/p270_011_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p270/p270_017_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p270/p270_082_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p270/p270_096_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p270/p270_212_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p270/p270_307_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p270/p270_372_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p270/p270_389_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p270/p270_439_mic1.flac"
+  ]
+ },
+ "p271": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p271/p271_143_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p271/p271_174_mic1.flac",
+   "dose": 0.1881,
+   "text_A": "And the Farmer is worried about another aspect of farming life.",
+   "text_B": "By then, however, both men were already in the US."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p271/p271_088_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p271/p271_382_mic1.flac",
+   "dose": 0.3941,
+   "text_A": "It just shows the arrogance of Labour and the Liberal Democrats.",
+   "text_B": "Star and producer were in agreement about their opinion of the director."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_019_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_040_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_077_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_088_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_090_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_095_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_143_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_174_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_182_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_189_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_200_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_234_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_277_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_362_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_382_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p271/p271_417_mic1.flac"
+  ]
+ },
+ "p285": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p285/p285_006_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p285/p285_008_mic1.flac",
+   "dose": 0.1625,
+   "text_A": "When the sunlight strikes raindrops in the air, they act as a prism and form a rainbow.",
+   "text_B": "These take the shape of a long round arch, with its path high above, and its two ends apparently beyond the horizon."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p285/p285_008_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p285/p285_379_mic1.flac",
+   "dose": 0.4038,
+   "text_A": "These take the shape of a long round arch, with its path high above, and its two ends apparently beyond the horizon.",
+   "text_B": "Building an underground, for example, has proved a nightmare."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p285/p285_006_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p285/p285_008_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p285/p285_191_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p285/p285_242_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p285/p285_258_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p285/p285_379_mic1.flac"
+  ]
+ },
+ "p293": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p293/p293_007_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p293/p293_009_mic1.flac",
+   "dose": 0.1758,
+   "text_A": "The rainbow is a division of white light into many beautiful colors.",
+   "text_B": "There is , according to legend, a boiling pot of gold at one end."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p293/p293_009_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p293/p293_116_mic1.flac",
+   "dose": 0.4546,
+   "text_A": "There is , according to legend, a boiling pot of gold at one end.",
+   "text_B": "PR for Westminster is their holy grail."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_007_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_009_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_025_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_036_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_070_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_081_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_104_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_116_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_122_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_125_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_129_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_135_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_141_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_153_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_156_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_164_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_181_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_194_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_219_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_243_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_257_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_288_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_334_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p293/p293_377_mic1.flac"
+  ]
+ },
+ "p298": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p298/p298_005_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p298/p298_009_mic1.flac",
+   "dose": 0.1849,
+   "text_A": "She can scoop these things into three red bags, and we will go meet her Wednesday at the train station.",
+   "text_B": "There is , according to legend, a boiling pot of gold at one end."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p298/p298_237_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p298/p298_368_mic1.flac",
+   "dose": 0.4737,
+   "text_A": "But one shouldn't go by that.",
+   "text_B": "It was also put on the Internet."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_004_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_005_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_009_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_013_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_022_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_053_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_055_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_085_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_105_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_107_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_116_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_126_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_143_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_154_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_167_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_226_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_237_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_254_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_275_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_317_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_329_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_330_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_333_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_335_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_344_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_359_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p298/p298_368_mic1.flac"
+  ]
+ },
+ "p300": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p300/p300_167_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p300/p300_312_mic1.flac",
+   "dose": 0.1903,
+   "text_A": "Where are his symphonies and major concertos?",
+   "text_B": "The Allies intend to maintain the average."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p300/p300_002_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p300/p300_377_mic1.flac",
+   "dose": 0.3804,
+   "text_A": "Ask her to bring these things with her from the store.",
+   "text_B": "Well, it happened to me, so it's happening to him."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_002_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_004_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_005_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_011_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_020_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_047_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_051_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_060_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_070_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_090_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_094_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_103_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_118_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_123_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_129_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_159_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_166_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_167_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_177_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_210_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_216_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_249_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_267_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_278_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_280_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_301_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_310_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_312_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_333_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_338_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_347_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_354_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_377_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_379_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p300/p300_384_mic1.flac"
+  ]
+ },
+ "p301": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p301/p301_326_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p301/p301_404_mic1.flac",
+   "dose": 0.1977,
+   "text_A": "It needs to be sorted out by Easter.",
+   "text_B": "He is very popular in the squad, in England, and abroad."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p301/p301_092_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p301/p301_254_mic1.flac",
+   "dose": 0.4637,
+   "text_A": "One film a year is, he says, his natural rhythm.",
+   "text_B": "The final stage is paranoia."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_003_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_004_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_024_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_067_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_068_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_075_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_085_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_092_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_094_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_097_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_133_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_170_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_180_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_196_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_204_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_208_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_216_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_228_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_242_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_254_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_258_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_269_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_277_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_289_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_300_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_321_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_326_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_341_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_364_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_376_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_377_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_379_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_382_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_388_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p301/p301_404_mic1.flac"
+  ]
+ },
+ "p303": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p303/p303_079_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p303/p303_296_mic1.flac",
+   "dose": 0.1987,
+   "text_A": "She had travelled to Spain to give evidence.",
+   "text_B": "Last night, however, other experts were cautious about the claim."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p303/p303_254_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p303/p303_325_mic1.flac",
+   "dose": 0.4574,
+   "text_A": "I learned a lot from her.",
+   "text_B": "I wanted, really, to deal with two opposite energies."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_005_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_017_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_022_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_024_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_028_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_048_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_058_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_059_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_076_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_077_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_078_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_079_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_113_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_116_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_126_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_133_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_135_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_137_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_144_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_153_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_154_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_157_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_174_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_204_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_211_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_225_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_228_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_254_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_296_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_319_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_325_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_335_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_346_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p303/p303_347_mic1.flac"
+  ]
+ },
+ "p306": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p306/p306_051_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p306/p306_210_mic1.flac",
+   "dose": 0.1776,
+   "text_A": "On the contrary, some of the music is very expensive.",
+   "text_B": "The next time he saw her, she was a different person."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p306/p306_048_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p306/p306_325_mic1.flac",
+   "dose": 0.446,
+   "text_A": "But all forms of the illness are treatable.",
+   "text_B": "It's good to start with Judith."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_014_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_015_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_047_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_048_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_051_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_061_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_065_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_071_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_107_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_110_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_119_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_120_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_124_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_128_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_138_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_156_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_206_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_210_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_234_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_236_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_240_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_241_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_242_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_244_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_248_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_261_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_262_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_264_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_312_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_325_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_343_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p306/p306_354_mic1.flac"
+  ]
+ },
+ "p307": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p307/p307_015_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p307/p307_030_mic1.flac",
+   "dose": 0.1626,
+   "text_A": "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain.",
+   "text_B": "He had just returned to Thailand from Canada."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p307/p307_015_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p307/p307_298_mic1.flac",
+   "dose": 0.4102,
+   "text_A": "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain.",
+   "text_B": "We are aware of the tribunal case."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_002_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_013_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_014_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_015_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_016_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_030_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_035_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_036_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_066_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_134_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_147_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_148_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_170_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_176_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_181_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_241_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_246_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_249_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_255_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_268_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_298_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_315_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_335_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_352_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p307/p307_381_mic1.flac"
+  ]
+ },
+ "p308": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p308/p308_022_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p308/p308_116_mic1.flac",
+   "dose": 0.1376,
+   "text_A": "The actual primary rainbow observed is said to be the effect of super-imposition on a number of bows.",
+   "text_B": "I can assure you, the new Augusta National is exactly that."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p308/p308_123_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p308/p308_290_mic1.flac",
+   "dose": 0.4069,
+   "text_A": "Do not go into government buildings.",
+   "text_B": "Holyrood is just a part of the jigsaw."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_005_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_021_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_022_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_049_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_055_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_082_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_097_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_116_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_123_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_158_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_194_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_197_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_220_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_253_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_259_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_289_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_290_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p308/p308_369_mic1.flac"
+  ]
+ },
+ "p310": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p310/p310_002_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p310/p310_006_mic1.flac",
+   "dose": 0.1724,
+   "text_A": "Ask her to bring these things with her from the store.",
+   "text_B": "When the sunlight strikes the raindrops in the air, they act as a prism and form a rainbow."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p310/p310_006_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p310/p310_068_mic1.flac",
+   "dose": 0.4651,
+   "text_A": "When the sunlight strikes the raindrops in the air, they act as a prism and form a rainbow.",
+   "text_B": "This is about the Orange Order."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_002_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_004_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_006_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_009_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_033_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_048_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_068_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_160_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_173_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_189_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_215_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_256_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_331_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_385_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_387_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p310/p310_393_mic1.flac"
+  ]
+ },
+ "p318": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p318/p318_020_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p318/p318_024_mic1.flac",
+   "dose": 0.1632,
+   "text_A": "Many complicated ideas about the rainbow have been formed.",
+   "text_B": "This is a very common type of bow, one showing mainly red and yellow, with little or no green or blue."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p318/p318_024_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p318/p318_031_mic1.flac",
+   "dose": 0.413,
+   "text_A": "This is a very common type of bow, one showing mainly red and yellow, with little or no green or blue.",
+   "text_B": "I thought it was quite good."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p318/p318_008_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p318/p318_014_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p318/p318_019_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p318/p318_020_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p318/p318_024_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p318/p318_031_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p318/p318_033_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p318/p318_072_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p318/p318_166_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p318/p318_262_mic1.flac"
+  ]
+ },
+ "p330": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p330/p330_013_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p330/p330_317_mic1.flac",
+   "dose": 0.1876,
+   "text_A": "Some have accepted it as a miracle without physical explanation.",
+   "text_B": "Axis itself was created from that exercise."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p330/p330_050_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p330/p330_282_mic1.flac",
+   "dose": 0.4785,
+   "text_A": "There will be widespread support on all sides.",
+   "text_B": "Except, this time, it seems, he really, really means it."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_003_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_013_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_018_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_050_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_064_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_091_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_164_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_183_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_220_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_282_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_317_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p330/p330_417_mic1.flac"
+  ]
+ },
+ "p341": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p341/p341_207_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p341/p341_352_mic1.flac",
+   "dose": 0.1998,
+   "text_A": "She told me to apply for the crest.",
+   "text_B": "They are just bewildered and very concerned."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p341/p341_207_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p341/p341_263_mic1.flac",
+   "dose": 0.4266,
+   "text_A": "She told me to apply for the crest.",
+   "text_B": "This time, there were no such rewards."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_019_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_071_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_073_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_079_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_080_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_122_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_132_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_142_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_198_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_203_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_207_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_210_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_233_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_263_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_266_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_330_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_340_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_347_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_352_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_366_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p341/p341_385_mic1.flac"
+  ]
+ },
+ "p345": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p345/p345_015_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p345/p345_019_mic1.flac",
+   "dose": 0.1881,
+   "text_A": "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain.",
+   "text_B": "Since then physicists have found that it is not reflection, but refraction by the raindrops which causes the rainbows."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/p345/p345_005_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/p345/p345_248_mic1.flac",
+   "dose": 0.4005,
+   "text_A": "She can scoop these things into three red bags, and we will go meet her Wednesday at the train station.",
+   "text_B": "It is not surprising, but it is appaling."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/p345/p345_005_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p345/p345_007_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p345/p345_015_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p345/p345_019_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p345/p345_021_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p345/p345_248_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p345/p345_251_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/p345/p345_359_mic1.flac"
+  ]
+ },
+ "s5": {
+  "low": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/s5/s5_359_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/s5/s5_396_mic1.flac",
+   "dose": 0.1262,
+   "text_A": "Similar increases have been experienced by the medical defence unions.",
+   "text_B": "Many farmers cannot even agree within their own families."
+  },
+  "high": {
+   "seed_A": "inputs/vctk/wav48_silence_trimmed/s5/s5_010_mic1.flac",
+   "seed_B": "inputs/vctk/wav48_silence_trimmed/s5/s5_282_mic1.flac",
+   "dose": 0.3812,
+   "text_A": "People look, but no one ever finds it.",
+   "text_B": "It had happened on average once a week this year."
+  },
+  "pool": [
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_010_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_016_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_019_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_041_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_060_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_066_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_084_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_089_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_124_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_130_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_179_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_183_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_201_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_202_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_230_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_244_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_254_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_259_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_282_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_297_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_303_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_317_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_326_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_328_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_350_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_358_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_359_mic1.flac",
+   "inputs/vctk/wav48_silence_trimmed/s5/s5_396_mic1.flac"
+  ]
+ }
+}

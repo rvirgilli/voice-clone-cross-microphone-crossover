@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Which Conditioning Recording Does a Voice Clone Follow? A Balanced Cross-Microphone Crossover"
+message: "Please cite the accompanying paper when using this repository."
+type: software
+authors:
+  - family-names: Virgilli
+    given-names: Rafaello
+  - family-names: Souza
+    given-names: Lucas Alcantara
+  - family-names: Ferro Filho
+    given-names: Alexandre Costa
+  - family-names: Tunnermann
+    given-names: Daniel
+  - family-names: Oliveira
+    given-names: Gustavo dos Reis
+  - family-names: Galvão Filho
+    given-names: Arlindo
+version: 0.1.0
+date-released: 2026-08-17
+license: MIT
