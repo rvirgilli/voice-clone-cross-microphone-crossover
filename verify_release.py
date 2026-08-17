@@ -60,6 +60,7 @@ def main() -> int:
         [sys.executable, "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/verify_exp205_package.py"],
         [sys.executable, "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/verify_selection_provenance.py"],
         [sys.executable, "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/verify_public_history.py"],
+        [sys.executable, "experiments/EXP-206-clone-to-clone-crossover/verify_result.py"],
         [sys.executable, "paper/F2/check_numbers.py"],
         [sys.executable, "paper/F2/mutation_test.py"],
     )

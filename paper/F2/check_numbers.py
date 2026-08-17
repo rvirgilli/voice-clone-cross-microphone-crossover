@@ -17,6 +17,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 EXP205 = ROOT / "experiments/EXP-205-f2-crossmic-crossover"
+EXP206 = ROOT / "experiments/EXP-206-clone-to-clone-crossover"
 PACKAGE = EXP205 / "audit_package/exp205"
 EXP202 = ROOT / "experiments/EXP-202-f2-campaign"
 EXP204 = ROOT / "experiments/EXP-204-f2-seed-crossover"
@@ -34,6 +35,7 @@ OLD_OPEN = json.loads((EXP202 / "open_set_intervals.json").read_text(encoding="u
 OLD_CROSSOVER = json.loads((EXP204 / "crossover.json").read_text(encoding="utf-8"))
 ANCESTRY = json.loads((EXP205 / "roster_ancestry_sensitivity.json").read_text(encoding="utf-8"))
 ARM = json.loads((EXP205 / "arm_pairing_sensitivity.json").read_text(encoding="utf-8"))
+EXTENSION = json.loads((EXP206 / "result.json").read_text(encoding="utf-8"))
 
 
 def f3(value: float) -> str:
@@ -105,10 +107,14 @@ def main() -> int:
     if RESULT["headline_permission"] != "BIDIRECTIONAL_HEADLINE_PERMITTED":
         fails.append("sealed result no longer permits bidirectional headline")
     checks += 1
+    if EXTENSION["verdict"]["manuscript_permission"] != "ABSTRACT_AND_CONCLUSION_UPGRADE_PERMITTED":
+        fails.append("EXP-206 no longer permits manuscript upgrade")
+    checks += 1
 
     p = RESULT["directions"]["primary_mic1_to_mic2"]
     r = RESULT["directions"]["reverse_mic2_to_mic1"]
-    same = RESULT["same_microphone_diagnostics_no_verdict"]
+    xp = EXTENSION["directions"]["primary_mic1_to_mic2"]
+    xr = EXTENSION["directions"]["reverse_mic2_to_mic1"]
 
     # Abstract: all four predeclared cross-microphone estimates and intervals.
     abstract_values = []
@@ -116,29 +122,42 @@ def main() -> int:
         abstract_values.extend([f3(node["point"]), f3(node["stability_interval_95"][0]), f3(node["stability_interval_95"][1])])
     require_window(fails, "abstract exact result", "With fixed speaker-verification readouts", abstract_values, 900)
     checks += len(abstract_values)
+    extension_abstract_values = []
+    for node in (xp["ecapa"], xr["ecapa"], xp["wavlm"], xr["wavlm"]):
+        extension_abstract_values.extend(
+            [f3(node["point"]), f3(node["stability_interval_95"][0]), f3(node["stability_interval_95"][1])]
+        )
+    require_window(
+        fails,
+        "abstract EXP-206 result",
+        "A frozen stricter extension",
+        extension_abstract_values,
+        800,
+    )
+    checks += len(extension_abstract_values)
 
-    # Pooled table rows, including diagnostics in fixed column order.
+    # Pooled table rows, with real- and clone-candidate results in fixed order.
     pooled_rows = [
-        ("mic1$\\rightarrow$mic2 & ECAPA", p["ecapa"], same["same_mic1"]["ecapa"]),
-        ("mic2$\\rightarrow$mic1 & ECAPA", r["ecapa"], same["same_mic2"]["ecapa"]),
+        ("mic1$\\rightarrow$mic2 & ECAPA", p["ecapa"], xp["ecapa"]),
+        ("mic2$\\rightarrow$mic1 & ECAPA", r["ecapa"], xr["ecapa"]),
     ]
     # The WavLM marker occurs twice; bind the reverse row by its exact leading whitespace.
-    for marker, cross, diagnostic in pooled_rows:
+    for marker, cross, extension in pooled_rows:
         require_row(
             fails,
             f"pooled {marker}",
             marker,
             [f3(cross["point"]), f3(cross["stability_interval_95"][0]), f3(cross["stability_interval_95"][1]),
-             f3(diagnostic["point"]), f3(diagnostic["stability_interval_95"][0]), f3(diagnostic["stability_interval_95"][1])],
+             f3(extension["point"]), f3(extension["stability_interval_95"][0]), f3(extension["stability_interval_95"][1])],
         )
         checks += 6
     primary_wavlm_line = [line.replace("$", "") for line in TEX_RAW.splitlines() if "& WavLM & \\textbf{.622" in line]
     if len(primary_wavlm_line) != 1:
         fails.append("ROW primary WavLM missing or ambiguous")
     else:
-        node, diag = p["wavlm"], same["same_mic1"]["wavlm"]
+        node, extension = p["wavlm"], xp["wavlm"]
         for value in (f3(node["point"]), f3(node["stability_interval_95"][0]), f3(node["stability_interval_95"][1]),
-                      f3(diag["point"]), f3(diag["stability_interval_95"][0]), f3(diag["stability_interval_95"][1])):
+                      f3(extension["point"]), f3(extension["stability_interval_95"][0]), f3(extension["stability_interval_95"][1])):
             if value not in primary_wavlm_line[0]:
                 fails.append(f"ROW primary WavLM missing {value}")
     checks += 6
@@ -146,9 +165,9 @@ def main() -> int:
     if len(reverse_wavlm_line) != 1:
         fails.append("ROW reverse WavLM missing or ambiguous")
     else:
-        node, diag = r["wavlm"], same["same_mic2"]["wavlm"]
+        node, extension = r["wavlm"], xr["wavlm"]
         for value in (f3(node["point"]), f3(node["stability_interval_95"][0]), f3(node["stability_interval_95"][1]),
-                      f3(diag["point"]), f3(diag["stability_interval_95"][0]), f3(diag["stability_interval_95"][1])):
+                      f3(extension["point"]), f3(extension["stability_interval_95"][0]), f3(extension["stability_interval_95"][1])):
             if value not in reverse_wavlm_line[0]:
                 fails.append(f"ROW reverse WavLM missing {value}")
     checks += 6
@@ -165,16 +184,20 @@ def main() -> int:
         require_row(fails, f"systems {marker}", marker, values)
         checks += 4
 
-    bar_rows = (
-        ("E   & primary ECAPA", [f3(p["ecapa"]["stability_interval_95"][0])]),
-        ("O   & ECAPA point", [f3(p["ecapa"]["point"]), f3(p["ecapa"]["stability_interval_95"][0])]),
-        ("R   & primary WavLM", [f3(p["wavlm"]["stability_interval_95"][0])]),
-        ("$D_E$ & reverse ECAPA", [f3(r["ecapa"]["stability_interval_95"][0])]),
-        ("$D_R$ & reverse WavLM", [f3(r["wavlm"]["stability_interval_95"][0])]),
+    require_window(
+        fails,
+        "EXP-206 result prose",
+        "clone-to-clone extension contains 31,104 comparisons",
+        [
+            f3(xp["ecapa"]["point"]),
+            f3(xr["ecapa"]["point"]),
+            f3(xp["wavlm"]["point"]),
+            f3(xr["wavlm"]["point"]),
+            "31,104",
+        ],
+        800,
     )
-    for marker, values in bar_rows:
-        require_row(fails, f"frozen bar {marker}", marker, values + ["PASS"])
-        checks += len(values) + 1
+    checks += 5
 
     observed_duration_gap = max(
         value
@@ -213,21 +236,24 @@ def main() -> int:
     )
     checks += 6
 
-    ancestry_rows = (
-        ("Pass, not retained", "tier1_gate_pass_not_selected"),
-        ("Fail                &", "tier1_gate_fail"),
-        ("Not evaluated", "tier1_gate_not_evaluated"),
-    )
-    for marker, key in ancestry_rows:
+    ancestry_values = []
+    for key in ("tier1_gate_pass_not_selected", "tier1_gate_fail"):
         node = ANCESTRY["strata"][key]
-        values = [str(node["directions"]["primary_mic1_to_mic2"]["ecapa"]["n_speakers"])]
+        ancestry_values.append(str(node["directions"]["primary_mic1_to_mic2"]["ecapa"]["n_speakers"]))
         for encoder in ("ecapa", "wavlm"):
-            values.extend(
+            ancestry_values.extend(
                 f3(node["directions"][direction][encoder]["point"])
                 for direction in ("primary_mic1_to_mic2", "reverse_mic2_to_mic1")
             )
-        require_row(fails, f"ancestry {key}", marker, values)
-        checks += len(values)
+    ancestry_values.append("Three")
+    require_window(
+        fails,
+        "ancestry sensitivity",
+        "corresponding primary/reverse ECAPA points",
+        ancestry_values,
+        650,
+    )
+    checks += len(ancestry_values)
 
     arm_values = []
     for encoder in ("ecapa", "wavlm"):
@@ -271,6 +297,10 @@ def main() -> int:
         "duration match": "at most .25\\,s",
         "rate match": "at most 5\\%",
         "speaker unit": "32 dependent comparisons per direction",
+        "extension comparison census": "31,104 comparisons",
+        "extension speaker unit": "288 comparisons per speaker/direction",
+        "extension cross-generator/text": "a different generator and a different output text",
+        "extension material bars": "ECAPA points $\\geq.60$ and WavLM points $\\geq.55$",
         "bootstrap": "100,000 times with a frozen seed",
         "F5 package version": f"F5-TTS {EXECUTION['generators']['f5']['package_version']}",
         "XTTS package version": f"XTTS-v2 {EXECUTION['generators']['xtts']['package_version']}",

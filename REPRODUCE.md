@@ -15,13 +15,14 @@ For individual checks:
 uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/verify_exp205_package.py
 uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/verify_selection_provenance.py
 uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/verify_public_history.py
+uv run --frozen python experiments/EXP-206-clone-to-clone-crossover/verify_result.py
 uv run --frozen python paper/F2/check_numbers.py
 uv run --frozen python paper/F2/mutation_test.py
 ```
 
-Expected final lines are `PASS` from both the result and selection packages,
-`PASS` from the paper checker, and `UNCAUGHT: 0  INVALID: 0` from mutation
-testing.
+Expected final lines are `PASS` from the EXP-205 and EXP-206 result packages
+and the selection package, `PASS` from the paper checker, and
+`UNCAUGHT: 0  INVALID: 0` from mutation testing.
 
 ## Level 2 — post-result sensitivities and figure
 
@@ -35,6 +36,21 @@ uv run --frozen python paper/F2/make_exp205_figure.py
 
 Run them in a disposable clone when comparing regenerated files with the
 canonical release. Neither sensitivity is allowed to alter the sealed verdict.
+
+EXP-206 reuses the sealed EXP-205 embeddings in a prospectively frozen
+cross-generator, cross-text clone-to-clone grid. Its committed public result
+contains all 54 speaker means for each direction/readout. The public verifier
+reconstructs the four points, the shared 100,000-resample speaker-bootstrap
+intervals, and the frozen verdict:
+
+```bash
+uv run --frozen python experiments/EXP-206-clone-to-clone-crossover/verify_result.py
+```
+
+Recomputing clone-level similarities requires the non-redistributed generated
+audio and authenticated feature caches described by the EXP-206 input
+manifest; that audio-to-embedding boundary is the same Level-3 boundary as
+EXP-205.
 
 ## Level 3 — generation and scoring
 
