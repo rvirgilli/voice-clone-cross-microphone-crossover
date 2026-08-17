@@ -19,6 +19,11 @@ data/
   libritts-r/
 ```
 
+For a Level-3 rerun, expose those files below the logical `inputs/` paths in
+the released selection manifest (symlinks are sufficient). The runner hashes
+every selected input before use, so a wrong corpus version or file mapping is
+rejected.
+
 ## Systems and fixed readouts
 
 The sealed execution records exact repository states, package versions,
@@ -34,6 +39,49 @@ Notably, the fixed readouts are pinned to:
 
 Model weights are not committed. Never replace a pinned snapshot with a moving
 branch name when claiming reproduction of the sealed execution.
+
+## Level-3 environment variables
+
+Run the commands in `REPRODUCE.md` from the released EXP-205 `source/`
+directory. The runner requires these six variables:
+
+- `EXP205_ROOT`: that absolute `source/` directory (normally `$PWD`).
+- `EXP205_RUN`: a writable, fast work directory outside the Git checkout; it
+  receives generated audio, scores, caches, and execution receipts.
+- `EXP205_DETECTOR_ROOT`: checkout of the detector/readout uv project used to
+  run pin verification and manifest construction.
+- `EXP205_XTTS_VENV`: virtual environment containing `coqui-tts==0.25.3`.
+- `EXP205_COSY_ROOT`: pinned CosyVoice checkout containing its `venv/`.
+- `EXP205_SEEDVC_ROOT`: pinned Seed-VC checkout containing `inference.py`, its
+  `venv/`, and the snapshot/cache layout authenticated by the config builder.
+
+For example, replace the placeholders below with local absolute paths:
+
+```bash
+export EXP205_ROOT="$PWD"
+export EXP205_RUN=/fast/work/exp205-run
+export EXP205_DETECTOR_ROOT=/path/to/detector-project
+export EXP205_XTTS_VENV=/path/to/xtts-venv
+export EXP205_COSY_ROOT=/path/to/CosyVoice
+export EXP205_SEEDVC_ROOT=/path/to/seed-vc
+```
+
+The execution-config builder also accepts optional model-location overrides.
+If omitted, the paths shown here are resolved from the `source/` directory:
+
+| Variable | Default |
+|---|---|
+| `EXP205_F5_SNAPSHOT` | `external/models/f5-tts` |
+| `EXP205_VOCOS_SNAPSHOT` | `external/models/vocos` |
+| `EXP205_XTTS_MODEL` | `external/models/xtts-v2` |
+| `EXP205_COSY_SNAPSHOT` | `external/models/cosyvoice2` |
+| `EXP205_ECAPA_SNAPSHOT` | `external/models/ecapa-voxceleb` |
+| `EXP205_WAVLM_SNAPSHOT` | `external/models/wavlm-base-plus-sv` |
+
+`EXP205_COSY_ROOT`, `EXP205_SEEDVC_ROOT`, `EXP205_XTTS_VENV`, and
+`EXP205_RUN` are consumed by both the builder and runner as described above.
+The builder hashes the loader-visible files and records resolved targets; run
+`verify_pins.py` before generation, as required by `REPRODUCE.md`.
 
 ## Generated data and publication boundary
 
