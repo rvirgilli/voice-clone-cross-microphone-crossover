@@ -20,16 +20,17 @@ PASS — portable EXP-205 census, provenance, statistics and verdict verify
 
 `scores.portable.tsv`, the `*.portable.json` records, and `result.json` use
 logical paths and are the intended portable public records. Files under
-`source/` are hash-pinned release copies of the analysis and execution source.
-Machine-specific defaults were replaced by environment variables, and
-historical roster paths were mapped to logical paths; these public adaptations
-do not alter the sealed result or the original trust-root hashes. The portable
+`source/` are release copies of the analysis and execution source. Three public
+wrappers use documented portability adaptations, while `audit.json` preserves
+the original execution trust roots separately. Machine-specific defaults were
+replaced by environment variables, and historical roster paths were mapped to
+logical paths; these adaptations do not alter the sealed result. The portable
 verifier does not invoke generation or scoring code.
 
-The post-review `roster_ancestry_sensitivity.*` and
+The post-result `roster_ancestry_sensitivity.*` and
 `arm_pairing_sensitivity.*` files are descriptive checks added after the frozen
 result. Their status fields explicitly prohibit changing or rescuing the
-pre-registered verdict. They can be reproduced in place with:
+frozen verdict. They can be reproduced in place with:
 
 ```bash
 uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/roster_ancestry_sensitivity.py
@@ -38,6 +39,18 @@ uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/e
 
 The exact hash-pinned historical roster records needed by the first command are
 under `source/history/`.
+
+`source/selection/verify_selection_provenance.py` additionally checks the
+complete Tier-1/Tier-2/evaluation ancestry and every within-roster A/B pair.
+The directory publishes the historical builders and a path-portable feasibility
+census; its README states which records predate the result and which are
+publication adaptations.
+
+The protocol and two infrastructure amendments received publication-only
+wording cleanup after the result. `PUBLICATION-AMENDMENTS.json` and
+`verify_public_history.py` authenticate their original bytes from Git history;
+the unchanged `PREREG-FROZEN.sha256` continues to name the original protocol,
+not the cleaned publication copy. No external timestamp is claimed.
 
 `audit.json` authenticates every package component. The score and source-file
 licenses are summarized in `LICENSES.md`; model code and weights are not

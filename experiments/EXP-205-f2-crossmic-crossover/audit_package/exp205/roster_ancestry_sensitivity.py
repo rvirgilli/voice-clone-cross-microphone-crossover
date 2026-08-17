@@ -3,7 +3,7 @@
 # requires-python = ">=3.11"
 # dependencies = ["numpy==2.4.6"]
 # ///
-"""Post-review descriptive sensitivity to EXP-205's ECAPA-informed ancestry.
+"""Post-result descriptive sensitivity to EXP-205's ECAPA-informed ancestry.
 
 EXP-205 is the 54-speaker complement of EXP-204 tiers 1 and 2.  Tier 1 applied
 an ECAPA gate to 105 speakers, then kept the first 30 passing speakers.  This

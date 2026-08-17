@@ -1,7 +1,7 @@
 """Build the hash-pinned, outcome-blind EXP-205 execution config.
 
 This intentionally hashes several gigabytes of generator/readout weights. Run
-it only after the GPU/I/O-critical M1 scoring job has released the card.
+it only when the shared GPU and storage path are not serving another workload.
 """
 
 from __future__ import annotations

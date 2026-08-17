@@ -2,24 +2,20 @@
 
 Date drafted: 2026-08-17
 
-Status: **FROZEN / AMENDMENT 1 INDEPENDENT PASS / AUTHORITY TO EXECUTE THE
-EXACT SUCCESSOR JOB.** The outcome-blind selection builder, manifest, generators,
+Status: **FROZEN / AMENDMENT 1 CLOSED FOR THE EXACT SUCCESSOR JOB.** The
+outcome-blind selection builder, manifest, generators,
 per-clone ancestry ledgers, authenticated readouts/scorer, receipt-bound
 analyzer, verdict truth table, licence/release boundary and synthetic
 census/mutation suite are frozen by execution config SHA-256
 `c82586074c5e7ec6aad9b21a101968f213f4849f35624492400041be1d2bd294`.
-The same independent auditor closed the logical-snapshot/ref blocker. The first
+Read-only integrity checks closed the logical-snapshot/ref blocker. The first
 execution then exposed the outcome-blind F5 path failure recorded in
-`AMENDMENT-1-f5-logical-checkpoint.md`; zero clones existed. The same auditor
-reproduced the suffixless-blob failure and closed the successor trust root
-before rerun.
+`AMENDMENT-1-f5-logical-checkpoint.md`; zero clones existed. The suffixless-blob
+failure was reproduced and the successor trust root was closed before rerun.
 
-Coordinator compute authorization was granted on 2026-08-17 for in-scope jobs
-up to 12 GPU-hours and 12 wall-clock hours. EXP-205's current 1.6 h queue
-allowance is inside that boundary. This removes the administrative gate but
-did not remove the technical gate; the technical gate is now satisfied only
-for the exact trust root above. Any source, manifest, model mapping, ref or
-config change revokes execution authority and requires a new audit.
+Only the exact trust root above satisfied the technical execution gate. Any
+source, manifest, model mapping, ref or config change required a new integrity
+verification.
 
 ## Question and paper-changing claim
 
@@ -138,19 +134,19 @@ microphones and arms are fixed crossed factors.
 
 ## Fixed readouts under consideration
 
-The protocol review must either accept this roster unchanged or explain a
-scientific revision before freeze:
+The protocol fixes this roster unchanged unless a scientific revision is
+recorded before freeze:
 
 1. **Primary:** cosine similarity from the same fixed ECAPA-TDNN SV encoder used
    throughout F2. This was named primary before the cross-mic discovery screen
    was opened because the claim concerns a same-speaker recording contrast.
-2. **Independent representation replication:** the fixed SV-fine-tuned WavLM
-   encoder already used throughout F2.
-3. **Diagnostics only:** the pre-registered four-family fusion, five-family
+2. **Second fixed SV readout:** the SV-fine-tuned WavLM encoder already used
+   throughout F2.
+3. **Diagnostics only:** the predeclared four-family fusion, five-family
    fusion, handcrafted no-SV families and same-mic candidate counterparts.
 
 No method is chosen by whichever produces the best held-out result. Diagnostics
-cannot rescue a failed primary or replication conjunct.
+cannot rescue a failed primary or second-readout conjunct.
 
 ## Candidate estimand and intervals
 
@@ -303,12 +299,12 @@ about 1.1 TB free. No running job may write to bigfour SMR.
 
 After M1 releases the GPU, a valid frozen package can execute and analyze in one
 day. Reserve two additional days for artifact audit, paper rewrite and exact-PDF
-review. This is not on the deadline critical path unless protocol review finds
-a substantive defect.
+This is not on the deadline critical path unless a substantive protocol defect
+is found.
 
 ## Satisfied GO package
 
-Before GPU submission, all existed and received independent review:
+Before GPU submission, all existed and passed recorded integrity checks:
 
 1. append-only EXP-204 correction acknowledging its omitted `.90` conjunct;
 2. exact hashed selection manifest and four generated-text hashes;
@@ -319,11 +315,10 @@ Before GPU submission, all existed and received independent review:
 6. synthetic alternatives that exercise every scientific branch, tie handling,
    missing/duplicate files, wrong speakers, wrong microphones and a swapped
    ancestry receipt;
-7. a protocol-only adversarial audit returning PASS;
-8. explicit coordinator authorization within the standing 12-hour boundary
-   and portfolio priority for the high-ROI EXP-205 route.
+7. a protocol-only integrity test suite returning PASS;
+8. execution within the frozen resource boundary.
 
-Execution is authorized only as:
+The historical execution command was:
 
 ```bash
 experiments/EXP-205-f2-crossmic-crossover/run.sh \

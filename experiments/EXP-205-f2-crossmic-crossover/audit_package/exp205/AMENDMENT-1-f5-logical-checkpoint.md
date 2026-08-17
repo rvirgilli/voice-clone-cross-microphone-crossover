@@ -5,7 +5,7 @@ any clone, feature, score or scientific result existed.
 
 ## Outcome-blind failure
 
-The first audited execution verified all pins and built the Seed-VC job
+The first frozen execution verified all pins and built the Seed-VC job
 manifest, then stopped at `F5TTS(...)` before generating its first clone. The
 durable status is `INFRASTRUCTURE_FAILURE` at `generate_f5`; the clone-file
 census is exactly zero.
@@ -18,7 +18,7 @@ safetensors bytes as a torch pickle and failed closed.
 
 ## Delimited correction
 
-This amendment authorizes only:
+This amendment permits only:
 
 1. construct the F5 model pin once and set `checkpoint_path` to that exact
    pin's logical `path`;
@@ -43,5 +43,5 @@ bar or verdict branch changes.
 
 The full outcome-blind suite passes **26/26** and `verify_pins.py` rehashes 49
 model/ref files plus 15 source files under the successor config. Execution
-remains prohibited until the same independent auditor reproduces this exact
-closure and authorizes the successor trust root.
+remained prohibited until read-only integrity checks reproduced this exact
+closure and successor trust root.

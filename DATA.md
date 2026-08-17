@@ -46,3 +46,13 @@ of the upstream licences.
 Generation writes must target a fast work volume outside both this repository
 and the read-mostly corpus library. Preserve only hashes and milestone outputs
 needed for provenance.
+
+## Selection provenance
+
+The public selection package records the complete 30 + 24 + 54 roster
+ancestry. Tier 1 and Tier 2 used ECAPA geometry during earlier development;
+EXP-205 is their disjoint complement and is therefore not embedding-naive.
+Within that fixed complement, EXP-205 A/B pair selection used only duration,
+transcript-byte rate, and deterministic lexical tie-breaking. The portable
+feasibility census replaces only a historical absolute run-root prefix with
+`inputs/`; its scientific fields and original source hash are preserved.

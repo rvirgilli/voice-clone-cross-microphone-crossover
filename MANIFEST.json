@@ -7,21 +7,25 @@
     "bytes": 618,
     "sha256": "f4b3e56bd2da0090d2e209b00dc12c39721a4ff53976593304c3eef0a59dd7fd"
   },
+  "CLAIM-SCOPE.md": {
+    "bytes": 2394,
+    "sha256": "2ccc382ef58d5e67f04367aee75564f1e2cb3c90e4272581ba9d961070328987"
+  },
   "DATA.md": {
-    "bytes": 1917,
-    "sha256": "e85abede45999a535c887015d00d47d41bbb3f0e6da7a2504ad5abb9c809e1bb"
+    "bytes": 2465,
+    "sha256": "cc2263c58ce24d0c4fc26a1a81806a4cf3f06e3b77ee6da132709c429a388ac3"
   },
   "LICENSE": {
     "bytes": 1091,
     "sha256": "1ce598d1dda270df1b294dcdc03a226a79c06fe0f9fafd6e1e0c57cadcb80325"
   },
   "README.md": {
-    "bytes": 2030,
-    "sha256": "90ff2407f0710e5c11e29d88e242719b25b0f02f4cdf619e0414f9df5f6f7c5e"
+    "bytes": 2205,
+    "sha256": "a43fa79ccff9b726f4da792c9593ce630078ebe337ad66c4dd7fc72458784b89"
   },
   "REPRODUCE.md": {
-    "bytes": 2015,
-    "sha256": "0f22994e808b2ecb8765c832f1c5ba8b7792266f69abc7e00ff1df704afbb82f"
+    "bytes": 2927,
+    "sha256": "8660fbc6e58a25ddfeb3397ac32f48389c16f80cd2dab7456020b18fe85673c9"
   },
   "build_manifest.py": {
     "bytes": 958,
@@ -48,28 +52,32 @@
     "sha256": "d1c05721381b383c8d5ce236f2b5111bb870bd245b376135766189eda5e6451c"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/AMENDMENT-1-f5-logical-checkpoint.md": {
-    "bytes": 2024,
-    "sha256": "1d21be34aa9fe0b98b6b8b637576beab15818f5368d6fc94dfb8600b4da07f17"
+    "bytes": 2004,
+    "sha256": "a6fb530bd13d772e883525d6d2417b06abac6c1d0e6dc5a2b740e73574ec7932"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/AMENDMENT-2-analysis-config-recovery.md": {
-    "bytes": 2937,
-    "sha256": "fcdeb902b26eafde96e1d1c23facc506a7092279ea99923319c749f832f73fa9"
+    "bytes": 2867,
+    "sha256": "63d805e8543eab7cd5d106ee7df42094859f8f1d42a9fb58f6ce0dfbd19a34cd"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/LICENSES.md": {
     "bytes": 2410,
     "sha256": "01fa88460a32bec44db3db826d3bce8f0edada6a232a84461d53ec87b7a8c652"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/PREREG-DRAFT.md": {
-    "bytes": 17996,
-    "sha256": "677cd4776418c061fd9bc189544b942f80311c40cf02e4ef7bc976a9a86e0c4b"
+    "bytes": 17562,
+    "sha256": "055a6c7ae71e5a74401f30f8939f74b35833b4ea76ae09d19ced33cb8990f536"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/PREREG-FROZEN.sha256": {
     "bytes": 82,
     "sha256": "0638d5a5143c2421f4f475121c29d827faba5e42ff864d73070a1aeb0cb72459"
   },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/PUBLICATION-AMENDMENTS.json": {
+    "bytes": 1135,
+    "sha256": "719830df2c84139d4df7c62edd474f971371da1f0001138834959a75987896a5"
+  },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/README.md": {
-    "bytes": 1996,
-    "sha256": "14de2a5e2765563c795f6fde2b71dec08afa939253893a8db526bb5809e3f5b7"
+    "bytes": 2770,
+    "sha256": "db5de93676c05f4df1771046d2c2ff2c8190b1f91d69bae9305078eb539c7f4d"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/analysis-config-recovery.portable.json": {
     "bytes": 900,
@@ -81,11 +89,11 @@
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/arm_pairing_sensitivity.py": {
     "bytes": 6404,
-    "sha256": "8550eb9f9fd0cf7351336dbe4a0ad82289e5f715de70c0e2f441ff05825c6934"
+    "sha256": "1b039d85645887003eb336f1b1f824e3cc2c57177591373afff06bbcfd0f3484"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/audit.json": {
-    "bytes": 8232,
-    "sha256": "0b56811c176aadcb90a0c00d5628fd6fef4c236cf9cc177965563e58d175976e"
+    "bytes": 10243,
+    "sha256": "aa65af07c56e409222eaf68724c9d3d3e1ed0dadc92e6b3645fc7a2c5e588985"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/execution-config.portable.json": {
     "bytes": 20417,
@@ -113,11 +121,15 @@
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/roster_ancestry_sensitivity.py": {
     "bytes": 6615,
-    "sha256": "4887f0736653375be0235e74bb64b085871d86ddae12d381613a040a699310e8"
+    "sha256": "523748f83b61d97ad52520843f042f6a2de8e2433846a2ecaabd52b288a800d7"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/scores.portable.tsv": {
     "bytes": 2696493,
     "sha256": "535d3a5cba9f98bb830175004214b62977047f629113248ecca07c11cbd9c387"
+  },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/LICENSES.md": {
+    "bytes": 2410,
+    "sha256": "01fa88460a32bec44db3db826d3bce8f0edada6a232a84461d53ec87b7a8c652"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/LICENSES_md.md": {
     "bytes": 2410,
@@ -128,8 +140,8 @@
     "sha256": "6ff83b3c9657b373a437446413cc704bf4c99ffa92074b274375e12b7d8174d6"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/build_execution_config.py": {
-    "bytes": 9285,
-    "sha256": "b2aa673dc305c48f8d7507e88728b958cde4ace7c7820ad58fcabe9dc94ec23f"
+    "bytes": 9291,
+    "sha256": "b95fac988baa3560def0f2cb74162ec8fa4a08a4fdfbd383ea73b2fc7b316eba"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/build_seedvc_manifest.py": {
     "bytes": 3493,
@@ -155,6 +167,10 @@
     "bytes": 45650,
     "sha256": "c520ca6c976e61b1dfbcd3dbb350e9875924fe099c66525838b0e5ff3e1014b2"
   },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/run.sh": {
+    "bytes": 2909,
+    "sha256": "e6447be26bd842ec4b47485777d7fab8057fbfb27eb400b6fbdc44a398b96e7e"
+  },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/run_sh.sh": {
     "bytes": 2909,
     "sha256": "e6447be26bd842ec4b47485777d7fab8057fbfb27eb400b6fbdc44a398b96e7e"
@@ -162,6 +178,42 @@
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/score.py": {
     "bytes": 20549,
     "sha256": "931ea0e24e4234257d9476a8b8ee0ec24582266f33c481677a90acb59aec695f"
+  },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection-manifest.json": {
+    "bytes": 130510,
+    "sha256": "d4def5472b514c6a756315990c3decaa488d6aa7896223d9c1dc42825f430417"
+  },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/README.md": {
+    "bytes": 1557,
+    "sha256": "01a3faef26504350616a9bb7a25fd14eb471b3082b31631b1f92643a02d81a29"
+  },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/build_portable_feasibility.py": {
+    "bytes": 1761,
+    "sha256": "ec8f3824d49b03e8e77b194502ab9351bdf3cfc7258c346d1c0439a81cb1f898"
+  },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/build_tier1_gate.historical.py": {
+    "bytes": 5161,
+    "sha256": "31658ecd4165f60b4114c6e77de1c1f7851205ad92845f0f47f8d4af50dea2cd"
+  },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/build_tier2_pairs.historical.py": {
+    "bytes": 5034,
+    "sha256": "888e51b2ac2e7dd77fa84bb1334c9b3a48bf94ba7a594f176758ccb545014339"
+  },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/feasibility.historical.py": {
+    "bytes": 10689,
+    "sha256": "95e243aba7f901773f0e7b42729aea7c2160e0919869479a5e7a5b4af2f392d1"
+  },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/feasibility.portable.json": {
+    "bytes": 81021,
+    "sha256": "1a839375922a2228e232e0004c8a219049287cfd63409867c4a49c3455ab6905"
+  },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/tier2_selection.json": {
+    "bytes": 3582,
+    "sha256": "1fb1ec863b1ab3d758c917f3786a3ac5b70f7bf4bd929e217d2bcdc4c4e1e527"
+  },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/verify_selection_provenance.py": {
+    "bytes": 4068,
+    "sha256": "1a5096dcf35a39735b2114b61fb07b21286d063f40839633235835451dfc060c"
   },
   "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/test_analyze.py": {
     "bytes": 18256,
@@ -195,6 +247,10 @@
     "bytes": 8858,
     "sha256": "0defea3141f93fcafcd6497a13fdfe09158f2be5f5563995d7ab405ed02eec01"
   },
+  "experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/verify_public_history.py": {
+    "bytes": 1812,
+    "sha256": "2a96f967bb3a0df519b5eed5c2ec7b8bc09adbb82a792f4afc1f915eee504d0d"
+  },
   "experiments/EXP-205-f2-crossmic-crossover/roster_ancestry_sensitivity.json": {
     "bytes": 6703,
     "sha256": "abe80e9b4b749781dc8322a2c6300f9874f6c9e798570f343179a36a471a9c73"
@@ -208,32 +264,32 @@
     "sha256": "fb5b9f3579b6a79b3323b40ded4242d6b51d3f8bd7f1859efd5fa14083ef9b30"
   },
   "paper/F2/check_numbers.py": {
-    "bytes": 15898,
-    "sha256": "cfc3623082959faeb224f844baf49797175fdd36237f56e288e5ada06b375dff"
+    "bytes": 16577,
+    "sha256": "03c24764f50ef6bc4772ab5df0feab9559c536711d21b588d6ab5d99cf5b2b68"
   },
   "paper/F2/fig_exp205_speakers.pdf": {
     "bytes": 13482,
     "sha256": "8689aaf5089f4515306ff3c6e3893faf807e695a8aaa05674c64b6b3d8b071e6"
   },
   "paper/F2/main.pdf": {
-    "bytes": 155340,
-    "sha256": "6cc4a8f7cb0612bbe19fa08c25519ce166d5375940e2580ee7521eb37cc273df"
+    "bytes": 157497,
+    "sha256": "4b3c28a79b08a57552eb389e5916aa9537062d51f8096e17e1adb69c791a7af6"
   },
   "paper/F2/main.tex": {
-    "bytes": 21874,
-    "sha256": "0bf6efac84aa382a2702ef1351d4bffe421baeb6be5ee2a77913607a2f220395"
+    "bytes": 22909,
+    "sha256": "2768cd687fc36cf28470c214825a5bfc7f3b14c468dd91ad43832c7552798dc7"
   },
   "paper/F2/make_exp205_figure.py": {
     "bytes": 2511,
     "sha256": "f807607a5699f8387ad31ddc3684da9f16bf303a24a10647951cfe064bb14848"
   },
   "paper/F2/mutation_test.py": {
-    "bytes": 4954,
-    "sha256": "e0740b1b5ed6a6fa254445dbad00b167a70c7c70033b362736739da185e049f6"
+    "bytes": 4981,
+    "sha256": "bca9fbb2d11a3a9dc176b651075516306a737b733d39b7e42224c37104c90cc9"
   },
   "paper/F2/refs.bib": {
-    "bytes": 11052,
-    "sha256": "0416e26e78fdb0df5c4084cc8580ffce845037c939ccd81b0e4e4cf412a9069d"
+    "bytes": 11537,
+    "sha256": "9988c303c152a5ef0811be29a0c6407699096b1cd396a96e12047603da598c54"
   },
   "paper/F2/spconf.sty": {
     "bytes": 8798,
@@ -248,7 +304,7 @@
     "sha256": "02011edabb954da5b6a220c1a1f10e3331e0c81f236d46f4ceaf8cb07cd1f181"
   },
   "verify_release.py": {
-    "bytes": 3065,
-    "sha256": "8539860db6ec1d28e438b86c22c2fb0f2cc78d6e52d43935651a531b376318da"
+    "bytes": 3072,
+    "sha256": "03fb2e771dc5a475229a0ac6b8684b84e0611f2e9f131f1a82417c41397d22ac"
   }
 }

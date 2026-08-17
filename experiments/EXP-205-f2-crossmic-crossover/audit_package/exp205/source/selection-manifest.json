@@ -1,0 +1,3198 @@
+{
+  "corpus": {
+    "doi": "10.7488/ds/2645",
+    "mic1": "DPA 4035 omni-directional microphone",
+    "mic2": "Sennheiser MKH 800 condenser microphone",
+    "name": "CSTR VCTK Corpus",
+    "version": "0.92"
+  },
+  "counts": {
+    "comparisons_per_speaker_per_direction": 32,
+    "expected_clones": 3456,
+    "generated_texts": 4,
+    "prompt_microphones": 2,
+    "seed_arms": 2,
+    "speakers": 54,
+    "systems": 4
+  },
+  "generation": {
+    "generated_texts": [
+      {
+        "index": 0,
+        "sha256_utf8": "ad748a7aabea548707cbbc378e556121dad83230ba64491a306a4bbcee0a2a73",
+        "text": "Well, sir, we never make coffee but in the afternoon. Would you like a good bavaroise, or a decanter of orgeat?\"",
+        "utf8_bytes": 112
+      },
+      {
+        "index": 1,
+        "sha256_utf8": "1176ffc9e12e1f2ed1ec3fbbb2e99351d3e0cd4f2529825e542de448346cf159",
+        "text": "Baletti's father, who had just recovered from a long illness, was not with us, but we had his father's sister, who was older than Mario.",
+        "utf8_bytes": 136
+      },
+      {
+        "index": 2,
+        "sha256_utf8": "be8164923489e503ceaa7c3a0f1277c0c3c93ded689275acedf3211634281b98",
+        "text": "First they took turns sweeping, as best they could, with a very ancient and frowsy broom, the thick, moth eaten carpet.",
+        "utf8_bytes": 119
+      },
+      {
+        "index": 3,
+        "sha256_utf8": "ea373418658231b1caef548909a50d2a4f562bd02ed169b7a5d7e3466bc3524b",
+        "text": "I address him in Italian, and he answers very wittily, but his way of speaking makes me smile, and I tell him why.",
+        "utf8_bytes": 114
+      }
+    ],
+    "rng_seed_base": 42,
+    "seedvc_sources": [
+      {
+        "generated_text_sha256_utf8": "ad748a7aabea548707cbbc378e556121dad83230ba64491a306a4bbcee0a2a73",
+        "index": 0,
+        "path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000041_000001.wav",
+        "sha256": "85480534622a9c0d05b188086567f6225bab3b3ebf8d2932bfe4d7df092ec299",
+        "transcript": "Well, sir, we never make coffee but in the afternoon. Would you like a good bavaroise, or a decanter of orgeat?\"",
+        "transcript_path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000041_000001.normalized.txt",
+        "transcript_sha256": "ad748a7aabea548707cbbc378e556121dad83230ba64491a306a4bbcee0a2a73"
+      },
+      {
+        "generated_text_sha256_utf8": "1176ffc9e12e1f2ed1ec3fbbb2e99351d3e0cd4f2529825e542de448346cf159",
+        "index": 1,
+        "path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000003_000001.wav",
+        "sha256": "37e289f38ee7cfee08c1d41a247401f3c0e872b313638036b432a9dcb34a4b95",
+        "transcript": "Baletti's father, who had just recovered from a long illness, was not with us, but we had his father's sister, who was older than Mario.",
+        "transcript_path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000003_000001.normalized.txt",
+        "transcript_sha256": "1176ffc9e12e1f2ed1ec3fbbb2e99351d3e0cd4f2529825e542de448346cf159"
+      },
+      {
+        "generated_text_sha256_utf8": "be8164923489e503ceaa7c3a0f1277c0c3c93ded689275acedf3211634281b98",
+        "index": 2,
+        "path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/6930/76324/6930_76324_000014_000003.wav",
+        "sha256": "ae9cc284858ed520888aebcc1d22628771f9976b5e03d62ecc5e6e794f55372a",
+        "transcript": "First they took turns sweeping, as best they could, with a very ancient and frowsy broom, the thick, moth eaten carpet.",
+        "transcript_path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/6930/76324/6930_76324_000014_000003.normalized.txt",
+        "transcript_sha256": "be8164923489e503ceaa7c3a0f1277c0c3c93ded689275acedf3211634281b98"
+      },
+      {
+        "generated_text_sha256_utf8": "ea373418658231b1caef548909a50d2a4f562bd02ed169b7a5d7e3466bc3524b",
+        "index": 3,
+        "path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000048_000001.wav",
+        "sha256": "664ccb2ff88c1cb149fac9a4273cdcdcc70c3099860240b446ef1dcdf2e47ee4",
+        "transcript": "I address him in Italian, and he answers very wittily, but his way of speaking makes me smile, and I tell him why.",
+        "transcript_path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000048_000001.normalized.txt",
+        "transcript_sha256": "ea373418658231b1caef548909a50d2a4f562bd02ed169b7a5d7e3466bc3524b"
+      }
+    ],
+    "systems": [
+      "f5",
+      "xtts",
+      "cosy",
+      "seedvc"
+    ]
+  },
+  "input_hashes": {
+    "exp203_pool": "8ef413f1cf9fb493516c54ed27c925710605b388341453fa69a436401ee16d7a",
+    "exp204_tier1": "0ec8e8515ce4e478d4ccf37d3aca2c9f9d787d98ab813ee41321f85dab0d62d4",
+    "exp204_tier2": "428d51bff3511beef37b39886cb36161ccf7969703f6829714f5c99143e16d53",
+    "feasibility": "9c42c3245c307e9f208a2dcc73d877352b2dfda83813d9672c762be9fa15b4f6",
+    "feasibility_builder": "95e243aba7f901773f0e7b42729aea7c2160e0919869479a5e7a5b4af2f392d1",
+    "generation_text_source": "0e3ab1acbd2b3c52bb7863dd40ad7026c5176b2809060e3f702b37326d9e6afb"
+  },
+  "schema": "exp205-selection-manifest-v1",
+  "scope": "real_audio_metadata_and_text_only_no_clone_or_score_outcomes",
+  "selection": {
+    "duration_range_s": [
+      4.0,
+      10.0
+    ],
+    "embedding_or_outcome_screening": false,
+    "max_pair_duration_gap_s_on_each_mic": 0.25,
+    "max_relative_seconds_per_utf8_byte_gap_on_each_mic": 0.05,
+    "ranking": [
+      "minimum maximum normalized gap across both microphones",
+      "minimum sum of all four normalized gaps",
+      "minimum maximum rate gap",
+      "minimum maximum duration gap",
+      "lexicographic path A then path B"
+    ],
+    "roster": "54 EXP-203 speakers absent from EXP-204 tiers 1 and 2"
+  },
+  "speakers": [
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.454854166666666,
+          "frames": 213833,
+          "path": "inputs/vctk/wav48_silence_trimmed/p229/p229_040_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "970505f46176549f2325fc84987362cbc21b51c417b45442764a2bafa462e74e"
+        },
+        "A_mic2": {
+          "duration_s": 4.454854166666666,
+          "frames": 213833,
+          "path": "inputs/vctk/wav48_silence_trimmed/p229/p229_040_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "4d0f0c47d2e0ad44b4a5dbc3f42be4fabe210d5fa5c73d9cc878a329a68aa5f9"
+        },
+        "B_mic1": {
+          "duration_s": 4.463958333333333,
+          "frames": 214270,
+          "path": "inputs/vctk/wav48_silence_trimmed/p229/p229_229_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "2bcca59e83097d00497f90e13c0942a1391d66af782cdb9edcc8a17939007bfc"
+        },
+        "B_mic2": {
+          "duration_s": 4.463958333333333,
+          "frames": 214270,
+          "path": "inputs/vctk/wav48_silence_trimmed/p229/p229_229_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "e181230a52fc97c41876bb1e663b8e61137776a387cf5a5494c8174ed1878142"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p229/p229_065_mic1.flac",
+        "sha256": "277f7d618407b92753491352ce91940e46d18492a427221f51c6b67cedc6ae6d"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.009104166666666913,
+        "duration_gap_mic2_s": 0.009104166666666913,
+        "relative_rate_gap_mic1": 0.0020415647636200314,
+        "relative_rate_gap_mic2": 0.0020415647636200314
+      },
+      "speaker": "p229",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p229/p229_040.txt",
+          "sha256": "a4a42226f5faf38cabdd548e4509795fcb8fc955aaa01b17d89c428300800178",
+          "text": "Two other men, including the taxi driver, were wounded in the attack.",
+          "utf8_bytes": 69
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p229/p229_229.txt",
+          "sha256": "03e8885a84b2b2458043021478c7e6bb730c678bd17941d5d7edab195b173a44",
+          "text": "The council has proposed a temporary barrier to protect the monument.",
+          "utf8_bytes": 69
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.7338125,
+          "frames": 227223,
+          "path": "inputs/vctk/wav48_silence_trimmed/p231/p231_015_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "aa2efb4db3b44fe9c6c401b54fda851ac372ce8463eeeaf73207ea49e2f1110d"
+        },
+        "A_mic2": {
+          "duration_s": 4.7338125,
+          "frames": 227223,
+          "path": "inputs/vctk/wav48_silence_trimmed/p231/p231_015_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "a0c4bb31d828f6168f32cc8d6c590af3ce8a76371ab53134ea4f61766286b7e7"
+        },
+        "B_mic1": {
+          "duration_s": 4.783854166666667,
+          "frames": 229625,
+          "path": "inputs/vctk/wav48_silence_trimmed/p231/p231_018_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "8c79e5dd0c27078610a306ede7adda89e8cd1261ea3a3001385db258add4bb4e"
+        },
+        "B_mic2": {
+          "duration_s": 4.783854166666667,
+          "frames": 229625,
+          "path": "inputs/vctk/wav48_silence_trimmed/p231/p231_018_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "b0b24bfd428daf2a9179669721f6b8e32b935ad1a89eae5aa80499138bb64fe8"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p231/p231_128_mic1.flac",
+        "sha256": "44f36ae9bc8128b884d2b4bfce24cda68365aadb51a985c3b7fa26c520a4a98c"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.050041666666666984,
+        "duration_gap_mic2_s": 0.050041666666666984,
+        "relative_rate_gap_mic1": 0.01051553251847441,
+        "relative_rate_gap_mic2": 0.01051553251847441
+      },
+      "speaker": "p231",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p231/p231_015.txt",
+          "sha256": "d04330d9e63a43f5aa2a0472b9fc7edece91326f5b62e338235e29bbf65b372c",
+          "text": "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain.",
+          "utf8_bytes": 90
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p231/p231_018.txt",
+          "sha256": "1c139664be43dcdc559867ef2d1ab4059a81ea4ee6c418831f84d55229cf822f",
+          "text": "Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain.",
+          "utf8_bytes": 90
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.782791666666666,
+          "frames": 229574,
+          "path": "inputs/vctk/wav48_silence_trimmed/p257/p257_015_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "aa31d831a0c86c6bffa4fa7c36d39241f6f244c5b78d3a9cb927ffd9c62adbf8"
+        },
+        "A_mic2": {
+          "duration_s": 4.782791666666666,
+          "frames": 229574,
+          "path": "inputs/vctk/wav48_silence_trimmed/p257/p257_015_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "69422485c7deced8e53d1308c64d82eb7ec69a21239126a981715feab5d0010f"
+        },
+        "B_mic1": {
+          "duration_s": 4.738604166666667,
+          "frames": 227453,
+          "path": "inputs/vctk/wav48_silence_trimmed/p257/p257_018_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "df38dea598967c509c905b3f3db34b0c28e6e14cd5454894c1053dc5e30becb0"
+        },
+        "B_mic2": {
+          "duration_s": 4.738604166666667,
+          "frames": 227453,
+          "path": "inputs/vctk/wav48_silence_trimmed/p257/p257_018_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "1a72a9daa286aa0e745ebd9067889bac7d2b1046afbd0b284b1e9b033d8ce56d"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p257/p257_138_mic1.flac",
+        "sha256": "eeda2aaef0fe0e14b08762685ed48cd74aad4c9e4b199dcdca84e0ad7b338e2b"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0441874999999996,
+        "duration_gap_mic2_s": 0.0441874999999996,
+        "relative_rate_gap_mic1": 0.009281727337771975,
+        "relative_rate_gap_mic2": 0.009281727337771975
+      },
+      "speaker": "p257",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p257/p257_015.txt",
+          "sha256": "d04330d9e63a43f5aa2a0472b9fc7edece91326f5b62e338235e29bbf65b372c",
+          "text": "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain.",
+          "utf8_bytes": 90
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p257/p257_018.txt",
+          "sha256": "1c139664be43dcdc559867ef2d1ab4059a81ea4ee6c418831f84d55229cf822f",
+          "text": "Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain.",
+          "utf8_bytes": 90
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.426166666666667,
+          "frames": 212456,
+          "path": "inputs/vctk/wav48_silence_trimmed/p260/p260_213_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "79b624b6d06a0b388298ce4221a9b8d2dc5749af7cb2d4d70def47f8f2210798"
+        },
+        "A_mic2": {
+          "duration_s": 4.426166666666667,
+          "frames": 212456,
+          "path": "inputs/vctk/wav48_silence_trimmed/p260/p260_213_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "1f518765a5c6dd77fbb56be51908e0ca74ddadef10dbca1841652994453e1978"
+        },
+        "B_mic1": {
+          "duration_s": 4.438645833333333,
+          "frames": 213055,
+          "path": "inputs/vctk/wav48_silence_trimmed/p260/p260_291_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "e185d5c5de610e5afd91463ae3898a7e324c09fb82f915b0fddabed61bd6d174"
+        },
+        "B_mic2": {
+          "duration_s": 4.438645833333333,
+          "frames": 213055,
+          "path": "inputs/vctk/wav48_silence_trimmed/p260/p260_291_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "8b5f1314befd22b6fcb8b4292b7626c2b5bf27b9f586bba369ed44adf8b22598"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p260/p260_070_mic1.flac",
+        "sha256": "a346d17936890f14d12f272eff5369642ce7051742eccf6eecf9fd0052c1ee92"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.012479166666666153,
+        "duration_gap_mic2_s": 0.012479166666666153,
+        "relative_rate_gap_mic1": 0.0028154383787962266,
+        "relative_rate_gap_mic2": 0.0028154383787962266
+      },
+      "speaker": "p260",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p260/p260_213.txt",
+          "sha256": "589df6da380bd1da6af6f23369f50196521257d7594579e61bc03db788901cb6",
+          "text": "This obsession wasn't just contained within the world of the losers.",
+          "utf8_bytes": 68
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p260/p260_291.txt",
+          "sha256": "6de90e0530441439ac67f8f364ccf56da0003867172bd6239c41b3ea31f3edaa",
+          "text": "He added that public transport improvements must also be maintained.",
+          "utf8_bytes": 68
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.01375,
+          "frames": 192660,
+          "path": "inputs/vctk/wav48_silence_trimmed/p261/p261_090_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "621275ff0c84a4b19e9d9fbddec36dff736f86e749fcc8b92778965c8f98c96c"
+        },
+        "A_mic2": {
+          "duration_s": 4.01375,
+          "frames": 192660,
+          "path": "inputs/vctk/wav48_silence_trimmed/p261/p261_090_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "a13bf962090b03752571f5eb0e63f3ed21f1fe14f4c84c5188785bda58617f9a"
+        },
+        "B_mic1": {
+          "duration_s": 4.0558125,
+          "frames": 194679,
+          "path": "inputs/vctk/wav48_silence_trimmed/p261/p261_297_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "a6d88365a2673920d176b695b3d14c804e7b41f6cff7a33598862832fb55664d"
+        },
+        "B_mic2": {
+          "duration_s": 4.0558125,
+          "frames": 194679,
+          "path": "inputs/vctk/wav48_silence_trimmed/p261/p261_297_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "1d0db25eb829030bc370e17da7c620076a73bbaa95cef0704ba53cf1121f2289"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p261/p261_002_mic1.flac",
+        "sha256": "245e1286d4d61323ff4440b2be11937f5f267540c7a209a21eab8aff8bb55ae6"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.042062500000000114,
+        "duration_gap_mic2_s": 0.042062500000000114,
+        "relative_rate_gap_mic1": 0.006382025666349982,
+        "relative_rate_gap_mic2": 0.006382025666349982
+      },
+      "speaker": "p261",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p261/p261_090.txt",
+          "sha256": "a47475f1a3e70f062bb9d29cfdc0878b4ece16972c226b72b69e8f7f555d4551",
+          "text": "However, on this showing it's going to be a difficult task.",
+          "utf8_bytes": 59
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p261/p261_297.txt",
+          "sha256": "149ab4c1726aba96e76ff27877a0a7c955719378b70b0964dfe49b0abbd8dfeb",
+          "text": "He ran into immediate problems with local people and police.",
+          "utf8_bytes": 60
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.096354166666667,
+          "frames": 196625,
+          "path": "inputs/vctk/wav48_silence_trimmed/p267/p267_071_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "456cdbe8faf445523eabc37cde6f4978d68029f91f319f42ba9bec7a62138c8e"
+        },
+        "A_mic2": {
+          "duration_s": 4.096354166666667,
+          "frames": 196625,
+          "path": "inputs/vctk/wav48_silence_trimmed/p267/p267_071_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "f57b00be06c63969699ba87184c53eca903c28d7fe7f723df0b8260e92743645"
+        },
+        "B_mic1": {
+          "duration_s": 4.100125,
+          "frames": 196806,
+          "path": "inputs/vctk/wav48_silence_trimmed/p267/p267_405_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "2f8d3f25bcb8126e939dbff919cd1cd137d6d59732b6d3b792edfee03f91caa2"
+        },
+        "B_mic2": {
+          "duration_s": 4.100125,
+          "frames": 196806,
+          "path": "inputs/vctk/wav48_silence_trimmed/p267/p267_405_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "ed53af19f34e039d3ec30a4e8073f5939a982daadcb51b41e6626fb0a0a82221"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p267/p267_183_mic1.flac",
+        "sha256": "cae93a522b082a27af613b346a3e33796ceabb548a454e82083b692bda1c55bd"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.003770833333333279,
+        "duration_gap_mic2_s": 0.003770833333333279,
+        "relative_rate_gap_mic1": 0.0009201105149315907,
+        "relative_rate_gap_mic2": 0.0009201105149315907
+      },
+      "speaker": "p267",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p267/p267_071.txt",
+          "sha256": "08436405faafe578992f7f379c9283deee166fb50e8308ce349b10ce9178c875",
+          "text": "Last night, the move was bitterly denounced by France Telecom.",
+          "utf8_bytes": 62
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p267/p267_405.txt",
+          "sha256": "d9872731ca13da2e32c63dcc82f0af291c03e51c448e8654edbeb22b19eebc87",
+          "text": "Family liaison officers are now working to support the family.",
+          "utf8_bytes": 62
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.0568333333333335,
+          "frames": 194728,
+          "path": "inputs/vctk/wav48_silence_trimmed/p272/p272_037_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "b0214e439fcea4401373c70920d5c4b6583132b4770cca9ea379a57906d74ed0"
+        },
+        "A_mic2": {
+          "duration_s": 4.0568333333333335,
+          "frames": 194728,
+          "path": "inputs/vctk/wav48_silence_trimmed/p272/p272_037_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "8c9b4847dac0e7be9c308325f2663006d04b48b984e74b31e30cb3d6480c1bad"
+        },
+        "B_mic1": {
+          "duration_s": 4.055416666666667,
+          "frames": 194660,
+          "path": "inputs/vctk/wav48_silence_trimmed/p272/p272_131_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "b911dce18493f87f9f55a54f12aab8f9b95c42d90af855be952213ed8bb40480"
+        },
+        "B_mic2": {
+          "duration_s": 4.055416666666667,
+          "frames": 194660,
+          "path": "inputs/vctk/wav48_silence_trimmed/p272/p272_131_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "152fafa9efaf14e191e5865094f367eea4b36f4b991f06cfc65942719f37af05"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p272/p272_204_mic1.flac",
+        "sha256": "206c36135fb0e9a5bfeb2976d7b86b98121f83752c4e05b64391100b3cfec4cb"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0014166666666666217,
+        "duration_gap_mic2_s": 0.0014166666666666217,
+        "relative_rate_gap_mic1": 0.00034926602771527375,
+        "relative_rate_gap_mic2": 0.00034926602771527375
+      },
+      "speaker": "p272",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p272/p272_037.txt",
+          "sha256": "7e0f016076bc176c20fba6b786c58522487652892ba6201510cb31b256f65488",
+          "text": "Other members of the family were too upset to comment last night.",
+          "utf8_bytes": 65
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p272/p272_131.txt",
+          "sha256": "c3493746e59d3e01931d9ddaf8753a4a2701cfd83ae0624b2c3173f3fd20a158",
+          "text": "The task force continues to be in discussion with both companies.",
+          "utf8_bytes": 65
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.349208333333333,
+          "frames": 208762,
+          "path": "inputs/vctk/wav48_silence_trimmed/p273/p273_112_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "0cbb057e096194f12719fe335ed164994d74c0d391f382f7cbf8b98fad8e6a7c"
+        },
+        "A_mic2": {
+          "duration_s": 4.349208333333333,
+          "frames": 208762,
+          "path": "inputs/vctk/wav48_silence_trimmed/p273/p273_112_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "bc092c75ed0ba0f81ec1a6ab7ff313319669b80bf112eb75eba666662874b444"
+        },
+        "B_mic1": {
+          "duration_s": 4.3957291666666665,
+          "frames": 210995,
+          "path": "inputs/vctk/wav48_silence_trimmed/p273/p273_350_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "e52b78f9cf0c9ecd16560da7316db450cb36002c75f98f909d45494fa2ab8e43"
+        },
+        "B_mic2": {
+          "duration_s": 4.3957291666666665,
+          "frames": 210995,
+          "path": "inputs/vctk/wav48_silence_trimmed/p273/p273_350_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "abe01c09ffe34aa43d6372bc2ff34000c14f672b92087a9dc27414b4d47ed818"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p273/p273_226_mic1.flac",
+        "sha256": "6909f72606d0531e39b62391c667f4f7429b48fbaa8d4a06465c48df3ff9e6e8"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.04652083333333312,
+        "duration_gap_mic2_s": 0.04652083333333312,
+        "relative_rate_gap_mic1": 0.0041754903144557015,
+        "relative_rate_gap_mic2": 0.0041754903144557015
+      },
+      "speaker": "p273",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p273/p273_112.txt",
+          "sha256": "c97f47796160a03db61efcd3aad3be76e762749fedf2a4c43263d585722c31da",
+          "text": "Strathclyde Police are expected to make an announcement next month.",
+          "utf8_bytes": 67
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p273/p273_350.txt",
+          "sha256": "d0b2428c841fc944bfc9ca434b49e7ef907230a47700ab4bd39e0d1881e4a2c8",
+          "text": "The announcement was made after inquiries from a national newspaper.",
+          "utf8_bytes": 68
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.8240625,
+          "frames": 231555,
+          "path": "inputs/vctk/wav48_silence_trimmed/p274/p274_056_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "2e1fc60b2662ad7fb707e7b546e9f57edbd5fb182a7130a38d84a5e0500f382f"
+        },
+        "A_mic2": {
+          "duration_s": 4.8240625,
+          "frames": 231555,
+          "path": "inputs/vctk/wav48_silence_trimmed/p274/p274_056_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "f32f520ba75ff2ba37d52a98d8c1330c06492262660fc49d90a166ef812031be"
+        },
+        "B_mic1": {
+          "duration_s": 4.838770833333333,
+          "frames": 232261,
+          "path": "inputs/vctk/wav48_silence_trimmed/p274/p274_360_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "c9ec76abf9df53d9c09c949a51e41e9da7adf42fb5eb491b35820edfa059f872"
+        },
+        "B_mic2": {
+          "duration_s": 4.838770833333333,
+          "frames": 232261,
+          "path": "inputs/vctk/wav48_silence_trimmed/p274/p274_360_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "a9eff505b817683535bad17ef890581be7a2119778166a6364050dafa03755f9"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p274/p274_023_mic1.flac",
+        "sha256": "79c358c826b587f0110276bdb1ad8acd115456fc77f97e74e5dc55e634cad2b3"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.014708333333333101,
+        "duration_gap_mic2_s": 0.014708333333333101,
+        "relative_rate_gap_mic1": 0.0030443106749226947,
+        "relative_rate_gap_mic2": 0.0030443106749226947
+      },
+      "speaker": "p274",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p274/p274_056.txt",
+          "sha256": "35e1f4a731c16a5fa66527f94b8b51410d0443784cd0591665619a7d974aec8d",
+          "text": "Until recently, she worked as a recruitment consultant in London.",
+          "utf8_bytes": 65
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p274/p274_360.txt",
+          "sha256": "dec0e2f68a5eace3a614bcd1360e9584a37a67b8c8f36e0bfc1209bc109e0758",
+          "text": "It is understood the timescale for the refurbishment has slipped.",
+          "utf8_bytes": 65
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.346354166666667,
+          "frames": 208625,
+          "path": "inputs/vctk/wav48_silence_trimmed/p275/p275_103_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "62a2159e183ab36b0bc6067ec1f02325a28d884ec64d0eb9953b6ff46cd73297"
+        },
+        "A_mic2": {
+          "duration_s": 4.346354166666667,
+          "frames": 208625,
+          "path": "inputs/vctk/wav48_silence_trimmed/p275/p275_103_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "e8797255328808170e7cc834cdfa01859df7d2abd32b58afc292dca03a95975c"
+        },
+        "B_mic1": {
+          "duration_s": 4.340833333333333,
+          "frames": 208360,
+          "path": "inputs/vctk/wav48_silence_trimmed/p275/p275_151_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "0480d6201b1e616140fb72c91eeeb35fa17bcdfbd37370bb6a2d8d7ff5f20838"
+        },
+        "B_mic2": {
+          "duration_s": 4.340833333333333,
+          "frames": 208360,
+          "path": "inputs/vctk/wav48_silence_trimmed/p275/p275_151_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "13b1ce370fec553189720a520b315c95cec3f08257b4f522f69263b3c64363b2"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p275/p275_032_mic1.flac",
+        "sha256": "2218ea7dc77ac47ac1254c25346ce33946edbc164c3dcb9324aacf5e8bede170"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.005520833333333641,
+        "duration_gap_mic2_s": 0.005520833333333641,
+        "relative_rate_gap_mic1": 0.0012710289338944349,
+        "relative_rate_gap_mic2": 0.0012710289338944349
+      },
+      "speaker": "p275",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p275/p275_103.txt",
+          "sha256": "088b89133fa117aad956bc45ed7da9d6b5142385ae2561e52565313ae107ad32",
+          "text": "Now, though, he believes that the new formation has helped him form.",
+          "utf8_bytes": 68
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p275/p275_151.txt",
+          "sha256": "8ceea23f6ea9ecc56937a07494f8864a80ce716471b97d794e20bdee7f6fa7e5",
+          "text": "He sets the nature of his Parliament in a simple, realistic context.",
+          "utf8_bytes": 68
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 6.489645833333333,
+          "frames": 311503,
+          "path": "inputs/vctk/wav48_silence_trimmed/p276/p276_015_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "ed01d22155d26abf7be9898b08d50196395c4127740b208e9b3903bbc3defc2f"
+        },
+        "A_mic2": {
+          "duration_s": 6.489645833333333,
+          "frames": 311503,
+          "path": "inputs/vctk/wav48_silence_trimmed/p276/p276_015_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "a637beab9c5ec5393df6bab33afa3099b8eaeac0fbeea789c59d8b4221d255ca"
+        },
+        "B_mic1": {
+          "duration_s": 6.4863125,
+          "frames": 311343,
+          "path": "inputs/vctk/wav48_silence_trimmed/p276/p276_018_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "e13f0a3e3d33dc287fbe0df907999361d5d6b9cdcc6d86754ffb243f8a6a3896"
+        },
+        "B_mic2": {
+          "duration_s": 6.4863125,
+          "frames": 311343,
+          "path": "inputs/vctk/wav48_silence_trimmed/p276/p276_018_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "a942d6963fe638b6b89339cfa6d36ce7c45545a01c890013eddb2a56f26cac4e"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p276/p276_291_mic1.flac",
+        "sha256": "690a5b0a8e8846dfe63952ac0963a89983d36c74d2a5d16a8a2a7664bcc5090d"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0033333333333329662,
+        "duration_gap_mic2_s": 0.0033333333333329662,
+        "relative_rate_gap_mic1": 0.000513770659199767,
+        "relative_rate_gap_mic2": 0.000513770659199767
+      },
+      "speaker": "p276",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p276/p276_015.txt",
+          "sha256": "d04330d9e63a43f5aa2a0472b9fc7edece91326f5b62e338235e29bbf65b372c",
+          "text": "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain.",
+          "utf8_bytes": 90
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p276/p276_018.txt",
+          "sha256": "1c139664be43dcdc559867ef2d1ab4059a81ea4ee6c418831f84d55229cf822f",
+          "text": "Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain.",
+          "utf8_bytes": 90
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.184958333333333,
+          "frames": 200878,
+          "path": "inputs/vctk/wav48_silence_trimmed/p277/p277_231_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "8eb1e0d4b05bd829ba587808d163292e18bfb50d2101cbda0d7ddd17801d2102"
+        },
+        "A_mic2": {
+          "duration_s": 4.184958333333333,
+          "frames": 200878,
+          "path": "inputs/vctk/wav48_silence_trimmed/p277/p277_231_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "795134808464e6a9e574f9fb3884f3e9472cd88f0b4cda8176ec0e6988d44f29"
+        },
+        "B_mic1": {
+          "duration_s": 4.184270833333334,
+          "frames": 200845,
+          "path": "inputs/vctk/wav48_silence_trimmed/p277/p277_331_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "04b09254315c123bf61f4e1b21595483a8eecba07f3e01ab12e2d5512a550a4c"
+        },
+        "B_mic2": {
+          "duration_s": 4.184270833333334,
+          "frames": 200845,
+          "path": "inputs/vctk/wav48_silence_trimmed/p277/p277_331_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "c98ffaa15148929c964be9b52ecb38f89ccf193831f7805da4bdbf919246a006"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p277/p277_463_mic1.flac",
+        "sha256": "ff7e9a84eeb39c846e1c36a49652657cddcf41e4fe7ae2c0f401a5ed45ea0976"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.00068749999999973,
+        "duration_gap_mic2_s": 0.00068749999999973,
+        "relative_rate_gap_mic1": 0.00016429231087093857,
+        "relative_rate_gap_mic2": 0.00016429231087093857
+      },
+      "speaker": "p277",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p277/p277_231.txt",
+          "sha256": "889690db1223afb0cc2a68123e4b1086bb3301db274f4f22ccef6bb300611834",
+          "text": "Attendance at the project is a condition of a probation order.",
+          "utf8_bytes": 62
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p277/p277_331.txt",
+          "sha256": "132e7255c4ca00720490b95cb3781cfd8942d4ae7eb2df09e046aebfc02a8c4f",
+          "text": "In the early days, I was obsessed with working in the theatre.",
+          "utf8_bytes": 62
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.007,
+          "frames": 192336,
+          "path": "inputs/vctk/wav48_silence_trimmed/p278/p278_068_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "ce8669ab3464babe6b1e2dfd7e84e6d91ce594c05b92ec60542bc6e9ece27de2"
+        },
+        "A_mic2": {
+          "duration_s": 4.007,
+          "frames": 192336,
+          "path": "inputs/vctk/wav48_silence_trimmed/p278/p278_068_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "0a88f69c9dbaf30fb0b17f533642ff0d76d6899775d1bc811d0c98a050c6cd69"
+        },
+        "B_mic1": {
+          "duration_s": 4.002166666666667,
+          "frames": 192104,
+          "path": "inputs/vctk/wav48_silence_trimmed/p278/p278_294_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "69fcf1dcc8c57cf189078dabbcba486311be0f2391801d585071d4e58398ceda"
+        },
+        "B_mic2": {
+          "duration_s": 4.002166666666667,
+          "frames": 192104,
+          "path": "inputs/vctk/wav48_silence_trimmed/p278/p278_294_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "200d5e3ad9d3b34ae47335325f6ddf99d870c7211b5ce163ac67c017d09a6df7"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p278/p278_035_mic1.flac",
+        "sha256": "17837bd44f591727a319cd44d43ae0cd97b53951d476da0677ac1380e3db3912"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.004833333333333023,
+        "duration_gap_mic2_s": 0.004833333333333023,
+        "relative_rate_gap_mic1": 0.0012069503693682923,
+        "relative_rate_gap_mic2": 0.0012069503693682923
+      },
+      "speaker": "p278",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p278/p278_068.txt",
+          "sha256": "4e7192be75b24a0e256ea0d5aa122d05512448ed1e1f5b06c794aceed5bd516f",
+          "text": "Halifax has also been mentioned as a likely predator.",
+          "utf8_bytes": 53
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p278/p278_294.txt",
+          "sha256": "1cd116e4f7c6b2c8b606d77516c31b642d0395ca35b076d65665761c8755623b",
+          "text": "Both companies have had a rough ride in recent years.",
+          "utf8_bytes": 53
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.083375,
+          "frames": 196002,
+          "path": "inputs/vctk/wav48_silence_trimmed/p279/p279_013_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "98b2fecbbbcac7a4de6a739900cb660307f6c7f84bfde953bda673266b430cee"
+        },
+        "A_mic2": {
+          "duration_s": 4.083375,
+          "frames": 196002,
+          "path": "inputs/vctk/wav48_silence_trimmed/p279/p279_013_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "62bfccaef2e0f0076dc1b4ff2853004448236932525014c719d99b4d97bad991"
+        },
+        "B_mic1": {
+          "duration_s": 4.108125,
+          "frames": 197190,
+          "path": "inputs/vctk/wav48_silence_trimmed/p279/p279_057_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "ca142d9cf7f37cc809a4ffaaa74e8f40f2d58eaaf662dd60f4aba768db4108da"
+        },
+        "B_mic2": {
+          "duration_s": 4.108125,
+          "frames": 197190,
+          "path": "inputs/vctk/wav48_silence_trimmed/p279/p279_057_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "46b35587819ba89f4ab37ab1ec4d7a894dfa894efb0b7aa94f73983c20d8cdd2"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p279/p279_118_mic1.flac",
+        "sha256": "ff9b92baac81d19017ed29dfb72e4c8cbeeaea639fb67f88acd0fa5823dbe560"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.02475000000000005,
+        "duration_gap_mic2_s": 0.02475000000000005,
+        "relative_rate_gap_mic1": 0.006042849295000927,
+        "relative_rate_gap_mic2": 0.006042849295000927
+      },
+      "speaker": "p279",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p279/p279_013.txt",
+          "sha256": "4ae7da9b279a73483f230d89f4be30e1f758c2772808c083361666284b4005b3",
+          "text": "Some have accepted it as a miracle without physical explanation.",
+          "utf8_bytes": 64
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p279/p279_057.txt",
+          "sha256": "0cb7fd631a98268de2b0a63be6a1efbc3708a10fd6782bb7894a6177e1efe6a9",
+          "text": "Rebuilding public transport was never going to happen overnight.",
+          "utf8_bytes": 64
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.153104166666667,
+          "frames": 199349,
+          "path": "inputs/vctk/wav48_silence_trimmed/p281/p281_017_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "81e2e5e6ff8b21011ceeb12d67546a999feabac5b3ee7f0e4932c42c9fdcb4ba"
+        },
+        "A_mic2": {
+          "duration_s": 4.153104166666667,
+          "frames": 199349,
+          "path": "inputs/vctk/wav48_silence_trimmed/p281/p281_017_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "edd07edfeeb6ba5c585da8a160fa41de514095ee693d7a491e97fa8513078c3b"
+        },
+        "B_mic1": {
+          "duration_s": 4.127645833333333,
+          "frames": 198127,
+          "path": "inputs/vctk/wav48_silence_trimmed/p281/p281_264_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "05beb191a5bb70b96be27d33a0662002b71ca45db6948be5d80b08f04033741e"
+        },
+        "B_mic2": {
+          "duration_s": 4.127645833333333,
+          "frames": 198127,
+          "path": "inputs/vctk/wav48_silence_trimmed/p281/p281_264_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "fbf8d4b1479c0f5e4b4dc4b77748a41b03177c60733d0a95014e9720f92b8a7a"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p281/p281_193_mic1.flac",
+        "sha256": "d3979ee5f7443fd5a7ede0a8a8adecd6af3bb9c6f9b1b88b0f011ce2a1ab88bd"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.025458333333333805,
+        "duration_gap_mic2_s": 0.025458333333333805,
+        "relative_rate_gap_mic1": 0.006148798921192753,
+        "relative_rate_gap_mic2": 0.006148798921192753
+      },
+      "speaker": "p281",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p281/p281_017.txt",
+          "sha256": "c8120969a401d40cb13e7ed1ccf7c66b5d5acf2fd30f3bf04f4f1697b269ce68",
+          "text": "Others have tried to explain the phenomenon physically.",
+          "utf8_bytes": 55
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p281/p281_264.txt",
+          "sha256": "08ec132ece376cd1f8acab362f91f975ff60d89428d81c68a613b467b7c5dacf",
+          "text": "In the meantime, the fans would settle for a derby win.",
+          "utf8_bytes": 55
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.254541666666666,
+          "frames": 204218,
+          "path": "inputs/vctk/wav48_silence_trimmed/p282/p282_344_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "07c51e25e4b6b5f6f16131875ecbe53977e1ee5cd1ebe2c773825e381c508f63"
+        },
+        "A_mic2": {
+          "duration_s": 4.254541666666666,
+          "frames": 204218,
+          "path": "inputs/vctk/wav48_silence_trimmed/p282/p282_344_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "14f1d5e1cb96e58f7282edaed8c1b5010e4a484fde7b702ae74780d84d54544a"
+        },
+        "B_mic1": {
+          "duration_s": 4.2531875,
+          "frames": 204153,
+          "path": "inputs/vctk/wav48_silence_trimmed/p282/p282_347_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "522082651c86aafe60292b3e960135fe318920d9f8ec9f1676d5073cf145c2cd"
+        },
+        "B_mic2": {
+          "duration_s": 4.2531875,
+          "frames": 204153,
+          "path": "inputs/vctk/wav48_silence_trimmed/p282/p282_347_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "f7f568b22de9ffb35607a155ac342a18d8ea5f0bc9be7aedf04b69dee9ec4b22"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p282/p282_236_mic1.flac",
+        "sha256": "e65cff41420726836f67d86ace3605a9bb501968e5a040ef13a0935ff5aa4abf"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0013541666666663232,
+        "duration_gap_mic2_s": 0.0013541666666663232,
+        "relative_rate_gap_mic1": 0.0003183379818839382,
+        "relative_rate_gap_mic2": 0.0003183379818839382
+      },
+      "speaker": "p282",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p282/p282_344.txt",
+          "sha256": "5fdde4d4df5f81bf958e3ffe6912b9e01d2935bfa595f81c0ae15caee603fc16",
+          "text": "It was only a matter of time before someone was killed.",
+          "utf8_bytes": 55
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p282/p282_347.txt",
+          "sha256": "5c6b2c3581c36a0435e828d582dc1f2c08e484fc07e386059853ad30a70c7d91",
+          "text": "Instead, he was informed to join the line of creditors.",
+          "utf8_bytes": 55
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.162416666666667,
+          "frames": 199796,
+          "path": "inputs/vctk/wav48_silence_trimmed/p283/p283_206_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "770ed81327717929eac981461dc2fc4a5ad582461c1b098d42666c9728c68a77"
+        },
+        "A_mic2": {
+          "duration_s": 4.162416666666667,
+          "frames": 199796,
+          "path": "inputs/vctk/wav48_silence_trimmed/p283/p283_206_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "7c7809605f6f73f094602a66c2c66138a7903ef9d5228245da4a3528555d1ace"
+        },
+        "B_mic1": {
+          "duration_s": 4.13925,
+          "frames": 198684,
+          "path": "inputs/vctk/wav48_silence_trimmed/p283/p283_250_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "6a2b0151fec2d4cb2fff6e257a3bd2cf4baef71bb44840a322731ea9244148df"
+        },
+        "B_mic2": {
+          "duration_s": 4.13925,
+          "frames": 198684,
+          "path": "inputs/vctk/wav48_silence_trimmed/p283/p283_250_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "03ee683057c5b1bb51e1e697f6b26ea8d83490faff15d760c13550a075e72451"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p283/p283_416_mic1.flac",
+        "sha256": "d9f2de19a543f3b5a11aafad5421415b3529130956089fb1c0f00c89cb0d469d"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.023166666666667446,
+        "duration_gap_mic2_s": 0.023166666666667446,
+        "relative_rate_gap_mic1": 0.01067919629686865,
+        "relative_rate_gap_mic2": 0.01067919629686865
+      },
+      "speaker": "p283",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p283/p283_206.txt",
+          "sha256": "d9872731ca13da2e32c63dcc82f0af291c03e51c448e8654edbeb22b19eebc87",
+          "text": "Family liaison officers are now working to support the family.",
+          "utf8_bytes": 62
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p283/p283_250.txt",
+          "sha256": "44599d51695ca6173026784f10a3f9b82fbfc084281c7c79529cc3857db45c83",
+          "text": "For the refugees, the return will not come a moment too soon.",
+          "utf8_bytes": 61
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.081604166666667,
+          "frames": 195917,
+          "path": "inputs/vctk/wav48_silence_trimmed/p284/p284_120_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "a55624a5dd88a9185d264c6900282bae7ed788aefa919976d44fc9bb1fc3ec7a"
+        },
+        "A_mic2": {
+          "duration_s": 4.081604166666667,
+          "frames": 195917,
+          "path": "inputs/vctk/wav48_silence_trimmed/p284/p284_120_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "d42f569a2cfd3086070b5f25ca8e6b2c571437ce475a10d734ee149b878a32cc"
+        },
+        "B_mic1": {
+          "duration_s": 4.089375,
+          "frames": 196290,
+          "path": "inputs/vctk/wav48_silence_trimmed/p284/p284_210_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "c8811463a86c70458369f1cec6fdb84edb7a5fd18baaee3fd9d29798b902fea6"
+        },
+        "B_mic2": {
+          "duration_s": 4.089375,
+          "frames": 196290,
+          "path": "inputs/vctk/wav48_silence_trimmed/p284/p284_210_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "18540edf103f7ed7464fbf11d6f521c8accbf23e2e2cb02d60bdd0dbe0a84013"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p284/p284_041_mic1.flac",
+        "sha256": "0bbff173f52492cae1772caf61af8c82ea2940da001e20547c5c19400b7988cc"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0077708333333337265,
+        "duration_gap_mic2_s": 0.0077708333333337265,
+        "relative_rate_gap_mic1": 0.0019020568220353513,
+        "relative_rate_gap_mic2": 0.0019020568220353513
+      },
+      "speaker": "p284",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p284/p284_120.txt",
+          "sha256": "6b2793f9fb244d7636eb51fd160e5eb098c3ee962cda6a67130fbd7532683de4",
+          "text": "That was the lesson to be learned from the European Championships.",
+          "utf8_bytes": 66
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p284/p284_210.txt",
+          "sha256": "a61f0f06080b72179389aa37f766586621d5e499a904e7e0302b72cded43da85",
+          "text": "The workers do not want to read about their futures in newspapers.",
+          "utf8_bytes": 66
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.058333333333334,
+          "frames": 194800,
+          "path": "inputs/vctk/wav48_silence_trimmed/p286/p286_302_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "5711705343d06cfa2111d897195a9704cdb251a0a7b4fcdc2608d77e08346d64"
+        },
+        "A_mic2": {
+          "duration_s": 4.058333333333334,
+          "frames": 194800,
+          "path": "inputs/vctk/wav48_silence_trimmed/p286/p286_302_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "fab81df58c0e56705567f071e01a8ede92b2e4e9e2f7f99ec44cacb890a93408"
+        },
+        "B_mic1": {
+          "duration_s": 4.054625,
+          "frames": 194622,
+          "path": "inputs/vctk/wav48_silence_trimmed/p286/p286_460_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "e8e807267e1058ba4511c7808da3b98575c90648edce1f10dacbb72ea44a86d8"
+        },
+        "B_mic2": {
+          "duration_s": 4.054625,
+          "frames": 194622,
+          "path": "inputs/vctk/wav48_silence_trimmed/p286/p286_460_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "e117659faab255b79af0623f3126d2e761295e53ad1c47e96d8a1d30521e8dc3"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p286/p286_458_mic1.flac",
+        "sha256": "7bf196ec39ea8a7009ea0370c18cc0a5ddddf181242c7c4c8bfe51fee10f3c28"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0037083333333338686,
+        "duration_gap_mic2_s": 0.0037083333333338686,
+        "relative_rate_gap_mic1": 0.0009141753675963095,
+        "relative_rate_gap_mic2": 0.0009141753675963095
+      },
+      "speaker": "p286",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p286/p286_302.txt",
+          "sha256": "e58c1ac3046fc32e1dc414041789843165d5cd94ae9ff6460894cc4820fa5482",
+          "text": "It was not hard to feel some sympathy for Baxter yesterday.",
+          "utf8_bytes": 59
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p286/p286_460.txt",
+          "sha256": "17f4041cdb25ba4bfa08b28584e983c8e1dd5bbe824043ffe87ebbc0d68222e9",
+          "text": "The Edinburgh audience was able to understand the dialogue.",
+          "utf8_bytes": 59
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.1745,
+          "frames": 200376,
+          "path": "inputs/vctk/wav48_silence_trimmed/p287/p287_063_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "a239931ca8595a458ab906c971e64854d66a59d224a6ea235cf4c1de052617b7"
+        },
+        "A_mic2": {
+          "duration_s": 4.1745,
+          "frames": 200376,
+          "path": "inputs/vctk/wav48_silence_trimmed/p287/p287_063_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "5bd9df0e6bfaffcf5055f347ea6393006a7e1667d231df955f9481a037fba37b"
+        },
+        "B_mic1": {
+          "duration_s": 4.175395833333333,
+          "frames": 200419,
+          "path": "inputs/vctk/wav48_silence_trimmed/p287/p287_279_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "da52768147acefd21b26e7dd4f61ca09f40ca5de28d35685eeb0750c5f54c89e"
+        },
+        "B_mic2": {
+          "duration_s": 4.175395833333333,
+          "frames": 200419,
+          "path": "inputs/vctk/wav48_silence_trimmed/p287/p287_279_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "405616a9c643744a7d84ee06decacb900e69e386b4c54425867b76752add748f"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p287/p287_278_mic1.flac",
+        "sha256": "a02bd94dfa550c550bb48388f5b01abf2eff00d4c5fd911bbcd367fac5caa4d7"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0008958333333328738,
+        "duration_gap_mic2_s": 0.0008958333333328738,
+        "relative_rate_gap_mic1": 0.00021457353509890068,
+        "relative_rate_gap_mic2": 0.00021457353509890068
+      },
+      "speaker": "p287",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p287/p287_063.txt",
+          "sha256": "83e7c553bc2ed4a31c588c6779f101f87e2cfde3f14ab22f4849b72d0230fe3a",
+          "text": "Everything happened so quickly, that we were taken by surprise.",
+          "utf8_bytes": 63
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p287/p287_279.txt",
+          "sha256": "98850c08c36298b9243ce9ea67974fd420a50d3b85451071417b1e2b334af652",
+          "text": "Internet users will double over the next three years in the UK.",
+          "utf8_bytes": 63
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.283875,
+          "frames": 205626,
+          "path": "inputs/vctk/wav48_silence_trimmed/p288/p288_032_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "7bb8691c852c05d32abcb25987bb7a221eedc9cf2c0dc11254bd4cb3e9bf1dd0"
+        },
+        "A_mic2": {
+          "duration_s": 4.283875,
+          "frames": 205626,
+          "path": "inputs/vctk/wav48_silence_trimmed/p288/p288_032_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "2e5caddd975dbc55c0315d2f3410363e27918eee40afcfa23b34583fceeb0de7"
+        },
+        "B_mic1": {
+          "duration_s": 4.283354166666666,
+          "frames": 205601,
+          "path": "inputs/vctk/wav48_silence_trimmed/p288/p288_235_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "49d62a9355c6828c8ce6fb3e0c83d3f6f9e60a0ce5eea94baabcf5c5d312c456"
+        },
+        "B_mic2": {
+          "duration_s": 4.283354166666666,
+          "frames": 205601,
+          "path": "inputs/vctk/wav48_silence_trimmed/p288/p288_235_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "9b277ce17f9ee665dfd30b68a7f69fad929f7690815999c2e4c6811e05cdd05a"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p288/p288_161_mic1.flac",
+        "sha256": "87b81e91b81ec04e248f42e7aac733e45b1de29ea1db9d32df449066c48f7f2d"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0005208333333337478,
+        "duration_gap_mic2_s": 0.0005208333333337478,
+        "relative_rate_gap_mic1": 0.00012158734713437218,
+        "relative_rate_gap_mic2": 0.00012158734713437218
+      },
+      "speaker": "p288",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p288/p288_032.txt",
+          "sha256": "01ce75c43a733202876dadf42f77f76d99dac373f40d3e609ac15248a9d65429",
+          "text": "We must provide a long-term solution to tackle this attitude.",
+          "utf8_bytes": 61
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p288/p288_235.txt",
+          "sha256": "03b223ea91d4333808ad0289ae759faf327b2708f71be5d760fd8fe056ffbc2c",
+          "text": "On the ground, the West Bank was again the focus of violence.",
+          "utf8_bytes": 61
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.058666666666666,
+          "frames": 194816,
+          "path": "inputs/vctk/wav48_silence_trimmed/p292/p292_075_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "f3ace349d5b5aa72dfcfe845d9e5d74060f2d650a7ceb4ebddad0b845b7afb47"
+        },
+        "A_mic2": {
+          "duration_s": 4.058666666666666,
+          "frames": 194816,
+          "path": "inputs/vctk/wav48_silence_trimmed/p292/p292_075_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "aec46af7cde69d941e135866f4db21ef5c2eebe07bf202c4696754ea31901f31"
+        },
+        "B_mic1": {
+          "duration_s": 4.043458333333334,
+          "frames": 194086,
+          "path": "inputs/vctk/wav48_silence_trimmed/p292/p292_388_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "690ca7547645beca406fb1c07ca75f004a653358320ea1283543c270e30c5129"
+        },
+        "B_mic2": {
+          "duration_s": 4.043458333333334,
+          "frames": 194086,
+          "path": "inputs/vctk/wav48_silence_trimmed/p292/p292_388_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "f12b40c4a4127f66ec191082f6f2d51a003f8ef05d372cec7ce2adc84dbb81e0"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p292/p292_232_mic1.flac",
+        "sha256": "dc141ef58202e1ef441377c773e5204d6cbd2e6bdd93a5f404ec33fff654f7fe"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.015208333333332824,
+        "duration_gap_mic2_s": 0.015208333333332824,
+        "relative_rate_gap_mic1": 0.003754159145491547,
+        "relative_rate_gap_mic2": 0.003754159145491547
+      },
+      "speaker": "p292",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p292/p292_075.txt",
+          "sha256": "2db3f205ffb959db191496709eb2d525be910e8e694ee71305dac1b08f9daf96",
+          "text": "If true, it will be the first sign of dissent.",
+          "utf8_bytes": 46
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p292/p292_388.txt",
+          "sha256": "13ce32cc239a72c3b85c4ce7814b22881ac0a3ebd189721974d6a95e4ac8a540",
+          "text": "The occasion was a conference on Scottish art.",
+          "utf8_bytes": 46
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 6.543625,
+          "frames": 314094,
+          "path": "inputs/vctk/wav48_silence_trimmed/p294/p294_015_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "184a4165c4f4b4b79d86b21cfe56538a2f289aaf63170628b9efade44272e7b9"
+        },
+        "A_mic2": {
+          "duration_s": 6.543625,
+          "frames": 314094,
+          "path": "inputs/vctk/wav48_silence_trimmed/p294/p294_015_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "267eb11834b445a9b9680dc9c66e3223407d59231cc05345eb34cdb1bf8f3de9"
+        },
+        "B_mic1": {
+          "duration_s": 6.620645833333334,
+          "frames": 317791,
+          "path": "inputs/vctk/wav48_silence_trimmed/p294/p294_018_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "ac10f81af1f6a10e0bccd1693b110e4d36ff461cc5b9b09c6d5595a426e45c0a"
+        },
+        "B_mic2": {
+          "duration_s": 6.620645833333334,
+          "frames": 317791,
+          "path": "inputs/vctk/wav48_silence_trimmed/p294/p294_018_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "08142e824b14b5a045aa0f0bc9dfcb9a84d255eebaf8840f36655facb77bbd67"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p294/p294_373_mic1.flac",
+        "sha256": "d20e0f0680436c7795e7db8aa4298c433ce52c8825e6240cd7ae0ce3ba3f1038"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.07702083333333398,
+        "duration_gap_mic2_s": 0.07702083333333398,
+        "relative_rate_gap_mic1": 0.01170149631657678,
+        "relative_rate_gap_mic2": 0.01170149631657678
+      },
+      "speaker": "p294",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p294/p294_015.txt",
+          "sha256": "ddc8171a4e7e98ee2a8104bed57d388d69470580d3cd02714c214453b34dfd76",
+          "text": "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain.",
+          "utf8_bytes": 90
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p294/p294_018.txt",
+          "sha256": "968a7af7150e0e6ce1c35a0d055a95aabbb1ed1c78a7428fe635c242316b9b58",
+          "text": "Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain.",
+          "utf8_bytes": 90
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.100979166666667,
+          "frames": 196847,
+          "path": "inputs/vctk/wav48_silence_trimmed/p295/p295_109_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "dbef11d82492c66c77b14741e710685c69b20a0de175710d0cf89b223f4680c2"
+        },
+        "A_mic2": {
+          "duration_s": 4.100979166666667,
+          "frames": 196847,
+          "path": "inputs/vctk/wav48_silence_trimmed/p295/p295_109_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "e03905cb0e23a5c890445ae2bc7ec5f52f23e779dc64dddc76d0b8c7425c6e23"
+        },
+        "B_mic1": {
+          "duration_s": 4.1004375,
+          "frames": 196821,
+          "path": "inputs/vctk/wav48_silence_trimmed/p295/p295_134_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "9581ca2f2df0965b9c5c223cac3469cc1235938093e79b9c2b8d960e2a029ca4"
+        },
+        "B_mic2": {
+          "duration_s": 4.1004375,
+          "frames": 196821,
+          "path": "inputs/vctk/wav48_silence_trimmed/p295/p295_134_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "5cf44db61816e1ad780dd7ba05c91aea1d3c440d181009d77ac9464ff0d8e7c7"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p295/p295_263_mic1.flac",
+        "sha256": "7ddf844547fa641dd64e4ed92898654e3cc844e8b5e8f0d7c24885ec6225aee7"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0005416666666668846,
+        "duration_gap_mic2_s": 0.0005416666666668846,
+        "relative_rate_gap_mic1": 0.00013209100053857798,
+        "relative_rate_gap_mic2": 0.00013209100053857798
+      },
+      "speaker": "p295",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p295/p295_109.txt",
+          "sha256": "bfee0a61c8f0379c4feb5b734c9e6411669fdaa6434f98c8f666d4243abadc17",
+          "text": "We're in a state of shock and disbelief.",
+          "utf8_bytes": 40
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p295/p295_134.txt",
+          "sha256": "2c79d099d39f9d29fc542c44b91653e17a9cb041a34e445d76249b5e9c3a9f11",
+          "text": "I wondered about changing back to rugby.",
+          "utf8_bytes": 40
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.1412708333333335,
+          "frames": 198781,
+          "path": "inputs/vctk/wav48_silence_trimmed/p297/p297_107_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "105927bb494e18cef7a85b8d8dc3af422bcd22a56ae4f6abe3cba4cd8247c7f3"
+        },
+        "A_mic2": {
+          "duration_s": 4.1412708333333335,
+          "frames": 198781,
+          "path": "inputs/vctk/wav48_silence_trimmed/p297/p297_107_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "80946b413f2df7b2af117324552119a3915475368b4c3d850d0690de391f9d7f"
+        },
+        "B_mic1": {
+          "duration_s": 4.141166666666667,
+          "frames": 198776,
+          "path": "inputs/vctk/wav48_silence_trimmed/p297/p297_123_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "f13fb2c4c5007f0a0257101ca0537f929529b669b8cab585e5ab4f8ec7e13490"
+        },
+        "B_mic2": {
+          "duration_s": 4.141166666666667,
+          "frames": 198776,
+          "path": "inputs/vctk/wav48_silence_trimmed/p297/p297_123_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "81f5b4fd6cb8193ab242935853c496fe05541e46e70fa7394c819fc9ff5cfa7a"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p297/p297_356_mic1.flac",
+        "sha256": "603a0eaec35ff9f13dd304059ac124d940fcad52f0c6dc93b15177d9842d65bb"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.00010416666666657193,
+        "duration_gap_mic2_s": 0.00010416666666657193,
+        "relative_rate_gap_mic1": 2.5153625769323435e-05,
+        "relative_rate_gap_mic2": 2.5153625769323435e-05
+      },
+      "speaker": "p297",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p297/p297_107.txt",
+          "sha256": "2b76ab45d76ef4d6d5a45392c7b56fa8a8270299314688c181091916f5307c50",
+          "text": "No other vehicle was involved in the incident.",
+          "utf8_bytes": 46
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p297/p297_123.txt",
+          "sha256": "ff4d8bcf3592c4ebbb59317c01858ace3fcc31a087c8c4fa1680e880eb78b7df",
+          "text": "Asylum is an entirely different issue to race.",
+          "utf8_bytes": 46
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.105625,
+          "frames": 197070,
+          "path": "inputs/vctk/wav48_silence_trimmed/p299/p299_183_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "455cd6849472c3bcc80d9765347b2daf8797d231c5c022fdc0050ba555afa6ca"
+        },
+        "A_mic2": {
+          "duration_s": 4.105625,
+          "frames": 197070,
+          "path": "inputs/vctk/wav48_silence_trimmed/p299/p299_183_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "562dddce990ce76a3b7e4b232e8d5a63345d2d9441b5d2c0d18356e646dc7b9d"
+        },
+        "B_mic1": {
+          "duration_s": 4.0962708333333335,
+          "frames": 196621,
+          "path": "inputs/vctk/wav48_silence_trimmed/p299/p299_298_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "81c797e279e0eb2edbabcf406e34a801ff6113a7ae633bc3ee3eca85792f9529"
+        },
+        "B_mic2": {
+          "duration_s": 4.0962708333333335,
+          "frames": 196621,
+          "path": "inputs/vctk/wav48_silence_trimmed/p299/p299_298_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "d87d0ca7671998a4ec6b434eab6a4dc14d544a030dc3bd34d1da7a6aa3d00bb0"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p299/p299_134_mic1.flac",
+        "sha256": "ac3fb34da17793eb8ef80dd935e610794b11aa950a034abc95bf06061ebda67e"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.00935416666666633,
+        "duration_gap_mic2_s": 0.00935416666666633,
+        "relative_rate_gap_mic1": 0.0022809767050808063,
+        "relative_rate_gap_mic2": 0.0022809767050808063
+      },
+      "speaker": "p299",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p299/p299_183.txt",
+          "sha256": "4d6c3531550f8f387e1b77962c37de44df5fb5379a50fe716a0c1c0ea4ad6d02",
+          "text": "Serb forces then opened fire in their direction.",
+          "utf8_bytes": 48
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p299/p299_298.txt",
+          "sha256": "6855a13382edad018ca941854e4150803205398219d267756880359a54ba7302",
+          "text": "However, there are also many areas of agreement.",
+          "utf8_bytes": 48
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.444395833333333,
+          "frames": 213331,
+          "path": "inputs/vctk/wav48_silence_trimmed/p302/p302_196_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "2dcfb2a9b915e8769082998b61d661d1a8c33dfd88807f8e35f7f76b4d2e15a7"
+        },
+        "A_mic2": {
+          "duration_s": 4.444395833333333,
+          "frames": 213331,
+          "path": "inputs/vctk/wav48_silence_trimmed/p302/p302_196_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "6adc86e2ac335752742c2d76945c8d5a5de6d16a4c424649773dcb1f54831754"
+        },
+        "B_mic1": {
+          "duration_s": 4.4523125,
+          "frames": 213711,
+          "path": "inputs/vctk/wav48_silence_trimmed/p302/p302_284_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "d6485f757815a71f7e3cfba266046cad7a89f0182cb2238291efd8f92fbb7e81"
+        },
+        "B_mic2": {
+          "duration_s": 4.4523125,
+          "frames": 213711,
+          "path": "inputs/vctk/wav48_silence_trimmed/p302/p302_284_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "45c774841723b1a717300c34dfdd81c30a21e81e9ab930531676f3d694ba9669"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p302/p302_283_mic1.flac",
+        "sha256": "2a94e15cbcfd3b1eee06323ca854f82832403c2cc7f8379e992dd3c51f2417cc"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.007916666666666572,
+        "duration_gap_mic2_s": 0.007916666666666572,
+        "relative_rate_gap_mic1": 0.0017796844338495267,
+        "relative_rate_gap_mic2": 0.0017796844338495267
+      },
+      "speaker": "p302",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p302/p302_196.txt",
+          "sha256": "c262c66db72883126f61196053011a5632efbd9257a2b7e42bffe0625a2c21fd",
+          "text": "To which the only answer is, don't hold your breath.",
+          "utf8_bytes": 52
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p302/p302_284.txt",
+          "sha256": "856cfdc716c75e9b8e44dfb36b6846214ec5e361270d584cfb0398f786ec6efa",
+          "text": "Therefore, this type of aircraft is completely safe.",
+          "utf8_bytes": 52
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.595020833333334,
+          "frames": 220561,
+          "path": "inputs/vctk/wav48_silence_trimmed/p304/p304_041_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "928e61c5287dfb9fc999278a5ca660009176b3d691c45e0af99b1fffcbc2e882"
+        },
+        "A_mic2": {
+          "duration_s": 4.595020833333334,
+          "frames": 220561,
+          "path": "inputs/vctk/wav48_silence_trimmed/p304/p304_041_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "666aa1043ba4ad522628cd021bf998f43725445b0dceb7aaa3769c355b790792"
+        },
+        "B_mic1": {
+          "duration_s": 4.594145833333333,
+          "frames": 220519,
+          "path": "inputs/vctk/wav48_silence_trimmed/p304/p304_043_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "70912080f8611250e2322bdd48cef5bcd6a22a7605f8ebd4d6290fd8f030e348"
+        },
+        "B_mic2": {
+          "duration_s": 4.594145833333333,
+          "frames": 220519,
+          "path": "inputs/vctk/wav48_silence_trimmed/p304/p304_043_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "3d48e4d112da52ab7ba4b21677db41d65318407bd0bca9cc1f70f46076d83bfd"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p304/p304_140_mic1.flac",
+        "sha256": "e26d0081a3cd25aaa438d4488a233efb9c5e2f96672941f0e4797213d6f064a2"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0008750000000006253,
+        "duration_gap_mic2_s": 0.0008750000000006253,
+        "relative_rate_gap_mic1": 0.0001904416432394819,
+        "relative_rate_gap_mic2": 0.0001904416432394819
+      },
+      "speaker": "p304",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p304/p304_041.txt",
+          "sha256": "986d7500cc57532cc8cfaa50e933f8af99df04f08d30d887733331689598e53c",
+          "text": "However, they will only be found in the wild.",
+          "utf8_bytes": 45
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p304/p304_043.txt",
+          "sha256": "ee43b9cc09ff298864ad3bb446c9f1f8f145278d996173ac24c3be5902498277",
+          "text": "For these people, the ruling is very welcome.",
+          "utf8_bytes": 45
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.084229166666667,
+          "frames": 196043,
+          "path": "inputs/vctk/wav48_silence_trimmed/p305/p305_017_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "990261f62fa52054179e9fee60fe3d2eea228d99a976b514c2c54b4869e7fa96"
+        },
+        "A_mic2": {
+          "duration_s": 4.084229166666667,
+          "frames": 196043,
+          "path": "inputs/vctk/wav48_silence_trimmed/p305/p305_017_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "ae1c50cc2246f03f58684812872e85c02bbb26f782f3167797d01fb6158b9f38"
+        },
+        "B_mic1": {
+          "duration_s": 4.1060625,
+          "frames": 197091,
+          "path": "inputs/vctk/wav48_silence_trimmed/p305/p305_338_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "266d0cdcd86cbd598fea476b76b96043c8623acf8c0710cc22837858a4fdedeb"
+        },
+        "B_mic2": {
+          "duration_s": 4.1060625,
+          "frames": 197091,
+          "path": "inputs/vctk/wav48_silence_trimmed/p305/p305_338_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "1219f4d8c270401a47e3ddd7aa8d439bae8ced35dc64ee367153ad509dafcb7d"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p305/p305_249_mic1.flac",
+        "sha256": "189a0f25cf4f4b9851550a8b58379cc787a1c620fc64fadce81bd1770a7d0f81"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.02183333333333337,
+        "duration_gap_mic2_s": 0.02183333333333337,
+        "relative_rate_gap_mic1": 0.00533151546292091,
+        "relative_rate_gap_mic2": 0.00533151546292091
+      },
+      "speaker": "p305",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p305/p305_017.txt",
+          "sha256": "dbb5b108041101629e027e1be831abae47b22cb68ab434a0d6ed64b99d6e3ac4",
+          "text": "Others have tried to explain the phenomenon physically.",
+          "utf8_bytes": 55
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p305/p305_338.txt",
+          "sha256": "e9addfe1f7c0c67d94dc9f03880cdfd5a4e39f06405dc3a7649069c79d1ce526",
+          "text": "When people talk about the Beach Boys and Brian Wilson.",
+          "utf8_bytes": 55
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.070041666666667,
+          "frames": 195362,
+          "path": "inputs/vctk/wav48_silence_trimmed/p311/p311_002_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "ffdcef8fa980b63d09c0d6b27d00a8c70f016bd50a4fe1ecfcb5a7669ee886d8"
+        },
+        "A_mic2": {
+          "duration_s": 4.070041666666667,
+          "frames": 195362,
+          "path": "inputs/vctk/wav48_silence_trimmed/p311/p311_002_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "3a3785489485f7e77ee60341dae5bbb66a55e5a8f9537f019123ecb0ee988d39"
+        },
+        "B_mic1": {
+          "duration_s": 4.076083333333333,
+          "frames": 195652,
+          "path": "inputs/vctk/wav48_silence_trimmed/p311/p311_048_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "e7faf68aa7c1b65022688a2a08561688a90b0e8dbb182008dc7be075350f5a98"
+        },
+        "B_mic2": {
+          "duration_s": 4.076083333333333,
+          "frames": 195652,
+          "path": "inputs/vctk/wav48_silence_trimmed/p311/p311_048_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "01034d63149fb5bb3ac088deac9e36f16e6f3247261c17bde89036e6c251fcc0"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p311/p311_064_mic1.flac",
+        "sha256": "2cdf60c958314808fccc4044c1bc218ba8937bb72e99ce926b1d01a00e4bc6dc"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.006041666666666501,
+        "duration_gap_mic2_s": 0.006041666666666501,
+        "relative_rate_gap_mic1": 0.0014833228477752374,
+        "relative_rate_gap_mic2": 0.0014833228477752374
+      },
+      "speaker": "p311",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p311/p311_002.txt",
+          "sha256": "19481b97b98547fd2607a1065ed92b3fb6703d33c926becd8c3da61727e34d3c",
+          "text": "Ask her to bring these things with her from the store.",
+          "utf8_bytes": 54
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p311/p311_048.txt",
+          "sha256": "bbc487b6e5eeea5cf9155c5bc55744aff751b0780a5223c1010ef467a9a1cc9d",
+          "text": "There are different cultures in different departments.",
+          "utf8_bytes": 54
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 5.9359375,
+          "frames": 284925,
+          "path": "inputs/vctk/wav48_silence_trimmed/p312/p312_015_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "7f930bb7e803bcfc38ef10a127c705fc8256fce24e28a9b7088276a6a6a069d1"
+        },
+        "A_mic2": {
+          "duration_s": 5.9359375,
+          "frames": 284925,
+          "path": "inputs/vctk/wav48_silence_trimmed/p312/p312_015_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "b407405fcba9e6a5bb179c2f510c41db3090ced2ed527479b2d5d292a4a69909"
+        },
+        "B_mic1": {
+          "duration_s": 5.976854166666667,
+          "frames": 286889,
+          "path": "inputs/vctk/wav48_silence_trimmed/p312/p312_018_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "1b93380dd14d25ca9572a3e2cfd662882ce177647ab1d8e109b2230ea4805137"
+        },
+        "B_mic2": {
+          "duration_s": 5.976854166666667,
+          "frames": 286889,
+          "path": "inputs/vctk/wav48_silence_trimmed/p312/p312_018_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "2f0093ee6cb6c8e05ed0db68bd9e02626b3873f849217019ae2627fbfd717efd"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p312/p312_309_mic1.flac",
+        "sha256": "adb82db2904e088a2b4fbe2267a8e8706d3cb518dc6098e9da901b2f5b1ea7cd"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.040916666666666934,
+        "duration_gap_mic2_s": 0.040916666666666934,
+        "relative_rate_gap_mic1": 0.006869366612219976,
+        "relative_rate_gap_mic2": 0.006869366612219976
+      },
+      "speaker": "p312",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p312/p312_015.txt",
+          "sha256": "ddc8171a4e7e98ee2a8104bed57d388d69470580d3cd02714c214453b34dfd76",
+          "text": "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain.",
+          "utf8_bytes": 90
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p312/p312_018.txt",
+          "sha256": "968a7af7150e0e6ce1c35a0d055a95aabbb1ed1c78a7428fe635c242316b9b58",
+          "text": "Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain.",
+          "utf8_bytes": 90
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.1011041666666666,
+          "frames": 196853,
+          "path": "inputs/vctk/wav48_silence_trimmed/p313/p313_124_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "80eae84710ee987b51e81ce4c46333e2e55607ab927a0c1582e64494a56d3b4b"
+        },
+        "A_mic2": {
+          "duration_s": 4.1011041666666666,
+          "frames": 196853,
+          "path": "inputs/vctk/wav48_silence_trimmed/p313/p313_124_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "51434f55506dfd81b8aa55016125f033a5a5d1b3cc28551f02f3d20ed1dc7421"
+        },
+        "B_mic1": {
+          "duration_s": 4.099708333333333,
+          "frames": 196786,
+          "path": "inputs/vctk/wav48_silence_trimmed/p313/p313_368_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "8962e9abfe1c8f0e9a2d8e43b4cc5e2348b3dbad340b6cd0f0399827aa65dad3"
+        },
+        "B_mic2": {
+          "duration_s": 4.099708333333333,
+          "frames": 196786,
+          "path": "inputs/vctk/wav48_silence_trimmed/p313/p313_368_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "5436982c73e4d2cfc4230ecdcfbfd3c3d7b7ab6e3769fab4bd78db8369bf45a1"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p313/p313_229_mic1.flac",
+        "sha256": "a1b3a7307b3cbf4c5901e4fd49aa2e8803c2f761e93bd192af338a62d33579bb"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.001395833333333485,
+        "duration_gap_mic2_s": 0.001395833333333485,
+        "relative_rate_gap_mic1": 0.00034041342448293624,
+        "relative_rate_gap_mic2": 0.00034041342448293624
+      },
+      "speaker": "p313",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p313/p313_124.txt",
+          "sha256": "53f80e292840c256b25f3b1108a08cb944743617a1c71273bf5b435769b4cb79",
+          "text": "Life, as many people know it, in other words.",
+          "utf8_bytes": 45
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p313/p313_368.txt",
+          "sha256": "b3d00eb40c3079cc55fda168816a76bac7e48287e3493e2a5df6aca3d8ac6609",
+          "text": "He suffered a broken back and other injuries.",
+          "utf8_bytes": 45
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.011375,
+          "frames": 192546,
+          "path": "inputs/vctk/wav48_silence_trimmed/p314/p314_068_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "ecf9a18158bdf00c557899bc86ff010195edc343efe73bf8497fe7f7dd1885a8"
+        },
+        "A_mic2": {
+          "duration_s": 4.011375,
+          "frames": 192546,
+          "path": "inputs/vctk/wav48_silence_trimmed/p314/p314_068_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "cbf07a4dab262371186704334b89fd94870705b331e08a68d49a1de6ebba3d65"
+        },
+        "B_mic1": {
+          "duration_s": 4.010875,
+          "frames": 192522,
+          "path": "inputs/vctk/wav48_silence_trimmed/p314/p314_252_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "b9c2c68a5aba77ab9e82c2ac1d75caefaaaa6b3aa1a5b27bb8348f33a6ce7744"
+        },
+        "B_mic2": {
+          "duration_s": 4.010875,
+          "frames": 192522,
+          "path": "inputs/vctk/wav48_silence_trimmed/p314/p314_252_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "ea4cf8fc527b5368a2c010bd09e45f3581c2987433bf8739c9ffbc15258edcb6"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p314/p314_099_mic1.flac",
+        "sha256": "4dc4e5bb024674fa0d70dbfef1791e999c02d36812599de0687ab19462f71ca8"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0004999999999997229,
+        "duration_gap_mic2_s": 0.0004999999999997229,
+        "relative_rate_gap_mic1": 0.00012465330798714695,
+        "relative_rate_gap_mic2": 0.00012465330798714695
+      },
+      "speaker": "p314",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p314/p314_068.txt",
+          "sha256": "dc8b9b24d069d1ecbae99c469b265180b70519d534549e9fecdfe4620f3ff81f",
+          "text": "I've learned a lot, and tomorrow is another day.",
+          "utf8_bytes": 48
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p314/p314_252.txt",
+          "sha256": "902433622f0c959b19e50e8131cdc8576da08c62b272c21727f4aac37e4908aa",
+          "text": "A Scottish film studio is also being considered.",
+          "utf8_bytes": 48
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.213770833333333,
+          "frames": 202261,
+          "path": "inputs/vctk/wav48_silence_trimmed/p316/p316_080_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "bdd8b874c6f49cd0456ebaa6d7580b817bb580baf6697335dda189e7fe99f125"
+        },
+        "A_mic2": {
+          "duration_s": 4.213770833333333,
+          "frames": 202261,
+          "path": "inputs/vctk/wav48_silence_trimmed/p316/p316_080_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "08fd58c4be12592bd51a94b79e6be07746b2623175bb549df0d268ce8df1498a"
+        },
+        "B_mic1": {
+          "duration_s": 4.1898125,
+          "frames": 201111,
+          "path": "inputs/vctk/wav48_silence_trimmed/p316/p316_106_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "66364b1e2225c6b95c21132213e1834eaa2fb7463a354d7a8baddb13252b62ed"
+        },
+        "B_mic2": {
+          "duration_s": 4.1898125,
+          "frames": 201111,
+          "path": "inputs/vctk/wav48_silence_trimmed/p316/p316_106_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "c2c9616ff1e72a27310332dd6a99050b7c8e46d4210923b54a3ef6d60faa14c0"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p316/p316_135_mic1.flac",
+        "sha256": "1c42a15e82acba231d5a88a43d919c50a3176102b805801ffa9626c0824e8d47"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.02395833333333286,
+        "duration_gap_mic2_s": 0.02395833333333286,
+        "relative_rate_gap_mic1": 0.005701932707277616,
+        "relative_rate_gap_mic2": 0.005701932707277616
+      },
+      "speaker": "p316",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p316/p316_080.txt",
+          "sha256": "dc5f124581ddbddd7849e2fe33779400252c50cd07e954d94f5694522103bfe1",
+          "text": "They control the prices paid to farmers.",
+          "utf8_bytes": 40
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p316/p316_106.txt",
+          "sha256": "50dcff6f43ddd8139cde8067050797b60dec3726eee53fb6300bba282d4c06af",
+          "text": "We are making progress on waiting lists.",
+          "utf8_bytes": 40
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.059125,
+          "frames": 194838,
+          "path": "inputs/vctk/wav48_silence_trimmed/p317/p317_196_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "b159f6777f7d6c6d146f53268941c08e88b0831d4ac4d93083a63f27496e28a0"
+        },
+        "A_mic2": {
+          "duration_s": 4.059125,
+          "frames": 194838,
+          "path": "inputs/vctk/wav48_silence_trimmed/p317/p317_196_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "8428878f80aa524477e22cf87759f993efa6f94e1783b3428ea1cd77a16bd493"
+        },
+        "B_mic1": {
+          "duration_s": 4.043729166666667,
+          "frames": 194099,
+          "path": "inputs/vctk/wav48_silence_trimmed/p317/p317_206_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "77cd68ad0ea2832440a7d26a926dad7e68de1b704c3f49d94ad6a9e95ed8b8fd"
+        },
+        "B_mic2": {
+          "duration_s": 4.043729166666667,
+          "frames": 194099,
+          "path": "inputs/vctk/wav48_silence_trimmed/p317/p317_206_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "0cccdc203c1bb75fbaaa49baddb258c29d8888c5eb308d63e2d33059349d8cad"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p317/p317_089_mic1.flac",
+        "sha256": "6d53d2d87d8bb7c9c8e4c2562946ea624ebb086a85a26ae94f4ba001b2585e06"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.015395833333332831,
+        "duration_gap_mic2_s": 0.015395833333332831,
+        "relative_rate_gap_mic1": 0.0038001013017529583,
+        "relative_rate_gap_mic2": 0.0038001013017529583
+      },
+      "speaker": "p317",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p317/p317_196.txt",
+          "sha256": "c2266e83e8d6f0334ad870160572f340544fb1f4c1888b4a90805be8e9c98846",
+          "text": "Everyone needs a holiday, even the Salvation Army.",
+          "utf8_bytes": 50
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p317/p317_206.txt",
+          "sha256": "eafbdd04cfdc7ac0fce1c7209daadeefde57eb338b5fc80214584fe176de7f47",
+          "text": "On this form, they have a real chance of going up.",
+          "utf8_bytes": 50
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.226895833333334,
+          "frames": 202891,
+          "path": "inputs/vctk/wav48_silence_trimmed/p323/p323_237_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "2f6fe9ff7404c7aed6d37df9a815bea5dde53c167582cfc1e88dd2bffd9ca0e7"
+        },
+        "A_mic2": {
+          "duration_s": 4.226895833333334,
+          "frames": 202891,
+          "path": "inputs/vctk/wav48_silence_trimmed/p323/p323_237_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "4252c227a74f458d8e962a2a44de7dc7632373ab401af567a26fd0be027e2714"
+        },
+        "B_mic1": {
+          "duration_s": 4.229333333333333,
+          "frames": 203008,
+          "path": "inputs/vctk/wav48_silence_trimmed/p323/p323_421_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "c6bec885e05f95e6dde2f8948a3cac15cdb5498fd40e1a7d3b8d76fc3e6cd554"
+        },
+        "B_mic2": {
+          "duration_s": 4.229333333333333,
+          "frames": 203008,
+          "path": "inputs/vctk/wav48_silence_trimmed/p323/p323_421_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "ba1bf0db6faa84f09528cb6b6babc72c368761dbe6dc1bf58ab32747de604e5f"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p323/p323_022_mic1.flac",
+        "sha256": "ab19bfe8938ad4b4c4bfca9b0968943a4b26529e931dc8d7582726a54aadeecb"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.002437499999999204,
+        "duration_gap_mic2_s": 0.002437499999999204,
+        "relative_rate_gap_mic1": 0.0005764980943533103,
+        "relative_rate_gap_mic2": 0.0005764980943533103
+      },
+      "speaker": "p323",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p323/p323_237.txt",
+          "sha256": "ac1aedea5072a37c9f6c52dd9fb1cc2482d00e47796accfc7e1d3ba1d43b3463",
+          "text": "He predicted the contest would be very close.",
+          "utf8_bytes": 45
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p323/p323_421.txt",
+          "sha256": "d228d591730cf1bc3e1f1f8bfdb79c037f8244651b2bc6ed62bd2e36f7337cb6",
+          "text": "As often as not, the cause remains a mystery.",
+          "utf8_bytes": 45
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.3518125,
+          "frames": 208887,
+          "path": "inputs/vctk/wav48_silence_trimmed/p326/p326_254_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "78ff35749ff4bb7b7b098c1590a46d5f6255175b9b1de96ca27f193b8c6aee61"
+        },
+        "A_mic2": {
+          "duration_s": 4.3518125,
+          "frames": 208887,
+          "path": "inputs/vctk/wav48_silence_trimmed/p326/p326_254_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "e8dc532a2578ecf1e31578cde2c6d1bf51f5bd7fb0d059aa8979eb726568eb15"
+        },
+        "B_mic1": {
+          "duration_s": 4.3991875,
+          "frames": 211161,
+          "path": "inputs/vctk/wav48_silence_trimmed/p326/p326_361_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "72993fd794152de6e63c0eb1bb211a25544913e43e664587f11e1690be9ddb8f"
+        },
+        "B_mic2": {
+          "duration_s": 4.3991875,
+          "frames": 211161,
+          "path": "inputs/vctk/wav48_silence_trimmed/p326/p326_361_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "35eec36de06075bb2d9aebf6c4ac0fd233568fdb23f9545ef8e0c2290bc2dc2a"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p326/p326_069_mic1.flac",
+        "sha256": "0ba88ea7920c3e9ff19888f2386b0e95f8aff0f8cfd973e8d01bf17530094176"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.04737499999999972,
+        "duration_gap_mic2_s": 0.04737499999999972,
+        "relative_rate_gap_mic1": 0.010827334018969164,
+        "relative_rate_gap_mic2": 0.010827334018969164
+      },
+      "speaker": "p326",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p326/p326_254.txt",
+          "sha256": "5848bba208acad8fff76d7f26e3b7b92fb00dd08d8011e7ceb39680dee6560d0",
+          "text": "My family, health and golf is always a balancing act.",
+          "utf8_bytes": 53
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p326/p326_361.txt",
+          "sha256": "b3f119d8a59fb5bd92270a32196b0b0d132418469b665d94d66c4450fdf50eb7",
+          "text": "However, BBC Scotland was not interested in his work.",
+          "utf8_bytes": 53
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.0583125,
+          "frames": 194799,
+          "path": "inputs/vctk/wav48_silence_trimmed/p329/p329_017_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "f7dcd821aa976f5905fd931c74f6e51b5ddc7bdb212f488c005c4fd02f2b65f8"
+        },
+        "A_mic2": {
+          "duration_s": 4.0583125,
+          "frames": 194799,
+          "path": "inputs/vctk/wav48_silence_trimmed/p329/p329_017_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "f06a7ddcb45ccc69932c91997c06c21778d5b0fefa8d57a5c7190addeca6d62a"
+        },
+        "B_mic1": {
+          "duration_s": 4.060666666666667,
+          "frames": 194912,
+          "path": "inputs/vctk/wav48_silence_trimmed/p329/p329_205_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "c9aa2b49400865238466776de9c8bf34bf0574f222c3fbdc71e04fcbb81acde6"
+        },
+        "B_mic2": {
+          "duration_s": 4.060666666666667,
+          "frames": 194912,
+          "path": "inputs/vctk/wav48_silence_trimmed/p329/p329_205_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "0aa2e59342cc20ae77fd23d61de3dc66d15bd92418bfb833c486f5a74704a4fb"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p329/p329_186_mic1.flac",
+        "sha256": "9fe90a3a89c804161a064b3bca954c5fdac22342fc80fd870be57b437b93ae68"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.002354166666666657,
+        "duration_gap_mic2_s": 0.002354166666666657,
+        "relative_rate_gap_mic1": 0.0005799169127892423,
+        "relative_rate_gap_mic2": 0.0005799169127892423
+      },
+      "speaker": "p329",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p329/p329_017.txt",
+          "sha256": "dbb5b108041101629e027e1be831abae47b22cb68ab434a0d6ed64b99d6e3ac4",
+          "text": "Others have tried to explain the phenomenon physically.",
+          "utf8_bytes": 55
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p329/p329_205.txt",
+          "sha256": "98bd51c59a29bda2b805ff211b50abfc14b93a2ec2a51b81f7872b01d774a150",
+          "text": "Thankfully, we have started to listen to our customers.",
+          "utf8_bytes": 55
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 6.6151875,
+          "frames": 317529,
+          "path": "inputs/vctk/wav48_silence_trimmed/p333/p333_003_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "503cf1e61d93b64dc73bf36fd7908a3d1a65578a4b56d8e606a59420f0a566f6"
+        },
+        "A_mic2": {
+          "duration_s": 6.6151875,
+          "frames": 317529,
+          "path": "inputs/vctk/wav48_silence_trimmed/p333/p333_003_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "d5c3a30f6c03758cd1f2f97cfc36f22d9d2818812a874ff1cf90463a9e4b74de"
+        },
+        "B_mic1": {
+          "duration_s": 6.574208333333333,
+          "frames": 315562,
+          "path": "inputs/vctk/wav48_silence_trimmed/p333/p333_024_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "2511228b8949c652076a37a2d7e51270781abb66b152fdb0243479204639e795"
+        },
+        "B_mic2": {
+          "duration_s": 6.574208333333333,
+          "frames": 315562,
+          "path": "inputs/vctk/wav48_silence_trimmed/p333/p333_024_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "339482f155ccb510901198b7e1aea18d5d937dc85d74747eafc38649ca60710b"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p333/p333_221_mic1.flac",
+        "sha256": "9ab7bd33da7b923d949450767e170a54a338062e21142bd0d7093a4ee2bc3caa"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.04097916666666723,
+        "duration_gap_mic2_s": 0.04097916666666723,
+        "relative_rate_gap_mic1": 0.006213956603395203,
+        "relative_rate_gap_mic2": 0.006213956603395203
+      },
+      "speaker": "p333",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p333/p333_003.txt",
+          "sha256": "77e8e13dc0804676d926513a1a65983a9013e3ac6a49cd2a647628f49710b084",
+          "text": "Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.",
+          "utf8_bytes": 102
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p333/p333_024.txt",
+          "sha256": "918aa074ce90ebf1758a723b1f2b177b8aa83806952aad7e9d8f044923b836be",
+          "text": "This is a very common type of bow, one showing mainly red and yellow, with little or no green or blue.",
+          "utf8_bytes": 102
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.382604166666667,
+          "frames": 210365,
+          "path": "inputs/vctk/wav48_silence_trimmed/p334/p334_271_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "84b8f2287f8db66df085bc9813baa35a15fcf904e208ea598d8d97fcd3307c3f"
+        },
+        "A_mic2": {
+          "duration_s": 4.382604166666667,
+          "frames": 210365,
+          "path": "inputs/vctk/wav48_silence_trimmed/p334/p334_271_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "cba61517dc8f486ad787da44053092769cde49b5c762cb66341b3a82a401a733"
+        },
+        "B_mic1": {
+          "duration_s": 4.3948125,
+          "frames": 210951,
+          "path": "inputs/vctk/wav48_silence_trimmed/p334/p334_320_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "8b74d3f5b1473194870010fcecaf87fe0badeab924d58b617954d4906bcd5c2e"
+        },
+        "B_mic2": {
+          "duration_s": 4.3948125,
+          "frames": 210951,
+          "path": "inputs/vctk/wav48_silence_trimmed/p334/p334_320_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "fe8b407755c22fea02654bdb9eb9d4e5281af5d1a142b5cb65dbcd69bac31ee4"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p334/p334_385_mic1.flac",
+        "sha256": "4236b9bb1cc40e35fc40a9c3b611b722162fffdd41b2104405c5b8c968ed81f8"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.01220833333333271,
+        "duration_gap_mic2_s": 0.01220833333333271,
+        "relative_rate_gap_mic1": 0.0027817600091140826,
+        "relative_rate_gap_mic2": 0.0027817600091140826
+      },
+      "speaker": "p334",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p334/p334_271.txt",
+          "sha256": "3cbad3a4e5329fd086a3fe00ff91ef5e1e4aebaeef5ae537643d8366a20b93cd",
+          "text": "Charles Gordon, leader of the Glasgow City Council declined to comment.",
+          "utf8_bytes": 71
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p334/p334_320.txt",
+          "sha256": "69672c03b8ca099dd2cb9d37fd3f433837f90cfc3be81599a6c1055ad59a954b",
+          "text": "His replacement was named yesterday, following inquiries by The Herald.",
+          "utf8_bytes": 71
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.396645833333333,
+          "frames": 211039,
+          "path": "inputs/vctk/wav48_silence_trimmed/p335/p335_300_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "5178149858f8653e86bad20080e68174b812abb32f071ea3d851159c87b35de6"
+        },
+        "A_mic2": {
+          "duration_s": 4.396645833333333,
+          "frames": 211039,
+          "path": "inputs/vctk/wav48_silence_trimmed/p335/p335_300_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "22d2ce089009833686899be928f72e9d1dbe8b44675e12ae16d962a39f644819"
+        },
+        "B_mic1": {
+          "duration_s": 4.395520833333333,
+          "frames": 210985,
+          "path": "inputs/vctk/wav48_silence_trimmed/p335/p335_309_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "54e8b4324b847bdf87f834b22a877cdeaa5cfc5a36f92fdf58b899ec0b82b9ba"
+        },
+        "B_mic2": {
+          "duration_s": 4.395520833333333,
+          "frames": 210985,
+          "path": "inputs/vctk/wav48_silence_trimmed/p335/p335_309_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "637336fa12ab96d263ae4c6b1c898784d155812309e0aec864abc9911f7b7deb"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p335/p335_207_mic1.flac",
+        "sha256": "65b9bed92f0a9cefc5ba59d7c5833999559b96491259b06fc41230928378f8fa"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0011250000000000426,
+        "duration_gap_mic2_s": 0.0011250000000000426,
+        "relative_rate_gap_mic1": 0.0002559096165147103,
+        "relative_rate_gap_mic2": 0.0002559096165147103
+      },
+      "speaker": "p335",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p335/p335_300.txt",
+          "sha256": "d5611391378b1262d8bcf470769d914fab984c3ff350797b9d7750fc344b7f67",
+          "text": "Sadly, the revival could not be sustained.",
+          "utf8_bytes": 42
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p335/p335_309.txt",
+          "sha256": "13d60e84014f02c358d5283a6fb6cce4d95a9253eced43fe37a05f328d709c1d",
+          "text": "Luckily for us, he enjoyed the experience.",
+          "utf8_bytes": 42
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 7.638895833333334,
+          "frames": 366667,
+          "path": "inputs/vctk/wav48_silence_trimmed/p336/p336_008_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "aa288c175b38cb8d50f559e16196b62d9e9359f19d62b597d4feb37690ad2962"
+        },
+        "A_mic2": {
+          "duration_s": 7.638895833333334,
+          "frames": 366667,
+          "path": "inputs/vctk/wav48_silence_trimmed/p336/p336_008_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "162e27d158a18084a64e8095095ee86142af9156f932879c330dfe1ff0b75de4"
+        },
+        "B_mic1": {
+          "duration_s": 7.623083333333334,
+          "frames": 365908,
+          "path": "inputs/vctk/wav48_silence_trimmed/p336/p336_019_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "0674500104a9bb8a462bf6b9602214573bd5a75a87684be7f0df7a65584d358a"
+        },
+        "B_mic2": {
+          "duration_s": 7.623083333333334,
+          "frames": 365908,
+          "path": "inputs/vctk/wav48_silence_trimmed/p336/p336_019_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "50b8c5ecab542919a8648e5f46bdfa921b1434ca5fd65e7dcb0735eea0084f02"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p336/p336_303_mic1.flac",
+        "sha256": "16242df5115a471bb398199eecbb2a344a603bd69312948df918a547a2716911"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.015812500000000007,
+        "duration_gap_mic2_s": 0.015812500000000007,
+        "relative_rate_gap_mic1": 0.019165990157228183,
+        "relative_rate_gap_mic2": 0.019165990157228183
+      },
+      "speaker": "p336",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p336/p336_008.txt",
+          "sha256": "03db5354ca80afbe4468ac2e8c8719ffafd1d296fd28bdc9c1028f4b4181fab5",
+          "text": "These take the shape of a long round arch, with its path high above, and its two ends apparently beyond the horizon.",
+          "utf8_bytes": 116
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p336/p336_019.txt",
+          "sha256": "5a77eb1669e76188dd7734417393446b0985e2b2efcbf429e425229bf9105703",
+          "text": "Since then physicists have found that it is not reflection, but refraction by the raindrops which causes the rainbows.",
+          "utf8_bytes": 118
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.014458333333334,
+          "frames": 192694,
+          "path": "inputs/vctk/wav48_silence_trimmed/p339/p339_026_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "9613e2113f77ceb397bd2147a5c97b23a2f1432b3cc5c8455824d19e4b875db4"
+        },
+        "A_mic2": {
+          "duration_s": 4.014458333333334,
+          "frames": 192694,
+          "path": "inputs/vctk/wav48_silence_trimmed/p339/p339_026_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "24a00a5187050710c6c0c7e9f075aefd357a8638b55dbd07d3b8cdfaadfe390c"
+        },
+        "B_mic1": {
+          "duration_s": 4.0763541666666665,
+          "frames": 195665,
+          "path": "inputs/vctk/wav48_silence_trimmed/p339/p339_343_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "1383cbbbda9875483a8dfb55a3e66092e9f0f73588a21b48c384fc5429881b4d"
+        },
+        "B_mic2": {
+          "duration_s": 4.0763541666666665,
+          "frames": 195665,
+          "path": "inputs/vctk/wav48_silence_trimmed/p339/p339_343_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "883d4a3b342d58c9a5338d51cd545ec6beddc603d516d12310e0f9e2b80523c3"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p339/p339_395_mic1.flac",
+        "sha256": "6ef6ae7b3c18e2bbbb212cbf29d9fcf36daab02dc343e1a9ae05e8eade011ebe"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.06189583333333282,
+        "duration_gap_mic2_s": 0.06189583333333282,
+        "relative_rate_gap_mic1": 0.01530027629075147,
+        "relative_rate_gap_mic2": 0.01530027629075147
+      },
+      "speaker": "p339",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p339/p339_026.txt",
+          "sha256": "23b1bbf124d4673847fd7bfd208c333c447e498078514fdca4c97883733f45db",
+          "text": "The pollution and the driving are beyond belief.",
+          "utf8_bytes": 48
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p339/p339_343.txt",
+          "sha256": "0f55e63c91bb844bde179c550f494c2a4b3fd676a1dd6a1a79f454f28bad98b9",
+          "text": "Only injury has prevented that happening before.",
+          "utf8_bytes": 48
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 5.8480625,
+          "frames": 280707,
+          "path": "inputs/vctk/wav48_silence_trimmed/p340/p340_022_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "f55de1384f6e060be630c8dc0cbcf7b9ec4c2a4407feedfc5007ab3c482f0f6d"
+        },
+        "A_mic2": {
+          "duration_s": 5.8480625,
+          "frames": 280707,
+          "path": "inputs/vctk/wav48_silence_trimmed/p340/p340_022_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "6689c00f39eb379b581d643a59a93d79fbf75cc3a1a34ec9f54d1f7c8155d1b5"
+        },
+        "B_mic1": {
+          "duration_s": 5.895770833333334,
+          "frames": 282997,
+          "path": "inputs/vctk/wav48_silence_trimmed/p340/p340_024_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "4beee855a1f1675b37b3cd4bb46b6c56568c1ff8663ceb4483885da1bdf79e9d"
+        },
+        "B_mic2": {
+          "duration_s": 5.895770833333334,
+          "frames": 282997,
+          "path": "inputs/vctk/wav48_silence_trimmed/p340/p340_024_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "acb757a849b76ac5c4fcc12961431d8e1d7bbc782e432c4f1ea718938434d9d1"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p340/p340_256_mic1.flac",
+        "sha256": "7983caf3026932a09a9b085ebc303d95a8c5cbf630a3180e376b40ce1cd8038e"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.047708333333333464,
+        "duration_gap_mic2_s": 0.047708333333333464,
+        "relative_rate_gap_mic1": 0.0017274198458856525,
+        "relative_rate_gap_mic2": 0.0017274198458856525
+      },
+      "speaker": "p340",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p340/p340_022.txt",
+          "sha256": "845e0661ac472b99a91d5cab18bb76b85ff9f7a2d36408039f04e0bf8610d89e",
+          "text": "The actual primary rainbow observed is said to be the effect of super-imposition of a number of bows.",
+          "utf8_bytes": 101
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p340/p340_024.txt",
+          "sha256": "918aa074ce90ebf1758a723b1f2b177b8aa83806952aad7e9d8f044923b836be",
+          "text": "This is a very common type of bow, one showing mainly red and yellow, with little or no green or blue.",
+          "utf8_bytes": 102
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.311875,
+          "frames": 206970,
+          "path": "inputs/vctk/wav48_silence_trimmed/p343/p343_247_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "1e3554d46c7e81c02d61eddc1c4308f848445d4bbe850329ad76219caeba4c1a"
+        },
+        "A_mic2": {
+          "duration_s": 4.311875,
+          "frames": 206970,
+          "path": "inputs/vctk/wav48_silence_trimmed/p343/p343_247_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "6408117e892ccc9565c22bb96e88200daf5e7da65de3aa599d9ee54efdf51b4d"
+        },
+        "B_mic1": {
+          "duration_s": 4.3673125,
+          "frames": 209631,
+          "path": "inputs/vctk/wav48_silence_trimmed/p343/p343_270_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "89c648bafae8aaf87a2759ae3664e032c969e76eef2ad5dacaa6b5b82cfcac25"
+        },
+        "B_mic2": {
+          "duration_s": 4.3673125,
+          "frames": 209631,
+          "path": "inputs/vctk/wav48_silence_trimmed/p343/p343_270_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "5b56db2ad0dbef35576632b6c3742579cf27c7cd20fcbef33514ea46d9d099b7"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p343/p343_165_mic1.flac",
+        "sha256": "a7c15b455c29f2fd3d3fb15a5e0fa31086a8d0cee23ce06d179e82f6c65f707e"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.05543750000000003,
+        "duration_gap_mic2_s": 0.05543750000000003,
+        "relative_rate_gap_mic1": 0.012774813310577782,
+        "relative_rate_gap_mic2": 0.012774813310577782
+      },
+      "speaker": "p343",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p343/p343_247.txt",
+          "sha256": "450cd3bc340121aca3b42584e060fb7bfa1f4e18b6ebc3cd0cf734e14d973460",
+          "text": "It is ambitious, but it can be achieved.",
+          "utf8_bytes": 40
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p343/p343_270.txt",
+          "sha256": "b281d022172ccf5b02570349d5ecdb3f6fe5a860afd69a4762fd2fdb29eaa3ff",
+          "text": "That is a question for the next manager.",
+          "utf8_bytes": 40
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.823541666666666,
+          "frames": 231530,
+          "path": "inputs/vctk/wav48_silence_trimmed/p347/p347_009_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "6b2d1d8558422c87a1b3f7db0bbe432dc34765d30b54f036b832e0ab62adb9d7"
+        },
+        "A_mic2": {
+          "duration_s": 4.823541666666666,
+          "frames": 231530,
+          "path": "inputs/vctk/wav48_silence_trimmed/p347/p347_009_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "882410e8fd353c7b8ae099b865f1fa372ef4d553f3c7cd77ab9a39206d4d0f49"
+        },
+        "B_mic1": {
+          "duration_s": 4.781645833333333,
+          "frames": 229519,
+          "path": "inputs/vctk/wav48_silence_trimmed/p347/p347_013_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "c7841cc1890b62fa972ee046e34bf870273abae9634629de2a0fb1536bc180bc"
+        },
+        "B_mic2": {
+          "duration_s": 4.781645833333333,
+          "frames": 229519,
+          "path": "inputs/vctk/wav48_silence_trimmed/p347/p347_013_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "63ab1f46113ab4bc42bb92dd5e7b52f624719685f4f9a841c30f7d9e4b80c2c9"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p347/p347_018_mic1.flac",
+        "sha256": "ae53fc1ca2bd5ba272746ad9609a5e05ef4154d1e8e5d569efec85e29881aa37"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.04189583333333324,
+        "duration_gap_mic2_s": 0.04189583333333324,
+        "relative_rate_gap_mic1": 0.006780520539381394,
+        "relative_rate_gap_mic2": 0.006780520539381394
+      },
+      "speaker": "p347",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p347/p347_009.txt",
+          "sha256": "3a4bc4c702c8ac0d2b83727b7625116d959798206e080edb087a64963123e4a0",
+          "text": "There is , according to legend, a boiling pot of gold at one end.",
+          "utf8_bytes": 65
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p347/p347_013.txt",
+          "sha256": "3221acef01a827b90bec46df1557ba0557e2497c616e46fae80013e0f1881828",
+          "text": "Some have accepted it as a miracle without physical explanation.",
+          "utf8_bytes": 64
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 6.883291666666667,
+          "frames": 330398,
+          "path": "inputs/vctk/wav48_silence_trimmed/p351/p351_008_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "ccbfa9a7026edaa8b2c6926485bf43295fbbc8ef388b7e3e11e521ab220370a6"
+        },
+        "A_mic2": {
+          "duration_s": 6.883291666666667,
+          "frames": 330398,
+          "path": "inputs/vctk/wav48_silence_trimmed/p351/p351_008_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "6e5a5ce18eb9dfb640335d5d1d8799ed0558b2c122d336878deebec241efbc8a"
+        },
+        "B_mic1": {
+          "duration_s": 6.869270833333333,
+          "frames": 329725,
+          "path": "inputs/vctk/wav48_silence_trimmed/p351/p351_019_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "16b0585ac897c7c2b14b4979114e73311fa13c5ae048a9b5fbaaf6b33555bb8f"
+        },
+        "B_mic2": {
+          "duration_s": 6.869270833333333,
+          "frames": 329725,
+          "path": "inputs/vctk/wav48_silence_trimmed/p351/p351_019_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "34945be0512d9f7ec6fc01900daa387fc78bd22ff941aebca0a3db4226014042"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p351/p351_009_mic1.flac",
+        "sha256": "a246f22f064d6b43c645b19dbff1a8d7f649dcfba61072a845e5039cf83e9ada"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.014020833333333371,
+        "duration_gap_mic2_s": 0.014020833333333371,
+        "relative_rate_gap_mic1": 0.019132864316652832,
+        "relative_rate_gap_mic2": 0.019132864316652832
+      },
+      "speaker": "p351",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p351/p351_008.txt",
+          "sha256": "03db5354ca80afbe4468ac2e8c8719ffafd1d296fd28bdc9c1028f4b4181fab5",
+          "text": "These take the shape of a long round arch, with its path high above, and its two ends apparently beyond the horizon.",
+          "utf8_bytes": 116
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p351/p351_019.txt",
+          "sha256": "5a77eb1669e76188dd7734417393446b0985e2b2efcbf429e425229bf9105703",
+          "text": "Since then physicists have found that it is not reflection, but refraction by the raindrops which causes the rainbows.",
+          "utf8_bytes": 118
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 6.488479166666667,
+          "frames": 311447,
+          "path": "inputs/vctk/wav48_silence_trimmed/p360/p360_003_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "0dcabab014270a288e816a393e724207213d2c5d826cd98e22f82e9b73d013a1"
+        },
+        "A_mic2": {
+          "duration_s": 6.488479166666667,
+          "frames": 311447,
+          "path": "inputs/vctk/wav48_silence_trimmed/p360/p360_003_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "240c860a29f74ecd77e9b0c46dca82985db59aebf5f38608a6a605ee2f3dabda"
+        },
+        "B_mic1": {
+          "duration_s": 6.592145833333333,
+          "frames": 316423,
+          "path": "inputs/vctk/wav48_silence_trimmed/p360/p360_022_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "87519326a1e2e71379e30023d1d9b8aa223f6931c14aea683b32276b09b534f4"
+        },
+        "B_mic2": {
+          "duration_s": 6.592145833333333,
+          "frames": 316423,
+          "path": "inputs/vctk/wav48_silence_trimmed/p360/p360_022_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "a6796baa111f76c1fa55559f24bc501c7e26c454542a76769a56d190ff32030f"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p360/p360_282_mic1.flac",
+        "sha256": "e1e84cce9e64dc71dc73e4f564f2220167fe6799dc679437b18b801e22b933cc"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.10366666666666635,
+        "duration_gap_mic2_s": 0.10366666666666635,
+        "relative_rate_gap_mic1": 0.02570162824093346,
+        "relative_rate_gap_mic2": 0.02570162824093346
+      },
+      "speaker": "p360",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p360/p360_003.txt",
+          "sha256": "77e8e13dc0804676d926513a1a65983a9013e3ac6a49cd2a647628f49710b084",
+          "text": "Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.",
+          "utf8_bytes": 102
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p360/p360_022.txt",
+          "sha256": "845e0661ac472b99a91d5cab18bb76b85ff9f7a2d36408039f04e0bf8610d89e",
+          "text": "The actual primary rainbow observed is said to be the effect of super-imposition of a number of bows.",
+          "utf8_bytes": 101
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 6.7047083333333335,
+          "frames": 321826,
+          "path": "inputs/vctk/wav48_silence_trimmed/p361/p361_003_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "be7d3cc5ce1ec53b56658be95d2b74dcf3f3ca27ae4e36924202f4b1cd64e091"
+        },
+        "A_mic2": {
+          "duration_s": 6.7047083333333335,
+          "frames": 321826,
+          "path": "inputs/vctk/wav48_silence_trimmed/p361/p361_003_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "478e08ce9ca6b7dbe6dcfc2ece3614c9721c3514b1f50c325e419fd73c606a46"
+        },
+        "B_mic1": {
+          "duration_s": 6.6569375,
+          "frames": 319533,
+          "path": "inputs/vctk/wav48_silence_trimmed/p361/p361_022_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "6b06b0f5bf37705ff3b2cc3498ae2065d9c0422b339a2b4a02444b0637fb62c2"
+        },
+        "B_mic2": {
+          "duration_s": 6.6569375,
+          "frames": 319533,
+          "path": "inputs/vctk/wav48_silence_trimmed/p361/p361_022_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "536fdf5994edc9fe8e4df0e751097fb14d6387368f28ad0d0a634e222f86f8bb"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p361/p361_256_mic1.flac",
+        "sha256": "94041186b9f4f3fdfe9aa537570fbf4ddbaf8e1bc37d3a81579e03eb7365b2b7"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.04777083333333376,
+        "duration_gap_mic2_s": 0.04777083333333376,
+        "relative_rate_gap_mic1": 0.002701822848658884,
+        "relative_rate_gap_mic2": 0.002701822848658884
+      },
+      "speaker": "p361",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p361/p361_003.txt",
+          "sha256": "77e8e13dc0804676d926513a1a65983a9013e3ac6a49cd2a647628f49710b084",
+          "text": "Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.",
+          "utf8_bytes": 102
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p361/p361_022.txt",
+          "sha256": "845e0661ac472b99a91d5cab18bb76b85ff9f7a2d36408039f04e0bf8610d89e",
+          "text": "The actual primary rainbow observed is said to be the effect of super-imposition of a number of bows.",
+          "utf8_bytes": 101
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 4.465625,
+          "frames": 214350,
+          "path": "inputs/vctk/wav48_silence_trimmed/p362/p362_041_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "bfaca05b6bde0a392a03dbd33bb1fa2f9c90856d08a8573f1ff0ed98adea2f6b"
+        },
+        "A_mic2": {
+          "duration_s": 4.465625,
+          "frames": 214350,
+          "path": "inputs/vctk/wav48_silence_trimmed/p362/p362_041_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "c7ad16165f1152336f3b0a4945047ff340826a14c7511825cedbc923b0bd2497"
+        },
+        "B_mic1": {
+          "duration_s": 4.484375,
+          "frames": 215250,
+          "path": "inputs/vctk/wav48_silence_trimmed/p362/p362_194_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "8956233df8bfee29b515694f3c4c12aafdec08fa65d0105f328a83453bc58dba"
+        },
+        "B_mic2": {
+          "duration_s": 4.484375,
+          "frames": 215250,
+          "path": "inputs/vctk/wav48_silence_trimmed/p362/p362_194_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "9d4f203abd624e49af5c52fd3047356059b2fbda2177915625234e89174e3e0e"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p362/p362_175_mic1.flac",
+        "sha256": "2ec2c48f0a59399bc41124b4c4dd04cbcf70cc1e03f8570a432a3ad9bb3c9dd6"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.018749999999999822,
+        "duration_gap_mic2_s": 0.018749999999999822,
+        "relative_rate_gap_mic1": 0.020718511037368242,
+        "relative_rate_gap_mic2": 0.020718511037368242
+      },
+      "speaker": "p362",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p362/p362_041.txt",
+          "sha256": "22e5ad0945e6564ea22090df1d0158b936863d9358106042f979971ceff6b311",
+          "text": "As agreed, the prime minister was driven to Westminster Hall.",
+          "utf8_bytes": 61
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p362/p362_194.txt",
+          "sha256": "f966fdceee16bc1129958354e65649599abfecbeed2ad6dcc4b4e6f18fcfcc62",
+          "text": "Last year, it was won by Jack McConnell, the first minister.",
+          "utf8_bytes": 60
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 5.2221875,
+          "frames": 250665,
+          "path": "inputs/vctk/wav48_silence_trimmed/p363/p363_006_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "b9c8f4cfbccc6919aaf241e5c9c0eef5bac12465feae2e233e28938729de64ac"
+        },
+        "A_mic2": {
+          "duration_s": 5.2221875,
+          "frames": 250665,
+          "path": "inputs/vctk/wav48_silence_trimmed/p363/p363_006_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "d55a4dc0989b055bb692e436335ef8bb1d01dbd5bb29a8c2703be18bd1dee46d"
+        },
+        "B_mic1": {
+          "duration_s": 5.3341875,
+          "frames": 256041,
+          "path": "inputs/vctk/wav48_silence_trimmed/p363/p363_018_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "c738aff3a5f0b3c13003d6fb9bf66699f77d8d127c6d20a11429ddb1aeec95ba"
+        },
+        "B_mic2": {
+          "duration_s": 5.3341875,
+          "frames": 256041,
+          "path": "inputs/vctk/wav48_silence_trimmed/p363/p363_018_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "3c3b71697a4f5f19b43e52f80e9252069bf9f42fb20d5f7f61a2361c47cfbd88"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p363/p363_193_mic1.flac",
+        "sha256": "87b75de719f2a83b316b8a56a449e6ec99eec47185e8ec3d5379d33d082745dc"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.11199999999999921,
+        "duration_gap_mic2_s": 0.11199999999999921,
+        "relative_rate_gap_mic1": 0.012681180148274494,
+        "relative_rate_gap_mic2": 0.012681180148274494
+      },
+      "speaker": "p363",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p363/p363_006.txt",
+          "sha256": "e3613e64600de1aba2be8fb3b18188fd2d6f4098659dcbcab32fba9d8ccfecb3",
+          "text": "When the sunlight strikes raindrops in the air, they act as a prism and form a rainbow.",
+          "utf8_bytes": 87
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p363/p363_018.txt",
+          "sha256": "968a7af7150e0e6ce1c35a0d055a95aabbb1ed1c78a7428fe635c242316b9b58",
+          "text": "Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain.",
+          "utf8_bytes": 90
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 5.9478125,
+          "frames": 285495,
+          "path": "inputs/vctk/wav48_silence_trimmed/p364/p364_004_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "7bda91fdff74dd43852d1543ac0fb1407ff4b1809d6276659fdc516b2e645597"
+        },
+        "A_mic2": {
+          "duration_s": 5.9478125,
+          "frames": 285495,
+          "path": "inputs/vctk/wav48_silence_trimmed/p364/p364_004_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "f61cbc92f5955a4aedb2aa78f7f96a0ea239788d82dc3469bfa256652a99a892"
+        },
+        "B_mic1": {
+          "duration_s": 5.913270833333334,
+          "frames": 283837,
+          "path": "inputs/vctk/wav48_silence_trimmed/p364/p364_007_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "086545203b124978ac5d6a4a1bea5b4e47440e9fb7357ad2cf480053e4357373"
+        },
+        "B_mic2": {
+          "duration_s": 5.913270833333334,
+          "frames": 283837,
+          "path": "inputs/vctk/wav48_silence_trimmed/p364/p364_007_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "92daf8989bdf8181f62e561e5254d2c9f7c8c13e4d15968a848848a48374c2c2"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p364/p364_124_mic1.flac",
+        "sha256": "de489d48e3c2393bd8c32ddc92d324d71d992d53218eb3a6be6947258de9b6bc"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.03454166666666669,
+        "duration_gap_mic2_s": 0.03454166666666669,
+        "relative_rate_gap_mic1": 0.020638739213419712,
+        "relative_rate_gap_mic2": 0.020638739213419712
+      },
+      "speaker": "p364",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p364/p364_004.txt",
+          "sha256": "6c07f3122d878ee854e8e5c1bbbdd0c702da9e00e31dea05b51dbc01cc1ee1fb",
+          "text": "We also need a small plastic snake and a big toy frog for the kids.",
+          "utf8_bytes": 67
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p364/p364_007.txt",
+          "sha256": "70ac8cbb6717a8dbba6fdd71f4b7e6a9bc7941e1ab52ee3023ed65b64fdf6dc9",
+          "text": "The rainbow is a division of white light into many beautiful colors.",
+          "utf8_bytes": 68
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 8.34,
+          "frames": 400320,
+          "path": "inputs/vctk/wav48_silence_trimmed/p374/p374_003_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "00e6e5dc91f26e15b1e0f009a53f27dd1f5d011811ad35c84cf5eadd3bec6396"
+        },
+        "A_mic2": {
+          "duration_s": 8.34,
+          "frames": 400320,
+          "path": "inputs/vctk/wav48_silence_trimmed/p374/p374_003_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "072335e206b6194aa5be1f9eeca929391955f5453b1dc828ce82d9a157b9fa6a"
+        },
+        "B_mic1": {
+          "duration_s": 8.346520833333333,
+          "frames": 400633,
+          "path": "inputs/vctk/wav48_silence_trimmed/p374/p374_005_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "639d80fa9216d38f47c89d4c80f4331ac7d8c5bf570eff83954dbbc592c45dc5"
+        },
+        "B_mic2": {
+          "duration_s": 8.346520833333333,
+          "frames": 400633,
+          "path": "inputs/vctk/wav48_silence_trimmed/p374/p374_005_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "21a992dd389fd3d33a104a149a6f944c0c11553b1bf5f02378b27b699c034927"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p374/p374_080_mic1.flac",
+        "sha256": "05727fdd8fee177230c407eba7db4793b68360c72b410d93afc70549c1c6a629"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.006520833333333087,
+        "duration_gap_mic2_s": 0.006520833333333087,
+        "relative_rate_gap_mic1": 0.00897454571286354,
+        "relative_rate_gap_mic2": 0.00897454571286354
+      },
+      "speaker": "p374",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p374/p374_003.txt",
+          "sha256": "77e8e13dc0804676d926513a1a65983a9013e3ac6a49cd2a647628f49710b084",
+          "text": "Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.",
+          "utf8_bytes": 102
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p374/p374_005.txt",
+          "sha256": "a902b48490d4862d2d1d2378760292ae29b47df45490af38d013c4684344cb43",
+          "text": "She can scoop these things into three red bags, and we will go meet her Wednesday at the train station.",
+          "utf8_bytes": 103
+        }
+      }
+    },
+    {
+      "audio": {
+        "A_mic1": {
+          "duration_s": 6.746125,
+          "frames": 323814,
+          "path": "inputs/vctk/wav48_silence_trimmed/p376/p376_003_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "74ca309bd0ee8c69f8a40318898f522133fac2961b129ece7988c75037ad7046"
+        },
+        "A_mic2": {
+          "duration_s": 6.746125,
+          "frames": 323814,
+          "path": "inputs/vctk/wav48_silence_trimmed/p376/p376_003_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "91e2d024147b29227f4e961a1f548d39a30383850a869569a62413f60f2a7f78"
+        },
+        "B_mic1": {
+          "duration_s": 6.7178125,
+          "frames": 322455,
+          "path": "inputs/vctk/wav48_silence_trimmed/p376/p376_022_mic1.flac",
+          "samplerate_hz": 48000,
+          "sha256": "bff24d8895b0294a3cd606ce4013b458537cf183ff5a1324d8a15f1d439fc015"
+        },
+        "B_mic2": {
+          "duration_s": 6.7178125,
+          "frames": 322455,
+          "path": "inputs/vctk/wav48_silence_trimmed/p376/p376_022_mic2.flac",
+          "samplerate_hz": 48000,
+          "sha256": "786b0b00157e0bec5496d2b6019f72726fc2b4e19cc3e710952503901cef1b17"
+        }
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p376/p376_165_mic1.flac",
+        "sha256": "5a6b46a1e39cce68d89a76bc304559bf7fa07508158ee22804bb98fe88008aea"
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.028312500000000185,
+        "duration_gap_mic2_s": 0.028312500000000185,
+        "relative_rate_gap_mic1": 0.005646596181476944,
+        "relative_rate_gap_mic2": 0.005646596181476944
+      },
+      "speaker": "p376",
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p376/p376_003.txt",
+          "sha256": "1cd6e7fd0b9e9ce6f23bbb1595a8789009f977b55c8b5c6691ad147384da356c",
+          "text": "Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.",
+          "utf8_bytes": 102
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p376/p376_022.txt",
+          "sha256": "67586066e90b4046b1d5234c03cceed7e116d6533fd1bbe14b97767ec3ae82e3",
+          "text": "The actual primary rainbow observed is said to be the effect of super-imposition of a number of bows.",
+          "utf8_bytes": 101
+        }
+      }
+    }
+  ]
+}

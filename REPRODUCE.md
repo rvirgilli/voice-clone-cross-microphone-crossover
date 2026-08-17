@@ -13,12 +13,15 @@ For individual checks:
 
 ```bash
 uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/verify_exp205_package.py
+uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/verify_selection_provenance.py
+uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/verify_public_history.py
 uv run --frozen python paper/F2/check_numbers.py
 uv run --frozen python paper/F2/mutation_test.py
 ```
 
-Expected final lines are `PASS` from the portable package, `147 checks: PASS`
-from the paper checker, and `UNCAUGHT: 0  INVALID: 0` from mutation testing.
+Expected final lines are `PASS` from both the result and selection packages,
+`PASS` from the paper checker, and `UNCAUGHT: 0  INVALID: 0` from mutation
+testing.
 
 ## Level 2 — post-result sensitivities and figure
 
@@ -44,6 +47,20 @@ outside this repository.
 The public package retains the original result trust roots while using logical
 paths and environment variables in its released source. A new inference run is
 a new execution with new hashes; it must not be presented as the sealed run.
+The runnable source directory contains the logical `selection-manifest.json`,
+`LICENSES.md`, and `run.sh` names expected by the builder and runner. From that
+directory, after configuring every `EXP205_*` path described in `DATA.md`:
+
+```bash
+uv run python build_execution_config.py --out execution-config.json
+uv run python verify_pins.py --config execution-config.json
+sha256sum execution-config.json
+bash run.sh THE_PRINTED_64_HEX_SHA256
+```
+
+This full command regenerates and scores 3,456 clones and is intentionally not
+part of the CPU-only release gate. Use a writable fast work volume for
+`EXP205_RUN`; never write generated audio into this Git checkout.
 
 ## Manuscript build
 

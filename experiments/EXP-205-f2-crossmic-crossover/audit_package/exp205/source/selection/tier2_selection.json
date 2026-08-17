@@ -1,0 +1,203 @@
+{
+ "n_speakers": 24,
+ "tier1_speakers_excluded": 30,
+ "dose_low_mean": 0.1762,
+ "dose_high_mean": 0.4216,
+ "contrast_mean": 0.2453,
+ "duration_gap_mean_s": 0.047,
+ "duration_gap_max_s": 0.452,
+ "per_speaker": [
+  {
+   "spk": "p262",
+   "dose_low": 0.1789,
+   "dose_high": 0.4307,
+   "dur_gap_s": 0.009,
+   "dur_low_s": 4.97,
+   "dur_high_s": 4.96
+  },
+  {
+   "spk": "p263",
+   "dose_low": 0.1681,
+   "dose_high": 0.4162,
+   "dur_gap_s": 0.001,
+   "dur_low_s": 4.5,
+   "dur_high_s": 4.5
+  },
+  {
+   "spk": "p264",
+   "dose_low": 0.1953,
+   "dose_high": 0.4227,
+   "dur_gap_s": 0.063,
+   "dur_low_s": 7.13,
+   "dur_high_s": 7.19
+  },
+  {
+   "spk": "p265",
+   "dose_low": 0.1949,
+   "dose_high": 0.3819,
+   "dur_gap_s": 0.011,
+   "dur_low_s": 5.15,
+   "dur_high_s": 5.16
+  },
+  {
+   "spk": "p266",
+   "dose_low": 0.1834,
+   "dose_high": 0.4232,
+   "dur_gap_s": 0.026,
+   "dur_low_s": 4.28,
+   "dur_high_s": 4.25
+  },
+  {
+   "spk": "p268",
+   "dose_low": 0.166,
+   "dose_high": 0.3972,
+   "dur_gap_s": 0.036,
+   "dur_low_s": 5.23,
+   "dur_high_s": 5.26
+  },
+  {
+   "spk": "p269",
+   "dose_low": 0.1813,
+   "dose_high": 0.383,
+   "dur_gap_s": 0.157,
+   "dur_low_s": 4.38,
+   "dur_high_s": 4.53
+  },
+  {
+   "spk": "p270",
+   "dose_low": 0.1489,
+   "dose_high": 0.4077,
+   "dur_gap_s": 0.0,
+   "dur_low_s": 6.32,
+   "dur_high_s": 6.32
+  },
+  {
+   "spk": "p271",
+   "dose_low": 0.1881,
+   "dose_high": 0.3941,
+   "dur_gap_s": 0.038,
+   "dur_low_s": 4.55,
+   "dur_high_s": 4.58
+  },
+  {
+   "spk": "p285",
+   "dose_low": 0.1625,
+   "dose_high": 0.4038,
+   "dur_gap_s": 0.452,
+   "dur_low_s": 6.02,
+   "dur_high_s": 5.57
+  },
+  {
+   "spk": "p293",
+   "dose_low": 0.1758,
+   "dose_high": 0.4546,
+   "dur_gap_s": 0.023,
+   "dur_low_s": 5.31,
+   "dur_high_s": 5.29
+  },
+  {
+   "spk": "p298",
+   "dose_low": 0.1849,
+   "dose_high": 0.4737,
+   "dur_gap_s": 0.0,
+   "dur_low_s": 5.39,
+   "dur_high_s": 5.38
+  },
+  {
+   "spk": "p300",
+   "dose_low": 0.1903,
+   "dose_high": 0.3804,
+   "dur_gap_s": 0.0,
+   "dur_low_s": 4.56,
+   "dur_high_s": 4.56
+  },
+  {
+   "spk": "p301",
+   "dose_low": 0.1977,
+   "dose_high": 0.4637,
+   "dur_gap_s": 0.001,
+   "dur_low_s": 4.69,
+   "dur_high_s": 4.69
+  },
+  {
+   "spk": "p303",
+   "dose_low": 0.1987,
+   "dose_high": 0.4574,
+   "dur_gap_s": 0.007,
+   "dur_low_s": 5.07,
+   "dur_high_s": 5.07
+  },
+  {
+   "spk": "p306",
+   "dose_low": 0.1776,
+   "dose_high": 0.446,
+   "dur_gap_s": 0.001,
+   "dur_low_s": 5.34,
+   "dur_high_s": 5.33
+  },
+  {
+   "spk": "p307",
+   "dose_low": 0.1626,
+   "dose_high": 0.4102,
+   "dur_gap_s": 0.002,
+   "dur_low_s": 5.85,
+   "dur_high_s": 5.85
+  },
+  {
+   "spk": "p308",
+   "dose_low": 0.1376,
+   "dose_high": 0.4069,
+   "dur_gap_s": 0.002,
+   "dur_low_s": 5.19,
+   "dur_high_s": 5.18
+  },
+  {
+   "spk": "p310",
+   "dose_low": 0.1724,
+   "dose_high": 0.4651,
+   "dur_gap_s": 0.022,
+   "dur_low_s": 5.77,
+   "dur_high_s": 5.79
+  },
+  {
+   "spk": "p318",
+   "dose_low": 0.1632,
+   "dose_high": 0.413,
+   "dur_gap_s": 0.082,
+   "dur_low_s": 6.05,
+   "dur_high_s": 5.97
+  },
+  {
+   "spk": "p330",
+   "dose_low": 0.1876,
+   "dose_high": 0.4785,
+   "dur_gap_s": 0.024,
+   "dur_low_s": 4.76,
+   "dur_high_s": 4.78
+  },
+  {
+   "spk": "p341",
+   "dose_low": 0.1998,
+   "dose_high": 0.4266,
+   "dur_gap_s": 0.032,
+   "dur_low_s": 4.07,
+   "dur_high_s": 4.04
+  },
+  {
+   "spk": "p345",
+   "dose_low": 0.1881,
+   "dose_high": 0.4005,
+   "dur_gap_s": 0.128,
+   "dur_low_s": 6.36,
+   "dur_high_s": 6.24
+  },
+  {
+   "spk": "s5",
+   "dose_low": 0.1262,
+   "dose_high": 0.3812,
+   "dur_gap_s": 0.0,
+   "dur_low_s": 4.62,
+   "dur_high_s": 4.62
+  }
+ ]
+}

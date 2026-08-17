@@ -40,7 +40,7 @@ This is a transport/configuration defect.  It does not change the manifest,
 the census, audio, clone ledgers, embeddings, scores, statistical procedure,
 bars, random seed, or branch logic.
 
-## Recovery authorized by this amendment
+## Delimited recovery
 
 Run the already-pinned analyzer exactly once using
 `analysis-config-recovery.json`.  That file differs from the generated config
@@ -51,10 +51,10 @@ manifest, receipt, score table, complete census, and receipt contract before
 parsing scientific values.
 
 The recovery is CPU-only.  It must not rerun generation, feature extraction,
-or scoring.  Before execution, an independent read-only auditor must verify
-the exact diff, hashes, and that no scientific result has been used to choose
-this repair.  After execution, a separate result audit must independently
-authenticate and recompute the sealed result before anyone interprets it.
+or scoring. Before execution, read-only verification must check the exact diff,
+hashes, and that no scientific result was used to choose this repair. After
+execution, a separate recomputation must authenticate the sealed result before
+interpretation.
 
 For future campaigns, `score.py` should copy `config["manifest"]` verbatim
 when constructing its analysis config, with a regression test.  That source

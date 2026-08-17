@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Descriptive arm-balance and paired-capture integrity checks for EXP-205.
 
-This post-review analysis authenticates the portable score table and manifest,
+This post-result analysis authenticates the portable score table and manifest,
 then reports every arm-specific follow rate and verifies that each selected
 mic1/mic2 candidate pair has identical sample metadata.  It is descriptive,
 does not alter the frozen verdict, and performs no model inference.
