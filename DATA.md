@@ -29,13 +29,15 @@ rejected.
 The sealed execution records exact repository states, package versions,
 snapshot revisions, and file hashes for F5-TTS, XTTS-v2, CosyVoice2, Seed-VC,
 SpeechBrain ECAPA, and Microsoft WavLM. The complete licence inventory is at
-`LICENSES.md`.
+`LICENSES.md`; exact model-card/licence bytes and their hashes are in `licenses/`.
 Notably, the fixed readouts are pinned to:
 
 - `speechbrain/spkrec-ecapa-voxceleb`, revision
   `0f99f2d0ebe89ac095bcc5903c4dd8f72b367286`, Apache-2.0.
 - `microsoft/wavlm-base-plus-sv`, revision
-  `feb593a6c23c1cc3d9510425c29b0a14d2b07b1e`, MIT.
+  `feb593a6c23c1cc3d9510425c29b0a14d2b07b1e`. Its pinned model card points to
+  Microsoft UniSpeech's licence; the exact linked revision is CC BY-SA 3.0,
+  correcting the earlier MIT inventory label.
 
 Model weights are not committed. Never replace a pinned snapshot with a moving
 branch name when claiming reproduction of the sealed execution.

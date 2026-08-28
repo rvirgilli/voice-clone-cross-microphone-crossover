@@ -36,6 +36,16 @@ FORBIDDEN_RELEASE_SUFFIXES = {
     ".wav", ".flac", ".mp3", ".ogg", ".m4a", ".aac", ".opus",
     ".pt", ".pth", ".ckpt", ".safetensors", ".bin", ".zip", ".tar", ".gz", ".7z",
 }
+EXPECTED_LICENSE_SNAPSHOTS = {
+    "f5-model-card-84e5a410.md": "cf3354feaf4020527b3642b12a5a382de13d0af6bc99e8d37bee84425c1ca224",
+    "f5-cc-by-nc-4.0.txt": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0",
+    "xtts-v2-model-card-6c2b0d75.md": "1cfa85b3293f685b3a6537f8da3d94820fd111270e553589073885dea3facfb7",
+    "xtts-v2-cpml-1.0.0.txt": "190f6d7c19b8984f91b97712b94ce92d2b2e640fc677dacab966e955ece9d043",
+    "ecapa-model-card-0f99f2d0.md": "00f58c3cbd7a7510de9374080da0e82a4c4e8f4df567f7338fe6efe108be705a",
+    "apache-2.0.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "wavlm-model-card-feb593a6.md": "97f5513cde351b3adb4e182b60ec23154dadba7ca83e667ceace237177855b8e",
+    "wavlm-unispeech-cc-by-sa-3.0-6112826a.txt": "74295d561f60f770a4aa7525b71c0d119ec70422e9f5c601ee3c77e1b7822c91",
+}
 
 
 def sha256(path: Path) -> str:
@@ -95,6 +105,38 @@ def read_checksum_inventory() -> dict[str, str]:
     return records
 
 
+def verify_license_snapshots() -> int:
+    root = ROOT / "licenses"
+    manifest = json.loads((root / "SNAPSHOT-MANIFEST.json").read_text(encoding="utf-8"))
+    if manifest.get("schema") != "f2-license-snapshots-v1":
+        raise AssertionError("licence snapshot schema invalid")
+    records = manifest.get("files", [])
+    by_path = {record.get("path"): record for record in records}
+    if len(by_path) != len(records) or set(by_path) != set(EXPECTED_LICENSE_SNAPSHOTS):
+        raise AssertionError("licence snapshot census invalid")
+    actual = {path.name for path in root.iterdir() if path.is_file()}
+    if actual != set(EXPECTED_LICENSE_SNAPSHOTS) | {"SNAPSHOT-MANIFEST.json"}:
+        raise AssertionError("unlisted or missing licence snapshot")
+    for name, expected in EXPECTED_LICENSE_SNAPSHOTS.items():
+        record = by_path[name]
+        if record.get("sha256") != expected or sha256(root / name) != expected:
+            raise AssertionError(f"licence snapshot hash mismatch: {name}")
+        if not str(record.get("url", "")).startswith("https://"):
+            raise AssertionError(f"licence snapshot source is not HTTPS: {name}")
+    if "license: cc-by-nc-4.0" not in (root / "f5-model-card-84e5a410.md").read_text():
+        raise AssertionError("F5 model-card licence changed")
+    cpml = (root / "xtts-v2-cpml-1.0.0.txt").read_text()
+    if "only non-commercial use of a machine learning model and its outputs" not in cpml:
+        raise AssertionError("XTTS CPML output terms missing")
+    if "license: \"apache-2.0\"" not in (root / "ecapa-model-card-0f99f2d0.md").read_text():
+        raise AssertionError("ECAPA model-card licence changed")
+    if "Attribution-ShareAlike 3.0 Unported" not in (
+        root / "wavlm-unispeech-cc-by-sa-3.0-6112826a.txt"
+    ).read_text():
+        raise AssertionError("WavLM linked licence changed")
+    return len(records)
+
+
 def capture_census_sha256(speakers: list[dict]) -> tuple[str, int]:
     census = []
     for spk in speakers:
@@ -127,7 +169,8 @@ def main() -> int:
     for rel, digest in records.items():
         if sha256(ROOT / rel) != digest:
             raise AssertionError(f"checksum mismatch: {rel}")
-    checked = len(records)
+    checksum_count = len(records)
+    licence_snapshot_count = verify_license_snapshots()
 
     # Released files must not contain local machine paths.
     for name in ("trials.json", "generation_ledger.json", "generation_config.json",
@@ -140,6 +183,18 @@ def main() -> int:
     manifest = load("trials.json")
     selection_manifest = load("selection_manifest.json")
     receipt = load("generation_ledger.json")
+    antecedent = load("antecedent_seed_crossover.json")
+    old = antecedent.get("POOLED", {})
+    if (
+        old.get("follow_rate") != 0.806
+        or old.get("ci95") != [0.757, 0.854]
+        or old.get("bar_point_at_least") != 0.90
+        or old.get("VERDICT") != "AMBIGUOUS"
+        or old.get("n_conjuncts_declared") != 3
+        or old.get("n_conjuncts_evaluated") != 3
+        or [item.get("passed") for item in old.get("conjuncts", [])] != [False, True, False]
+    ):
+        raise AssertionError("antecedent EXP-204 conjunctive correction missing or invalid")
     if result["status"] != "SCIENTIFIC_RESULT" or manifest["counts"]["speakers"] != 54:
         raise AssertionError("result/manifest scope invalid")
     speakers = result["counts"]["speaker_ids"]
@@ -316,7 +371,13 @@ def main() -> int:
         "channel injection maximum": "at most $.000000026$",
         "channel byte result": "no pair is byte-identical",
         "duplicate tolerance boundary": "not a universal perceptual threshold",
-        "artifact locator": "github.com/rvirgilli/voice-clone-cross-microphone-crossover",
+        "artifact locator": "github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027",
+        "known-positive triage scope": "known-positive two-recording set for human provenance review",
+        "no arbitrary presence decision": "cannot decide whether an arbitrary queried recording was present",
+        "prosody-cloning positioning": "\\cite{prosodyclone2022}",
+        "source-voiceprint positioning": "\\cite{sourcevoiceprint2023}",
+        "rank-disclosure positioning": "\\cite{rankdisclosure2026,sterns2026}",
+        "prior-intervention distinction": "None intervenes on which of two same-speaker recording events conditions a clone",
         "open-set boundary": "neither identifies the carrier nor solves open-set recording-presence detection",
     }
     for label, phrase in required_manuscript.items():
@@ -330,8 +391,11 @@ def main() -> int:
     present = [phrase for phrase in retired_claims if phrase in tex_raw]
     if present:
         raise AssertionError(f"retired manuscript claims restored: {present}")
-    print(f"PASS — {checked} files match their checksums; census, generation ledger, "
-          f"statistics, channel control and frozen result all verify")
+    print(
+        f"PASS — {checksum_count} payload files match their checksums; "
+        f"{licence_snapshot_count} licence snapshots authenticate; census, generation ledger, "
+        f"statistics, channel control and frozen result all verify"
+    )
     return 0
 
 

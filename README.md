@@ -18,6 +18,7 @@ Closed-set attribution is strong; open-set presence verification is not.
 | `paper/` | manuscript, LaTeX source, bibliography, figures |
 | `data/` | score table, trial roster, generation ledger and configs, results |
 | `code/` | generation, scoring, analysis, sensitivity checks, tests |
+| `licenses/` | exact pinned model-card/licence snapshots and their hash manifest |
 | `PREREGISTRATION.md` | the two registered plans and their deviations |
 | `SCOPE.md` | what is claimed, and the boundaries it does not cross |
 | `DATA.md` | data, model and licence boundaries |
@@ -36,7 +37,8 @@ This treats `data/checksums.sha256` as the explicit root of trust, requires it t
 enumerate every other release payload file exactly once, then recomputes the 3,456-row
 score census, follow rates and 100,000-draw bootstrap intervals, generation ledger,
 54 selected A/B pairs, and microphone-channel control. It rejects unlisted payloads,
-symlinks, audio, model weights and archives. It runs on CPU and does not generate or
+symlinks, audio, model weights and archives, and authenticates eight pinned
+model-card/licence snapshots including XTTS's output terms. It runs on CPU and does not generate or
 score audio.
 
 With a LaTeX toolchain installed, `uv run --frozen python code/verify_manuscript.py`

@@ -22,6 +22,7 @@ every other release payload file exactly once, and then recomputes from
 - the generation ledger, covering all 3,456 clones;
 - the microphone-channel control, which confirms that the two captures of each
   event are distinct signals rather than copies of one another;
+- all eight pinned model-card/licence snapshots and XTTS's explicit output terms;
 - the registered decision rule applied to those statistics.
 
 The inventory check rejects unlisted payloads, symlinks, audio, model weights and
@@ -82,3 +83,15 @@ with the released PDF.
 
 Source and generated speech, model weights, and large environments. Everything
 the paper asserts can be re-derived from the released score-level files.
+
+## Refresh licensing evidence (network, not needed for verification)
+
+`licenses/` already contains the authenticated snapshots. To prove that the
+pinned upstream URLs still return the exact recorded bytes:
+
+```bash
+python3 code/fetch_license_snapshots.py
+```
+
+The fetcher refuses upstream drift before replacing any snapshot. Offline
+verification never downloads anything.

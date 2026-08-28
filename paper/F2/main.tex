@@ -95,11 +95,14 @@ path.
 
 \textbf{Prompt transfer and nuisance information.} Prompt-conditioned systems
 preserve prosody and environment \cite{restyletts2026,noiserobust2024,icl2026};
-prompt cosine is also a standard synthesis metric \cite{simo}. Concurrent work
-separates prompt environment from identity \cite{promptenv2026}. These results
-motivate recording-level leakage, but do not make it identifiable: the same
-speaker and session can support both candidates. Our design targets the
-\emph{choice between A and B}, not a generic clone--prompt resemblance.
+prompt cosine is also a standard synthesis metric \cite{simo}; exact prosody cloning
+transfers reference prosody \cite{prosodyclone2022}. Source-voiceprint tracing recovers
+identity from converted audio \cite{sourcevoiceprint2023}, while rank/local-disclosure
+work treats linkage without global thresholds \cite{rankdisclosure2026,sterns2026}.
+None intervenes on which of two same-speaker recording events conditions a clone.
+Concurrent work separates prompt environment from identity \cite{promptenv2026}.
+These works motivate recording-level leakage but do not identify the chosen event:
+we target \emph{A versus B}, not generic clone--prompt resemblance.
 
 \section{Cross-microphone crossover}
 \subsection{Task and design}
@@ -125,11 +128,9 @@ an encoder's unconditional preference for A cannot create a positive effect.
 The predeclared direction reversal swaps microphones (mic2 prompt, mic1 candidates)
 and cannot rescue a failed primary direction.
 
-More explicitly, define $d_X=s(c_X,A)-s(c_X,B)$ after replacing candidates by
-the opposite-microphone captures. A system/text cell contributes
-$\{I[d_A>0]+I[d_B<0]\}/2$. A clone-independent bias toward A makes both
-$d_A,d_B$ positive and contributes exactly chance, rather than masquerading as
-seed following. Ties inherit weight $1/2$ inside each indicator.
+With $d_X=s(c_X,A)-s(c_X,B)$ on opposite-microphone candidates, a cell contributes
+$\{I[d_A>0]+I[d_B<0]\}/2$. Clone-independent candidate bias therefore yields
+chance; ties receive $1/2$.
 
 The threat model is deliberately narrow: the analyst has a clone and two
 known, same-speaker candidate recordings, exactly one of which supplied the
@@ -219,29 +220,21 @@ author-declared large-effect criterion, not a deployment-utility claim. The
 direction-reversal headline is permitted only if both reverse ECAPA and WavLM
 lower endpoints exceed .50. Diagnostics cannot rescue any conjunct.
 
-Before outcomes, the manifest, analyzer, verdict truth table and execution
-config were frozen and independently audited. The analyzer authenticates the
-complete clone/candidate census before parsing similarities. After scoring, a
-transport-only manifest-object mismatch stopped fail-closed; its one-field
-repair was recorded and independently approved before the result was opened.
-A second read-only auditor rehashed 3,456 clones and ledgers plus 216 candidates
-and independently reproduced every result field to $2\times10^{-15}$.
-The released artifact contains sanitized scores, manifest, receipt, analysis
-source (three files carry portability adaptations), the registered plans and an
-independent verifier that
-reconstructs the 3,456-row identity grid, 100,000 bootstraps and verdict without
-audio or model weights. Its NumPy dependency and execution command are pinned.
+Before outcomes, the manifest, analyzer, verdict and config were frozen and
+audited. A transport-only one-field repair was recorded and independently approved
+before the result was opened. A second read-only audit rehashed 3,456 clones and
+ledgers plus 216 candidates and independently reproduced every result field to
+$2\times10^{-15}$. The released artifact contains sanitized scores and an independent
+verifier that reconstructs the 3,456-row identity grid, bootstrap and verdict
+without audio or model weights; its execution environment is pinned.
 
 \section{Results}
 \subsection{The conditioning event survives pickup change}
 Table~\ref{tab:pooled} reports the predeclared directions. ECAPA attributes the
-conditioning event in 89.6\% of primary comparisons and 90.7\% in reverse. The
-primary point and lower endpoint meet the .80/.70 pre-registered large-effect
-criterion; the reverse ECAPA interval is wholly above chance. WavLM is much weaker
-but directionally consistent: 62.2\% and 62.0\%, with both intervals wholly
-above chance. Therefore E, O, R and both reverse components pass. Under the
-frozen rule, the ECAPA effect is large, WavLM provides cross-encoder
-corroboration, and the direction persists when the microphone roles are swapped.
+conditioning event in 89.6\% of primary comparisons and 90.7\% in reverse,
+meeting the .80/.70 primary bar. WavLM is much weaker but directionally consistent
+at 62.2\%/62.0\%. E, O, R and both reverse components pass: the ECAPA effect meets
+the frozen large-effect rule and WavLM corroborates its direction.
 
 \begin{table}[t]
 \centering
@@ -289,12 +282,9 @@ the dashed line is chance. P/R denote primary/reverse directions.}
 \label{fig:speakers}
 \end{figure}
 
-The same-microphone diagnostics are only modestly higher, so the signal is not
-created by an identical pickup path. This does not prove microphone
-invariance: both microphones observe the same event, and device-specific
-transformations can interact differently with the two encoders. It does show
-that exact microphone identity shared between prompt and candidate is
-unnecessary.
+Same-microphone diagnostics are only modestly higher: exact pickup identity is
+unnecessary, though paired captures of one event do not establish microphone
+invariance.
 
 Figure~\ref{fig:speakers} exposes the heterogeneity hidden by pooled points.
 All 54 primary ECAPA speaker means exceed .50; in reverse, 53 exceed it and one
@@ -305,12 +295,9 @@ heterogeneity rather than treating 1,728 comparisons per direction as
 independent.
 
 \subsection{Breadth across fixed systems}
-Table~\ref{tab:systems} gives descriptive system points. ECAPA exceeds .82 for
-every system and direction; WavLM ranges from .572 to .671. The pooled claim is
-not obtained by selecting the best generator, and the weaker XTTS-v2 cells
-remain visible. Because systems were fixed rather than sampled and no
-simultaneous per-system intervals were planned, we claim breadth of the tested
-design, not a universal system effect.
+Table~\ref{tab:systems} gives descriptive system points: ECAPA exceeds .82 throughout;
+WavLM spans .572--.671, with weaker XTTS-v2 cells visible. Fixed systems and no
+simultaneous per-system intervals license breadth only across this tested design.
 
 \begin{table}[t]
 \centering
@@ -329,21 +316,16 @@ WavLM, R & .657 & .574 & .657 & .593 \\
 \end{tabular}}
 \end{table}
 
-The ECAPA--WavLM gap is scientifically useful. It rules out a claim that every
-speaker representation exposes recording identity at near-ceiling magnitude;
-yet WavLM's corroborating lower endpoints show the effect is not specific to the
-ECAPA weights. Both are speaker-verification embeddings, so this does not
-exclude a cue shared by that representation class. Continuous margins are positive in the same directions,
-but were diagnostic and do not change the binary result.
+The ECAPA--WavLM gap rules out near-ceiling magnitude for every representation;
+WavLM's positive lower endpoints still oppose ECAPA-weight specificity. Both are
+speaker-verification embeddings, so a shared cue remains possible. Positive
+continuous margins are diagnostic only.
 
 \subsection{Post-review sensitivity checks}
-An ancestry audit found that the evaluation complement inherits ECAPA-informed
-development selection. Table~\ref{tab:ancestry} reports a post-hoc descriptive
-stratification by the earlier Tier~1 gate. The direction persists among both
-the 36 pass-but-not-retained and 15 fail speakers. Three roster speakers were
-absent from that gate record and are kept separate, not assigned a status.
-This check quantifies the inherited composition threat; it cannot reconstruct
-an embedding-naive sample or alter the frozen pooled verdict.
+Table~\ref{tab:ancestry} stratifies the inherited ECAPA-informed complement by the
+earlier Tier~1 gate. Direction persists among 36 pass-but-not-retained and 15 fail
+speakers; three absent from that record remain separate. This post-hoc check cannot
+create an embedding-naive sample or alter the pooled verdict.
 
 \begin{table}[t]
 \centering
@@ -391,8 +373,9 @@ two-alternative question known to contain the source. In our earlier paired
 present/absent evaluation, normalized minDCF at a .01 prior was .79--1.00
 against 1.00 for reject-all; only two of four systems had intervals excluding
 reject-all. A score can order A above B while lacking a stable global threshold.
-We therefore propose investigative triage, not an automated accusation or a
-claim that a queried recording is absent.
+We therefore limit investigative triage to prioritizing candidates inside a
+known-positive two-recording set for human provenance review; it cannot decide
+whether an arbitrary queried recording was present and is not an automated accusation.
 
 \textbf{The carrier is unidentified.} Opposite microphones exclude an exact
 waveform and shared device fingerprint, while A/B balancing excludes a fixed
@@ -412,7 +395,7 @@ Natural speech, noisy field recordings, other pickup paths, more than two
 candidates and open-set search remain untested.
 
 \textbf{Release and misuse.} Code, score-level data, provenance metadata and
-aggregate/per-speaker results are at \url{https://github.com/rvirgilli/voice-clone-cross-microphone-crossover}; model weights, source audio and
+aggregate/per-speaker results are at \url{https://github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027}; model weights, source audio and
 playable impersonations are not redistributed. Recording attribution can assist provenance audits and
 also deanonymize speakers; licensing alone does not settle consent.
 

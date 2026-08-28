@@ -7,7 +7,14 @@
   ],
   "n_trials": 240,
   "n_speakers": 30,
-  "verdict": "CONFIRM"
+  "VERDICT": "AMBIGUOUS",
+  "n_conjuncts_declared": 3,
+  "n_conjuncts_evaluated": 3,
+  "conjuncts": [
+   {"conjunct": "point estimate >= .90", "passed": false},
+   {"conjunct": "speaker-clustered CI lower bound > .70", "passed": true},
+   {"conjunct": "speaker-clustered CI includes .50 null", "passed": false}
+  ]
  },
  "xtts": {
   "follow_rate": 0.683,
@@ -17,7 +24,14 @@
   ],
   "n_trials": 240,
   "n_speakers": 30,
-  "verdict": "AMBIGUOUS"
+  "VERDICT": "AMBIGUOUS",
+  "n_conjuncts_declared": 3,
+  "n_conjuncts_evaluated": 3,
+  "conjuncts": [
+   {"conjunct": "point estimate >= .90", "passed": false},
+   {"conjunct": "speaker-clustered CI lower bound > .70", "passed": false},
+   {"conjunct": "speaker-clustered CI includes .50 null", "passed": false}
+  ]
  },
  "cosy": {
   "follow_rate": 0.846,
@@ -27,7 +41,14 @@
   ],
   "n_trials": 240,
   "n_speakers": 30,
-  "verdict": "CONFIRM"
+  "VERDICT": "AMBIGUOUS",
+  "n_conjuncts_declared": 3,
+  "n_conjuncts_evaluated": 3,
+  "conjuncts": [
+   {"conjunct": "point estimate >= .90", "passed": false},
+   {"conjunct": "speaker-clustered CI lower bound > .70", "passed": true},
+   {"conjunct": "speaker-clustered CI includes .50 null", "passed": false}
+  ]
  },
  "seedvc": {
   "follow_rate": 0.808,
@@ -37,7 +58,14 @@
   ],
   "n_trials": 240,
   "n_speakers": 30,
-  "verdict": "CONFIRM"
+  "VERDICT": "AMBIGUOUS",
+  "n_conjuncts_declared": 3,
+  "n_conjuncts_evaluated": 3,
+  "conjuncts": [
+   {"conjunct": "point estimate >= .90", "passed": false},
+   {"conjunct": "speaker-clustered CI lower bound > .70", "passed": true},
+   {"conjunct": "speaker-clustered CI includes .50 null", "passed": false}
+  ]
  },
  "POOLED": {
   "follow_rate": 0.806,
@@ -48,12 +76,20 @@
   "n_trials": 960,
   "n_speakers": 30,
   "null": 0.5,
+  "bar_point_at_least": 0.9,
   "bar_ci_lower_above": 0.7,
-  "VERDICT": "CONFIRM",
   "gate_conditioning": {
    "pairs_considered": 105,
    "pairs_rejected": 16,
    "note": "the claim is conditioned on seed pairs being distinguishable; reference population matched to the candidate population"
-  }
+  },
+  "VERDICT": "AMBIGUOUS",
+  "n_conjuncts_declared": 3,
+  "n_conjuncts_evaluated": 3,
+  "conjuncts": [
+   {"conjunct": "point estimate >= .90", "passed": false},
+   {"conjunct": "speaker-clustered CI lower bound > .70", "passed": true},
+   {"conjunct": "speaker-clustered CI includes .50 null", "passed": false}
+  ]
  }
 }
