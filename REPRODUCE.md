@@ -12,7 +12,8 @@ uv sync --frozen
 uv run --frozen python code/verify.py
 ```
 
-Checks every released file against `data/checksums.sha256`, then recomputes from
+Treats `data/checksums.sha256` as the explicit root of trust, requires it to list
+every other release payload file exactly once, and then recomputes from
 `data/scores.tsv`:
 
 - the 3,456-row score census and the 54-speaker × 2-event roster;
@@ -22,6 +23,10 @@ Checks every released file against `data/checksums.sha256`, then recomputes from
 - the microphone-channel control, which confirms that the two captures of each
   event are distinct signals rather than copies of one another;
 - the registered decision rule applied to those statistics.
+
+The inventory check rejects unlisted payloads, symlinks, audio, model weights and
+archives. Runtime caches and reproducible LaTeX intermediates are outside the release
+surface.
 
 ## 2. Run the tests (CPU, seconds)
 
@@ -60,6 +65,18 @@ uv run --frozen --with soundfile python code/channel_distinctness.py
 Not required to check any number in the paper. It needs the third-party cloning
 systems and the pinned model revisions recorded in `data/generation_config.json`
 and described in `DATA.md`, plus a local copy of VCTK. See `code/run.sh`.
+
+## 6. Verify manuscript source/PDF coherence (CPU, seconds)
+
+With `pdflatex`, `bibtex`, `pdfinfo` and `pdftotext` installed:
+
+```bash
+uv run --frozen python code/verify_manuscript.py
+```
+
+This builds in a temporary directory, requires exactly four pages, rejects unresolved
+references/citations and overfull boxes, and compares the clean build's extracted text
+with the released PDF.
 
 ## What is not redistributed
 

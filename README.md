@@ -32,10 +32,16 @@ uv sync --frozen
 uv run --frozen python code/verify.py
 ```
 
-This checks every released file against `data/checksums.sha256`, then recomputes
-the 3,456-row score census, the follow rates and their 100,000-draw bootstrap
-intervals, the generation ledger, the 54 selected A/B pairs, and the
-microphone-channel control. It runs on CPU and does not generate or score audio.
+This treats `data/checksums.sha256` as the explicit root of trust, requires it to
+enumerate every other release payload file exactly once, then recomputes the 3,456-row
+score census, follow rates and 100,000-draw bootstrap intervals, generation ledger,
+54 selected A/B pairs, and microphone-channel control. It rejects unlisted payloads,
+symlinks, audio, model weights and archives. It runs on CPU and does not generate or
+score audio.
+
+With a LaTeX toolchain installed, `uv run --frozen python code/verify_manuscript.py`
+also performs a clean four-page build and checks that the released PDF text matches
+the released source.
 
 Regenerating the clones themselves needs the third-party models and pinned
 revisions listed in `DATA.md`, and is not required to check the paper.

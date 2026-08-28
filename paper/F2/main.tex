@@ -2,7 +2,7 @@
 % Build with ./build.sh. Numerical assertions are checked by check_numbers.py.
 \documentclass[10pt,twocolumn,letterpaper]{article}
 \IfFileExists{spconf.sty}{\usepackage{spconf}\newcommand{\usingspconf}{}}{}
-\usepackage{amsmath,amssymb,graphicx,booktabs,multirow}
+\usepackage{amsmath,amssymb,graphicx,booktabs,multirow,url}
 \setlength{\textfloatsep}{3pt plus 2pt minus 2pt}
 \setlength{\floatsep}{3pt plus 2pt minus 2pt}
 \setlength{\intextsep}{3pt plus 2pt minus 2pt}
@@ -38,8 +38,8 @@ cannot decide the label. With fixed speaker-verification readouts, the
 mic1$\rightarrow$mic2 follow rate is .896 [.869,.921] for ECAPA and .622
 [.593,.652] for WavLM; the predeclared reverse direction gives .907 [.881,.931]
 and .620 [.589,.653]. The ECAPA result meets the pre-registered large-effect
-criterion; WavLM corroborates its direction, which is reproduced after
-reversing microphones. This establishes closed-set attribution between these
+criterion; WavLM corroborates its direction, which persists when the
+microphone roles are reversed. This establishes closed-set attribution between these
 two fixed pickup paths, not the carrier mechanism or open-set presence
 detection.
 \end{abstract}
@@ -105,14 +105,16 @@ speaker and session can support both candidates. Our design targets the
 \subsection{Task and design}
 For speaker $s$, let recording events $A$ and $B$ each have paired VCTK
 mic1/mic2 captures \cite{vctk} --- a DPA 4035 omni and a Sennheiser MKH 800.
-That the two are genuinely distinct signals is the
-design's load-bearing assumption, so we tested it rather than assume it. Raw
-correlation does not settle it in either direction: a delayed copy scores near
-zero, while genuine pairs reach $.92$ median once aligned. We therefore report the
-residual after optimal gain and delay alignment, which a copy under any of those
-transforms drives to zero. Over the 108 event captures the residual is $.38$ median
-and never below $.21$, against $.000$--$.001$ for injected exact, gain-scaled and
-delayed copies; no pair is byte-identical. A clone $c_{A,m1}$ is conditioned on event A's
+That the two are genuinely distinct signals is the design's load-bearing
+assumption, so we tested it rather than assume it. Raw correlation does not
+settle it in either direction: a delayed copy can score near zero, while genuine
+pairs reach $.92$ median once delay-aligned. We therefore use the normalized
+least-squares residual after optimal scalar gain and a $\pm50$\,ms zero-padded
+delay; its $.00001$ duplicate bar is a numerical tolerance for these transforms,
+not a universal perceptual threshold. Across all 108 event captures the residual
+is $.38$ median (range $.21$--$.70$). Exact, gain-scaled and delayed injections on
+every source, including both delay-window boundaries, are at most $.000000026$;
+no pair is byte-identical. A clone $c_{A,m1}$ is conditioned on event A's
 mic1 capture. The primary comparison asks whether a fixed encoder $f$ gives
 \begin{equation}
   I\!\left[\cos(f(c_{A,m1}),f(A_{m2}))>
@@ -224,8 +226,9 @@ transport-only manifest-object mismatch stopped fail-closed; its one-field
 repair was recorded and independently approved before the result was opened.
 A second read-only auditor rehashed 3,456 clones and ledgers plus 216 candidates
 and independently reproduced every result field to $2\times10^{-15}$.
-The prepared portable artifact contains sanitized scores, manifest, receipt,
-exact frozen source bytes, amendments and an independent verifier that
+The released artifact contains sanitized scores, manifest, receipt, analysis
+source (three files carry portability adaptations), the registered plans and an
+independent verifier that
 reconstructs the 3,456-row identity grid, 100,000 bootstraps and verdict without
 audio or model weights. Its NumPy dependency and execution command are pinned.
 
@@ -238,7 +241,7 @@ criterion; the reverse ECAPA interval is wholly above chance. WavLM is much weak
 but directionally consistent: 62.2\% and 62.0\%, with both intervals wholly
 above chance. Therefore E, O, R and both reverse components pass. Under the
 frozen rule, the ECAPA effect is large, WavLM provides cross-encoder
-corroboration, and the direction is reproduced after swapping microphones.
+corroboration, and the direction persists when the microphone roles are swapped.
 
 \begin{table}[t]
 \centering
@@ -328,8 +331,9 @@ WavLM, R & .657 & .574 & .657 & .593 \\
 
 The ECAPA--WavLM gap is scientifically useful. It rules out a claim that every
 speaker representation exposes recording identity at near-ceiling magnitude;
-yet WavLM's corroborating lower endpoints rule out an ECAPA-only artifact under
-the frozen criterion. Continuous margins are positive in the same directions,
+yet WavLM's corroborating lower endpoints show the effect is not specific to the
+ECAPA weights. Both are speaker-verification embeddings, so this does not
+exclude a cue shared by that representation class. Continuous margins are positive in the same directions,
 but were diagnostic and do not change the binary result.
 
 \subsection{Post-review sensitivity checks}
@@ -407,17 +411,17 @@ excluded. The intervals do not sample systems, texts or a speaker population.
 Natural speech, noisy field recordings, other pickup paths, more than two
 candidates and open-set search remain untested.
 
-\textbf{Release and misuse.} We will release code, hashes, provenance metadata,
-scores and aggregate/per-speaker results, but not model weights, source audio or
-playable impersonations. Recording attribution can assist provenance audits and
+\textbf{Release and misuse.} Code, score-level data, provenance metadata and
+aggregate/per-speaker results are at \url{https://github.com/rvirgilli/voice-clone-cross-microphone-crossover}; model weights, source audio and
+playable impersonations are not redistributed. Recording attribution can assist provenance audits and
 also deanonymize speakers; licensing alone does not settle consent.
 
 \section{Conclusion}
 In this fixed roster, a clone follows which same-speaker recording conditioned
 it when prompt and candidates use the two tested microphone paths. The effect
 meets the pre-registered large-effect criterion with ECAPA, is smaller but
-corroborated by WavLM, and is reproduced after reversing microphones while
-pooling equally over four fixed systems. This is a large closed-set signal
+corroborated by WavLM, and persists when the microphone roles are reversed,
+while pooling equally over four fixed systems. This is a large closed-set signal
 between two tested paths; it neither identifies the carrier nor solves open-set
 recording-presence detection.
 

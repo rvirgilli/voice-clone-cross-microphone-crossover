@@ -1,13 +1,15 @@
 {
- "schema": "exp205-posthoc-channel-distinctness-v2",
+ "schema": "exp205-posthoc-channel-distinctness-v3",
  "manifest_sha256": "4b879491f02badf252365aa4d2b3caa22402c04301c60ed5e02bd06d43f19b2d",
+ "frozen_manifest_sha256": "4b879491f02badf252365aa4d2b3caa22402c04301c60ed5e02bd06d43f19b2d",
+ "capture_census_sha256": "1b27f4c4b1473436812f11cbac17ae9f3f762c18f38369d3c3d61044c909975f",
  "status": "POST_HOC_DESCRIPTIVE_NO_VERDICT_CHANGE",
  "mic1": "DPA 4035 omni-directional microphone",
  "mic2": "Sennheiser MKH 800 condenser microphone",
  "n_speakers": 54,
  "n_event_captures": 108,
  "byte_identical_pairs": 0,
- "duplicate_bar_alignment_residual": 0.02,
+ "duplicate_bar_alignment_residual": 1e-05,
  "lag_window_ms": 50.0,
  "waveform_correlation_zero_lag": {
   "median": -0.0913,
@@ -16,7 +18,7 @@
  },
  "waveform_correlation_max_lag": {
   "median": 0.9239,
-  "min": 0.7178,
+  "min": 0.7177,
   "max": 0.9768
  },
  "residual_after_alignment": {
@@ -26,9 +28,28 @@
   "closest_pair": "p274/A"
  },
  "injection_controls": {
-  "exact_copy": 0.0,
-  "gain_scaled_copy": 0.0,
-  "shifted_copy_120": 0.000694
+  "n_source_captures": 108,
+  "tested_shift_samples": [
+   -2400,
+   -120,
+   -1,
+   1,
+   120,
+   2400
+  ],
+  "max_residual_by_transform": {
+   "exact_copy": 0.0,
+   "gain_scaled_copy": 2.11e-08,
+   "gain_scaled_shifted_copy_+2400": 2.58e-08,
+   "gain_scaled_shifted_copy_-2400": 2.11e-08,
+   "shifted_copy_+1": 0.0,
+   "shifted_copy_+120": 0.0,
+   "shifted_copy_+2400": 0.0,
+   "shifted_copy_-1": 0.0,
+   "shifted_copy_-120": 0.0,
+   "shifted_copy_-2400": 0.0
+  },
+  "max_residual": 2.58e-08
  },
  "rms_ratio": {
   "median": 0.863,

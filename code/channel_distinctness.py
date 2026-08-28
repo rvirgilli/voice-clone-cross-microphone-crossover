@@ -24,6 +24,7 @@ import hashlib
 import json
 import os
 import sys
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -37,11 +38,11 @@ EXPECTED_SPEAKERS = 54
 EXPECTED_EVENTS = ("A", "B")
 EXPECTED_PAIRS = EXPECTED_SPEAKERS * len(EXPECTED_EVENTS)
 LAG_MS = 50.0
-# A pair is a duplicate if the residual after optimal gain+delay alignment falls below this.
-# Measured separation on this roster: injected duplicates reach 0.000000 (exact), 0.000000
-# (gain x0.4) and 0.000981 (shift +120 samples); the closest real pair is 0.2141. The bar
-# sits ~20x above the worst injection and ~10x below the closest real pair.
-DUPLICATE_BAR = 0.02
+# This is a numerical-tolerance bar for the explicitly tested exact gain/delay transforms,
+# not a universal perceptual near-duplicate threshold.  Boundary-shift injections are run
+# on every source capture; the closest genuine pair is more than four orders above the bar.
+DUPLICATE_BAR = 1e-5
+FROZEN_MANIFEST_SHA256 = "4b879491f02badf252365aa4d2b3caa22402c04301c60ed5e02bd06d43f19b2d"
 
 
 def sha256(path):
@@ -52,39 +53,88 @@ def sha256(path):
     return h.hexdigest()
 
 
-def best_alignment(x, y, sr, lag_ms=LAG_MS):
-    """(max |normalised correlation| over +-lag_ms, residual after that alignment).
+def capture_census_sha256(speakers):
+    """Bind the measurement to the exact 108 manifest pairs without machine paths."""
+    census = []
+    for spk in speakers:
+        for event in EXPECTED_EVENTS:
+            audio = spk["audio"]
+            census.append({
+                "speaker": spk["speaker"],
+                "event": event,
+                "mic1_sha256": audio[f"{event}_mic1"]["sha256"],
+                "mic2_sha256": audio[f"{event}_mic2"]["sha256"],
+            })
+    payload = json.dumps(census, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
 
-    The correlation is gain- and shift-invariant; the residual is what separates a
-    different microphone from a transformed copy.
+
+def best_alignment(x, y, sr, lag_ms=LAG_MS):
+    """Return max projection, least-squares residual and lag over ``+-lag_ms``.
+
+    For lag d, ``shift(x)[t] = x[t-d]`` inside the signal and zero outside it.  The
+    denominator uses the norm of that zero-padded, truncated shift—not the norm of the
+    unshifted source.  This detail makes a real padded delay score zero even at the search
+    boundary.  The residual is the exact optimum of ``||y-g*shift(x)||/||y||`` over a
+    scalar gain g and the declared lag window.
     """
     n = min(len(x), len(y))
     a = np.asarray(x[:n], dtype=np.float64)
     b = np.asarray(y[:n], dtype=np.float64)
-    a -= a.mean()
-    b -= b.mean()
-    na, nb = np.linalg.norm(a), np.linalg.norm(b)
-    if na == 0 or nb == 0:
-        return float("nan")
-    lag = int(sr * lag_ms / 1000.0)
-    size = 1 << int(np.ceil(np.log2(2 * n)))
-    corr = np.fft.irfft(np.fft.rfft(a, size) * np.conj(np.fft.rfft(b, size)), size)
-    window = np.concatenate([corr[: lag + 1], corr[-lag:]]) if lag else corr[:1]
-    r = float(np.abs(window).max() / (na * nb))
-    return r, float(np.sqrt(max(0.0, 1.0 - r * r)))
+    if n < 2:
+        raise ValueError("alignment needs at least two samples")
+    max_lag = min(int(sr * lag_ms / 1000.0), n - 1)
+    size = 1 << int(np.ceil(np.log2(2 * n - 1)))
+    # ifft(fft(y)*conj(fft(x)))[d] = sum_t y[t] x[t-d]
+    corr = np.fft.irfft(np.fft.rfft(b, size) * np.conj(np.fft.rfft(a, size)), size)
+    lags = np.arange(-max_lag, max_lag + 1, dtype=np.int64)
+    dots = np.asarray([corr[d if d >= 0 else size + d] for d in lags])
+
+    prefix_energy = np.concatenate(([0.0], np.cumsum(a * a)))
+    shifted_energy = np.empty(lags.size, dtype=np.float64)
+    nonnegative = lags >= 0
+    shifted_energy[nonnegative] = prefix_energy[n - lags[nonnegative]]
+    shifted_energy[~nonnegative] = prefix_energy[n] - prefix_energy[-lags[~nonnegative]]
+    target_energy = float(np.dot(b, b))
+    tiny = np.finfo(np.float64).tiny
+    if target_energy <= tiny or not np.any(shifted_energy > tiny):
+        raise ValueError("alignment is undefined for a silent capture")
+    projection = np.abs(dots) / np.sqrt(np.maximum(shifted_energy * target_energy, tiny))
+    index = int(np.argmax(projection))
+    r = min(float(projection[index]), 1.0)  # clip floating overshoot for exact copies
+    return r, float(np.sqrt(max(0.0, 1.0 - r * r))), int(lags[index])
+
+
+def shifted_copy(x, lag):
+    """Zero-padded, non-wrapped shift with the same length as x."""
+    out = np.zeros_like(x)
+    if lag >= 0:
+        if lag < len(x):
+            out[lag:] = x[: len(x) - lag]
+    else:
+        offset = -lag
+        if offset < len(x):
+            out[: len(x) - offset] = x[offset:]
+    return out
 
 
 def injection_controls(x, sr):
-    """A6: the test must catch every transform class, checked on every run.
-
-    Injections are built from a real capture rather than synthetic noise: a wrapped shift
-    of white noise mismatches its wrapped tail completely, which understates detection.
-    A delayed copy is modelled by padding, which is what a real delay produces.
-    """
-    delayed = np.concatenate([np.zeros(120), x[:-120]])
-    return {"exact_copy": round(best_alignment(x, x.copy(), sr)[1], 6),
-            "gain_scaled_copy": round(best_alignment(x, 0.4 * x, sr)[1], 6),
-            "shifted_copy_120": round(best_alignment(x, delayed, sr)[1], 6)}
+    """A6 controls on one real source, including both search-window boundaries."""
+    limit = min(int(sr * LAG_MS / 1000.0), len(x) - 1)
+    shifts = sorted({-limit, -1, 1, limit} | {lag for lag in (-120, 120) if abs(lag) <= limit})
+    controls = {
+        "exact_copy": best_alignment(x, x.copy(), sr)[1],
+        "gain_scaled_copy": best_alignment(x, 0.4 * x, sr)[1],
+    }
+    for lag in shifts:
+        controls[f"shifted_copy_{lag:+d}"] = best_alignment(x, shifted_copy(x, lag), sr)[1]
+    controls[f"gain_scaled_shifted_copy_{limit:+d}"] = best_alignment(
+        x, 0.4 * shifted_copy(x, limit), sr
+    )[1]
+    controls[f"gain_scaled_shifted_copy_{-limit:+d}"] = best_alignment(
+        x, 0.4 * shifted_copy(x, -limit), sr
+    )[1]
+    return controls, shifts
 
 
 def read_pair(a_meta, b_meta):
@@ -110,7 +160,9 @@ def measure():
     if len(speakers) != EXPECTED_SPEAKERS:
         raise ValueError(f"expected {EXPECTED_SPEAKERS} speakers, manifest has {len(speakers)}")
 
-    rows, dup_hash, injections = [], 0, None
+    rows, dup_hash = [], 0
+    injection_maxima = {}
+    tested_shifts = set()
     for spk in speakers:
         for event in EXPECTED_EVENTS:
             a = spk["audio"].get(f"{event}_mic1")
@@ -122,13 +174,16 @@ def measure():
             dup_hash += int(same_hash)
             n = min(len(x), len(y))
             xa, ya = x[:n], y[:n]
-            if injections is None:
-                injections = injection_controls(xa, sr)
-            aligned, resid = best_alignment(xa, ya, sr)
+            controls, shifts = injection_controls(xa, sr)
+            tested_shifts.update(shifts)
+            for name, value in controls.items():
+                injection_maxima[name] = max(injection_maxima.get(name, 0.0), value)
+            aligned, resid, best_lag = best_alignment(xa, ya, sr)
             rows.append({
                 "speaker": spk["speaker"], "event": event, "frames": n,
                 "corr_zero_lag": float(np.corrcoef(xa, ya)[0, 1]),
                 "corr_max_lag": aligned, "residual_after_alignment": resid,
+                "best_lag_samples": best_lag,
                 "rms_ratio": float(np.sqrt(np.mean(ya ** 2)) /
                                    max(np.sqrt(np.mean(xa ** 2)), 1e-12)),
             })
@@ -142,8 +197,10 @@ def measure():
     ratio = np.array([r["rms_ratio"] for r in rows])
     worst = min(rows, key=lambda r: r["residual_after_alignment"])
     return {
-        "schema": "exp205-posthoc-channel-distinctness-v2",
+        "schema": "exp205-posthoc-channel-distinctness-v3",
         "manifest_sha256": sha256(MANIFEST),
+        "frozen_manifest_sha256": FROZEN_MANIFEST_SHA256,
+        "capture_census_sha256": capture_census_sha256(speakers),
         "status": "POST_HOC_DESCRIPTIVE_NO_VERDICT_CHANGE",
         "mic1": man["corpus"]["mic1"], "mic2": man["corpus"]["mic2"],
         "n_speakers": len(speakers), "n_event_captures": len(rows),
@@ -159,7 +216,15 @@ def measure():
             "median": round(float(np.median(res)), 4),
             "min": round(float(res.min()), 4), "max": round(float(res.max()), 4),
             "closest_pair": f"{worst['speaker']}/{worst['event']}"},
-        "injection_controls": injections,
+        "injection_controls": {
+            "n_source_captures": len(rows),
+            "tested_shift_samples": sorted(tested_shifts),
+            "max_residual_by_transform": {
+                name: round(float(value), 10)
+                for name, value in sorted(injection_maxima.items())
+            },
+            "max_residual": round(float(max(injection_maxima.values())), 10),
+        },
         "rms_ratio": {"median": round(float(np.median(ratio)), 4),
                       "min": round(float(ratio.min()), 4),
                       "max": round(float(ratio.max()), 4)},
@@ -179,25 +244,42 @@ def assertions(out):
             f"pair {r['closest_pair']} has alignment residual {r['min']}, at or below the "
             f"{DUPLICATE_BAR} duplicate bar")
     inj = out["injection_controls"]
-    if any(v > DUPLICATE_BAR for v in inj.values()):
+    if inj["n_source_captures"] != EXPECTED_PAIRS:
+        problems.append("injection controls did not cover every source capture")
+    if inj["max_residual"] > DUPLICATE_BAR:
         problems.append(f"injected duplicates not detected: {inj} — the test cannot fail")
     return problems
 
 
 def main():
-    out = measure()
-    problems = assertions(out)
-    if problems:
-        for p in problems:
-            print(f"FAIL {p}", file=sys.stderr)
-        sys.exit(1)
-    # A5: publish only after every assertion has passed, and atomically.
-    tmp = OUT.with_suffix(".json.tmp")
-    tmp.write_text(json.dumps(out, indent=1))
-    os.replace(tmp, OUT)
+    tmp = None
+    try:
+        out = measure()
+        problems = assertions(out)
+        if problems:
+            raise RuntimeError("; ".join(problems))
+        # A5: publish only after every assertion has passed, and atomically.
+        fd, tmp_name = tempfile.mkstemp(prefix=f".{OUT.name}.", suffix=".tmp", dir=OUT.parent)
+        tmp = Path(tmp_name)
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            handle.write(json.dumps(out, indent=1) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(tmp, OUT)
+        tmp = None
+    except BaseException as exc:
+        # A failed recomputation must not leave a stale result that looks current.
+        OUT.unlink(missing_ok=True)
+        if tmp is not None:
+            tmp.unlink(missing_ok=True)
+        if isinstance(exc, KeyboardInterrupt):
+            raise
+        print(f"FAIL {exc}", file=sys.stderr)
+        return 1
     print(json.dumps(out, indent=1))
     print(f"\nOK: {out['n_event_captures']} authenticated pairs, none duplicated")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

@@ -42,10 +42,10 @@ branch name when claiming reproduction of the sealed execution.
 
 ## Level-3 environment variables
 
-Run the commands in `REPRODUCE.md` from `code/`
-directory. The runner requires these six variables:
+Run the commands in `REPRODUCE.md` from the repository root. For a Level-3 generation
+rerun, the runner requires these six variables:
 
-- `EXP205_ROOT`: that absolute `source/` directory (normally `$PWD`).
+- `EXP205_ROOT`: the absolute repository root (normally `$PWD`).
 - `EXP205_RUN`: a writable, fast work directory outside the Git checkout; it
   receives generated audio, scores, caches, and execution receipts.
 - `EXP205_DETECTOR_ROOT`: checkout of the detector/readout uv project used to

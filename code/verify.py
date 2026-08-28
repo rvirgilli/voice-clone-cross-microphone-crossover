@@ -3,7 +3,7 @@
 # requires-python = ">=3.11"
 # dependencies = ["numpy==2.4.6"]
 # ///
-"""Verify the portable this work package and independently recompute its result."""
+"""Verify the portable release package and independently recompute its result."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ import hashlib
 import json
 import math
 from collections import defaultdict
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 import numpy as np
 
@@ -25,6 +25,17 @@ DIRECTIONS = ("primary_mic1_to_mic2", "reverse_mic2_to_mic1")
 ENCODERS = ("ecapa", "wavlm")
 BOOTSTRAPS = 100_000
 SEED = 2052027
+EXPECTED_MANIFEST_SHA256 = "4b879491f02badf252365aa4d2b3caa22402c04301c60ed5e02bd06d43f19b2d"
+EXPECTED_CHANNEL_SCHEMA = "exp205-posthoc-channel-distinctness-v3"
+EXPECTED_DUPLICATE_BAR = 1e-5
+EXPECTED_LAG_MS = 50.0
+IGNORED_DIRS = {".git", ".venv", ".pytest_cache", "__pycache__", "regenerated",
+                "generated-audio", "model-snapshots"}
+IGNORED_SUFFIXES = {".pyc", ".aux", ".bbl", ".blg", ".fdb_latexmk", ".fls", ".log"}
+FORBIDDEN_RELEASE_SUFFIXES = {
+    ".wav", ".flac", ".mp3", ".ogg", ".m4a", ".aac", ".opus",
+    ".pt", ".pth", ".ckpt", ".safetensors", ".bin", ".zip", ".tar", ".gz", ".7z",
+}
 
 
 def sha256(path: Path) -> str:
@@ -44,21 +55,79 @@ def close(observed, expected, label: str, tolerance: float = 2e-15) -> None:
         raise AssertionError(f"{label}: {observed} != {expected}")
 
 
-def main() -> int:
-    # Every released file matches the recorded checksum.
-    checked = 0
-    for line in (DATA / "checksums.sha256").read_text().splitlines():
+def discover_release_files() -> set[str]:
+    files = set()
+    for path in ROOT.rglob("*"):
+        rel = path.relative_to(ROOT)
+        if any(part in IGNORED_DIRS for part in rel.parts):
+            continue
+        if path.is_symlink():
+            raise AssertionError(f"symlink forbidden in release: {rel}")
+        if not path.is_file() or path.suffix.lower() in IGNORED_SUFFIXES:
+            continue
+        name = rel.as_posix()
+        if name == "data/checksums.sha256":
+            continue  # this inventory is the explicit root of trust
+        if path.suffix.lower() in FORBIDDEN_RELEASE_SUFFIXES:
+            raise AssertionError(f"audio/model/archive forbidden in release: {name}")
+        files.add(name)
+    return files
+
+
+def read_checksum_inventory() -> dict[str, str]:
+    records = {}
+    previous = ""
+    for line in (DATA / "checksums.sha256").read_text(encoding="utf-8").splitlines():
         if not line.strip():
             continue
         digest, rel = line.split("  ", 1)
-        path = ROOT / rel
-        if rel.endswith("checksums.sha256"):
-            continue
-        if not path.is_file():
-            raise AssertionError(f"missing released file: {rel}")
-        if sha256(path) != digest:
+        pure = PurePosixPath(rel)
+        if pure.is_absolute() or ".." in pure.parts or pure.as_posix() != rel:
+            raise AssertionError(f"unsafe checksum path: {rel}")
+        if len(digest) != 64 or any(ch not in "0123456789abcdef" for ch in digest):
+            raise AssertionError(f"invalid checksum digest: {rel}")
+        if rel in records:
+            raise AssertionError(f"duplicate checksum entry: {rel}")
+        if previous and rel <= previous:
+            raise AssertionError("checksum inventory is not strictly path-sorted")
+        records[rel] = digest
+        previous = rel
+    return records
+
+
+def capture_census_sha256(speakers: list[dict]) -> tuple[str, int]:
+    census = []
+    for spk in speakers:
+        audio = spk.get("audio", {})
+        for event in ("A", "B"):
+            m1, m2 = audio.get(f"{event}_mic1"), audio.get(f"{event}_mic2")
+            if not isinstance(m1, dict) or not isinstance(m2, dict):
+                raise AssertionError(f"channel manifest arm missing: {spk.get('speaker')}/{event}")
+            if m1.get("sha256") == m2.get("sha256"):
+                raise AssertionError(f"channel manifest pair is byte-identical: {spk.get('speaker')}/{event}")
+            census.append({
+                "speaker": spk["speaker"], "event": event,
+                "mic1_sha256": m1["sha256"], "mic2_sha256": m2["sha256"],
+            })
+    payload = json.dumps(census, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest(), len(census)
+
+
+def main() -> int:
+    # The checksum file is the explicit root of trust; it must enumerate every other
+    # release payload file exactly once. Runtime caches and documented generated files are
+    # outside the release surface.
+    records = read_checksum_inventory()
+    actual_files = discover_release_files()
+    if set(records) != actual_files:
+        raise AssertionError(
+            f"release inventory mismatch: missing={sorted(set(records)-actual_files)}, "
+            f"unlisted={sorted(actual_files-set(records))}"
+        )
+    for rel, digest in records.items():
+        if sha256(ROOT / rel) != digest:
             raise AssertionError(f"checksum mismatch: {rel}")
-        checked += 1
+    checked = len(records)
 
     # Released files must not contain local machine paths.
     for name in ("trials.json", "generation_ledger.json", "generation_config.json",
@@ -69,6 +138,7 @@ def main() -> int:
 
     result = load("result.json")
     manifest = load("trials.json")
+    selection_manifest = load("selection_manifest.json")
     receipt = load("generation_ledger.json")
     if result["status"] != "SCIENTIFIC_RESULT" or manifest["counts"]["speakers"] != 54:
         raise AssertionError("result/manifest scope invalid")
@@ -192,17 +262,74 @@ def main() -> int:
     # Channel distinctness is load-bearing for the crossover control (Gate 2, A1/A2):
     # authenticate the measurement's own contract, not merely the file's hash.
     ch = load("channel_distinctness.json")
-    if ch.get("schema") != "exp205-posthoc-channel-distinctness-v2":
+    if ch.get("schema") != EXPECTED_CHANNEL_SCHEMA:
         raise AssertionError("channel probe schema invalid")
+    manifest_root = result["artifact_hashes"].get("manifest")
+    portable_manifest_hash = sha256(DATA / "selection_manifest.json")
+    if manifest_root != EXPECTED_MANIFEST_SHA256:
+        raise AssertionError("frozen manifest trust root changed")
+    if ch.get("frozen_manifest_sha256") != manifest_root:
+        raise AssertionError("channel result's frozen manifest trust root changed")
+    if ch.get("manifest_sha256") not in {manifest_root, portable_manifest_hash}:
+        raise AssertionError("channel result is not bound to the frozen manifest")
+    census_digest, census_count = capture_census_sha256(selection_manifest["speakers"])
+    if census_count != 108 or ch.get("capture_census_sha256") != census_digest:
+        raise AssertionError("channel result is not bound to the released 108-pair hash census")
     if ch["n_speakers"] != 54 or ch["n_event_captures"] != 108:
         raise AssertionError(f"channel census incomplete: {ch['n_speakers']}x2 != 108")
     if ch["byte_identical_pairs"] != 0:
         raise AssertionError("a mic1/mic2 pair is byte-identical: crossover control vacuous")
     bar = ch["duplicate_bar_alignment_residual"]
+    if bar != EXPECTED_DUPLICATE_BAR or ch.get("lag_window_ms") != EXPECTED_LAG_MS:
+        raise AssertionError("channel transform contract changed")
     if ch["residual_after_alignment"]["min"] <= bar:
         raise AssertionError("a capture pair is at or below the duplicate bar")
-    if max(ch["injection_controls"].values()) > bar:
+    controls = ch["injection_controls"]
+    if controls.get("n_source_captures") != 108:
+        raise AssertionError("injection controls do not cover all 108 source captures")
+    if controls.get("tested_shift_samples") != [-2400, -120, -1, 1, 120, 2400]:
+        raise AssertionError("injection controls do not cover both 50 ms boundaries")
+    by_transform = controls.get("max_residual_by_transform", {})
+    required_transforms = {
+        "exact_copy", "gain_scaled_copy", "shifted_copy_+2400", "shifted_copy_-2400",
+        "gain_scaled_shifted_copy_+2400", "gain_scaled_shifted_copy_-2400",
+    }
+    if not required_transforms.issubset(by_transform):
+        raise AssertionError("injection transform coverage incomplete")
+    if not by_transform or controls.get("max_residual") != max(by_transform.values()):
+        raise AssertionError("injection-control maximum is internally inconsistent")
+    if controls["max_residual"] > bar:
         raise AssertionError("injected duplicates not detected: the probe cannot fail")
+
+    # Bind the released manuscript source to the recomputed headline and channel evidence.
+    tex_raw = (ROOT / "paper" / "F2" / "main.tex").read_text(encoding="utf-8")
+    tex = " ".join(tex_raw.split())
+    required_manuscript = {
+        "title": "Which Conditioning Recording Does a Voice Clone Follow?",
+        "primary ECAPA": ".896 [.869,.921]",
+        "primary WavLM": ".622 [.593,.652]",
+        "reverse ECAPA": ".907 [.881,.931]",
+        "reverse WavLM": ".620 [.589,.653]",
+        "channel census": "Across all 108 event captures",
+        "channel aligned median": "reach $.92$ median",
+        "channel residual range": "is $.38$ median (range $.21$--$.70$)",
+        "channel injection maximum": "at most $.000000026$",
+        "channel byte result": "no pair is byte-identical",
+        "duplicate tolerance boundary": "not a universal perceptual threshold",
+        "artifact locator": "github.com/rvirgilli/voice-clone-cross-microphone-crossover",
+        "open-set boundary": "neither identifies the carrier nor solves open-set recording-presence detection",
+    }
+    for label, phrase in required_manuscript.items():
+        if phrase not in tex:
+            raise AssertionError(f"released manuscript source lost {label}: {phrase!r}")
+    retired_claims = (
+        "is reproduced after", "ECAPA-only artifact", "exact frozen source bytes",
+        "population confidence interval", "open-set confirmation", "operationally large",
+        "simultaneous VCTK", "bidirectionally replicated",
+    )
+    present = [phrase for phrase in retired_claims if phrase in tex_raw]
+    if present:
+        raise AssertionError(f"retired manuscript claims restored: {present}")
     print(f"PASS — {checked} files match their checksums; census, generation ledger, "
           f"statistics, channel control and frozen result all verify")
     return 0
