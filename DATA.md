@@ -2,10 +2,10 @@
 
 ## Public corpora
 
-EXP-205 uses VCTK v0.92 candidate/reference speech and one fixed LibriTTS-R
+This work uses VCTK v0.92 candidate/reference speech and one fixed LibriTTS-R
 source utterance per generated text for Seed-VC. The repository does not
 redistribute audio. Obtain the corpora from their official releases and verify
-the exact selected-file hashes recorded in the portable manifest and execution
+the exact selected-file hashes recorded in the trial roster and execution
 config before generation.
 
 - VCTK v0.92: <https://doi.org/10.7488/ds/2645>, CC BY 4.0.
@@ -29,7 +29,7 @@ rejected.
 The sealed execution records exact repository states, package versions,
 snapshot revisions, and file hashes for F5-TTS, XTTS-v2, CosyVoice2, Seed-VC,
 SpeechBrain ECAPA, and Microsoft WavLM. The complete licence inventory is at
-`experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/LICENSES.md`.
+`LICENSES.md`.
 Notably, the fixed readouts are pinned to:
 
 - `speechbrain/spkrec-ecapa-voxceleb`, revision
@@ -42,7 +42,7 @@ branch name when claiming reproduction of the sealed execution.
 
 ## Level-3 environment variables
 
-Run the commands in `REPRODUCE.md` from the released EXP-205 `source/`
+Run the commands in `REPRODUCE.md` from `code/`
 directory. The runner requires these six variables:
 
 - `EXP205_ROOT`: that absolute `source/` directory (normally `$PWD`).
@@ -99,8 +99,8 @@ needed for provenance.
 
 The public selection package records the complete 30 + 24 + 54 roster
 ancestry. Tier 1 and Tier 2 used ECAPA geometry during earlier development;
-EXP-205 is their disjoint complement and is therefore not embedding-naive.
-Within that fixed complement, EXP-205 A/B pair selection used only duration,
-transcript-byte rate, and deterministic lexical tie-breaking. The portable
+The roster used here is their disjoint complement and is therefore not embedding-naive.
+Within that fixed complement, A/B pair selection used only duration,
+transcript-byte rate, and deterministic lexical tie-breaking. The published
 feasibility census replaces only a historical absolute run-root prefix with
 `inputs/`; its scientific fields and original source hash are preserved.

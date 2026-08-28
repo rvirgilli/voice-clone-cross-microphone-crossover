@@ -1,89 +1,67 @@
-# Reproduction guide
+# Reproducing this work
 
-## Level 1 — paper from frozen public artifacts
-
-This level is CPU-only and uses only versioned repository files.
+Python 3.11 or newer and [`uv`](https://docs.astral.sh/uv/).
 
 ```bash
 uv sync --frozen
-uv run --frozen python verify_release.py
 ```
 
-For individual checks:
+## 1. Verify the released results (CPU, seconds)
 
 ```bash
-uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/verify_exp205_package.py
-uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/source/selection/verify_selection_provenance.py
-uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/verify_public_history.py
-uv run --frozen python experiments/EXP-206-clone-to-clone-crossover/verify_result.py
-uv run --frozen python paper/F2/check_numbers.py
-uv run --frozen python paper/F2/mutation_test.py
+uv run --frozen python code/verify.py
 ```
 
-Expected final lines are `PASS` from the EXP-205 and EXP-206 result packages
-and the selection package, `PASS` from the paper checker, and
-`UNCAUGHT: 0  INVALID: 0` from mutation testing.
+Checks every released file against `data/checksums.sha256`, then recomputes from
+`data/scores.tsv`:
 
-## Level 2 — post-result sensitivities and figure
+- the 3,456-row score census and the 54-speaker × 2-event roster;
+- the follow rates and their 100,000-draw whole-speaker bootstrap intervals,
+  for both directions and both speaker-verification readouts;
+- the generation ledger, covering all 3,456 clones;
+- the microphone-channel control, which confirms that the two captures of each
+  event are distinct signals rather than copies of one another;
+- the registered decision rule applied to those statistics.
 
-The sensitivity scripts authenticate their inputs before recomputing outputs:
+## 2. Run the tests (CPU, seconds)
 
 ```bash
-uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/roster_ancestry_sensitivity.py
-uv run --frozen python experiments/EXP-205-f2-crossmic-crossover/audit_package/exp205/arm_pairing_sensitivity.py
-uv run --frozen python paper/F2/make_exp205_figure.py
+uv run --frozen --with pytest --with soundfile python -m pytest -q code/
 ```
 
-Run them in a disposable clone when comparing regenerated files with the
-canonical release. Neither sensitivity is allowed to alter the sealed verdict.
+One test is skipped: it reads LibriTTS-R source transcripts, which this release
+does not redistribute. The mapping it would check is recorded in
+`data/trials.json` and `data/generation_ledger.json`.
 
-EXP-206 reuses the sealed EXP-205 embeddings in a prospectively frozen
-cross-generator, cross-text clone-to-clone grid. Its committed public result
-contains all 54 speaker means for each direction/readout. The public verifier
-reconstructs the four points, the shared 100,000-resample speaker-bootstrap
-intervals, and the frozen verdict:
+## 3. Sensitivity analyses (CPU, seconds)
 
 ```bash
-uv run --frozen python experiments/EXP-206-clone-to-clone-crossover/verify_result.py
+uv run --frozen python code/roster_ancestry_sensitivity.py
+uv run --frozen python code/arm_pairing_sensitivity.py
 ```
 
-Recomputing clone-level similarities requires the non-redistributed generated
-audio and authenticated feature caches described by the EXP-206 input
-manifest; that audio-to-embedding boundary is the same Level-3 boundary as
-EXP-205.
+Both rewrite their result files in `data/`; the recomputed values must match the
+committed ones.
 
-## Level 3 — generation and scoring
+## 4. Re-measure the microphone-channel control (needs VCTK audio)
 
-Audio generation and scoring require the third-party corpora, repositories,
-model snapshots, and environments described in `DATA.md`. Set the documented
-`EXP205_*` environment variables, construct a fresh execution config, verify
-its pins, and only then invoke the released runner. Generated audio must remain
-outside this repository.
-
-The public package retains the original result trust roots while using logical
-paths and environment variables in its released source. A new inference run is
-a new execution with new hashes; it must not be presented as the sealed run.
-The runnable source directory contains the logical `selection-manifest.json`,
-`LICENSES.md`, and `run.sh` names expected by the builder and runner. From that
-directory, after configuring every `EXP205_*` path described in `DATA.md`:
+`code/channel_distinctness.py` re-derives the channel control from the audio
+itself rather than from the released result. It reads the file paths in
+`data/selection_manifest.json`, which are relative to `inputs/`, so it needs a
+local VCTK v0.92 copy placed as `inputs/vctk/wav48_silence_trimmed/...`. The
+released `data/channel_distinctness.json` records what it produced.
 
 ```bash
-uv run python build_execution_config.py --out execution-config.json
-uv run python verify_pins.py --config execution-config.json
-sha256sum execution-config.json
-bash run.sh THE_PRINTED_64_HEX_SHA256
+uv run --frozen --with soundfile python code/channel_distinctness.py
 ```
 
-This full command regenerates and scores 3,456 clones and is intentionally not
-part of the CPU-only release gate. Use a writable fast work volume for
-`EXP205_RUN`; never write generated audio into this Git checkout.
+## 5. Regenerate the clones (GPU, hours)
 
-## Manuscript build
+Not required to check any number in the paper. It needs the third-party cloning
+systems and the pinned model revisions recorded in `data/generation_config.json`
+and described in `DATA.md`, plus a local copy of VCTK. See `code/run.sh`.
 
-With a TeX installation that provides `pdflatex`, `bibtex`, and `pdfinfo`:
+## What is not redistributed
 
-```bash
-bash paper/F2/build.sh
-```
-
-The submitted PDF is already committed and authenticated by `MANIFEST.json`.
+Source and generated speech, model weights, and large environments. Everything
+the paper asserts can be re-derived from the released score-level files.

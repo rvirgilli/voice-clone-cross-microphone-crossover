@@ -1,51 +1,47 @@
 # Cross-microphone voice-clone attribution
 
-This repository accompanies **“Which Conditioning Recording Does a Voice
-Clone Follow? A Balanced Cross-Microphone Crossover.”** It contains the exact
-release-candidate manuscript, frozen score-level artifacts, contemporaneous
-protocol records and amendments, released analysis source, and executable
-checks that bind the paper's claims to those records.
+Code, data and manuscript for **"Which Conditioning Recording Does a Voice Clone
+Follow? A Balanced Cross-Microphone Crossover."**
 
-## Verify the release
+We ask which of two recordings of the same speaker was used to prompt a voice
+clone. A clone is generated from one microphone and attributed through the
+other, so speaker identity, generated text, exact waveform and a shared
+microphone fingerprint cannot decide the label. Over 54 VCTK speakers and four
+open cloning systems (3,456 clones), the mic1→mic2 follow rate is **.896
+[.869, .921]** with an ECAPA readout and **.622 [.593, .652]** with WavLM.
+Closed-set attribution is strong; open-set presence verification is not.
 
-Python 3.11 or newer and [`uv`](https://docs.astral.sh/uv/) are required.
+## Contents
+
+| Path | What it holds |
+|---|---|
+| `paper/` | manuscript, LaTeX source, bibliography, figures |
+| `data/` | score table, trial roster, generation ledger and configs, results |
+| `code/` | generation, scoring, analysis, sensitivity checks, tests |
+| `PREREGISTRATION.md` | the two registered plans and their deviations |
+| `SCOPE.md` | what is claimed, and the boundaries it does not cross |
+| `DATA.md` | data, model and licence boundaries |
+| `REPRODUCE.md` | what reproduces, and the exact commands |
+
+## Reproduce
+
+Python 3.11+ and [`uv`](https://docs.astral.sh/uv/):
 
 ```bash
 uv sync --frozen
-uv run --frozen python verify_release.py
+uv run --frozen python code/verify.py
 ```
 
-The release verifier authenticates every versioned file, recomputes the
-3,456-row EXP-205 census and its 100,000-bootstrap summaries, verifies the full
-108-speaker ancestry and all 54 selected A/B pairs, reproduces the frozen
-EXP-206 clone-to-clone points, intervals and verdict, checks the manuscript
-against EXP-202/204/205/206 records, and runs mutation tests against the
-paper-facing checker. It does not generate or score audio.
+This checks every released file against `data/checksums.sha256`, then recomputes
+the 3,456-row score census, the follow rates and their 100,000-draw bootstrap
+intervals, the generation ledger, the 54 selected A/B pairs, and the
+microphone-channel control. It runs on CPU and does not generate or score audio.
 
-## Repository map
-
-- `paper/F2/`: exact PDF, LaTeX source, bibliography, figure source, and checks.
-- `CLAIM-SCOPE.md`: fixed scientific thesis, provenance boundary, exclusions,
-  and stop rule.
-- `experiments/EXP-202-f2-campaign/`: antecedent same-speaker results used in the paper.
-- `experiments/EXP-204-f2-seed-crossover/`: earlier two-seed crossover result.
-- `experiments/EXP-205-f2-crossmic-crossover/`: final crossover, sensitivities, and portable audit package.
-- `experiments/EXP-206-clone-to-clone-crossover/`: frozen cross-generator,
-  cross-text extension, result, source, and public verifier.
-- `DATA.md`: data, model, licence, and redistribution boundaries.
-- `REPRODUCE.md`: reproduction levels and exact commands.
-- `MANIFEST.json`: SHA-256 and byte size of every released file.
-
-## Reproduction boundary
-
-All headline points, intervals, tables, sensitivities, selection checks, and
-claim-to-artifact bindings reproduce from committed files on CPU. Source and
-generated speech, model weights, and large environments are not redistributed.
-Regenerating the 3,456 clones requires the third-party assets and pinned model
-revisions described in `DATA.md`; it is not required to verify the paper.
+Regenerating the clones themselves needs the third-party models and pinned
+revisions listed in `DATA.md`, and is not required to check the paper.
 
 ## Licence
 
-Repository code is MIT licensed. The paper, datasets, models, checkpoints, and
-third-party implementations retain their original terms. See `DATA.md` and the
-EXP-205 package's `LICENSES.md`.
+Code is MIT. The manuscript, datasets, models and third-party implementations
+keep their own terms — see `DATA.md` and `LICENSES.md`. No source or generated
+speech and no model weights are redistributed here.

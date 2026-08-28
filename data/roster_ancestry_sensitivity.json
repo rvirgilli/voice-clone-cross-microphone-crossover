@@ -1,0 +1,240 @@
+{
+  "schema": "exp205-postreview-roster-ancestry-sensitivity-v1",
+  "status": "POST_HOC_DESCRIPTIVE_NO_VERDICT_CHANGE",
+  "question": "Does the this work direction persist across the observable residual strata of the prior tier-1 ECAPA gate?",
+  "limitations": [
+    "The tier-1 gate was ECAPA-based and the 30 kept speakers were the lexicographically first passing speakers.",
+    "Three this work speakers were absent from the historical tier-1 gate record and are reported separately rather than assigned a status.",
+    "All 24 tier-2-qualified speakers were consumed; this work is tier-2-ineligible by construction.",
+    "This sensitivity cannot recover an embedding-naive roster or population inference.",
+    "Intervals are descriptive within-stratum composition summaries and are not multiplicity-adjusted.",
+    "No stratum can alter or rescue the frozen pooled verdict."
+  ],
+  "pins": {
+    "result.json": "e9dcd48dcce8d44576c4915c743142faaba3318f0c43cb426c2cb4ef89593610",
+    "gate.json": "e2136b97c13094cbed10e2194940abe4bb36d8147a7969c7f4bcb7fa94d6b910",
+    "pairs.json": "2d5db209cf99684b42f2112bc62ae3bdeaefb9d6d6bce849580f75596cd627a9",
+    "tier2_pairs.json": "c520ca6c976e61b1dfbcd3dbb350e9875924fe099c66525838b0e5ff3e1014b2"
+  },
+  "ancestry_counts": {
+    "tier1": 30,
+    "tier2": 24,
+    "exp205_complement": 54,
+    "tier1_gate_considered": 105,
+    "tier1_gate_pass_total": 89,
+    "tier1_gate_fail_total": 16,
+    "exp205_gate_pass_not_selected": 36,
+    "exp205_gate_fail": 15,
+    "exp205_gate_not_evaluated": 3
+  },
+  "strata": {
+    "tier1_gate_pass_not_selected": {
+      "speaker_ids": [
+        "p260",
+        "p267",
+        "p272",
+        "p274",
+        "p275",
+        "p276",
+        "p277",
+        "p278",
+        "p279",
+        "p281",
+        "p282",
+        "p283",
+        "p284",
+        "p286",
+        "p287",
+        "p288",
+        "p295",
+        "p297",
+        "p302",
+        "p305",
+        "p312",
+        "p313",
+        "p314",
+        "p316",
+        "p323",
+        "p326",
+        "p329",
+        "p333",
+        "p335",
+        "p339",
+        "p343",
+        "p347",
+        "p351",
+        "p362",
+        "p364",
+        "p374"
+      ],
+      "directions": {
+        "primary_mic1_to_mic2": {
+          "ecapa": {
+            "n_speakers": 36,
+            "point": 0.9079861111111112,
+            "descriptive_composition_interval_95": [
+              0.8741319444444444,
+              0.9392361111111112
+            ],
+            "speakers_above_half": 36,
+            "speakers_equal_half": 0
+          },
+          "wavlm": {
+            "n_speakers": 36,
+            "point": 0.6085069444444444,
+            "descriptive_composition_interval_95": [
+              0.5729166666666666,
+              0.6458333333333334
+            ],
+            "speakers_above_half": 31,
+            "speakers_equal_half": 1
+          }
+        },
+        "reverse_mic2_to_mic1": {
+          "ecapa": {
+            "n_speakers": 36,
+            "point": 0.9071180555555556,
+            "descriptive_composition_interval_95": [
+              0.8715277777777778,
+              0.9383680555555556
+            ],
+            "speakers_above_half": 35,
+            "speakers_equal_half": 1
+          },
+          "wavlm": {
+            "n_speakers": 36,
+            "point": 0.5963541666666666,
+            "descriptive_composition_interval_95": [
+              0.5607638888888888,
+              0.6336805555555556
+            ],
+            "speakers_above_half": 27,
+            "speakers_equal_half": 4
+          }
+        }
+      }
+    },
+    "tier1_gate_fail": {
+      "speaker_ids": [
+        "p229",
+        "p257",
+        "p261",
+        "p273",
+        "p292",
+        "p294",
+        "p299",
+        "p304",
+        "p311",
+        "p317",
+        "p334",
+        "p336",
+        "p360",
+        "p361",
+        "p376"
+      ],
+      "directions": {
+        "primary_mic1_to_mic2": {
+          "ecapa": {
+            "n_speakers": 15,
+            "point": 0.8791666666666667,
+            "descriptive_composition_interval_95": [
+              0.8270833333333333,
+              0.9229166666666667
+            ],
+            "speakers_above_half": 15,
+            "speakers_equal_half": 0
+          },
+          "wavlm": {
+            "n_speakers": 15,
+            "point": 0.6541666666666667,
+            "descriptive_composition_interval_95": [
+              0.6020833333333333,
+              0.70625
+            ],
+            "speakers_above_half": 14,
+            "speakers_equal_half": 0
+          }
+        },
+        "reverse_mic2_to_mic1": {
+          "ecapa": {
+            "n_speakers": 15,
+            "point": 0.9145833333333333,
+            "descriptive_composition_interval_95": [
+              0.875,
+              0.9479166666666666
+            ],
+            "speakers_above_half": 15,
+            "speakers_equal_half": 0
+          },
+          "wavlm": {
+            "n_speakers": 15,
+            "point": 0.6854166666666667,
+            "descriptive_composition_interval_95": [
+              0.6229166666666667,
+              0.7479166666666667
+            ],
+            "speakers_above_half": 13,
+            "speakers_equal_half": 2
+          }
+        }
+      }
+    },
+    "tier1_gate_not_evaluated": {
+      "speaker_ids": [
+        "p231",
+        "p340",
+        "p363"
+      ],
+      "directions": {
+        "primary_mic1_to_mic2": {
+          "ecapa": {
+            "n_speakers": 3,
+            "point": 0.8333333333333334,
+            "descriptive_composition_interval_95": [
+              0.78125,
+              0.875
+            ],
+            "speakers_above_half": 3,
+            "speakers_equal_half": 0
+          },
+          "wavlm": {
+            "n_speakers": 3,
+            "point": 0.625,
+            "descriptive_composition_interval_95": [
+              0.46875,
+              0.78125
+            ],
+            "speakers_above_half": 2,
+            "speakers_equal_half": 0
+          }
+        },
+        "reverse_mic2_to_mic1": {
+          "ecapa": {
+            "n_speakers": 3,
+            "point": 0.875,
+            "descriptive_composition_interval_95": [
+              0.8125,
+              0.9375
+            ],
+            "speakers_above_half": 3,
+            "speakers_equal_half": 0
+          },
+          "wavlm": {
+            "n_speakers": 3,
+            "point": 0.5833333333333334,
+            "descriptive_composition_interval_95": [
+              0.53125,
+              0.625
+            ],
+            "speakers_above_half": 3,
+            "speakers_equal_half": 0
+          }
+        }
+      }
+    }
+  },
+  "bootstrap": {
+    "replicates": 100000,
+    "seed": 2052028
+  }
+}
