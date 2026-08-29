@@ -371,7 +371,8 @@ def main() -> int:
         "channel injection maximum": "at most $.000000026$",
         "channel byte result": "no pair is byte-identical",
         "duplicate tolerance boundary": "not a universal perceptual threshold",
-        "artifact locator": "github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027",
+        "artifact locator": "github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027-final",
+        "pre-specified plan wording": "pre-specified complete crossover",
         "known-positive triage scope": "known-positive two-recording set for human provenance review",
         "no arbitrary presence decision": "cannot decide whether an arbitrary queried recording was present",
         "prosody-cloning positioning": "\\cite{prosodyclone2022}",
@@ -386,7 +387,7 @@ def main() -> int:
     retired_claims = (
         "is reproduced after", "ECAPA-only artifact", "exact frozen source bytes",
         "population confidence interval", "open-set confirmation", "operationally large",
-        "simultaneous VCTK", "bidirectionally replicated",
+        "simultaneous VCTK", "bidirectionally replicated", "pre-registered",
     )
     present = [phrase for phrase in retired_claims if phrase in tex_raw]
     if present:

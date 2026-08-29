@@ -1,7 +1,10 @@
-# Registered plans
+# Frozen analysis plans
 
-This release covers two pre-registered experiments. Each plan below was registered
-before its run. Deviations are recorded with the plan they belong to.
+This release covers two pre-specified experiments. Each plan below was frozen
+before its run. These are contemporaneous internal records without an
+independently verifiable public pre-outcome timestamp; see `SCOPE.md`. Deviations
+are recorded with the plan they belong to. The filename is retained as a stable
+public locator for the historical plans.
 
 
 # Plan 1 — cross-microphone crossover

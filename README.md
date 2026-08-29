@@ -19,7 +19,7 @@ Closed-set attribution is strong; open-set presence verification is not.
 | `data/` | score table, trial roster, generation ledger and configs, results |
 | `code/` | generation, scoring, analysis, sensitivity checks, tests |
 | `licenses/` | exact pinned model-card/licence snapshots and their hash manifest |
-| `PREREGISTRATION.md` | the two registered plans and their deviations |
+| `PREREGISTRATION.md` | the two frozen analysis plans and their deviations |
 | `SCOPE.md` | what is claimed, and the boundaries it does not cross |
 | `DATA.md` | data, model and licence boundaries |
 | `REPRODUCE.md` | what reproduces, and the exact commands |

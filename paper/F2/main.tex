@@ -29,7 +29,7 @@ rafaello.virgilli@discente.ufg.br}
 \begin{abstract}
 Voice-clone attribution usually stops at the generator or speaker. We ask a
 finer question: which of two recordings of the same speaker conditioned the
-clone? In a pre-registered complete crossover, a fixed 54-speaker VCTK roster
+clone? In a pre-specified complete crossover, a fixed 54-speaker VCTK roster
 provides two events with paired microphone captures. Four open cloning systems
 and four fixed, held-out texts produce 3,456 clones. Generation uses one
 microphone; attribution compares the two events through the other, so speaker
@@ -37,7 +37,7 @@ identity, generated text, exact waveform and a shared microphone fingerprint
 cannot decide the label. With fixed speaker-verification readouts, the
 mic1$\rightarrow$mic2 follow rate is .896 [.869,.921] for ECAPA and .622
 [.593,.652] for WavLM; the predeclared reverse direction gives .907 [.881,.931]
-and .620 [.589,.653]. The ECAPA result meets the pre-registered large-effect
+and .620 [.589,.653]. The ECAPA result meets the frozen large-effect
 criterion; WavLM corroborates its direction, which persists when the
 microphone roles are reversed. This establishes closed-set attribution between these
 two fixed pickup paths, not the carrier mechanism or open-set presence
@@ -78,7 +78,7 @@ from metadata alone, without clone outcomes.
 
 Our contributions are: (1) a complete A/B crossover that identifies whether a
 clone follows its conditioning recording while changing pickup path; (2) a
-pre-registered, independently audited 3,456-clone evaluation on 54 speakers,
+pre-specified, independently audited 3,456-clone evaluation on 54 speakers,
 four systems and two fixed representations; and (3) a boundary result:
 recording-event attribution is consistent in a two-candidate closed set, but neither
 the physical carrier nor deployable recording-presence detection follows.
@@ -356,8 +356,8 @@ Earlier same-speaker mixed-chapter pools retrieved the seed at
 9.7--16.4$\times$ chance, and same-chapter fused AUC was .815--.872. Those
 designs established a floor but left seed and speaker/session structure
 entangled; F5-TTS also exposed a duration-per-text-byte cue. A subsequent
-two-seed crossover obtained .806 [.757,.854] but missed its pre-registered .90
-point bar and used favorable seed pairs on one pickup path. We retain that as
+two-seed crossover obtained .806 [.757,.854] but missed its frozen .90 point
+bar and used favorable seed pairs on one pickup path. We retain that as
 positive discovery, not confirmation.
 
 The present experiment is a separate test: the 54-speaker development
@@ -395,14 +395,14 @@ Natural speech, noisy field recordings, other pickup paths, more than two
 candidates and open-set search remain untested.
 
 \textbf{Release and misuse.} Code, score-level data, provenance metadata and
-aggregate/per-speaker results are at \url{https://github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027}; model weights, source audio and
+aggregate/per-speaker results are at \url{https://github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027-final}; model weights, source audio and
 playable impersonations are not redistributed. Recording attribution can assist provenance audits and
 also deanonymize speakers; licensing alone does not settle consent.
 
 \section{Conclusion}
 In this fixed roster, a clone follows which same-speaker recording conditioned
 it when prompt and candidates use the two tested microphone paths. The effect
-meets the pre-registered large-effect criterion with ECAPA, is smaller but
+meets the frozen large-effect criterion with ECAPA, is smaller but
 corroborated by WavLM, and persists when the microphone roles are reversed,
 while pooling equally over four fixed systems. This is a large closed-set signal
 between two tested paths; it neither identifies the carrier nor solves open-set
