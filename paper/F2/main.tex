@@ -29,13 +29,15 @@ rafaello.virgilli@discente.ufg.br}
 \begin{abstract}
 Voice-clone attribution usually stops at the generator or speaker. We ask a
 finer question: which of two same-speaker recording events supplied the
-conditioning recording? In a pre-specified complete crossover, a fixed 54-speaker VCTK roster
-provides two events with paired microphone captures. Four publicly available
+conditioning recording? In a pre-specified complete crossover over 54 VCTK
+speakers selected after earlier ECAPA-based screening, we synthesize from each
+of two utterances and compare each clone with both utterances recorded through
+the other microphone. Four publicly available
 cloning systems and four fixed generation texts, distinct from the candidate
 transcripts, produce 3,456 clones. Generation uses one
 microphone; attribution compares the two events through the other, so speaker
 identity, generated text, exact waveform and a shared microphone fingerprint
-cannot decide the label. With fixed speaker-verification readouts,
+cannot decide the label. With fixed speaker-verification encoders,
 speaker-averaged two-alternative attribution accuracy for
 mic1$\rightarrow$mic2 is .896 [.869,.921] for ECAPA and .622
 [.593,.652] for WavLM; reversing the microphones gives .907 [.881,.931]
@@ -43,11 +45,11 @@ and .620 [.589,.653]. When both candidates are themselves clones from a
 different system and a different text, attribution remains .805 [.780,.830]
 and .805 [.780,.831] for ECAPA. Brackets are 95\% bootstrap intervals that
 resample whole speakers within this fixed, previously screened roster;
-systems and texts are not resampled. Attribution is evaluated only between two
-same-speaker candidates known to include the source event. Prompt
-interventions show that neither timing nor the long-term spectrum carries the
-cue and that the pitch and energy contour carries a minor share; the results
-do not establish whether an arbitrary recording was used.
+systems and texts are not resampled. The main evaluation compares two
+same-speaker candidates known to include the source event. Attribution remains
+high after separate prompt transformations of duration, long-term spectrum and
+pitch/energy; these tests do not identify or exclude the carrier, and the
+results do not establish whether an arbitrary recording was used.
 \end{abstract}
 
 \begin{keywords}
@@ -371,9 +373,10 @@ Only the crossover and the clone-candidate comparison have decision rules fixed
 before analysis; the remaining analyses are post-hoc and descriptive. Two such
 extensions bound the claim. Enlarging the candidate set with
 metadata-matched captures of the same speaker through the opposite microphone,
-ECAPA rank-1 accuracy falls from .896/.907 at two candidates to .635
-[.545,.720]/.587 [.510,.659] at sixteen (chance .0625; the 22 speakers with
-enough eligible captures). Re-synthesizing each primary-direction clone with a
+among the 22 speakers with enough eligible captures, ECAPA rank-1 accuracy
+decreases from .935/.913 with two candidates to .635 [.545,.720]/.587
+[.510,.659] with sixteen (704 comparisons per direction; sixteen-candidate
+chance .0625). Re-synthesizing each primary-direction clone with a
 different system and a different text, the second-generation clone is still
 attributed to the original event at .796 [.759,.832] (ECAPA) and .596
 [.568,.626] (WavLM).
@@ -435,7 +438,7 @@ direction. $C_{miss}=C_{fa}=1$.}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{llccc}
 \toprule
-Encoder & Prompt$\rightarrow$candidate & EER & minDCF, prior .01 & minDCF, prior .5 \\
+Encoder & Prompt$\rightarrow$candidate & EER (fraction) & minDCF, prior .01 & minDCF, prior .5 \\
 \midrule
 ECAPA & mic1$\rightarrow$mic2 & .337 & .980 & .667 \\
 ECAPA & mic2$\rightarrow$mic1 & .343 & .981 & .678 \\
@@ -449,19 +452,20 @@ for human provenance review, where the score can prioritize candidates. It
 cannot decide whether an arbitrary queried recording was present, and it is not
 an automated accusation.
 
-\textbf{The carrier is bounded, not identified.} Opposite microphones exclude
-an exact waveform and shared device fingerprint, while A/B balancing excludes a
-fixed candidate preference, and metadata matching sharply limits duration
-shortcuts. Three post-hoc prompt interventions, synthesized with the same
-systems and scored against unmodified candidates (primary direction), bound
-what remains: equalizing the A/B durations or their long-term spectra leaves
-ECAPA attribution unchanged (.896 and .893 against .896), whereas flattening
-the pitch and energy contours lowers it to .840 [.804,.874] (.866 when the
-candidates receive the same transform). Static spectral coloration and timing
-therefore carry no measurable share, the prosodic contour a minor one, and at
-least .84 survives all three, bundled in fine spectral detail of the
-realization, articulation and their interaction with model conditioning. A
-positive mechanism claim requires interventions on those factors.
+\textbf{The carrier is unidentified.} Opposite microphones exclude an exact
+waveform and shared device fingerprint, while A/B balancing excludes a fixed
+candidate preference, and metadata matching sharply limits duration shortcuts.
+Three separate post-hoc prompt transformations, synthesized with the same
+systems and scored against unmodified candidates (primary direction), test
+robustness rather than mechanism: ECAPA accuracy was .896 after
+total-duration equalization, .893 after smoothed long-term spectral
+equalization and .840 [.804,.874] after pitch/energy modification (.866 when
+the candidates receive the same transform), against .896 for the original
+prompts. These transformations do not isolate causal contributions: relative
+timing and residual spectral information may remain, and the pitch/energy
+comparison includes resynthesis effects. The carrier therefore stays bundled
+in event-level prosody, articulation, background acoustics, paired-capture
+room state and their interactions with model conditioning.
 
 \textbf{Scope.} The result concerns four fixed checkpoints, four fixed texts,
 read English speech and one inherited 54-speaker VCTK complement. The complement
@@ -469,8 +473,10 @@ is disjoint from the earlier development rosters but ECAPA-informed through
 their composition, not globally unseen or population-sampled. Checkpoint
 training corpora are not documented at recording level, so VCTK exposure cannot be
 excluded. The intervals do not sample systems, texts or a speaker
-population. Spontaneous conversational speech, noisy field recordings, other pickup paths, more
-than two candidates and open-set search remain untested.
+population. Spontaneous conversational speech, noisy field recordings, other
+pickup paths, candidate sets beyond sixteen and open-set search remain
+untested; larger candidate sets were examined only post hoc on eligible
+subsets.
 
 \textbf{Release and misuse.} Code, score-level data, provenance metadata and
 aggregate/per-speaker results are at \url{https://github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027-rc2};
@@ -487,9 +493,8 @@ direction persists when the microphone roles are reversed, when both
 candidates are clones from another system and text (.805), and after a second
 synthesis (.796). The primary and
 reverse pooled estimates weight the four fixed systems equally. This is a large closed-set signal between two
-tested paths that neither timing nor long-term spectral coloration carries;
-it does not identify the carrier positively and does not solve open-set
-recording-presence detection.
+tested microphone paths; its physical carrier remains unidentified, and the
+experiment does not solve open-set recording-presence detection.
 
 \let\oldthebibliography\thebibliography
 \renewcommand{\thebibliography}[1]{\oldthebibliography{#1}%

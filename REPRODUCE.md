@@ -62,8 +62,10 @@ prompt-intervention analyses (see its README). Their comparison-level cosine tab
 are released (`data/ncandidate_scores.tsv`, `data/second_generation_scores.tsv`,
 `data/intervention_scores.tsv`) together with the summaries the paper prints;
 `verify.py` recomputes every printed point from those tables by speaker-weighted
-averaging. The clone-to-clone comparison of §4.1 is `data/extension_result.json`,
-checked by `code/extension_verify.py`.
+averaging. The clone-to-clone comparison of §4.1 is `data/extension_result.json`;
+`code/extension_verify.py` reproduces its aggregate estimates, intervals and decision
+from the released speaker summaries (comparison-level cosine scores for that
+comparison are not included in this release).
 
 ## 4a. Output-content audit (needs the clone audio, which is not released)
 

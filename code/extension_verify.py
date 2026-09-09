@@ -13,10 +13,15 @@ import numpy as np
 
 
 HERE = Path(__file__).resolve().parent
-RESULT = HERE / "result.json"
-INPUT_MANIFEST = HERE / "input-manifest.json"
-ANALYZER = HERE / "analyze.py"
-VERDICT = HERE / "verdict.py"
+DATA = HERE.parent / "data"
+RESULT = DATA / "extension_result.json"
+INPUT_MANIFEST = DATA / "extension_input_manifest.json"
+ANALYZER = HERE / "extension_analyze.py"
+VERDICT = HERE / "extension_verdict.py"
+# The result binds the hashes of the analyzer and verdict modules as they ran; the released
+# copies carry documented portability adaptations, so they are pinned here separately.
+RELEASED_ANALYZER_SHA256 = "462c48f524b74d83c1e5c8c3e5cd85b221e00b76aaccafa2108b7eb44a22c7eb"
+RELEASED_VERDICT_SHA256 = "1ff13c9ad22d2cca41a1746ce21347b0e83e722c1870956f4cdbbc22b8a70854"
 EXPECTED_RESULT_SHA256 = "cda08b8b68aea8cc8f45c22e7270a25cf42ddbc360626ffdddaeece285e4005a"
 BOOTSTRAPS = 100_000
 BOOTSTRAP_SEED = 2062027
@@ -72,8 +77,9 @@ def main() -> int:
     require(result.get("counts") == expected_counts, "counts")
     require(result.get("embedding_dimensions") == {"ecapa": 192, "wavlm": 512}, "dimensions")
     roots = result.get("artifact_hashes", {})
-    require(roots.get("analyzer") == sha256(ANALYZER), "analyzer root")
-    require(roots.get("verdict") == sha256(VERDICT), "verdict root")
+    require(sha256(ANALYZER) == RELEASED_ANALYZER_SHA256, "released analyzer hash")
+    require(sha256(VERDICT) == RELEASED_VERDICT_SHA256, "released verdict hash")
+    print(f"historical analyzer/verdict roots as run: {roots.get('analyzer')[:12]}… / {roots.get('verdict')[:12]}… (recorded, not the released copies)")
     require(roots.get("input_manifest") == sha256(INPUT_MANIFEST), "input root")
     require(
         roots.get("execution_config") == input_manifest.get("execution_config_sha256"),
@@ -118,7 +124,7 @@ def main() -> int:
             )
             verdict_cells[direction][readout] = {"point": point, "lcb": float(lo)}
 
-    verdict = authenticated_verdict(roots["verdict"]).decide(verdict_cells).as_dict()
+    verdict = authenticated_verdict(RELEASED_VERDICT_SHA256).decide(verdict_cells).as_dict()
     require(verdict == result.get("verdict"), "verdict")
     require(verdict["material_event_signal"] is True, "material verdict")
     require(
@@ -126,7 +132,7 @@ def main() -> int:
         == "ABSTRACT_AND_CONCLUSION_UPGRADE_PERMITTED",
         "manuscript permission",
     )
-    print("PASS — this work public result, intervals and verdict verify")
+    print("PASS — clone-to-clone aggregate estimates, intervals and verdict reproduce from the released speaker summaries; comparison-level cosine scores are not included in this release")
     return 0
 
 

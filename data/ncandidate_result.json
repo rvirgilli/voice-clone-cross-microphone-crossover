@@ -210,5 +210,25 @@
     "4": 47,
     "8": 35,
     "16": 22
+  },
+  "matched_cohort_two_candidates_ecapa": {
+    "primary_mic1_to_mic2": {
+      "n_speakers": 22,
+      "rank1_two_candidates_matched_cohort": 0.9346590909090909,
+      "interval_95": [
+        0.8948508522727273,
+        0.96875
+      ],
+      "comparisons": 704
+    },
+    "reverse_mic2_to_mic1": {
+      "n_speakers": 22,
+      "rank1_two_candidates_matched_cohort": 0.9133522727272727,
+      "interval_95": [
+        0.8622159090909091,
+        0.953125
+      ],
+      "comparisons": 704
+    }
   }
 }

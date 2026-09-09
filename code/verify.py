@@ -489,6 +489,17 @@ def main() -> int:
         if len(table) != cell["n_speakers"] or any(len(v) != 32 for v in table.values()):
             raise AssertionError(f"N-candidate census mismatch for {direction}")
         close(speaker_weighted(table), cell["rank1"], f"N=16 rank-1 {direction}", 1e-9)
+        # The two-candidate baseline the paper prints next to N=16 is the primary crossover
+        # restricted to the same speakers, recomputed here from the main score table.
+        matched = ncand["matched_cohort_two_candidates_ecapa"][direction]
+        two = {}
+        for row in rows:
+            if row["prompt_mic"] == mic and row["speaker"] in table:
+                own, other = row["seed_arm"], "B" if row["seed_arm"] == "A" else "A"
+                two.setdefault(row["speaker"], []).append(follow(float(row[f"ecapa_{own}"]), float(row[f"ecapa_{other}"])))
+        if len(two) != matched["n_speakers"] or sum(len(v) for v in two.values()) != matched["comparisons"]:
+            raise AssertionError(f"matched-cohort census mismatch for {direction}")
+        close(speaker_weighted(two), matched["rank1_two_candidates_matched_cohort"], f"matched-cohort two-candidate {direction}", 1e-9)
 
     gen2 = load("second_generation_result.json")
     for readout in ("ecapa", "wavlmsv"):
@@ -538,7 +549,7 @@ def main() -> int:
         "source-voiceprint positioning": "\\cite{sourcevoiceprint2023}",
         "rank-disclosure positioning": "\\cite{rankdisclosure2026,sterns2026}",
         "prior-intervention distinction": "None intervenes on which of two same-speaker recording events conditions a clone",
-        "open-set boundary": "does not identify the carrier positively and does not solve open-set",
+        "open-set boundary": "does not solve open-set recording-presence detection",
         "presence ECAPA primary row": "ECAPA & mic1$\\rightarrow$mic2 & .337 & .980 & .667",
         "presence ECAPA reverse row": "ECAPA & mic2$\\rightarrow$mic1 & .343 & .981 & .678",
         "presence WavLM primary row": "WavLM & mic1$\\rightarrow$mic2 & .447 & 1.000 & .884",
@@ -549,10 +560,11 @@ def main() -> int:
         "clone-to-clone abstract": "attribution remains .805 [.780,.830]",
         "clone-to-clone paragraph": "The correct candidate shares only the conditioning event",
         "post-hoc scope": "the remaining analyses are post-hoc and descriptive",
-        "N-candidate sentence": ".635 [.545,.720]/.587 [.510,.659] at sixteen",
+        "N-candidate sentence": "decreases from .935/.913 with two candidates to .635 [.545,.720]/.587",
         "second-generation sentence": "original event at .796 [.759,.832]",
-        "intervention sentence": "lowers it to .840 [.804,.874]",
-        "carrier bounded": "The carrier is bounded, not identified",
+        "intervention sentence": ".840 [.804,.874] after pitch/energy modification",
+        "intervention scope": "do not isolate causal contributions",
+        "carrier unidentified": "its physical carrier remains unidentified",
     }
     for label, phrase in required_manuscript.items():
         if phrase not in tex:
@@ -561,7 +573,7 @@ def main() -> int:
         "is reproduced after", "ECAPA-only artifact", "exact frozen source bytes",
         "population confidence interval", "open-set confirmation", "operationally large",
         "simultaneous VCTK", "bidirectionally replicated", "pre-registered", "follow rate",
-        "held-out texts", "EXP-205", "no clone repeats reference speech",
+        "held-out texts", "EXP-205", "no clone repeats reference speech", "no measurable share", "minor share",
     )
     present = [phrase for phrase in retired_claims if phrase in tex_raw]
     if present:
