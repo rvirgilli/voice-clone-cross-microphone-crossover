@@ -107,7 +107,7 @@ it was the inference-time prompt. We found no prior controlled study that interv
 the prompt recording within speaker while changing the candidate pickup path.
 
 \textbf{Prompt transfer and nuisance information.} Training-free generator
-attribution uses frozen representations \cite{tada2025}, and
+attribution uses frozen representations \cite{tada2025,pirlogeanu2026}, and
 recording-related nuisance in speaker embeddings motivates cross-recording
 sampling \cite{ssps2025}. Prompt-conditioned systems transfer prosody and
 environment \cite{restyletts2026,noiserobust2024,icl2026}, although cloning
@@ -222,7 +222,10 @@ largest duration gap; no embedding, score or clone outcome enters within-roster
 pair selection.
 Transcripts A and B differ. Generation instead uses four fixed texts that are
 disjoint from both candidates and fully crossed across arms. These four texts
-were also used in our earlier experiments; they are fixed experimental factors. The selected
+were also used in our earlier experiments; they are fixed experimental factors.
+An ASR transcript of every clone (Whisper-large-v3-turbo) matches its requested
+text (median WER .04; 0 of 3,456 flagged) and shares no run longer than one
+word with the conditioning transcript, so no clone repeats reference speech. The selected
 roster is substantially tighter than the eligibility limits. Its worst duration gap is .112\,s,
 and its worst relative duration-per-byte gap is 2.57\% across either microphone.
 
@@ -406,15 +409,16 @@ sweeps one common threshold per encoder over the same scores, pooled over
 systems and arms, as one-to-one verification within speaker. At the .01 prior,
 minimum DCF sits at or near the reject-all cost of 1.000; whole-speaker
 resampling as in Table~\ref{tab:pooled} gives ECAPA upper endpoints .989/.989.
-At the .5 prior of the two-candidate threat model it is .67 and .88. This
+At the .5 prior of the two-candidate threat model it is .67/.68 and .88/.89. This
 post-hoc check is descriptive. A score can order A above B while no global
 threshold separates the two.
 
 \begin{table}[t]
 \centering
-\caption{Within-speaker one-to-one verification with one global threshold.
-Target: clone versus its own event; non-target: clone versus the same
-speaker's other event; 1,728 each per direction. $C_{miss}=C_{fa}=1$.}
+\caption{Within-speaker one-to-one verification with one global threshold:
+EER and normalized minimum DCF. Target: clone versus its own event;
+non-target: clone versus the same speaker's other event; 1,728 each per
+direction. $C_{miss}=C_{fa}=1$.}
 \label{tab:presence}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{llccc}

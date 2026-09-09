@@ -55,6 +55,16 @@ committed ones. The third one is the within-speaker presence-detection boundary 
 the paper's §5: EER and normalized minimum DCF under one global threshold, with
 whole-speaker bootstrap intervals (about a minute on CPU).
 
+## 4a. Output-content audit (needs the clone audio, which is not released)
+
+`code/content_audit.py` transcribes every clone and its conditioning utterance with
+faster-whisper large-v3-turbo (CPU, int8) and records, per clone, the word error rate
+against the requested text and the longest word run shared with the conditioning
+transcript. `data/content_audit.json` is its released result (reading CLEAN: 0 of
+3,456 clones flagged, median WER .04, no shared run longer than one word); `verify.py`
+checks that summary against the score census. The script reads the EXP-205 run
+directory and the VCTK captures named in `data/selection_manifest.json`.
+
 ## 4. Re-measure the microphone-channel control (needs VCTK audio)
 
 `code/channel_distinctness.py` re-derives the channel control from the audio
@@ -81,7 +91,8 @@ With `pdflatex`, `bibtex`, `pdfinfo` and `pdftotext` installed:
 uv run --frozen python code/verify_manuscript.py
 ```
 
-This builds in a temporary directory, requires exactly four pages, rejects unresolved
+This builds in a temporary directory, accepts four pages or five with references
+only on the fifth, rejects unresolved
 references/citations and overfull boxes, and compares the clean build's extracted text
 with the released PDF.
 

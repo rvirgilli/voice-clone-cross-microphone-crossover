@@ -406,6 +406,18 @@ def main() -> int:
             if cell["ndcf_ci_excludes_reject_all"] != (cell["ndcf_ci95"][1] < 1.0):
                 raise AssertionError("presence-detection reject-all flag inconsistent with its interval")
 
+    # Output-content audit (paper §3.2): the released summary must carry the CLEAN reading the
+    # manuscript relies on, over the full clone census. Re-measuring it needs the clone audio.
+    content = load("content_audit.json")
+    if content.get("schema") != "exp208-output-content-audit-v1" or len(content["records"]) != 3456:
+        raise AssertionError("content-audit schema or census invalid")
+    overall = content["summary"]["overall"]
+    if content["summary"]["reading"] != "CLEAN" or overall["contaminated"] != 0 or overall["max_prompt_overlap"] > 1:
+        raise AssertionError("content-audit reading is not CLEAN as the manuscript states")
+    if {tuple(r[k] for k in ("speaker", "system", "text_index", "prompt_mic", "seed_arm")) for r in content["records"]} != set(
+            (r["speaker"], r["system"], int(r["text_index"]), r["prompt_mic"], r["seed_arm"]) for r in rows):
+        raise AssertionError("content-audit records do not cover the released score identities exactly")
+
     # Bind the released manuscript source to the recomputed headline and channel evidence.
     tex_raw = (ROOT / "paper" / "F2" / "main.tex").read_text(encoding="utf-8")
     tex = " ".join(tex_raw.split())
@@ -435,6 +447,7 @@ def main() -> int:
         "presence WavLM primary row": "WavLM & mic1$\\rightarrow$mic2 & .447 & 1.000 & .884",
         "presence WavLM reverse row": "WavLM & mic2$\\rightarrow$mic1 & .451 & .998 & .889",
         "presence post-hoc label": "This post-hoc check is descriptive",
+        "content audit": "median WER .04; 0 of 3,456 flagged",
     }
     for label, phrase in required_manuscript.items():
         if phrase not in tex:
