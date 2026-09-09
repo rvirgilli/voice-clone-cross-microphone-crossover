@@ -20,8 +20,11 @@ every other release payload file exactly once, and then recomputes from
 - the attribution accuracies and their 100,000-draw whole-speaker bootstrap intervals,
   for both directions and both speaker-verification readouts;
 - the generation ledger, covering all 3,456 clones;
-- the microphone-channel control, which confirms that the two captures of each
-  event are distinct signals rather than copies of one another;
+- the stored microphone-channel control summary, which records that the two
+  captures of each event are distinct signals rather than copies of one another
+  (re-measuring it from audio is section 4);
+- the within-speaker presence-detection points of the paper's §5 (EER and
+  normalized minimum DCF at two priors);
 - all eight pinned model-card/licence snapshots and XTTS's explicit output terms;
 - the registered decision rule applied to those statistics.
 
@@ -84,8 +87,10 @@ with the released PDF.
 
 ## What is not redistributed
 
-Source and generated speech, model weights, and large environments. Everything
-the paper asserts can be re-derived from the released score-level files.
+Source and generated speech, model weights, and large environments. The
+score-based statistics and decision criteria can be re-derived from the released
+score-level files; the microphone-channel control needs the identified VCTK audio
+(section 4), and release consistency does not authenticate historical execution.
 
 ## Refresh licensing evidence (network, not needed for verification)
 

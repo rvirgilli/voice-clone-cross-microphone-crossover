@@ -39,11 +39,12 @@ cannot decide the label. With fixed speaker-verification readouts,
 speaker-averaged two-alternative attribution accuracy for
 mic1$\rightarrow$mic2 is .896 [.869,.921] for ECAPA and .622
 [.593,.652] for WavLM; reversing the microphones gives .907 [.881,.931]
-and .620 [.589,.653]. Brackets are 95\% whole-speaker bootstrap intervals
-describing composition stability in this inherited roster; systems and texts
-are fixed. These results support recording-event attribution within a
-known-positive two-candidate set for the two tested microphones. They identify
-neither the acoustic carrier nor arbitrary recording-presence detection.
+and .620 [.589,.653]. Brackets are 95\% bootstrap intervals that resample
+whole speakers within this fixed, previously screened roster; systems and
+texts are not resampled. Attribution is evaluated only between two
+same-speaker candidates known to include the source event. The results do not
+identify the acoustic cues responsible or establish whether an arbitrary
+recording was used.
 \end{abstract}
 
 \begin{keywords}
@@ -93,7 +94,11 @@ recording-presence detection.
 \section{Related work}
 \textbf{Attribution and provenance.} Generator tracing, shared-generator
 verification and speaker attribution operate above the individual recording
-\cite{stopa,negroni2026forensic,kato2026floor,avatar2026}. Watermarking requires
+\cite{stopa,negroni2026forensic,kato2026floor,avatar2026}. Recent
+source-verification and passive-fingerprint studies distinguish generating
+systems and examine attribution cues \cite{falez2025,negroni2025source,li2026fingerprints};
+our label instead identifies the conditioning event within one speaker.
+Watermarking requires
 instrumentation before misuse \cite{vocalock}; VoiceMark attributes cloned
 speech through a watermark embedded in its inference-time reference
 \cite{voicemark}, whereas our candidates are unmodified recordings. Membership
@@ -247,11 +252,11 @@ are reported; we claim corroboration after reversal only if both lower
 endpoints exceed .50. Diagnostics cannot
 rescue any criterion.
 
-Before outcomes, the manifest, analyzer, verdict and config were frozen and
-checked. A second, independent
+We fixed the roster, analysis settings and success criteria before inspecting
+outcomes. A second, independent
 recomputation rehashed 3,456 clones and ledgers plus 216 candidates and
-reproduced every result field to $2\times10^{-15}$. The released artifact contains sanitized
-scores and an independent
+reproduced every result field to $2\times10^{-15}$. The released artifact
+contains per-clone cosine scores with candidate identities and an independent
 verifier that reconstructs the 3,456-row identity
 grid, bootstrap and verdict without audio or model weights. Its execution
 environment is pinned.
@@ -392,22 +397,37 @@ The present experiment is a separate test: the 54-speaker development
 complement, all speakers retained, within-roster metadata-only A/B pairs,
 balanced labels, opposite-microphone candidates and fixed readouts. Its .80/.70
 ECAPA bar was frozen for this design; passing it does not retroactively change
-the earlier .90 miss. This trajectory matters: each control removed a shortcut
-rather than merely adding another positive cell.
+the earlier .90 miss.
 
 \section{Boundary and limitations}
 \textbf{Attribution is not presence detection.} The crossover is a closed-set
-two-alternative question known to contain the source. Sweeping one common
-threshold per encoder over the same scores, pooled over systems and arms,
-one-to-one verification within speaker (target: clone versus its own event;
-non-target: clone versus the same speaker's other event; 1,728 each per
-direction) gives EER .337/.343 for ECAPA and .447/.451 for WavLM
-(primary/reverse). Normalized minimum DCF ($C_{miss}=C_{fa}=1$) is .980/.981
-and 1.000/.998 at a .01 target prior, and .667/.678 and .884/.889 at the .5
-prior of the two-candidate threat model; whole-speaker resampling as in
-Table~\ref{tab:pooled} gives ECAPA upper endpoints .989/.989 at .01. This
+two-alternative question known to contain the source. Table~\ref{tab:presence}
+sweeps one common threshold per encoder over the same scores, pooled over
+systems and arms, as one-to-one verification within speaker. At the .01 prior,
+minimum DCF sits at or near the reject-all cost of 1.000; whole-speaker
+resampling as in Table~\ref{tab:pooled} gives ECAPA upper endpoints .989/.989.
+At the .5 prior of the two-candidate threat model it is .67 and .88. This
 post-hoc check is descriptive. A score can order A above B while no global
 threshold separates the two.
+
+\begin{table}[t]
+\centering
+\caption{Within-speaker one-to-one verification with one global threshold.
+Target: clone versus its own event; non-target: clone versus the same
+speaker's other event; 1,728 each per direction. $C_{miss}=C_{fa}=1$.}
+\label{tab:presence}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llccc}
+\toprule
+Encoder & Prompt$\rightarrow$candidate & EER & minDCF, prior .01 & minDCF, prior .5 \\
+\midrule
+ECAPA & mic1$\rightarrow$mic2 & .337 & .980 & .667 \\
+ECAPA & mic2$\rightarrow$mic1 & .343 & .981 & .678 \\
+WavLM & mic1$\rightarrow$mic2 & .447 & 1.000 & .884 \\
+WavLM & mic2$\rightarrow$mic1 & .451 & .998 & .889 \\
+\bottomrule
+\end{tabular}}
+\end{table}
 We therefore restrict investigative triage to a known-positive two-recording set
 for human provenance review, where the score can prioritize candidates. It
 cannot decide whether an arbitrary queried recording was present, and it is not

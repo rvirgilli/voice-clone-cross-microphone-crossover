@@ -430,8 +430,10 @@ def main() -> int:
         "rank-disclosure positioning": "\\cite{rankdisclosure2026,sterns2026}",
         "prior-intervention distinction": "None intervenes on which of two same-speaker recording events conditions a clone",
         "open-set boundary": "neither identifies the carrier nor solves open-set recording-presence detection",
-        "presence EER": "gives EER .337/.343 for ECAPA and .447/.451 for WavLM",
-        "presence minDCF": ".980/.981 and 1.000/.998 at a .01 target prior, and .667/.678 and .884/.889",
+        "presence ECAPA primary row": "ECAPA & mic1$\\rightarrow$mic2 & .337 & .980 & .667",
+        "presence ECAPA reverse row": "ECAPA & mic2$\\rightarrow$mic1 & .343 & .981 & .678",
+        "presence WavLM primary row": "WavLM & mic1$\\rightarrow$mic2 & .447 & 1.000 & .884",
+        "presence WavLM reverse row": "WavLM & mic2$\\rightarrow$mic1 & .451 & .998 & .889",
         "presence post-hoc label": "This post-hoc check is descriptive",
     }
     for label, phrase in required_manuscript.items():
