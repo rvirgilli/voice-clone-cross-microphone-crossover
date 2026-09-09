@@ -417,6 +417,50 @@ def main() -> int:
     if {tuple(r[k] for k in ("speaker", "system", "text_index", "prompt_mic", "seed_arm")) for r in content["records"]} != set(
             (r["speaker"], r["system"], int(r["text_index"]), r["prompt_mic"], r["seed_arm"]) for r in rows):
         raise AssertionError("content-audit records do not cover the released score identities exactly")
+    # Recompute every WER and filtered-overlap value from the released recognized transcripts.
+    import re
+
+    def words(text: str) -> list[str]:
+        return re.sub(r"[^a-z0-9' ]+", " ", text.lower()).split()
+
+    def word_error_rate(reference: list[str], hypothesis: list[str]) -> float:
+        previous = list(range(len(hypothesis) + 1))
+        for i, ref_word in enumerate(reference, start=1):
+            current = [i]
+            for j, hyp_word in enumerate(hypothesis, start=1):
+                current.append(min(previous[j] + 1, current[j - 1] + 1, previous[j - 1] + (ref_word != hyp_word)))
+            previous = current
+        return previous[-1] / max(1, len(reference))
+
+    def filtered_overlap(clone: list[str], prompt: list[str], requested: list[str]) -> int:
+        requested_text = " " + " ".join(requested) + " "
+        best = 0
+        for i in range(len(clone)):
+            for j in range(len(prompt)):
+                k = 0
+                while i + k < len(clone) and j + k < len(prompt) and clone[i + k] == prompt[j + k]:
+                    k += 1
+                if k > best and (" " + " ".join(clone[i : i + k]) + " ") not in requested_text:
+                    best = k
+        return best
+
+    transcripts = {}
+    for line in (DATA / "transcripts.jsonl").read_text(encoding="utf-8").splitlines():
+        record = json.loads(line)
+        transcripts[record["path"]] = record["text"]
+    requested = {t["index"]: words(t["text"]) for t in selection_manifest["generation"]["generated_texts"]}
+    prompt_paths = {(s["speaker"], k): s["audio"][k]["path"] for s in selection_manifest["speakers"] for k in ("A_mic1", "A_mic2", "B_mic1", "B_mic2")}
+    for record in content["records"]:
+        clone_words = words(transcripts[record["clone_path"]])
+        prompt_words = words(transcripts[prompt_paths[(record["speaker"], f"{record['seed_arm']}_{record['prompt_mic']}")]])
+        req = requested[record["text_index"]]
+        if abs(word_error_rate(req, clone_words) - record["wer_requested"]) > 1e-12:
+            raise AssertionError(f"content-audit WER does not recompute for {record['clone_path']}")
+        if filtered_overlap(clone_words, prompt_words, req) != record["prompt_overlap"]:
+            raise AssertionError(f"content-audit overlap does not recompute for {record['clone_path']}")
+    wers = sorted(r["wer_requested"] for r in content["records"])
+    if wers[len(wers) // 2] != overall["median_wer_requested"] or sum(r["prompt_overlap"] >= content["overlap_words"] for r in content["records"]) != overall["contaminated"]:
+        raise AssertionError("content-audit summary does not recompute from its records")
 
     # Bind the released manuscript source to the recomputed headline and channel evidence.
     tex_raw = (ROOT / "paper" / "F2" / "main.tex").read_text(encoding="utf-8")
@@ -447,7 +491,8 @@ def main() -> int:
         "presence WavLM primary row": "WavLM & mic1$\\rightarrow$mic2 & .447 & 1.000 & .884",
         "presence WavLM reverse row": "WavLM & mic2$\\rightarrow$mic1 & .451 & .998 & .889",
         "presence post-hoc label": "This post-hoc check is descriptive",
-        "content audit": "median WER .04; 0 of 3,456 flagged",
+        "content audit": "no clone (0 of 3,456) was flagged",
+        "content audit scope": "does not establish the absence of reference-speech repetition",
     }
     for label, phrase in required_manuscript.items():
         if phrase not in tex:
@@ -456,7 +501,7 @@ def main() -> int:
         "is reproduced after", "ECAPA-only artifact", "exact frozen source bytes",
         "population confidence interval", "open-set confirmation", "operationally large",
         "simultaneous VCTK", "bidirectionally replicated", "pre-registered", "follow rate",
-        "held-out texts", "EXP-205",
+        "held-out texts", "EXP-205", "no clone repeats reference speech",
     )
     present = [phrase for phrase in retired_claims if phrase in tex_raw]
     if present:

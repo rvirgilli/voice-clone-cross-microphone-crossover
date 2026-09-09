@@ -58,12 +58,15 @@ whole-speaker bootstrap intervals (about a minute on CPU).
 ## 4a. Output-content audit (needs the clone audio, which is not released)
 
 `code/content_audit.py` transcribes every clone and its conditioning utterance with
-faster-whisper large-v3-turbo (CPU, int8) and records, per clone, the word error rate
-against the requested text and the longest word run shared with the conditioning
-transcript. `data/content_audit.json` is its released result (reading CLEAN: 0 of
-3,456 clones flagged, median WER .04, no shared run longer than one word); `verify.py`
-checks that summary against the score census. The script reads the EXP-205 run
-directory and the VCTK captures named in `data/selection_manifest.json`.
+faster-whisper large-v3-turbo (CPU, int8; `EXP205_RUN` and `FASTER_WHISPER_TURBO`
+point at the run directory and the model) and records, per clone, the word error rate
+against the requested text and the longest run of consecutive recognized words shared
+with the conditioning transcript **after excluding sequences present in the requested
+text**. A clone is flagged when that filtered run reaches four words.
+`data/transcripts.jsonl` holds the recognized transcripts and `data/content_audit.json`
+the per-clone values and summary (0 of 3,456 flagged, median WER .04); `verify.py`
+recomputes every WER and overlap value from the released transcripts. This is a
+screen for copied text, not proof that no clone repeats reference audio.
 
 ## 4. Re-measure the microphone-channel control (needs VCTK audio)
 

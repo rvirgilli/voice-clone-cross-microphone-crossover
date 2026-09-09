@@ -223,9 +223,11 @@ pair selection.
 Transcripts A and B differ. Generation instead uses four fixed texts that are
 disjoint from both candidates and fully crossed across arms. These four texts
 were also used in our earlier experiments; they are fixed experimental factors.
-An ASR transcript of every clone (Whisper-large-v3-turbo) matches its requested
-text (median WER .04; 0 of 3,456 flagged) and shares no run longer than one
-word with the conditioning transcript, so no clone repeats reference speech. The selected
+A post-hoc ASR screen (Whisper-large-v3-turbo) gives median WER .04 against
+the requested text; no clone (0 of 3,456) was flagged for four or more
+consecutive recognized words shared with its conditioning transcript after
+excluding sequences present in the requested text. This diagnostic does not
+establish the absence of reference-speech repetition. The selected
 roster is substantially tighter than the eligibility limits. Its worst duration gap is .112\,s,
 and its worst relative duration-per-byte gap is 2.57\% across either microphone.
 

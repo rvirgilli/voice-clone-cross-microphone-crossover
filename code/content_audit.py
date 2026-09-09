@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import re
 from collections import defaultdict
 from pathlib import Path
@@ -14,9 +15,12 @@ import soundfile as sf
 from faster_whisper import WhisperModel
 
 
-EXP205 = Path("/home/rv/projects/academic/icassp2027/experiments/EXP-205-f2-crossmic-crossover")
-RUN205 = Path("/home/rv/icassp-runs/EXP-205-f2-crossmic-crossover")
-MODEL = Path("/home/rv/.cache/huggingface/hub/models--mobiuslabsgmbh--faster-whisper-large-v3-turbo/snapshots")
+# Inputs are outside this release: the EXP-205 run directory (clones, scores.tsv) and the
+# VCTK captures named in data/selection_manifest.json. Point the environment at them.
+ROOT = Path(__file__).resolve().parent.parent
+RUN205 = Path(os.environ.get("EXP205_RUN", ROOT / "inputs" / "exp205-run"))
+MANIFEST = ROOT / "data" / "selection_manifest.json"
+MODEL = Path(os.environ.get("FASTER_WHISPER_TURBO", ROOT / "inputs" / "faster-whisper-large-v3-turbo"))
 OVERLAP_WORDS = 4
 
 
@@ -71,14 +75,13 @@ def main() -> int:
             record = json.loads(line)
             cache[record["path"]] = record["text"]
 
-    manifest = json.loads((EXP205 / "selection-manifest.json").read_text(encoding="utf-8"))
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     requested = {t["index"]: normalize(t["text"]) for t in manifest["generation"]["generated_texts"]}
-    prompts = {(s["speaker"], key): s["audio"][key]["path"] for s in manifest["speakers"] for key in ("A_mic1", "A_mic2", "B_mic1", "B_mic2")}
-    with (RUN205 / "scores.tsv").open(newline="", encoding="utf-8") as handle:
+    prompts = {(s["speaker"], key): str(ROOT / s["audio"][key]["path"]) for s in manifest["speakers"] for key in ("A_mic1", "A_mic2", "B_mic1", "B_mic2")}
+    with (ROOT / "data" / "scores.tsv").open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle, delimiter="\t"))
 
-    snapshots = sorted(MODEL.iterdir())
-    model = WhisperModel(str(snapshots[0]), device="cpu", compute_type="int8")
+    model = WhisperModel(str(MODEL), device="cpu", compute_type="int8")
     records = []
     durations = defaultdict(list)
     for n, row in enumerate(rows, start=1):
