@@ -48,11 +48,21 @@ def main() -> int:
             raise AssertionError(f"manuscript log contains: {found}")
         info = run(["pdfinfo", "main.pdf"], scratch).stdout
         pages = [line.split(":", 1)[1].strip() for line in info.splitlines() if line.startswith("Pages:")]
-        if pages != ["4"]:
-            raise AssertionError(f"expected a four-page manuscript, observed {pages}")
+        # ICASSP allows four pages of technical content plus an optional fifth page
+        # holding references only.
+        if pages not in (["4"], ["5"]):
+            raise AssertionError(f"expected a four- or five-page manuscript, observed {pages}")
+        if pages == ["5"]:
+            page4 = subprocess.run(["pdftotext", "-f", "4", "-l", "4", "main.pdf", "-"],
+                                   cwd=scratch, text=True, capture_output=True, check=True).stdout
+            page5 = subprocess.run(["pdftotext", "-f", "5", "-l", "5", "main.pdf", "-"],
+                                   cwd=scratch, text=True, capture_output=True, check=True).stdout
+            first = next((line for line in page5.splitlines() if line.strip()), "")
+            if "REFERENCES" not in page4 or not first.startswith("[") or "CONCLUSION" in page5:
+                raise AssertionError("page 5 must contain references only")
         if pdf_text(scratch / "main.pdf") != pdf_text(PAPER / "main.pdf"):
             raise AssertionError("released PDF text does not match a clean build of released source")
-    print("PASS — clean four-page build; no unresolved/overfull log markers; PDF text matches source")
+    print(f"PASS — clean {pages[0]}-page build; no unresolved/overfull log markers; PDF text matches source")
     return 0
 
 

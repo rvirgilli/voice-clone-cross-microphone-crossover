@@ -1,0 +1,113 @@
+{
+  "schema": "exp205-postreview-presence-detection-sensitivity-v1",
+  "status": "POST_HOC_DESCRIPTIVE_NO_VERDICT_CHANGE",
+  "pins": {
+    "scores.tsv": "535d3a5cba9f98bb830175004214b62977047f629113248ecca07c11cbd9c387"
+  },
+  "trial_definition": "Per clone, target = cosine to the opposite-microphone candidate of its own conditioning event; non-target = cosine to the same speaker's other event through that microphone. One global threshold per direction and encoder.",
+  "cost_model": {
+    "target_prior": 0.01,
+    "threat_model_prior": 0.5,
+    "cost_miss": 1.0,
+    "cost_false_alarm": 1.0,
+    "normalization": "divided by min(prior*C_miss, (1-prior)*C_fa); reject-all = 1.0",
+    "threshold_grid": "every distinct score plus one value above the maximum"
+  },
+  "bootstrap": {
+    "unit": "speaker",
+    "replicates": 100000,
+    "seed": 2052027,
+    "interval": "percentile 2.5/97.5"
+  },
+  "directions": {
+    "primary_mic1_to_mic2": {
+      "ecapa": {
+        "n_target_trials": 1728,
+        "n_nontarget_trials": 1728,
+        "eer": 0.3368055555555556,
+        "eer_ci95": [
+          0.3081597222222222,
+          0.36313657407407407
+        ],
+        "ndcf": 0.9803240740740741,
+        "ndcf_ci95": [
+          0.9600694444444444,
+          0.9890046296296295
+        ],
+        "ndcf_ci_excludes_reject_all": true,
+        "ndcf_threat_prior": 0.6672453703703703,
+        "ndcf_threat_prior_ci95": [
+          0.6041666666666667,
+          0.7118055555555556
+        ]
+      },
+      "wavlm": {
+        "n_target_trials": 1728,
+        "n_nontarget_trials": 1728,
+        "eer": 0.4473379629629629,
+        "eer_ci95": [
+          0.4276620370370371,
+          0.4618055555555556
+        ],
+        "ndcf": 1.0,
+        "ndcf_ci95": [
+          0.9965277777777778,
+          1.0
+        ],
+        "ndcf_ci_excludes_reject_all": false,
+        "ndcf_threat_prior": 0.8836805555555556,
+        "ndcf_threat_prior_ci95": [
+          0.8443287037037037,
+          0.9056712962962963
+        ]
+      }
+    },
+    "reverse_mic2_to_mic1": {
+      "ecapa": {
+        "n_target_trials": 1728,
+        "n_nontarget_trials": 1728,
+        "eer": 0.34259259259259256,
+        "eer_ci95": [
+          0.3125,
+          0.3666087962962963
+        ],
+        "ndcf": 0.9809027777777778,
+        "ndcf_ci95": [
+          0.953125,
+          0.9890046296296295
+        ],
+        "ndcf_ci_excludes_reject_all": true,
+        "ndcf_threat_prior": 0.6782407407407407,
+        "ndcf_threat_prior_ci95": [
+          0.615162037037037,
+          0.7181712962962963
+        ]
+      },
+      "wavlm": {
+        "n_target_trials": 1728,
+        "n_nontarget_trials": 1728,
+        "eer": 0.45138888888888884,
+        "eer_ci95": [
+          0.4311342592592593,
+          0.4681712962962963
+        ],
+        "ndcf": 0.9982638888888888,
+        "ndcf_ci95": [
+          0.9930555555555555,
+          1.0
+        ],
+        "ndcf_ci_excludes_reject_all": false,
+        "ndcf_threat_prior": 0.8894675925925926,
+        "ndcf_threat_prior_ci95": [
+          0.84375,
+          0.907986111111111
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Trials are the 1,728 per-direction two-candidate comparisons split into one target and one non-target score each; they are not an independent open-set search over unknown candidates.",
+    "Non-targets are same-speaker, paired-capture events, the hardest within-speaker case; cross-speaker impostors are not included.",
+    "This analysis is descriptive and cannot alter or rescue the frozen pooled EXP-205 verdict."
+  ]
+}

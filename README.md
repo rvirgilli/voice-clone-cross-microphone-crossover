@@ -7,9 +7,10 @@ We ask which of two recordings of the same speaker was used to prompt a voice
 clone. A clone is generated from one microphone and attributed through the
 other, so speaker identity, generated text, exact waveform and a shared
 microphone fingerprint cannot decide the label. Over 54 VCTK speakers and four
-open cloning systems (3,456 clones), the mic1→mic2 follow rate is **.896
-[.869, .921]** with an ECAPA readout and **.622 [.593, .652]** with WavLM.
-Closed-set attribution is strong; open-set presence verification is not.
+open cloning systems (3,456 clones), speaker-averaged two-alternative attribution
+accuracy for mic1→mic2 is **.896 [.869, .921]** with an ECAPA readout and
+**.622 [.593, .652]** with WavLM. Closed-set attribution is strong; with one
+global threshold, within-speaker presence verification is not (EER .34 and .45).
 
 ## Contents
 
@@ -35,8 +36,9 @@ uv run --frozen python code/verify.py
 
 This treats `data/checksums.sha256` as the explicit root of trust, requires it to
 enumerate every other release payload file exactly once, then recomputes the 3,456-row
-score census, follow rates and 100,000-draw bootstrap intervals, generation ledger,
-54 selected A/B pairs, and microphone-channel control. It rejects unlisted payloads,
+score census, attribution accuracies and 100,000-draw bootstrap intervals, generation
+ledger, 54 selected A/B pairs, microphone-channel control, and the presence-detection
+points of the paper's §5. It rejects unlisted payloads,
 symlinks, audio, model weights and archives, and authenticates eight pinned
 model-card/licence snapshots including XTTS's output terms. It runs on CPU and does not generate or
 score audio.

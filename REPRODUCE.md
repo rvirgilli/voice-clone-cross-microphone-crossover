@@ -17,7 +17,7 @@ every other release payload file exactly once, and then recomputes from
 `data/scores.tsv`:
 
 - the 3,456-row score census and the 54-speaker × 2-event roster;
-- the follow rates and their 100,000-draw whole-speaker bootstrap intervals,
+- the attribution accuracies and their 100,000-draw whole-speaker bootstrap intervals,
   for both directions and both speaker-verification readouts;
 - the generation ledger, covering all 3,456 clones;
 - the microphone-channel control, which confirms that the two captures of each
@@ -44,10 +44,13 @@ does not redistribute. The mapping it would check is recorded in
 ```bash
 uv run --frozen python code/roster_ancestry_sensitivity.py
 uv run --frozen python code/arm_pairing_sensitivity.py
+uv run --frozen python code/presence_detection_sensitivity.py
 ```
 
-Both rewrite their result files in `data/`; the recomputed values must match the
-committed ones.
+All three rewrite their result files in `data/`; the recomputed values must match the
+committed ones. The third one is the within-speaker presence-detection boundary of
+the paper's §5: EER and normalized minimum DCF under one global threshold, with
+whole-speaker bootstrap intervals (about a minute on CPU).
 
 ## 4. Re-measure the microphone-channel control (needs VCTK audio)
 

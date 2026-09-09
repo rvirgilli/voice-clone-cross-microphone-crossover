@@ -62,7 +62,7 @@ def main() -> int:
     ax.set_ylim(0.34, 1.025)
     ax.set_xticks(range(1, 5), [item[0] for item in groups])
     ax.set_yticks([0.4, 0.5, 0.6, 0.8, 1.0])
-    ax.set_ylabel("follow rate", labelpad=1)
+    ax.set_ylabel("attribution accuracy", labelpad=1)
     ax.tick_params(axis="both", labelsize=7, length=2)
     for spine in ("top", "right"):
         ax.spines[spine].set_visible(False)

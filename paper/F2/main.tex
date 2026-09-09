@@ -28,20 +28,22 @@ rafaello.virgilli@discente.ufg.br}
 
 \begin{abstract}
 Voice-clone attribution usually stops at the generator or speaker. We ask a
-finer question: which of two recordings of the same speaker conditioned the
-clone? In a pre-specified complete crossover, a fixed 54-speaker VCTK roster
-provides two events with paired microphone captures. Four open cloning systems
-and four fixed, held-out texts produce 3,456 clones. Generation uses one
+finer question: which of two same-speaker recording events supplied the
+conditioning recording? In a pre-specified complete crossover, a fixed 54-speaker VCTK roster
+provides two events with paired microphone captures. Four publicly available
+cloning systems and four fixed generation texts, distinct from the candidate
+transcripts, produce 3,456 clones. Generation uses one
 microphone; attribution compares the two events through the other, so speaker
 identity, generated text, exact waveform and a shared microphone fingerprint
-cannot decide the label. With fixed speaker-verification readouts, the
-mic1$\rightarrow$mic2 follow rate is .896 [.869,.921] for ECAPA and .622
-[.593,.652] for WavLM; the predeclared reverse direction gives .907 [.881,.931]
-and .620 [.589,.653]. The ECAPA result meets the frozen large-effect
-criterion; WavLM corroborates its direction, which persists when the
-microphone roles are reversed. This establishes closed-set attribution between these
-two fixed pickup paths, not the carrier mechanism or open-set presence
-detection.
+cannot decide the label. With fixed speaker-verification readouts,
+speaker-averaged two-alternative attribution accuracy for
+mic1$\rightarrow$mic2 is .896 [.869,.921] for ECAPA and .622
+[.593,.652] for WavLM; reversing the microphones gives .907 [.881,.931]
+and .620 [.589,.653]. Brackets are 95\% whole-speaker bootstrap intervals
+describing composition stability in this inherited roster; systems and texts
+are fixed. These results support recording-event attribution within a
+known-positive two-candidate set for the two tested microphones. They identify
+neither the acoustic carrier nor arbitrary recording-presence detection.
 \end{abstract}
 
 \begin{keywords}
@@ -67,58 +69,71 @@ embeddings themselves encode session and channel \cite{xvecprobe2019,svprobe2026
 High retrieval from a same-speaker pool therefore does not by itself show that
 the target follows the recording used for conditioning.
 
-We turn the question into a balanced intervention. For each speaker, clone from
-recording event A and from event B, and test both signed comparisons. Prompt and
-candidate are paired captures from different microphones. Four systems and
-texts are fully crossed; ECAPA-TDNN \cite{ecapa} is fixed as primary and a
-speaker-verification-fine-tuned WavLM \cite{wavlm} as cross-encoder
-corroboration. Within a 54-speaker complement inherited from ECAPA-informed
-development rosters, all speakers are retained and pair selection is frozen
-from metadata alone, without clone outcomes.
+We turn the question into a balanced intervention. For each speaker, we clone
+from recording event A and event B, then test both signed comparisons. Prompt
+and candidate are paired captures from different microphones. Four systems and
+texts are fully crossed. ECAPA-TDNN \cite{ecapa} (SpeechBrain
+\texttt{spkrec-ecapa-voxceleb}) is fixed as the primary encoder, with a
+speaker-verification-fine-tuned WavLM \cite{wavlm}
+(\texttt{microsoft/wavlm-base-plus-sv}) as a second embedding model for
+corroboration. The experiment uses a 54-speaker complement
+inherited from ECAPA-informed development rosters. All speakers in that
+complement are retained, and metadata alone determines pair selection without
+clone outcomes.
 
-Our contributions are: (1) a complete A/B crossover that identifies whether a
-clone follows its conditioning recording while changing pickup path; (2) a
-pre-specified, independently audited 3,456-clone evaluation on 54 speakers,
-four systems and two fixed representations; and (3) a boundary result:
-recording-event attribution is consistent in a two-candidate closed set, but neither
-the physical carrier nor deployable recording-presence detection follows.
+We make three contributions. (1) The complete A/B crossover tests whether a
+clone follows its conditioning recording after a pickup-path change. (2) The
+evaluation, whose analysis plan and decision rule were fixed before outcomes
+were inspected, covers 3,456 clones, 54 speakers, four systems and two fixed
+representations. (3) The boundary is
+explicit: recording-event attribution is consistent in a two-candidate closed
+set, but the experiment identifies neither the physical carrier nor deployable
+recording-presence detection.
 
 \section{Related work}
 \textbf{Attribution and provenance.} Generator tracing, shared-generator
 verification and speaker attribution operate above the individual recording
 \cite{stopa,negroni2026forensic,kato2026floor,avatar2026}. Watermarking requires
-instrumentation before misuse \cite{vocalock}; membership inference asks
-whether audio entered training \cite{flowleak2026}, not whether it was the
-inference-time prompt. To our knowledge, no prior controlled study intervenes
-on the prompt recording within speaker and then replaces the candidate pickup
-path.
+instrumentation before misuse \cite{vocalock}; VoiceMark attributes cloned
+speech through a watermark embedded in its inference-time reference
+\cite{voicemark}, whereas our candidates are unmodified recordings. Membership
+inference asks whether audio entered training \cite{flowleak2026}, not whether
+it was the inference-time prompt. We found no prior controlled study that intervenes on
+the prompt recording within speaker while changing the candidate pickup path.
 
-\textbf{Prompt transfer and nuisance information.} Prompt-conditioned systems
-preserve prosody and environment \cite{restyletts2026,noiserobust2024,icl2026};
-prompt cosine is also a standard synthesis metric \cite{simo}; exact prosody cloning
-transfers reference prosody \cite{prosodyclone2022}. Source-voiceprint tracing recovers
-identity from converted audio \cite{sourcevoiceprint2023}, while rank/local-disclosure
-work treats linkage without global thresholds \cite{rankdisclosure2026,sterns2026}.
-None intervenes on which of two same-speaker recording events conditions a clone.
-Concurrent work separates prompt environment from identity \cite{promptenv2026}.
-These works motivate recording-level leakage but do not identify the chosen event:
-we target \emph{A versus B}, not generic clone--prompt resemblance.
+\textbf{Prompt transfer and nuisance information.} Training-free generator
+attribution uses frozen representations \cite{tada2025}, and
+recording-related nuisance in speaker embeddings motivates cross-recording
+sampling \cite{ssps2025}. Prompt-conditioned systems transfer prosody and
+environment \cite{restyletts2026,noiserobust2024,icl2026}, although cloning
+also alters style systematically \cite{stylecloning2026}; prompt cosine is a
+standard synthesis metric \cite{simo}. Exact prosody
+cloning transfers reference prosody \cite{prosodyclone2022}. Source-voiceprint
+tracing recovers identity from converted audio \cite{sourcevoiceprint2023},
+while rank/local-disclosure work treats linkage without global thresholds
+\cite{rankdisclosure2026,sterns2026}. None intervenes on which of two
+same-speaker recording events conditions a clone. Concurrent work separates
+prompt environment from identity \cite{promptenv2026}. These works motivate
+recording-level leakage but do not identify the chosen event. We target
+\emph{A versus B}, not generic clone--prompt resemblance.
 
 \section{Cross-microphone crossover}
 \subsection{Task and design}
 For speaker $s$, let recording events $A$ and $B$ each have paired VCTK
-mic1/mic2 captures \cite{vctk} --- a DPA 4035 omni and a Sennheiser MKH 800.
+mic1/mic2 captures \cite{vctk}: a DPA 4035 omni and a Sennheiser MKH 800.
 That the two are genuinely distinct signals is the design's load-bearing
-assumption, so we tested it rather than assume it. Raw correlation does not
-settle it in either direction: a delayed copy can score near zero, while genuine
-pairs reach $.92$ median once delay-aligned. We therefore use the normalized
-least-squares residual after optimal scalar gain and a $\pm50$\,ms zero-padded
-delay; its $.00001$ duplicate bar is a numerical tolerance for these transforms,
-not a universal perceptual threshold. Across all 108 event captures the residual
-is $.38$ median (range $.21$--$.70$). Exact, gain-scaled and delayed injections on
-every source, including both delay-window boundaries, are at most $.000000026$;
-no pair is byte-identical. A clone $c_{A,m1}$ is conditioned on event A's
-mic1 capture. The primary comparison asks whether a fixed encoder $f$ gives
+assumption. We tested it rather than assuming it. Raw correlation cannot settle
+the question. A delayed copy can score near zero, while genuine pairs reach $.92$ median
+once delay-aligned. We therefore use the normalized least-squares residual
+$\min_{g,|\tau|\le 50\,\mathrm{ms}}\|y-g\,T_\tau x\|_2/\|y\|_2$ over a scalar
+gain $g$ and a zero-padded delay $T_\tau$, where $x$ and $y$ are the mic1 and
+mic2 captures; its $.00001$ duplicate bar
+is a numerical tolerance for these transforms, not a universal perceptual
+threshold. Across all 108 event captures, the residual is $.38$ median
+(range $.21$--$.70$). Exact, gain-scaled and delayed injections on every source,
+including both delay-window boundaries, are at most $.000000026$; no pair is byte-identical. A clone $c_{A,m1}$ is conditioned on
+event A's mic1 capture.
+The primary comparison asks whether a fixed encoder $f$ gives
 \begin{equation}
   I\!\left[\cos(f(c_{A,m1}),f(A_{m2}))>
               \cos(f(c_{A,m1}),f(B_{m2}))\right],
@@ -128,15 +143,17 @@ an encoder's unconditional preference for A cannot create a positive effect.
 The predeclared direction reversal swaps microphones (mic2 prompt, mic1 candidates)
 and cannot rescue a failed primary direction.
 
-With $d_X=s(c_X,A)-s(c_X,B)$ on opposite-microphone candidates, a cell contributes
+With $q(u,v)=\cos(f(u),f(v))$ and $d_X=q(c_X,A)-q(c_X,B)$ on
+opposite-microphone candidates, a cell contributes
 $\{I[d_A>0]+I[d_B<0]\}/2$. Clone-independent candidate bias therefore yields
 chance; ties receive $1/2$.
 
-The threat model is deliberately narrow: the analyst has a clone and two
-known, same-speaker candidate recordings, exactly one of which supplied the
-prompt. The objective is source attribution, not deciding whether an arbitrary
+The threat model is deliberately narrow. The analyst has a clone and two
+same-speaker candidate recordings; exactly one is the other-microphone capture
+of the event that supplied the conditioning recording.
+The objective is source attribution, not deciding whether an arbitrary
 recording was used. Encoder parameters, score direction and the tie rule are
-fixed before evaluation; the analyst does not train on these speakers or
+fixed before evaluation. The analyst does not train on these speakers or
 systems.
 
 \begin{figure}[t]
@@ -178,33 +195,42 @@ The frozen manifest independently supports the pairing: all 108 selected
 event/microphone pairs have identical frame counts and sampling rates.
 
 The 54-speaker roster is the exact complement of two earlier development
-tiers. Tier~1 applied an ECAPA-geometry gate to 105 speakers and retained the
-lexicographically first 30 passing speakers; Tier~2 used ECAPA within-speaker
-geometry and retained all 24 remaining qualifiers. Consequently, the present
-roster is disjoint from development and blind to EXP-205 outcomes, but not
-embedding-naive or population-sampled. Within that fixed complement, all 54
-speakers remain
-and the A/B-pair rule below never inspects an embedding, score or clone outcome.
+subsets. The first applied an ECAPA pair-separation screen to 105 speakers
+(pair cosine below that speaker's 90th percentile over pairs of
+duration-eligible utterances) and retained the lexicographically first 30
+passing speakers. The second retained all 24 remaining speakers with one
+eligible pair at ECAPA cosine distance $\leq.20$ and another at $\geq.38$,
+pair-mean durations within .50\,s. The roster is therefore disjoint from those
+two subsets, although its speakers appeared in an earlier exploratory screen.
+It is blind to this experiment's clone outcomes, but not embedding-naive or
+population-sampled. Within that fixed complement, all 54
+speakers remain. The A/B-pair rule below never inspects an embedding, score or clone outcome.
 
-For each speaker, selection enumerates 4--10\,s paired utterances, excludes a
-previously used seed, and requires the A/B duration gap to be at most .25\,s and
-the relative seconds-per-UTF-8-byte duration gap at most 5\% on \emph{both}
-microphones. A deterministic metadata-only rule chooses the closest pair; no
-embedding, score or clone outcome enters within-roster pair selection.
-Transcripts A and B differ,
-but generation uses four fixed texts disjoint from both candidates and fully
-crossed across arms. The selected roster is substantially tighter than the
-eligibility limits: its worst duration gap is .112\,s and worst relative
-duration-per-byte gap is 2.57\% across either microphone.
+For each speaker, selection enumerates 4--10\,s paired utterances and excludes
+the conditioning utterance used for that speaker in the earlier exploratory
+screen (listed in the public selection manifest). It requires an A/B duration
+gap of at most .25\,s and a relative seconds-per-UTF-8-byte gap
+$|r_A-r_B|/[(r_A+r_B)/2]$ of at most 5\% on \emph{both} microphones. A
+deterministic metadata-only rule then takes the lexicographic minimum of the
+largest tolerance-normalized gap, their sum, the largest rate gap and the
+largest duration gap; no embedding, score or clone outcome enters within-roster
+pair selection.
+Transcripts A and B differ. Generation instead uses four fixed texts that are
+disjoint from both candidates and fully crossed across arms. These four texts
+were also used in our earlier experiments; they are fixed experimental factors. The selected
+roster is substantially tighter than the eligibility limits. Its worst duration gap is .112\,s,
+and its worst relative duration-per-byte gap is 2.57\% across either microphone.
 
-We evaluate F5-TTS 1.1.22 \cite{f5tts}, XTTS-v2 0.25.3 \cite{xtts}, CosyVoice~2
-\cite{cosyvoice2} and Seed-VC \cite{seedvc}. Seed-VC converts one fixed held-out
-source utterance per generation text, shared across targets. The full design is
+We evaluate F5-TTS (f5-tts 1.1.22) \cite{f5tts}, XTTS-v2 (coqui-tts 0.25.3)
+\cite{xtts}, CosyVoice~2 \cite{cosyvoice2} and Seed-VC \cite{seedvc}; exact
+checkpoint revisions are listed in the public artifact. Seed-VC converts one
+fixed LibriTTS-R \cite{librittsr} source utterance per generation text, shared
+across targets. The full design is
 $54$ speakers $\times2$ events $\times2$ prompt microphones $\times4$ texts
 $\times4$ systems $=3{,}456$ clones. Exact checkpoints, repositories,
 environments, files and per-clone ancestry ledgers are hash-pinned.
 
-\subsection{Estimand, bars and audit}
+\subsection{Estimand and decision criteria}
 Each speaker contributes 32 dependent comparisons per direction (two arms,
 four systems, four texts). We first average within speaker, then give all 54
 speakers equal weight. Percentile intervals resample whole speaker vectors
@@ -213,32 +239,35 @@ composition in this fixed eligible roster, not population-coverage confidence.
 Systems and texts are fixed crossed factors; system-specific points are
 descriptive and receive no individual inferential claims.
 
-The frozen primary conjunction is: \textbf{E}, ECAPA lower endpoint $>.50$;
-\textbf{O}, ECAPA point $\geq.80$ and lower endpoint $>.70$; and \textbf{R},
-WavLM lower endpoint $>.50$. ``O'' is the protocol's internal label; it is an
-author-declared large-effect criterion, not a deployment-utility claim. The
-direction-reversal headline is permitted only if both reverse ECAPA and WavLM
-lower endpoints exceed .50. Diagnostics cannot rescue any conjunct.
+The primary success criteria, fixed before outcomes were inspected, were ECAPA
+accuracy $\geq.80$ with lower stability-interval endpoint $>.70$, and WavLM
+lower endpoint $>.50$; the .80/.70 rule is an author-declared large-effect
+criterion, not a deployment-utility claim. Both reversed-microphone estimates
+are reported; we claim corroboration after reversal only if both lower
+endpoints exceed .50. Diagnostics cannot
+rescue any criterion.
 
 Before outcomes, the manifest, analyzer, verdict and config were frozen and
-audited. A transport-only one-field repair was recorded and independently approved
-before the result was opened. A second read-only audit rehashed 3,456 clones and
-ledgers plus 216 candidates and independently reproduced every result field to
-$2\times10^{-15}$. The released artifact contains sanitized scores and an independent
-verifier that reconstructs the 3,456-row identity grid, bootstrap and verdict
-without audio or model weights; its execution environment is pinned.
+checked. A second, independent
+recomputation rehashed 3,456 clones and ledgers plus 216 candidates and
+reproduced every result field to $2\times10^{-15}$. The released artifact contains sanitized
+scores and an independent
+verifier that reconstructs the 3,456-row identity
+grid, bootstrap and verdict without audio or model weights. Its execution
+environment is pinned.
 
 \section{Results}
 \subsection{The conditioning event survives pickup change}
 Table~\ref{tab:pooled} reports the predeclared directions. ECAPA attributes the
-conditioning event in 89.6\% of primary comparisons and 90.7\% in reverse,
-meeting the .80/.70 primary bar. WavLM is much weaker but directionally consistent
-at 62.2\%/62.0\%. E, O, R and both reverse components pass: the ECAPA effect meets
-the frozen large-effect rule and WavLM corroborates its direction.
+conditioning event in 89.6\% of primary comparisons and 90.7\% in reverse. It
+therefore meets the .80/.70 primary bar. WavLM is much weaker but directionally
+consistent at 62.2\%/62.0\%. All five criteria pass. The ECAPA
+effect meets the frozen large-effect rule, and WavLM corroborates its direction.
 
 \begin{table}[t]
 \centering
-\caption{Speaker-weighted follow rate [95\% composition-stability interval].
+\caption{Speaker-averaged two-alternative attribution accuracy [95\%
+speaker-resampling stability interval]; 1,728 comparisons per direction.
 Same-mic columns are diagnostics, never verdict inputs.}
 \label{tab:pooled}
 \resizebox{\linewidth}{!}{%
@@ -256,19 +285,19 @@ mic2$\rightarrow$mic1 & ECAPA & \textbf{.907 [.881,.931]} & .930 [.910,.948] \\
 
 \begin{table}[t]
 \centering
-\caption{Frozen bars and observed values. LCB is the lower endpoint in
-Table~\ref{tab:pooled}; inequalities are strict except the .80 point bar.}
+\caption{Predeclared criteria and observed values. Lower endpoints are those of
+Table~\ref{tab:pooled}; inequalities are strict except the .80 point.}
 \label{tab:bars}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{llll}
 \toprule
-Axis & Frozen criterion & Observed & Status \\
+Comparison & Criterion & Observed & Status \\
 \midrule
-E   & primary ECAPA LCB $>.50$ & .869 & PASS \\
-O   & ECAPA point $\geq.80$, LCB $>.70$ & .896/.869 & PASS \\
-R   & primary WavLM LCB $>.50$ & .593 & PASS \\
-$D_E$ & reverse ECAPA LCB $>.50$ & .881 & PASS \\
-$D_R$ & reverse WavLM LCB $>.50$ & .589 & PASS \\
+primary ECAPA & lower endpoint $>.50$ & .869 & PASS \\
+primary ECAPA & point $\geq.80$, lower endpoint $>.70$ & .896/.869 & PASS \\
+primary WavLM & lower endpoint $>.50$ & .593 & PASS \\
+reverse ECAPA & lower endpoint $>.50$ & .881 & PASS \\
+reverse WavLM & lower endpoint $>.50$ & .589 & PASS \\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -277,7 +306,7 @@ $D_R$ & reverse WavLM LCB $>.50$ & .589 & PASS \\
 \centering
 \includegraphics[width=.94\linewidth]{fig_exp205_speakers.pdf}
 \caption{Fixed-roster speaker means (54 dots/group; 32 comparisons per dot).
-Diamonds and bars are pooled points and 95\% composition-stability intervals;
+Diamonds and bars are pooled points and 95\% speaker-resampling stability intervals;
 the dashed line is chance. P/R denote primary/reverse directions.}
 \label{fig:speakers}
 \end{figure}
@@ -288,20 +317,20 @@ invariance.
 
 Figure~\ref{fig:speakers} exposes the heterogeneity hidden by pooled points.
 All 54 primary ECAPA speaker means exceed .50; in reverse, 53 exceed it and one
-equals it. WavLM is not uniformly positive---47 primary and 43 reverse speaker
-means exceed .50---so its contribution is corroboration of the aggregate
-direction, not a per-speaker guarantee. Whole-speaker resampling preserves this
-heterogeneity rather than treating 1,728 comparisons per direction as
-independent.
+equals it. WavLM is not uniformly positive: 47 primary and 43 reverse speaker
+means exceed .50. Its role is therefore aggregate corroboration, not a
+per-speaker guarantee. Whole-speaker resampling preserves this heterogeneity
+rather than treating 1,728 comparisons per direction as independent.
 
 \subsection{Breadth across fixed systems}
-Table~\ref{tab:systems} gives descriptive system points: ECAPA exceeds .82 throughout;
-WavLM spans .572--.671, with weaker XTTS-v2 cells visible. Fixed systems and no
-simultaneous per-system intervals license breadth only across this tested design.
+Table~\ref{tab:systems} gives descriptive system points. ECAPA exceeds .82
+throughout, while WavLM spans .572--.671 and has weaker XTTS-v2 cells. The
+systems are fixed, and there are no simultaneous per-system intervals. The
+breadth claim is therefore limited to this tested design.
 
 \begin{table}[t]
 \centering
-\caption{Descriptive follow-rate points by system. P/R: primary/reverse.}
+\caption{Descriptive attribution-accuracy points by system. P/R: primary/reverse.}
 \label{tab:systems}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{lcccc}
@@ -318,24 +347,26 @@ WavLM, R & .657 & .574 & .657 & .593 \\
 
 The ECAPA--WavLM gap rules out near-ceiling magnitude for every representation;
 WavLM's positive lower endpoints still oppose ECAPA-weight specificity. Both are
-speaker-verification embeddings, so a shared cue remains possible. Positive
-continuous margins are diagnostic only.
+speaker-verification embeddings, so a shared cue remains possible. Mean
+correct-minus-incorrect cosine margins are positive but small, ECAPA .079/.081
+and WavLM .011/.013 for primary/reverse, and are descriptive only.
 
-\subsection{Post-review sensitivity checks}
-Table~\ref{tab:ancestry} stratifies the inherited ECAPA-informed complement by the
-earlier Tier~1 gate. Direction persists among 36 pass-but-not-retained and 15 fail
-speakers; three absent from that record remain separate. This post-hoc check cannot
-create an embedding-naive sample or alter the pooled verdict.
+\subsection{Descriptive sensitivity analyses}
+Table~\ref{tab:ancestry} stratifies the inherited ECAPA-informed complement by
+the earlier pair-separation screen. Direction persists among 36 pass-but-not-retained and
+15 fail speakers. Three speakers absent from that record remain separate. This
+post-hoc check cannot create an embedding-naive sample or alter the pooled
+verdict.
 
 \begin{table}[t]
 \centering
-\caption{Post-hoc points by prior Tier~1 gate status. P/R: microphone
-direction; no stratum-specific confirmatory claim.}
+\caption{Post-hoc points by status in the earlier pair-separation screen. P/R:
+microphone direction; no stratum-specific confirmatory claim.}
 \label{tab:ancestry}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
-Prior gate status & $n$ & ECAPA P/R & WavLM P/R \\
+Screen status & $n$ & ECAPA P/R & WavLM P/R \\
 \midrule
 Pass, not retained & 36 & .908/.907 & .609/.596 \\
 Fail                & 15 & .879/.915 & .654/.685 \\
@@ -347,18 +378,15 @@ Not evaluated       &  3 & .833/.875 & .625/.583 \\
 Arm-separated points also oppose a one-candidate shortcut. For A/B, ECAPA is
 .889/.903 in primary and .892/.922 in reverse; WavLM is .588/.656 and
 .660/.581, respectively. Thus WavLM's arm asymmetry reverses with microphone
-direction. All 32 system$\times$direction$\times$encoder$\times$arm cells are
-above .50 (minimum .523), descriptively; no cell has a separate interval or
-multiplicity-adjusted test.
+direction. Descriptively, all 32
+system$\times$direction$\times$encoder$\times$arm cells are above .50 (minimum .523).
+No cell has a separate interval or multiplicity-adjusted test.
 
 \subsection{What changed relative to earlier evidence}
-Earlier same-speaker mixed-chapter pools retrieved the seed at
-9.7--16.4$\times$ chance, and same-chapter fused AUC was .815--.872. Those
-designs established a floor but left seed and speaker/session structure
-entangled; F5-TTS also exposed a duration-per-text-byte cue. A subsequent
-two-seed crossover obtained .806 [.757,.854] but missed its frozen .90 point
-bar and used favorable seed pairs on one pickup path. We retain that as
-positive discovery, not confirmation.
+An earlier exploratory two-reference crossover (30 speakers, 960 trials)
+obtained .806 [.757,.854] on one pickup path with favorable reference pairs
+and missed its frozen .90 point bar. We retain that as positive discovery,
+not confirmation.
 
 The present experiment is a separate test: the 54-speaker development
 complement, all speakers retained, within-roster metadata-only A/B pairs,
@@ -369,13 +397,21 @@ rather than merely adding another positive cell.
 
 \section{Boundary and limitations}
 \textbf{Attribution is not presence detection.} The crossover is a closed-set
-two-alternative question known to contain the source. In our earlier paired
-present/absent evaluation, normalized minDCF at a .01 prior was .79--1.00
-against 1.00 for reject-all; only two of four systems had intervals excluding
-reject-all. A score can order A above B while lacking a stable global threshold.
-We therefore limit investigative triage to prioritizing candidates inside a
-known-positive two-recording set for human provenance review; it cannot decide
-whether an arbitrary queried recording was present and is not an automated accusation.
+two-alternative question known to contain the source. Sweeping one common
+threshold per encoder over the same scores, pooled over systems and arms,
+one-to-one verification within speaker (target: clone versus its own event;
+non-target: clone versus the same speaker's other event; 1,728 each per
+direction) gives EER .337/.343 for ECAPA and .447/.451 for WavLM
+(primary/reverse). Normalized minimum DCF ($C_{miss}=C_{fa}=1$) is .980/.981
+and 1.000/.998 at a .01 target prior, and .667/.678 and .884/.889 at the .5
+prior of the two-candidate threat model; whole-speaker resampling as in
+Table~\ref{tab:pooled} gives ECAPA upper endpoints .989/.989 at .01. This
+post-hoc check is descriptive. A score can order A above B while no global
+threshold separates the two.
+We therefore restrict investigative triage to a known-positive two-recording set
+for human provenance review, where the score can prioritize candidates. It
+cannot decide whether an arbitrary queried recording was present, and it is not
+an automated accusation.
 
 \textbf{The carrier is unidentified.} Opposite microphones exclude an exact
 waveform and shared device fingerprint, while A/B balancing excludes a fixed
@@ -386,26 +422,28 @@ interactions with model conditioning. A mechanism claim requires interventions
 on those factors.
 
 \textbf{Scope.} The result concerns four fixed checkpoints, four fixed texts,
-read English speech and one inherited 54-speaker VCTK complement. It is disjoint
-from the earlier development rosters but ECAPA-informed through their
-composition, not globally unseen or population-sampled. Checkpoint training
-corpora are not documented at recording level, so VCTK exposure cannot be
-excluded. The intervals do not sample systems, texts or a speaker population.
-Natural speech, noisy field recordings, other pickup paths, more than two
-candidates and open-set search remain untested.
+read English speech and one inherited 54-speaker VCTK complement. The complement
+is disjoint from the earlier development rosters but ECAPA-informed through
+their composition, not globally unseen or population-sampled. Checkpoint
+training corpora are not documented at recording level, so VCTK exposure cannot be
+excluded. The intervals do not sample systems, texts or a speaker
+population. Spontaneous conversational speech, noisy field recordings, other pickup paths, more
+than two candidates and open-set search remain untested.
 
 \textbf{Release and misuse.} Code, score-level data, provenance metadata and
-aggregate/per-speaker results are at \url{https://github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027-final}; model weights, source audio and
-playable impersonations are not redistributed. Recording attribution can assist provenance audits and
-also deanonymize speakers; licensing alone does not settle consent.
+aggregate/per-speaker results are at \url{https://github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027-submitted};
+model weights, source audio and
+playable impersonations are not redistributed.
+Recording attribution can assist provenance audits, but it can also deanonymize
+speakers. Licensing alone does not settle consent.
 
 \section{Conclusion}
-In this fixed roster, a clone follows which same-speaker recording conditioned
-it when prompt and candidates use the two tested microphone paths. The effect
-meets the frozen large-effect criterion with ECAPA, is smaller but
-corroborated by WavLM, and persists when the microphone roles are reversed,
-while pooling equally over four fixed systems. This is a large closed-set signal
-between two tested paths; it neither identifies the carrier nor solves open-set
+In this fixed roster, clones preferentially match the other-microphone capture
+of their conditioning event across the two tested microphone paths. ECAPA meets the frozen large-effect
+criterion, and WavLM shows a smaller effect in the same direction. That
+direction persists when the microphone roles are reversed. The primary and
+reverse pooled estimates weight the four fixed systems equally. This is a large closed-set signal between two
+tested paths; it neither identifies the carrier nor solves open-set
 recording-presence detection.
 
 \let\oldthebibliography\thebibliography
