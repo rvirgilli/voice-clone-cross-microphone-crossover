@@ -55,6 +55,16 @@ committed ones. The third one is the within-speaker presence-detection boundary 
 the paper's §5: EER and normalized minimum DCF under one global threshold, with
 whole-speaker bootstrap intervals (about a minute on CPU).
 
+## 4b. Post-hoc extensions (§4.3 and §5; audio and GPU needed to re-run)
+
+`code/extensions/` documents the N-candidate scaling, second-generation cloning and
+prompt-intervention analyses (see its README). Their comparison-level cosine tables
+are released (`data/ncandidate_scores.tsv`, `data/second_generation_scores.tsv`,
+`data/intervention_scores.tsv`) together with the summaries the paper prints;
+`verify.py` recomputes every printed point from those tables by speaker-weighted
+averaging. The clone-to-clone comparison of §4.1 is `data/extension_result.json`,
+checked by `code/extension_verify.py`.
+
 ## 4a. Output-content audit (needs the clone audio, which is not released)
 
 `code/content_audit.py` transcribes every clone and its conditioning utterance with

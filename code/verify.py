@@ -462,6 +462,59 @@ def main() -> int:
     if wers[len(wers) // 2] != overall["median_wer_requested"] or sum(r["prompt_overlap"] >= content["overlap_words"] for r in content["records"]) != overall["contaminated"]:
         raise AssertionError("content-audit summary does not recompute from its records")
 
+    # Post-hoc extensions (§4.3, §5): recompute every printed point from the released
+    # comparison-level tables by speaker-weighted averaging and compare with the summaries.
+    def read_tsv(name: str) -> list[dict]:
+        with (DATA / name).open(newline="", encoding="utf-8") as handle:
+            return list(csv.DictReader(handle, delimiter="\t"))
+
+    def speaker_weighted(values: dict[str, list[float]]) -> float:
+        return float(np.mean([np.mean(v) for v in values.values()]))
+
+    def follow(own: float, other: float) -> float:
+        return 1.0 if own > other else 0.0 if own < other else 0.5
+
+    ncand = load("ncandidate_result.json")
+    per = {}
+    for row in read_tsv("ncandidate_scores.tsv"):
+        if row["readout"] != "ecapa" or int(row["n_distractors"]) < 14:
+            continue
+        own = float(row["cos_own_event"])
+        others = [float(row["cos_other_event"])] + [float(row[f"cos_distractor_{i + 1}"]) for i in range(14)]
+        rank1 = 1.0 if all(own > o for o in others) else 0.5 if all(own >= o for o in others) else 0.0
+        per.setdefault((row["prompt_mic"], row["speaker"]), []).append(rank1)
+    for mic, direction in (("mic1", "primary_mic1_to_mic2"), ("mic2", "reverse_mic2_to_mic1")):
+        table = {s: v for (m, s), v in per.items() if m == mic}
+        cell = ncand["readouts"]["ecapa"]["16"][direction]
+        if len(table) != cell["n_speakers"] or any(len(v) != 32 for v in table.values()):
+            raise AssertionError(f"N-candidate census mismatch for {direction}")
+        close(speaker_weighted(table), cell["rank1"], f"N=16 rank-1 {direction}", 1e-9)
+
+    gen2 = load("second_generation_result.json")
+    for readout in ("ecapa", "wavlmsv"):
+        table = {}
+        for row in read_tsv("second_generation_scores.tsv"):
+            if row["readout"] == readout:
+                table.setdefault(row["speaker"], []).append(follow(float(row["cos_own_event"]), float(row["cos_other_event"])))
+        if len(table) != 54 or any(len(v) != 32 for v in table.values()):
+            raise AssertionError("second-generation census mismatch")
+        close(speaker_weighted(table), gen2["readouts"][readout]["pooled"]["point"], f"second generation {readout}", 1e-9)
+
+    interv = load("intervention_result.json")
+    rows = read_tsv("intervention_scores.tsv")
+    for cond in ("flat", "stretch", "ltas"):
+        for arm, own_key, other_key in (("unmodified_candidates", "cos_own_event", "cos_other_event"),
+                                        ("matched_candidates", "cos_own_event_matched", "cos_other_event_matched")):
+            table = {}
+            for row in rows:
+                if row["condition"] == cond and row["readout"] == "ecapa":
+                    table.setdefault(row["speaker"], []).append(follow(float(row[own_key]), float(row[other_key])))
+            if len(table) != 54 or any(len(v) != 32 for v in table.values()):
+                raise AssertionError(f"intervention census mismatch for {cond}")
+            close(speaker_weighted(table), interv["readouts"]["ecapa"][cond][arm]["point"], f"intervention {cond} {arm}", 1e-9)
+    if interv["readings"] != {"flat": "SURVIVE", "stretch": "SURVIVE", "ltas": "SURVIVE"}:
+        raise AssertionError("intervention readings changed")
+
     # Bind the released manuscript source to the recomputed headline and channel evidence.
     tex_raw = (ROOT / "paper" / "F2" / "main.tex").read_text(encoding="utf-8")
     tex = " ".join(tex_raw.split())
@@ -477,7 +530,7 @@ def main() -> int:
         "channel injection maximum": "at most $.000000026$",
         "channel byte result": "no pair is byte-identical",
         "duplicate tolerance boundary": "not a universal perceptual threshold",
-        "artifact locator": "github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027-submitted",
+        "artifact locator": "github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027-rc2",
         "pre-specified plan wording": "pre-specified complete crossover",
         "known-positive triage scope": "known-positive two-recording set for human provenance review",
         "no arbitrary presence decision": "cannot decide whether an arbitrary queried recording was present",
@@ -485,7 +538,7 @@ def main() -> int:
         "source-voiceprint positioning": "\\cite{sourcevoiceprint2023}",
         "rank-disclosure positioning": "\\cite{rankdisclosure2026,sterns2026}",
         "prior-intervention distinction": "None intervenes on which of two same-speaker recording events conditions a clone",
-        "open-set boundary": "neither identifies the carrier nor solves open-set recording-presence detection",
+        "open-set boundary": "does not identify the carrier positively and does not solve open-set",
         "presence ECAPA primary row": "ECAPA & mic1$\\rightarrow$mic2 & .337 & .980 & .667",
         "presence ECAPA reverse row": "ECAPA & mic2$\\rightarrow$mic1 & .343 & .981 & .678",
         "presence WavLM primary row": "WavLM & mic1$\\rightarrow$mic2 & .447 & 1.000 & .884",
@@ -493,6 +546,13 @@ def main() -> int:
         "presence post-hoc label": "This post-hoc check is descriptive",
         "content audit": "no clone (0 of 3,456) was flagged",
         "content audit scope": "does not establish the absence of reference-speech repetition",
+        "clone-to-clone abstract": "attribution remains .805 [.780,.830]",
+        "clone-to-clone paragraph": "The correct candidate shares only the conditioning event",
+        "post-hoc scope": "the remaining analyses are post-hoc and descriptive",
+        "N-candidate sentence": ".635 [.545,.720]/.587 [.510,.659] at sixteen",
+        "second-generation sentence": "original event at .796 [.759,.832]",
+        "intervention sentence": "lowers it to .840 [.804,.874]",
+        "carrier bounded": "The carrier is bounded, not identified",
     }
     for label, phrase in required_manuscript.items():
         if phrase not in tex:

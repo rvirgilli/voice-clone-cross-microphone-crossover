@@ -1,0 +1,214 @@
+{
+  "schema": "exp209-ncandidate-scaling-v1",
+  "status": "POST_HOC_DESCRIPTIVE_NO_VERDICT_CHANGE",
+  "bootstrap": {
+    "unit": "speaker",
+    "replicates": 10000,
+    "seed": 2052027
+  },
+  "readouts": {
+    "ecapa": {
+      "2": {
+        "primary_mic1_to_mic2": {
+          "n_speakers": 54,
+          "chance": 0.5,
+          "rank1": 0.8958333333333334,
+          "rank1_interval_95": [
+            0.8686342592592593,
+            0.9212962962962963
+          ],
+          "mrr": 0.9479166666666666,
+          "rank_disclosure_bits": 0.8958333333333334
+        },
+        "reverse_mic2_to_mic1": {
+          "n_speakers": 54,
+          "chance": 0.5,
+          "rank1": 0.9074074074074074,
+          "rank1_interval_95": [
+            0.8813657407407407,
+            0.9305555555555556
+          ],
+          "mrr": 0.9537037037037037,
+          "rank_disclosure_bits": 0.9074074074074074
+        }
+      },
+      "4": {
+        "primary_mic1_to_mic2": {
+          "n_speakers": 47,
+          "chance": 0.25,
+          "rank1": 0.800531914893617,
+          "rank1_interval_95": [
+            0.7486702127659575,
+            0.8457446808510638
+          ],
+          "mrr": 0.8877992021276596,
+          "rank_disclosure_bits": 1.7547392369986128
+        },
+        "reverse_mic2_to_mic1": {
+          "n_speakers": 47,
+          "chance": 0.25,
+          "rank1": 0.7845744680851063,
+          "rank1_interval_95": [
+            0.7386968085106383,
+            0.8271276595744681
+          ],
+          "mrr": 0.879654255319149,
+          "rank_disclosure_bits": 1.7384428440436075
+        }
+      },
+      "8": {
+        "primary_mic1_to_mic2": {
+          "n_speakers": 35,
+          "chance": 0.125,
+          "rank1": 0.7383928571428572,
+          "rank1_interval_95": [
+            0.6767857142857143,
+            0.7982142857142858
+          ],
+          "mrr": 0.8417942176870749,
+          "rank_disclosure_bits": 2.6244866197739847
+        },
+        "reverse_mic2_to_mic1": {
+          "n_speakers": 35,
+          "chance": 0.125,
+          "rank1": 0.6973214285714285,
+          "rank1_interval_95": [
+            0.6410714285714286,
+            0.7508928571428571
+          ],
+          "mrr": 0.8179304846938776,
+          "rank_disclosure_bits": 2.5681650747795675
+        }
+      },
+      "16": {
+        "primary_mic1_to_mic2": {
+          "n_speakers": 22,
+          "chance": 0.0625,
+          "rank1": 0.6349431818181818,
+          "rank1_interval_95": [
+            0.5454545454545454,
+            0.7201704545454546
+          ],
+          "mrr": 0.7619051521395271,
+          "rank_disclosure_bits": 3.3890178204819095
+        },
+        "reverse_mic2_to_mic1": {
+          "n_speakers": 22,
+          "chance": 0.0625,
+          "rank1": 0.5866477272727273,
+          "rank1_interval_95": [
+            0.5099431818181818,
+            0.6590909090909091
+          ],
+          "mrr": 0.7218421493279448,
+          "rank_disclosure_bits": 3.2521720503615557
+        }
+      }
+    },
+    "wavlmsv": {
+      "2": {
+        "primary_mic1_to_mic2": {
+          "n_speakers": 54,
+          "chance": 0.5,
+          "rank1": 0.6221064814814815,
+          "rank1_interval_95": [
+            0.5925925925925926,
+            0.6527777777777778
+          ],
+          "mrr": 0.8110532407407407,
+          "rank_disclosure_bits": 0.6221064814814815
+        },
+        "reverse_mic2_to_mic1": {
+          "n_speakers": 54,
+          "chance": 0.5,
+          "rank1": 0.6203703703703703,
+          "rank1_interval_95": [
+            0.5891203703703703,
+            0.6527777777777778
+          ],
+          "mrr": 0.8101851851851852,
+          "rank_disclosure_bits": 0.6203703703703703
+        }
+      },
+      "4": {
+        "primary_mic1_to_mic2": {
+          "n_speakers": 47,
+          "chance": 0.25,
+          "rank1": 0.4095744680851064,
+          "rank1_interval_95": [
+            0.3603723404255319,
+            0.46143617021276595
+          ],
+          "mrr": 0.6431183510638298,
+          "rank_disclosure_bits": 1.177892519814469
+        },
+        "reverse_mic2_to_mic1": {
+          "n_speakers": 47,
+          "chance": 0.25,
+          "rank1": 0.42154255319148937,
+          "rank1_interval_95": [
+            0.37101063829787234,
+            0.4720744680851064
+          ],
+          "mrr": 0.6441156914893617,
+          "rank_disclosure_bits": 1.1702397438807406
+        }
+      },
+      "8": {
+        "primary_mic1_to_mic2": {
+          "n_speakers": 35,
+          "chance": 0.125,
+          "rank1": 0.22053571428571428,
+          "rank1_interval_95": [
+            0.17589285714285716,
+            0.26785714285714285
+          ],
+          "mrr": 0.4424011479591837,
+          "rank_disclosure_bits": 1.4623958368043524
+        },
+        "reverse_mic2_to_mic1": {
+          "n_speakers": 35,
+          "chance": 0.125,
+          "rank1": 0.23839285714285716,
+          "rank1_interval_95": [
+            0.18482142857142858,
+            0.29375
+          ],
+          "mrr": 0.4439423894557823,
+          "rank_disclosure_bits": 1.4387123310817485
+        }
+      },
+      "16": {
+        "primary_mic1_to_mic2": {
+          "n_speakers": 22,
+          "chance": 0.0625,
+          "rank1": 0.13068181818181818,
+          "rank1_interval_95": [
+            0.08522727272727272,
+            0.17897727272727273
+          ],
+          "mrr": 0.30156944539046815,
+          "rank_disclosure_bits": 1.6889096883504544
+        },
+        "reverse_mic2_to_mic1": {
+          "n_speakers": 22,
+          "chance": 0.0625,
+          "rank1": 0.14914772727272727,
+          "rank1_interval_95": [
+            0.10795454545454546,
+            0.1903409090909091
+          ],
+          "mrr": 0.3124455031237701,
+          "rank_disclosure_bits": 1.6925696344003867
+        }
+      }
+    }
+  },
+  "reading": "STRONG_IN_POOL",
+  "distractor_census": {
+    "2": 54,
+    "4": 47,
+    "8": 35,
+    "16": 22
+  }
+}

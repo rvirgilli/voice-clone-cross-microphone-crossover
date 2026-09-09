@@ -1,0 +1,124 @@
+{
+  "schema": "exp211-prompt-intervention-v1",
+  "status": "POST_HOC_DESCRIPTIVE_NO_VERDICT_CHANGE",
+  "bootstrap": {
+    "unit": "speaker",
+    "replicates": 10000,
+    "seed": 2052027
+  },
+  "readouts": {
+    "ecapa": {
+      "baseline_clone_to_prompt_cosine": 0.72430410303481,
+      "flat": {
+        "clone_to_prompt_cosine": 0.6854470385149483,
+        "unmodified_candidates": {
+          "point": 0.8396990740740741,
+          "stability_interval_95": [
+            0.8043981481481481,
+            0.8738425925925926
+          ]
+        },
+        "matched_candidates": {
+          "point": 0.8657407407407407,
+          "stability_interval_95": [
+            0.8327546296296297,
+            0.8969907407407407
+          ]
+        }
+      },
+      "stretch": {
+        "clone_to_prompt_cosine": 0.706135367142241,
+        "unmodified_candidates": {
+          "point": 0.8958333333333334,
+          "stability_interval_95": [
+            0.8692129629629629,
+            0.9201388888888888
+          ]
+        },
+        "matched_candidates": {
+          "point": 0.9068287037037037,
+          "stability_interval_95": [
+            0.8807870370370371,
+            0.9305555555555556
+          ]
+        }
+      },
+      "ltas": {
+        "clone_to_prompt_cosine": 0.731672014152433,
+        "unmodified_candidates": {
+          "point": 0.8929398148148148,
+          "stability_interval_95": [
+            0.8657407407407407,
+            0.9184027777777778
+          ]
+        },
+        "matched_candidates": {
+          "point": 0.8987268518518519,
+          "stability_interval_95": [
+            0.8715277777777778,
+            0.9247685185185185
+          ]
+        }
+      }
+    },
+    "wavlmsv": {
+      "baseline_clone_to_prompt_cosine": 0.9279036010621177,
+      "flat": {
+        "clone_to_prompt_cosine": 0.9160933931080092,
+        "unmodified_candidates": {
+          "point": 0.6116898148148148,
+          "stability_interval_95": [
+            0.5792824074074074,
+            0.6452546296296297
+          ]
+        },
+        "matched_candidates": {
+          "point": 0.6331018518518519,
+          "stability_interval_95": [
+            0.6082175925925926,
+            0.6585648148148148
+          ]
+        }
+      },
+      "stretch": {
+        "clone_to_prompt_cosine": 0.9220120450080926,
+        "unmodified_candidates": {
+          "point": 0.6163194444444444,
+          "stability_interval_95": [
+            0.5810185185185185,
+            0.6533564814814815
+          ]
+        },
+        "matched_candidates": {
+          "point": 0.6429398148148148,
+          "stability_interval_95": [
+            0.6064814814814815,
+            0.6776765046296295
+          ]
+        }
+      },
+      "ltas": {
+        "clone_to_prompt_cosine": 0.9286136300732594,
+        "unmodified_candidates": {
+          "point": 0.6209490740740741,
+          "stability_interval_95": [
+            0.5891203703703703,
+            0.6539351851851852
+          ]
+        },
+        "matched_candidates": {
+          "point": 0.6209490740740741,
+          "stability_interval_95": [
+            0.5885416666666666,
+            0.6533564814814815
+          ]
+        }
+      }
+    }
+  },
+  "readings": {
+    "flat": "SURVIVE",
+    "stretch": "SURVIVE",
+    "ltas": "SURVIVE"
+  }
+}

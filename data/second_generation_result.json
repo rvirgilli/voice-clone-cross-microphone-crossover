@@ -1,0 +1,160 @@
+{
+  "schema": "exp210-second-generation-v1",
+  "status": "POST_HOC_DESCRIPTIVE_NO_VERDICT_CHANGE",
+  "bootstrap": {
+    "unit": "speaker",
+    "replicates": 10000,
+    "seed": 2052027
+  },
+  "readouts": {
+    "ecapa": {
+      "pooled": {
+        "point": 0.7957175925925926,
+        "stability_interval_95": [
+          0.7586805555555556,
+          0.8315972222222222
+        ],
+        "comparisons_per_speaker": 32
+      },
+      "gen2=xtts": {
+        "point": 0.7569444444444444,
+        "stability_interval_95": [
+          0.7106481481481481,
+          0.8055555555555556
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen1=f5": {
+        "point": 0.7569444444444444,
+        "stability_interval_95": [
+          0.7106481481481481,
+          0.8055555555555556
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen2=cosy": {
+        "point": 0.7777777777777778,
+        "stability_interval_95": [
+          0.7268518518518519,
+          0.8287037037037037
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen1=xtts": {
+        "point": 0.7777777777777778,
+        "stability_interval_95": [
+          0.7268518518518519,
+          0.8287037037037037
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen2=seedvc": {
+        "point": 0.8310185185185185,
+        "stability_interval_95": [
+          0.7847222222222222,
+          0.875
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen1=cosy": {
+        "point": 0.8310185185185185,
+        "stability_interval_95": [
+          0.7847222222222222,
+          0.875
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen2=f5": {
+        "point": 0.8171296296296297,
+        "stability_interval_95": [
+          0.7685185185185185,
+          0.8634259259259259
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen1=seedvc": {
+        "point": 0.8171296296296297,
+        "stability_interval_95": [
+          0.7685185185185185,
+          0.8634259259259259
+        ],
+        "comparisons_per_speaker": 8
+      }
+    },
+    "wavlmsv": {
+      "pooled": {
+        "point": 0.5960648148148148,
+        "stability_interval_95": [
+          0.5677083333333334,
+          0.6261574074074074
+        ],
+        "comparisons_per_speaker": 32
+      },
+      "gen2=xtts": {
+        "point": 0.5879629629629629,
+        "stability_interval_95": [
+          0.5486111111111112,
+          0.6296296296296297
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen1=f5": {
+        "point": 0.5879629629629629,
+        "stability_interval_95": [
+          0.5486111111111112,
+          0.6296296296296297
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen2=cosy": {
+        "point": 0.5879629629629629,
+        "stability_interval_95": [
+          0.5416666666666666,
+          0.6342592592592593
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen1=xtts": {
+        "point": 0.5879629629629629,
+        "stability_interval_95": [
+          0.5416666666666666,
+          0.6342592592592593
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen2=seedvc": {
+        "point": 0.6087962962962963,
+        "stability_interval_95": [
+          0.5694444444444444,
+          0.6504629629629629
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen1=cosy": {
+        "point": 0.6087962962962963,
+        "stability_interval_95": [
+          0.5694444444444444,
+          0.6504629629629629
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen2=f5": {
+        "point": 0.5995370370370371,
+        "stability_interval_95": [
+          0.5601851851851852,
+          0.6435185185185185
+        ],
+        "comparisons_per_speaker": 8
+      },
+      "gen1=seedvc": {
+        "point": 0.5995370370370371,
+        "stability_interval_95": [
+          0.5601851851851852,
+          0.6435185185185185
+        ],
+        "comparisons_per_speaker": 8
+      }
+    }
+  },
+  "reading": "SURVIVES_LAUNDERING"
+}
