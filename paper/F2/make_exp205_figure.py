@@ -27,7 +27,7 @@ def main() -> int:
         ("WavLM\nP", "primary_mic1_to_mic2", "wavlm"),
         ("WavLM\nR", "reverse_mic2_to_mic1", "wavlm"),
     ]
-    fig, ax = plt.subplots(figsize=(3.35, 1.72))
+    fig, ax = plt.subplots(figsize=(3.35, 1.0))
     offsets = np.linspace(-0.16, 0.16, 54)
     # Deterministic permutation prevents stacked discrete speaker means without
     # implying an additional stochastic sample.

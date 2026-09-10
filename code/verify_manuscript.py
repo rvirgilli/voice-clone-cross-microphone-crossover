@@ -57,8 +57,11 @@ def main() -> int:
                                    cwd=scratch, text=True, capture_output=True, check=True).stdout
             page5 = subprocess.run(["pdftotext", "-f", "5", "-l", "5", "main.pdf", "-"],
                                    cwd=scratch, text=True, capture_output=True, check=True).stdout
-            first = next((line for line in page5.splitlines() if line.strip()), "")
-            if "REFERENCES" not in page4 or not first.startswith("[") or "CONCLUSION" in page5:
+            # Page 5 may begin inside a reference entry that started on page 4; its whole
+            # text must be the tail of the reference list, so no section can appear on it.
+            full = " ".join(pdf_text(scratch / "main.pdf").split())
+            references = full[full.index("REFERENCES"):] if "REFERENCES" in page4 else ""
+            if not references.endswith(" ".join(page5.split())):
                 raise AssertionError("page 5 must contain references only")
         if pdf_text(scratch / "main.pdf") != pdf_text(PAPER / "main.pdf"):
             raise AssertionError("released PDF text does not match a clean build of released source")

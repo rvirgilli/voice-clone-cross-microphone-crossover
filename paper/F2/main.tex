@@ -109,9 +109,10 @@ our label instead identifies the conditioning event within one speaker.
 Watermarking requires
 instrumentation before misuse \cite{vocalock}; VoiceMark attributes cloned
 speech through a watermark embedded in its inference-time reference
-\cite{voicemark}, whereas our candidates are unmodified recordings. Membership
-inference asks whether audio entered training \cite{flowleak2026,voxguard2026}, not whether
-it was the inference-time prompt. We found no prior controlled study that intervenes on
+\cite{voicemark}, whereas our candidates are unmodified recordings. Training-set
+membership inference asks whether audio entered training \cite{flowleak2026}, and VoxGuard
+tests enrolled-speaker and attribute privacy \cite{voxguard2026}; neither asks
+which recording was the inference-time prompt. We found no prior controlled study that intervenes on
 the prompt recording within speaker while changing the candidate pickup path.
 
 \textbf{Prompt transfer and nuisance information.} Training-free generator
@@ -291,7 +292,7 @@ system from a different text, conditioned on events A and B through the
 opposite microphone (288 comparisons per speaker and direction). The correct
 candidate shares only the conditioning event. Attribution remains .805
 [.780,.830] and .805 [.780,.831] for ECAPA and .610 [.595,.626] and .612
-[.593,.632] for WavLM (Table~\ref{tab:pooled}, last column), so the event
+[.593,.632] for WavLM (Table~\ref{tab:pooled}, Clone-to-clone column), so the event
 information survives a change of generator, output text, microphone and
 candidate medium.
 
@@ -300,9 +301,9 @@ analysis re-runs the crossover on a second utterance pair per speaker, chosen
 by the same metadata-only rule after excluding the original pair (53 speakers;
 one admits no second pair; 3,392 clones). The rule passes again: ECAPA .906
 [.878,.931] and .909 [.883,.933], WavLM .666 and .644
-(Table~\ref{tab:pooled}). Per-speaker accuracies correlate weakly
-across pairs (ECAPA Pearson $r$ .061/.291), so per-speaker difficulty is not a
-stable speaker trait across pairs.
+(Table~\ref{tab:pooled}). Observed per-speaker ECAPA accuracies have Pearson
+correlations .061/.291 between the two utterance pairs; this descriptive
+comparison does not establish the stability of an underlying speaker effect.
 
 \begin{table}[t]
 \centering
@@ -327,10 +328,10 @@ mic2$\rightarrow$mic1 & ECAPA & \textbf{.907 [.881,.931]} & .805 [.780,.831] & .
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.80\linewidth]{fig_exp205_speakers.pdf}
+\includegraphics[width=.90\linewidth]{fig_exp205_speakers.pdf}
 \caption{Fixed-roster speaker means (54 dots/group; 32 comparisons per dot).
 Diamonds and bars are pooled points and 95\% speaker-resampling stability intervals;
-the dashed line is chance. P/R denote primary/reverse directions.}
+the dashed line is chance. P/R: primary/reverse.}
 \label{fig:speakers}
 \end{figure}
 
@@ -342,9 +343,9 @@ invariance.
 Figure~\ref{fig:speakers} exposes the heterogeneity hidden by pooled points.
 All 54 primary ECAPA speaker means exceed .50; in reverse, 53 exceed it and one
 equals it. WavLM is not uniformly positive: 47 primary and 43 reverse speaker
-means exceed .50. Its role is therefore aggregate corroboration, not a
-per-speaker guarantee. Whole-speaker resampling preserves this heterogeneity
-rather than treating 1,728 comparisons per direction as independent.
+means exceed .50, so its role is aggregate corroboration, not a per-speaker
+guarantee. Whole-speaker resampling preserves this heterogeneity rather than
+treating 1,728 comparisons per direction as independent.
 
 \subsection{Breadth across fixed systems}
 Table~\ref{tab:systems} gives descriptive system points. ECAPA exceeds .82
@@ -378,9 +379,8 @@ and WavLM .011/.013 for primary/reverse, and are descriptive only.
 \subsection{Descriptive sensitivity analyses}
 Table~\ref{tab:ancestry} stratifies the inherited ECAPA-informed complement by
 the earlier pair-separation screen. Direction persists among 36 pass-but-not-retained and
-15 fail speakers. Three speakers absent from that record remain separate. This
-post-hoc check cannot create an embedding-naive sample or alter the pooled
-verdict.
+15 fail speakers; three absent from that record remain separate. This post-hoc
+check cannot create an embedding-naive sample or alter the pooled verdict.
 
 Only the crossover, the clone-candidate comparison and the fresh-pair
 replication have decision rules fixed before analysis; the remaining analyses
@@ -398,7 +398,7 @@ attributed to the original event at .796 [.759,.832] (ECAPA) and .596
 \begin{table}[t]
 \centering
 \caption{Post-hoc points by status in the earlier pair-separation screen. P/R:
-microphone direction; no stratum-specific confirmatory claim.}
+microphone direction; no stratum-specific claim.}
 \label{tab:ancestry}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{lccc}
@@ -474,10 +474,10 @@ equalization and .840 [.804,.874] after pitch/energy modification (.866 when
 the candidates receive the same transform), against .896 for the original
 prompts. These transformations do not isolate causal contributions: relative
 timing and residual spectral information may remain, and the pitch/energy
-comparison includes resynthesis effects. A post-hoc roster of fixed
-non-verification readouts on the same grid stays well below the encoders: a
-long-term spectral and cepstral average reaches .548/.549 and the best
-mean-pooled self-supervised layer .633/.631. The carrier therefore
+comparison includes resynthesis effects. Post-hoc alternative readouts on the
+same grid remain below ECAPA: a long-term spectral and cepstral average reaches
+.548/.549, and mean-pooled WavLM layer 0, centred on the speaker's real-capture
+mean, reaches .633/.631 against .622/.620 for WavLM-SV. The carrier therefore
 stays bundled in event-level prosody, articulation, background acoustics,
 paired-capture room state and their interactions with model conditioning.
 
@@ -497,7 +497,7 @@ aggregate/per-speaker results are at \url{https://github.com/rvirgilli/voice-clo
 model weights, source audio and
 playable impersonations are not redistributed.
 Recording attribution can assist provenance audits, but it can also deanonymize
-speakers. Licensing alone does not settle consent.
+speakers; licensing alone does not settle consent.
 
 \section{Conclusion}
 In this fixed roster, clones preferentially match the other-microphone capture
