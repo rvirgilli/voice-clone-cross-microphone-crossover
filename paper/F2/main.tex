@@ -3,6 +3,7 @@
 \documentclass[10pt,twocolumn,letterpaper]{article}
 \IfFileExists{spconf.sty}{\usepackage{spconf}\newcommand{\usingspconf}{}}{}
 \usepackage{amsmath,amssymb,graphicx,booktabs,multirow,url}
+\renewcommand{\UrlBreaks}{\do\/\do\-\do\.}
 \setlength{\textfloatsep}{3pt plus 2pt minus 2pt}
 \setlength{\floatsep}{3pt plus 2pt minus 2pt}
 \setlength{\intextsep}{3pt plus 2pt minus 2pt}
@@ -17,10 +18,10 @@
 \fi
 
 \title{Which Conditioning Recording Does a Voice Clone Follow?\\A Balanced Cross-Microphone Crossover}
-\name{\shortstack{Rafaello Virgilli, Lucas Alcantara Souza, Alexandre Costa Ferro Filho,\\
-Daniel Tunnermann, Gustavo dos Reis Oliveira, and Arlindo Galv\~ao Filho}}
-\address{Universidade Federal de Goi\'as, Brazil\\
-rafaello.virgilli@discente.ufg.br}
+\name{\shortstack{Rafaello Virgilli\sthanks{Corresponding author: Rafaello Virgilli (rafaello.virgilli@discente.ufg.br).}, Lucas Alc\^antara Souza, Alexandre Costa Ferro Filho, Daniel Tunnermann,\\
+Gustavo dos Reis Oliveira, Arlindo Rodrigues Galv\~ao Filho, and Anderson da Silva Soares}}
+\address{Advanced Knowledge Center in Immersive Technologies (AKCIT)\\
+Federal University of Goi\'as (UFG), Goi\^ania, GO, Brazil}
 
 \begin{document}
 \ninept
@@ -43,7 +44,9 @@ mic1$\rightarrow$mic2 is .896 [.869,.921] for ECAPA and .622
 [.593,.652] for WavLM; reversing the microphones gives .907 [.881,.931]
 and .620 [.589,.653]. When both candidates are themselves clones from a
 different system and a different text, attribution remains .805 [.780,.830]
-and .805 [.780,.831] for ECAPA. Brackets are 95\% bootstrap intervals that
+and .805 [.780,.831] for ECAPA; a replication on a second utterance pair per
+speaker, with the decision rule fixed before analysis, gives .906 and .909.
+Brackets are 95\% bootstrap intervals that
 resample whole speakers within this fixed, previously screened roster;
 systems and texts are not resampled. The main evaluation compares two
 same-speaker candidates known to include the source event. Attribution remains
@@ -107,7 +110,7 @@ Watermarking requires
 instrumentation before misuse \cite{vocalock}; VoiceMark attributes cloned
 speech through a watermark embedded in its inference-time reference
 \cite{voicemark}, whereas our candidates are unmodified recordings. Membership
-inference asks whether audio entered training \cite{flowleak2026}, not whether
+inference asks whether audio entered training \cite{flowleak2026,voxguard2026}, not whether
 it was the inference-time prompt. We found no prior controlled study that intervenes on
 the prompt recording within speaker while changing the candidate pickup path.
 
@@ -268,8 +271,7 @@ recomputation rehashed 3,456 clones and ledgers plus 216 candidates and
 reproduced every result field to $2\times10^{-15}$. The released artifact
 contains per-clone cosine scores with candidate identities and an independent
 verifier that reconstructs the 3,456-row identity
-grid, bootstrap and verdict without audio or model weights. Its execution
-environment is pinned.
+grid, bootstrap and verdict without audio or model weights.
 
 \section{Results}
 \subsection{The conditioning event survives pickup change}
@@ -293,36 +295,47 @@ candidate shares only the conditioning event. Attribution remains .805
 information survives a change of generator, output text, microphone and
 candidate medium.
 
+\textbf{Fresh pairs.} A replication with the decision rule fixed before
+analysis re-runs the crossover on a second utterance pair per speaker, chosen
+by the same metadata-only rule after excluding the original pair (53 speakers;
+one admits no second pair; 3,392 clones). The rule passes again: ECAPA .906
+[.878,.931] and .909 [.883,.933], WavLM .666 and .644
+(Table~\ref{tab:pooled}). Per-speaker accuracies correlate weakly
+across pairs (ECAPA Pearson $r$ .061/.291), so per-speaker difficulty is not a
+stable speaker trait across pairs.
+
 \begin{table}[t]
 \centering
 \caption{Speaker-averaged two-alternative attribution accuracy [95\%
 speaker-resampling stability interval]; 1,728 comparisons per direction
-(clone-to-clone: 15,552). Same-mic columns are diagnostics, never verdict
-inputs; clone-to-clone candidates come from a different system and text.}
+(clone-to-clone: 15,552; fresh pairs: 53 speakers, 1,696). Clone-to-clone
+candidates come from a different system and text; fresh pairs are a second,
+disjoint utterance pair per speaker.}
 \label{tab:pooled}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{llccc}
 \toprule
-Prompt$\rightarrow$candidate & Encoder & Cross-mic & Same-mic diagnostic & Clone-to-clone \\
+Prompt$\rightarrow$candidate & Encoder & Cross-mic & Clone-to-clone & Fresh pairs \\
 \midrule
-mic1$\rightarrow$mic2 & ECAPA & \textbf{.896 [.869,.921]} & .938 [.920,.955] & .805 [.780,.830] \\
-                      & WavLM & \textbf{.622 [.593,.652]} & .631 [.602,.660] & .610 [.595,.626] \\
-mic2$\rightarrow$mic1 & ECAPA & \textbf{.907 [.881,.931]} & .930 [.910,.948] & .805 [.780,.831] \\
-                      & WavLM & \textbf{.620 [.589,.653]} & .659 [.627,.692] & .612 [.593,.632] \\
+mic1$\rightarrow$mic2 & ECAPA & \textbf{.896 [.869,.921]} & .805 [.780,.830] & .906 [.878,.931] \\
+                      & WavLM & \textbf{.622 [.593,.652]} & .610 [.595,.626] & .666 [.636,.696] \\
+mic2$\rightarrow$mic1 & ECAPA & \textbf{.907 [.881,.931]} & .805 [.780,.831] & .909 [.883,.933] \\
+                      & WavLM & \textbf{.620 [.589,.653]} & .612 [.593,.632] & .644 [.616,.673] \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.94\linewidth]{fig_exp205_speakers.pdf}
+\includegraphics[width=.80\linewidth]{fig_exp205_speakers.pdf}
 \caption{Fixed-roster speaker means (54 dots/group; 32 comparisons per dot).
 Diamonds and bars are pooled points and 95\% speaker-resampling stability intervals;
 the dashed line is chance. P/R denote primary/reverse directions.}
 \label{fig:speakers}
 \end{figure}
 
-Same-microphone diagnostics are only modestly higher: exact pickup identity is
+Same-microphone diagnostics, never verdict inputs, are only modestly higher
+(ECAPA .938/.930, WavLM .631/.659, primary/reverse): exact pickup identity is
 unnecessary, though paired captures of one event do not establish microphone
 invariance.
 
@@ -369,8 +382,9 @@ the earlier pair-separation screen. Direction persists among 36 pass-but-not-ret
 post-hoc check cannot create an embedding-naive sample or alter the pooled
 verdict.
 
-Only the crossover and the clone-candidate comparison have decision rules fixed
-before analysis; the remaining analyses are post-hoc and descriptive. Two such
+Only the crossover, the clone-candidate comparison and the fresh-pair
+replication have decision rules fixed before analysis; the remaining analyses
+are post-hoc and descriptive. Two such
 extensions bound the claim. Enlarging the candidate set with
 metadata-matched captures of the same speaker through the opposite microphone,
 among the 22 speakers with enough eligible captures, ECAPA rank-1 accuracy
@@ -408,14 +422,11 @@ No cell has a separate interval or multiplicity-adjusted test.
 \subsection{What changed relative to earlier evidence}
 An earlier exploratory two-reference crossover (30 speakers, 960 trials)
 obtained .806 [.757,.854] on one pickup path with favorable reference pairs
-and missed its frozen .90 point bar. We retain that as positive discovery,
-not confirmation.
-
-The present experiment is a separate test: the 54-speaker development
-complement, all speakers retained, within-roster metadata-only A/B pairs,
-balanced labels, opposite-microphone candidates and fixed readouts. Its .80/.70
-ECAPA bar was frozen for this design; passing it does not retroactively change
-the earlier .90 miss.
+and missed its frozen .90 point bar; we retain it as positive discovery, not
+confirmation. The present experiment is a separate test (54-speaker complement,
+all speakers retained, metadata-only A/B pairs, balanced labels,
+opposite-microphone candidates, fixed readouts) with its own frozen .80/.70
+ECAPA bar; passing it does not retroactively change the earlier .90 miss.
 
 \section{Boundary and limitations}
 \textbf{Attribution is not presence detection.} The crossover is a closed-set
@@ -463,9 +474,12 @@ equalization and .840 [.804,.874] after pitch/energy modification (.866 when
 the candidates receive the same transform), against .896 for the original
 prompts. These transformations do not isolate causal contributions: relative
 timing and residual spectral information may remain, and the pitch/energy
-comparison includes resynthesis effects. The carrier therefore stays bundled
-in event-level prosody, articulation, background acoustics, paired-capture
-room state and their interactions with model conditioning.
+comparison includes resynthesis effects. A post-hoc roster of fixed
+non-verification readouts on the same grid stays well below the encoders: a
+long-term spectral and cepstral average reaches .548/.549 and the best
+mean-pooled self-supervised layer .633/.631. The carrier therefore
+stays bundled in event-level prosody, articulation, background acoustics,
+paired-capture room state and their interactions with model conditioning.
 
 \textbf{Scope.} The result concerns four fixed checkpoints, four fixed texts,
 read English speech and one inherited 54-speaker VCTK complement. The complement
@@ -490,8 +504,8 @@ In this fixed roster, clones preferentially match the other-microphone capture
 of their conditioning event across the two tested microphone paths. ECAPA meets the frozen large-effect
 criterion, and WavLM shows a smaller effect in the same direction. That
 direction persists when the microphone roles are reversed, when both
-candidates are clones from another system and text (.805), and after a second
-synthesis (.796). The primary and
+candidates are clones from another system and text (.805), on a second
+utterance pair per speaker (.906/.909), and after a second synthesis (.796). The primary and
 reverse pooled estimates weight the four fixed systems equally. This is a large closed-set signal between two
 tested microphone paths; its physical carrier remains unidentified, and the
 experiment does not solve open-set recording-presence detection.

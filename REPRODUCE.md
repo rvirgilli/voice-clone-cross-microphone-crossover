@@ -62,10 +62,25 @@ prompt-intervention analyses (see its README). Their comparison-level cosine tab
 are released (`data/ncandidate_scores.tsv`, `data/second_generation_scores.tsv`,
 `data/intervention_scores.tsv`) together with the summaries the paper prints;
 `verify.py` recomputes every printed point from those tables by speaker-weighted
-averaging. The clone-to-clone comparison of §4.1 is `data/extension_result.json`;
-`code/extension_verify.py` reproduces its aggregate estimates, intervals and decision
-from the released speaker summaries (comparison-level cosine scores for that
-comparison are not included in this release).
+averaging. The clone-to-clone comparison of §4.1 is `data/extension_result.json`, with
+its comparison-level cosine scores in `data/clone_to_clone_scores.tsv` (one row per
+comparison and readout, query and candidate clones identified); `code/extension_verify.py`
+rebuilds the per-speaker accuracies and margins from that table and reproduces the
+aggregate estimates, intervals and decision from the speaker summaries.
+The fresh-pair replication (the same crossover on a second metadata-selected A/B pair for
+the 53 speakers that admit one; same systems, texts, readouts and decision rule) is
+`data/fresh_pair_result.json`, with its comparison-level cosines in
+`data/fresh_pair_scores.tsv` and the outcome-blind pair manifest in
+`data/selection_manifest_fresh.json`; `verify.py` recomputes its four points from that
+table under the 53 × 32 census and checks the stored replication reading.
+As for the primary result, `input_hashes` in the fresh-pair result record the private
+files as they ran; the released manifest has its audio paths relativized to `inputs/`,
+so it does not hash to the recorded manifest value.
+The readout roster of §5 (fixed non-verification readouts on the primary grid) is
+`data/readout_roster.json`, produced by `code/extensions/extract_readouts.py` and
+`analyze_readouts.py`; its features are not released, so `verify.py` checks that its
+pipeline-control cells equal the main recomputation and that its predeclared reading
+holds on the stored intervals.
 
 ## 4a. Output-content audit (needs the clone audio, which is not released)
 

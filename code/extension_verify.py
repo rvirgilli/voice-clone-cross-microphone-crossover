@@ -1,7 +1,8 @@
-"""Verify the public this work result from its released speaker summaries."""
+"""Verify the public this work result from its released comparison-level scores and speaker summaries."""
 
 from __future__ import annotations
 
+import csv
 import hashlib
 import json
 import math
@@ -16,6 +17,7 @@ HERE = Path(__file__).resolve().parent
 DATA = HERE.parent / "data"
 RESULT = DATA / "extension_result.json"
 INPUT_MANIFEST = DATA / "extension_input_manifest.json"
+SCORES = DATA / "clone_to_clone_scores.tsv"
 ANALYZER = HERE / "extension_analyze.py"
 VERDICT = HERE / "extension_verdict.py"
 # The result binds the hashes of the analyzer and verdict modules as they ran; the released
@@ -90,6 +92,36 @@ def main() -> int:
         "execution receipt root",
     )
 
+    # Comparison-level scores: every clone identity resolves in the frozen input manifest and
+    # the per-speaker follow rates and margins rebuild from the cosines before aggregation.
+    speakers = input_manifest["speakers"]
+    clone_hashes = {
+        (r["speaker"], r["system"], str(r["text_index"]), r["prompt_mic"], r["seed_arm"]): r["clone_sha256"]
+        for r in input_manifest["clones"]
+    }
+    follows: dict[tuple[str, str, str], list[float]] = {}
+    margins: dict[tuple[str, str, str], list[float]] = {}
+    with SCORES.open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle, delimiter="\t"))
+    require(len(rows) == 54 * 2 * 288 * 2, "comparison census")
+    for row in rows:
+        query_mic, candidate_mic = {"primary_mic1_to_mic2": ("mic1", "mic2"), "reverse_mic2_to_mic1": ("mic2", "mic1")}[row["direction"]]
+        require(row["query_prompt_mic"] == query_mic and row["candidate_prompt_mic"] == candidate_mic, "direction microphones")
+        require(row["candidate_system"] != row["query_system"] and row["candidate_text_index"] != row["query_text_index"], "cross-generator cross-text")
+        require(row["own_seed_arm"] == row["query_seed_arm"] and row["other_seed_arm"] != row["query_seed_arm"], "candidate arms")
+        for clone, system, text, mic, arm in (
+            ("query_clone_sha256", "query_system", "query_text_index", "query_prompt_mic", "query_seed_arm"),
+            ("own_clone_sha256", "candidate_system", "candidate_text_index", "candidate_prompt_mic", "own_seed_arm"),
+            ("other_clone_sha256", "candidate_system", "candidate_text_index", "candidate_prompt_mic", "other_seed_arm"),
+        ):
+            key = (row["speaker"], row[system], row[text], row[mic], row[arm])
+            require(key in clone_hashes and clone_hashes[key].startswith(row[clone]) and len(row[clone]) >= 12, f"clone identity {key}")
+        own, other = float(row["cos_own_event"]), float(row["cos_other_event"])
+        cell_key = (row["direction"], row["readout"], row["speaker"])
+        follows.setdefault(cell_key, []).append(1.0 if own > other else 0.0 if own < other else 0.5)
+        margins.setdefault(cell_key, []).append(own - other)
+    require(len(follows) == 2 * 2 * 54 and all(len(v) == 288 for v in follows.values()), "speaker census")
+
     rng = np.random.default_rng(BOOTSTRAP_SEED)
     indices = rng.integers(0, 54, size=(BOOTSTRAPS, 54), dtype=np.int32)
     verdict_cells = {}
@@ -109,10 +141,15 @@ def main() -> int:
                 "cell schema",
             )
             vector = np.asarray(cell["speaker_means"], dtype=np.float64)
-            margins = np.asarray(cell["speaker_mean_margins"], dtype=np.float64)
-            require(vector.shape == (54,) and margins.shape == (54,), "speaker arrays")
-            require(np.isfinite(vector).all() and np.isfinite(margins).all(), "finite arrays")
+            margins_vector = np.asarray(cell["speaker_mean_margins"], dtype=np.float64)
+            require(vector.shape == (54,) and margins_vector.shape == (54,), "speaker arrays")
+            require(np.isfinite(vector).all() and np.isfinite(margins_vector).all(), "finite arrays")
             require(bool(((0.0 <= vector) & (vector <= 1.0)).all()), "follow range")
+            rebuilt = np.asarray([np.mean(follows[(direction, readout, s)]) for s in speakers])
+            rebuilt_margins = np.asarray([np.mean(margins[(direction, readout, s)]) for s in speakers])
+            require(np.allclose(rebuilt, vector, rtol=0.0, atol=1e-9), "speaker means from comparison scores")
+            require(np.allclose(rebuilt_margins, margins_vector, rtol=0.0, atol=1e-9), "speaker margins from comparison scores")
+            print(f"{direction} {readout}: {float(rebuilt.mean()):.3f} recomputed from {len(speakers)} speakers × 288 comparisons")
             point = float(vector.mean())
             distribution = vector[indices].mean(axis=1)
             lo, hi = np.quantile(distribution, (0.025, 0.975))
@@ -132,7 +169,7 @@ def main() -> int:
         == "ABSTRACT_AND_CONCLUSION_UPGRADE_PERMITTED",
         "manuscript permission",
     )
-    print("PASS — clone-to-clone aggregate estimates, intervals and verdict reproduce from the released speaker summaries; comparison-level cosine scores are not included in this release")
+    print("PASS — clone-to-clone per-speaker accuracies and margins rebuild from the released comparison-level cosine scores, and the aggregate estimates, intervals and verdict reproduce from the speaker summaries")
     return 0
 
 

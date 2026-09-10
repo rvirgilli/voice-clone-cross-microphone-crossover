@@ -1,0 +1,1571 @@
+{
+  "schema": "exp207-readout-roster-v1",
+  "status": "POST_HOC_DESCRIPTIVE_NO_VERDICT_CHANGE",
+  "bootstrap": {
+    "unit": "speaker",
+    "replicates": 10000,
+    "seed": 2052027
+  },
+  "readouts": {
+    "ecapa": {
+      "primary_mic1_to_mic2": {
+        "point": 0.8958333333333334,
+        "stability_interval_95": [
+          0.8686342592592593,
+          0.9212962962962963
+        ],
+        "speakers_above_chance": 54
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.9074074074074074,
+        "stability_interval_95": [
+          0.8807870370370371,
+          0.9311342592592593
+        ],
+        "speakers_above_chance": 53
+      }
+    },
+    "ecapa__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.8842592592592593,
+        "stability_interval_95": [
+          0.8541666666666666,
+          0.9114583333333334
+        ],
+        "speakers_above_chance": 53
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.9033564814814815,
+        "stability_interval_95": [
+          0.8761574074074074,
+          0.9265046296296297
+        ],
+        "speakers_above_chance": 53
+      }
+    },
+    "ltas_mfcc": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5480324074074074,
+        "stability_interval_95": [
+          0.5254629629629629,
+          0.5717592592592593
+        ],
+        "speakers_above_chance": 35
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5491898148148148,
+        "stability_interval_95": [
+          0.5306712962962963,
+          0.5706018518518519
+        ],
+        "speakers_above_chance": 31
+      }
+    },
+    "ltas_mfcc__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5607638888888888,
+        "stability_interval_95": [
+          0.5364583333333334,
+          0.5862268518518519
+        ],
+        "speakers_above_chance": 35
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5532407407407407,
+        "stability_interval_95": [
+          0.53125,
+          0.5787037037037037
+        ],
+        "speakers_above_chance": 33
+      }
+    },
+    "w2v2_L00": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5960648148148148,
+        "stability_interval_95": [
+          0.571166087962963,
+          0.6226851851851852
+        ],
+        "speakers_above_chance": 44
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6134259259259259,
+        "stability_interval_95": [
+          0.5862268518518519,
+          0.6417824074074074
+        ],
+        "speakers_above_chance": 44
+      }
+    },
+    "w2v2_L00__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6076388888888888,
+        "stability_interval_95": [
+          0.5810185185185185,
+          0.6359953703703703
+        ],
+        "speakers_above_chance": 44
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6099537037037037,
+        "stability_interval_95": [
+          0.5868055555555556,
+          0.6342592592592593
+        ],
+        "speakers_above_chance": 47
+      }
+    },
+    "w2v2_L01": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5925925925925926,
+        "stability_interval_95": [
+          0.5688657407407407,
+          0.6168981481481481
+        ],
+        "speakers_above_chance": 42
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5978009259259259,
+        "stability_interval_95": [
+          0.5758101851851852,
+          0.6209490740740741
+        ],
+        "speakers_above_chance": 45
+      }
+    },
+    "w2v2_L01__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5978009259259259,
+        "stability_interval_95": [
+          0.5746527777777778,
+          0.6221064814814815
+        ],
+        "speakers_above_chance": 40
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5943287037037037,
+        "stability_interval_95": [
+          0.5717592592592593,
+          0.6174768518518519
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "w2v2_L02": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6059027777777778,
+        "stability_interval_95": [
+          0.5827546296296297,
+          0.6290509259259259
+        ],
+        "speakers_above_chance": 46
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6076388888888888,
+        "stability_interval_95": [
+          0.5850694444444444,
+          0.6307870370370371
+        ],
+        "speakers_above_chance": 47
+      }
+    },
+    "w2v2_L02__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6041666666666666,
+        "stability_interval_95": [
+          0.5827546296296297,
+          0.6261574074074074
+        ],
+        "speakers_above_chance": 45
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5966435185185185,
+        "stability_interval_95": [
+          0.5729166666666666,
+          0.6209490740740741
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "w2v2_L03": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6059027777777778,
+        "stability_interval_95": [
+          0.582740162037037,
+          0.6290509259259259
+        ],
+        "speakers_above_chance": 43
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6215277777777778,
+        "stability_interval_95": [
+          0.5983796296296297,
+          0.6446759259259259
+        ],
+        "speakers_above_chance": 47
+      }
+    },
+    "w2v2_L03__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6082175925925926,
+        "stability_interval_95": [
+          0.5844907407407407,
+          0.6331018518518519
+        ],
+        "speakers_above_chance": 42
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6076388888888888,
+        "stability_interval_95": [
+          0.5838975694444445,
+          0.6319589120370368
+        ],
+        "speakers_above_chance": 46
+      }
+    },
+    "w2v2_L04": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6209490740740741,
+        "stability_interval_95": [
+          0.5960648148148148,
+          0.6464120370370371
+        ],
+        "speakers_above_chance": 45
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6122685185185185,
+        "stability_interval_95": [
+          0.5862268518518519,
+          0.6383101851851852
+        ],
+        "speakers_above_chance": 44
+      }
+    },
+    "w2v2_L04__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6059027777777778,
+        "stability_interval_95": [
+          0.5839120370370371,
+          0.6284722222222222
+        ],
+        "speakers_above_chance": 44
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6105324074074074,
+        "stability_interval_95": [
+          0.5856481481481481,
+          0.6359953703703703
+        ],
+        "speakers_above_chance": 46
+      }
+    },
+    "w2v2_L05": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6024305555555556,
+        "stability_interval_95": [
+          0.5804398148148148,
+          0.625
+        ],
+        "speakers_above_chance": 45
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6018518518518519,
+        "stability_interval_95": [
+          0.5804398148148148,
+          0.6238425925925926
+        ],
+        "speakers_above_chance": 45
+      }
+    },
+    "w2v2_L05__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5879629629629629,
+        "stability_interval_95": [
+          0.5677083333333334,
+          0.6087962962962963
+        ],
+        "speakers_above_chance": 43
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5914351851851852,
+        "stability_interval_95": [
+          0.5677083333333334,
+          0.6157407407407407
+        ],
+        "speakers_above_chance": 41
+      }
+    },
+    "w2v2_L06": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5908564814814815,
+        "stability_interval_95": [
+          0.5706018518518519,
+          0.6122685185185185
+        ],
+        "speakers_above_chance": 42
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.59375,
+        "stability_interval_95": [
+          0.5746527777777778,
+          0.6134259259259259
+        ],
+        "speakers_above_chance": 48
+      }
+    },
+    "w2v2_L06__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5839120370370371,
+        "stability_interval_95": [
+          0.5648148148148148,
+          0.6047453703703703
+        ],
+        "speakers_above_chance": 43
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5891203703703703,
+        "stability_interval_95": [
+          0.5694444444444444,
+          0.6099537037037037
+        ],
+        "speakers_above_chance": 45
+      }
+    },
+    "w2v2_L07": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5798611111111112,
+        "stability_interval_95": [
+          0.5613425925925926,
+          0.5995370370370371
+        ],
+        "speakers_above_chance": 45
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5891203703703703,
+        "stability_interval_95": [
+          0.5700231481481481,
+          0.6099537037037037
+        ],
+        "speakers_above_chance": 48
+      }
+    },
+    "w2v2_L07__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5706018518518519,
+        "stability_interval_95": [
+          0.5543981481481481,
+          0.5885416666666666
+        ],
+        "speakers_above_chance": 43
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5775462962962963,
+        "stability_interval_95": [
+          0.5596064814814815,
+          0.5960648148148148
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "w2v2_L08": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5740740740740741,
+        "stability_interval_95": [
+          0.5538194444444444,
+          0.5943287037037037
+        ],
+        "speakers_above_chance": 39
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5896990740740741,
+        "stability_interval_95": [
+          0.5700231481481481,
+          0.6105324074074074
+        ],
+        "speakers_above_chance": 46
+      }
+    },
+    "w2v2_L08__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5665509259259259,
+        "stability_interval_95": [
+          0.546875,
+          0.5873842592592593
+        ],
+        "speakers_above_chance": 41
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5792824074074074,
+        "stability_interval_95": [
+          0.5584490740740741,
+          0.6006944444444444
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "w2v2_L09": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5763888888888888,
+        "stability_interval_95": [
+          0.5572916666666666,
+          0.5960648148148148
+        ],
+        "speakers_above_chance": 41
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5827546296296297,
+        "stability_interval_95": [
+          0.5636574074074074,
+          0.6024305555555556
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "w2v2_L09__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5752314814814815,
+        "stability_interval_95": [
+          0.5572916666666666,
+          0.5943287037037037
+        ],
+        "speakers_above_chance": 43
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5787037037037037,
+        "stability_interval_95": [
+          0.5596064814814815,
+          0.5983796296296297
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "w2v2_L10": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5885416666666666,
+        "stability_interval_95": [
+          0.5688657407407407,
+          0.6087962962962963
+        ],
+        "speakers_above_chance": 44
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6024305555555556,
+        "stability_interval_95": [
+          0.5804398148148148,
+          0.6255787037037037
+        ],
+        "speakers_above_chance": 48
+      }
+    },
+    "w2v2_L10__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5960648148148148,
+        "stability_interval_95": [
+          0.5746527777777778,
+          0.6197916666666666
+        ],
+        "speakers_above_chance": 45
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6030092592592593,
+        "stability_interval_95": [
+          0.5787037037037037,
+          0.6296296296296297
+        ],
+        "speakers_above_chance": 45
+      }
+    },
+    "w2v2_L11": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5289351851851852,
+        "stability_interval_95": [
+          0.5167824074074074,
+          0.5416666666666666
+        ],
+        "speakers_above_chance": 28
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5526620370370371,
+        "stability_interval_95": [
+          0.5364438657407408,
+          0.5700231481481481
+        ],
+        "speakers_above_chance": 36
+      }
+    },
+    "w2v2_L11__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5341435185185185,
+        "stability_interval_95": [
+          0.5185185185185185,
+          0.5503472222222222
+        ],
+        "speakers_above_chance": 33
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5561342592592593,
+        "stability_interval_95": [
+          0.5393518518518519,
+          0.5734953703703703
+        ],
+        "speakers_above_chance": 40
+      }
+    },
+    "w2v2_L12": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5295138888888888,
+        "stability_interval_95": [
+          0.515625,
+          0.5445601851851852
+        ],
+        "speakers_above_chance": 26
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5509259259259259,
+        "stability_interval_95": [
+          0.5347222222222222,
+          0.5677083333333334
+        ],
+        "speakers_above_chance": 33
+      }
+    },
+    "w2v2_L12__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.546875,
+        "stability_interval_95": [
+          0.5306712962962963,
+          0.5648148148148148
+        ],
+        "speakers_above_chance": 33
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5451388888888888,
+        "stability_interval_95": [
+          0.5295138888888888,
+          0.5607638888888888
+        ],
+        "speakers_above_chance": 34
+      }
+    },
+    "wavlm_L00": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6261574074074074,
+        "stability_interval_95": [
+          0.5972222222222222,
+          0.6568287037037037
+        ],
+        "speakers_above_chance": 48
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6012731481481481,
+        "stability_interval_95": [
+          0.5752314814814815,
+          0.6278935185185185
+        ],
+        "speakers_above_chance": 46
+      }
+    },
+    "wavlm_L00__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6331018518518519,
+        "stability_interval_95": [
+          0.6099537037037037,
+          0.6568287037037037
+        ],
+        "speakers_above_chance": 49
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6307870370370371,
+        "stability_interval_95": [
+          0.6035879629629629,
+          0.6585648148148148
+        ],
+        "speakers_above_chance": 47
+      }
+    },
+    "wavlm_L01": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6116898148148148,
+        "stability_interval_95": [
+          0.5896990740740741,
+          0.6348379629629629
+        ],
+        "speakers_above_chance": 47
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6197916666666666,
+        "stability_interval_95": [
+          0.5925925925925926,
+          0.6481481481481481
+        ],
+        "speakers_above_chance": 44
+      }
+    },
+    "wavlm_L01__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6116898148148148,
+        "stability_interval_95": [
+          0.5896990740740741,
+          0.6336805555555556
+        ],
+        "speakers_above_chance": 46
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6140046296296297,
+        "stability_interval_95": [
+          0.5868055555555556,
+          0.6423611111111112
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "wavlm_L02": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6018518518518519,
+        "stability_interval_95": [
+          0.5769675925925926,
+          0.6261574074074074
+        ],
+        "speakers_above_chance": 43
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5896990740740741,
+        "stability_interval_95": [
+          0.5694444444444444,
+          0.6099537037037037
+        ],
+        "speakers_above_chance": 45
+      }
+    },
+    "wavlm_L02__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6087962962962963,
+        "stability_interval_95": [
+          0.5839120370370371,
+          0.6336805555555556
+        ],
+        "speakers_above_chance": 41
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5844907407407407,
+        "stability_interval_95": [
+          0.5653935185185185,
+          0.6041666666666666
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "wavlm_L03": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5989583333333334,
+        "stability_interval_95": [
+          0.5734953703703703,
+          0.6244212962962963
+        ],
+        "speakers_above_chance": 44
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5989583333333334,
+        "stability_interval_95": [
+          0.578125,
+          0.6209490740740741
+        ],
+        "speakers_above_chance": 46
+      }
+    },
+    "wavlm_L03__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6006944444444444,
+        "stability_interval_95": [
+          0.5775462962962963,
+          0.625
+        ],
+        "speakers_above_chance": 45
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5891203703703703,
+        "stability_interval_95": [
+          0.5694444444444444,
+          0.609375
+        ],
+        "speakers_above_chance": 44
+      }
+    },
+    "wavlm_L04": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6006944444444444,
+        "stability_interval_95": [
+          0.5792824074074074,
+          0.6226851851851852
+        ],
+        "speakers_above_chance": 45
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6128472222222222,
+        "stability_interval_95": [
+          0.5896990740740741,
+          0.6365740740740741
+        ],
+        "speakers_above_chance": 48
+      }
+    },
+    "wavlm_L04__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5758101851851852,
+        "stability_interval_95": [
+          0.5538194444444444,
+          0.5983796296296297
+        ],
+        "speakers_above_chance": 40
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5787037037037037,
+        "stability_interval_95": [
+          0.5567129629629629,
+          0.6012731481481481
+        ],
+        "speakers_above_chance": 36
+      }
+    },
+    "wavlm_L05": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6111111111111112,
+        "stability_interval_95": [
+          0.5896990740740741,
+          0.6336805555555556
+        ],
+        "speakers_above_chance": 48
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5868055555555556,
+        "stability_interval_95": [
+          0.5665509259259259,
+          0.6070601851851852
+        ],
+        "speakers_above_chance": 42
+      }
+    },
+    "wavlm_L05__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5734953703703703,
+        "stability_interval_95": [
+          0.5549768518518519,
+          0.5931712962962963
+        ],
+        "speakers_above_chance": 42
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5729166666666666,
+        "stability_interval_95": [
+          0.5526620370370371,
+          0.5949074074074074
+        ],
+        "speakers_above_chance": 36
+      }
+    },
+    "wavlm_L06": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5665509259259259,
+        "stability_interval_95": [
+          0.5503472222222222,
+          0.5821759259259259
+        ],
+        "speakers_above_chance": 43
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5885416666666666,
+        "stability_interval_95": [
+          0.5688657407407407,
+          0.6082175925925926
+        ],
+        "speakers_above_chance": 46
+      }
+    },
+    "wavlm_L06__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5642361111111112,
+        "stability_interval_95": [
+          0.5422453703703703,
+          0.5873842592592593
+        ],
+        "speakers_above_chance": 33
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5625,
+        "stability_interval_95": [
+          0.5410879629629629,
+          0.5856481481481481
+        ],
+        "speakers_above_chance": 32
+      }
+    },
+    "wavlm_L07": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5578703703703703,
+        "stability_interval_95": [
+          0.5416666666666666,
+          0.5740740740740741
+        ],
+        "speakers_above_chance": 39
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5792824074074074,
+        "stability_interval_95": [
+          0.5607638888888888,
+          0.5983796296296297
+        ],
+        "speakers_above_chance": 46
+      }
+    },
+    "wavlm_L07__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5457175925925926,
+        "stability_interval_95": [
+          0.5300925925925926,
+          0.5619212962962963
+        ],
+        "speakers_above_chance": 33
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5509259259259259,
+        "stability_interval_95": [
+          0.5347222222222222,
+          0.5677083333333334
+        ],
+        "speakers_above_chance": 32
+      }
+    },
+    "wavlm_L08": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5555555555555556,
+        "stability_interval_95": [
+          0.5399305555555556,
+          0.5711805555555556
+        ],
+        "speakers_above_chance": 42
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5653935185185185,
+        "stability_interval_95": [
+          0.5474537037037037,
+          0.5850694444444444
+        ],
+        "speakers_above_chance": 42
+      }
+    },
+    "wavlm_L08__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5277777777777778,
+        "stability_interval_95": [
+          0.5115740740740741,
+          0.5439814814814815
+        ],
+        "speakers_above_chance": 28
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5434027777777778,
+        "stability_interval_95": [
+          0.5277777777777778,
+          0.5601851851851852
+        ],
+        "speakers_above_chance": 29
+      }
+    },
+    "wavlm_L09": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5457175925925926,
+        "stability_interval_95": [
+          0.5324074074074074,
+          0.5596064814814815
+        ],
+        "speakers_above_chance": 38
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5410879629629629,
+        "stability_interval_95": [
+          0.5271990740740741,
+          0.5561342592592593
+        ],
+        "speakers_above_chance": 32
+      }
+    },
+    "wavlm_L09__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5306712962962963,
+        "stability_interval_95": [
+          0.5179398148148148,
+          0.5445601851851852
+        ],
+        "speakers_above_chance": 28
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5277777777777778,
+        "stability_interval_95": [
+          0.515625,
+          0.5405092592592593
+        ],
+        "speakers_above_chance": 27
+      }
+    },
+    "wavlm_L10": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5555555555555556,
+        "stability_interval_95": [
+          0.5422453703703703,
+          0.5694444444444444
+        ],
+        "speakers_above_chance": 40
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5445601851851852,
+        "stability_interval_95": [
+          0.5277777777777778,
+          0.5619212962962963
+        ],
+        "speakers_above_chance": 34
+      }
+    },
+    "wavlm_L10__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5451388888888888,
+        "stability_interval_95": [
+          0.53125,
+          0.5596064814814815
+        ],
+        "speakers_above_chance": 34
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5393518518518519,
+        "stability_interval_95": [
+          0.5237268518518519,
+          0.5561342592592593
+        ],
+        "speakers_above_chance": 31
+      }
+    },
+    "wavlm_L11": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5283564814814815,
+        "stability_interval_95": [
+          0.5150462962962963,
+          0.5428240740740741
+        ],
+        "speakers_above_chance": 23
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5277777777777778,
+        "stability_interval_95": [
+          0.5162037037037037,
+          0.5405092592592593
+        ],
+        "speakers_above_chance": 23
+      }
+    },
+    "wavlm_L11__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5289351851851852,
+        "stability_interval_95": [
+          0.515625,
+          0.5428240740740741
+        ],
+        "speakers_above_chance": 26
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5266203703703703,
+        "stability_interval_95": [
+          0.515625,
+          0.5381944444444444
+        ],
+        "speakers_above_chance": 25
+      }
+    },
+    "wavlm_L12": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5445601851851852,
+        "stability_interval_95": [
+          0.53125,
+          0.5584490740740741
+        ],
+        "speakers_above_chance": 34
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5491898148148148,
+        "stability_interval_95": [
+          0.5370370370370371,
+          0.5613425925925926
+        ],
+        "speakers_above_chance": 37
+      }
+    },
+    "wavlm_L12__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5480324074074074,
+        "stability_interval_95": [
+          0.5335648148148148,
+          0.5625
+        ],
+        "speakers_above_chance": 33
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5480324074074074,
+        "stability_interval_95": [
+          0.5358796296296297,
+          0.5607638888888888
+        ],
+        "speakers_above_chance": 38
+      }
+    },
+    "wavlmsv_L00": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6261574074074074,
+        "stability_interval_95": [
+          0.5972222222222222,
+          0.6568287037037037
+        ],
+        "speakers_above_chance": 48
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6012731481481481,
+        "stability_interval_95": [
+          0.5752314814814815,
+          0.6278935185185185
+        ],
+        "speakers_above_chance": 46
+      }
+    },
+    "wavlmsv_L00__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6331018518518519,
+        "stability_interval_95": [
+          0.6099537037037037,
+          0.6568287037037037
+        ],
+        "speakers_above_chance": 49
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6307870370370371,
+        "stability_interval_95": [
+          0.6035879629629629,
+          0.6585648148148148
+        ],
+        "speakers_above_chance": 47
+      }
+    },
+    "wavlmsv_L01": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6116898148148148,
+        "stability_interval_95": [
+          0.5896990740740741,
+          0.6348379629629629
+        ],
+        "speakers_above_chance": 47
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6197916666666666,
+        "stability_interval_95": [
+          0.5925925925925926,
+          0.6481481481481481
+        ],
+        "speakers_above_chance": 44
+      }
+    },
+    "wavlmsv_L01__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6116898148148148,
+        "stability_interval_95": [
+          0.5896990740740741,
+          0.6336805555555556
+        ],
+        "speakers_above_chance": 46
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6140046296296297,
+        "stability_interval_95": [
+          0.5868055555555556,
+          0.6423611111111112
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "wavlmsv_L02": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6018518518518519,
+        "stability_interval_95": [
+          0.5769675925925926,
+          0.6261574074074074
+        ],
+        "speakers_above_chance": 43
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5896990740740741,
+        "stability_interval_95": [
+          0.5694444444444444,
+          0.6099537037037037
+        ],
+        "speakers_above_chance": 45
+      }
+    },
+    "wavlmsv_L02__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6087962962962963,
+        "stability_interval_95": [
+          0.5839120370370371,
+          0.6336805555555556
+        ],
+        "speakers_above_chance": 41
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5844907407407407,
+        "stability_interval_95": [
+          0.5653935185185185,
+          0.6041666666666666
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "wavlmsv_L03": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5989583333333334,
+        "stability_interval_95": [
+          0.5734953703703703,
+          0.6244212962962963
+        ],
+        "speakers_above_chance": 44
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5989583333333334,
+        "stability_interval_95": [
+          0.578125,
+          0.6209490740740741
+        ],
+        "speakers_above_chance": 46
+      }
+    },
+    "wavlmsv_L03__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6006944444444444,
+        "stability_interval_95": [
+          0.5775462962962963,
+          0.625
+        ],
+        "speakers_above_chance": 45
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5891203703703703,
+        "stability_interval_95": [
+          0.5694444444444444,
+          0.609375
+        ],
+        "speakers_above_chance": 44
+      }
+    },
+    "wavlmsv_L04": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6006944444444444,
+        "stability_interval_95": [
+          0.5792824074074074,
+          0.6226851851851852
+        ],
+        "speakers_above_chance": 45
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6128472222222222,
+        "stability_interval_95": [
+          0.5896990740740741,
+          0.6365740740740741
+        ],
+        "speakers_above_chance": 48
+      }
+    },
+    "wavlmsv_L04__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5758101851851852,
+        "stability_interval_95": [
+          0.5538194444444444,
+          0.5983796296296297
+        ],
+        "speakers_above_chance": 40
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5787037037037037,
+        "stability_interval_95": [
+          0.5567129629629629,
+          0.6012731481481481
+        ],
+        "speakers_above_chance": 36
+      }
+    },
+    "wavlmsv_L05": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6111111111111112,
+        "stability_interval_95": [
+          0.5896990740740741,
+          0.6336805555555556
+        ],
+        "speakers_above_chance": 48
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5868055555555556,
+        "stability_interval_95": [
+          0.5665509259259259,
+          0.6070601851851852
+        ],
+        "speakers_above_chance": 42
+      }
+    },
+    "wavlmsv_L05__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5734953703703703,
+        "stability_interval_95": [
+          0.5549768518518519,
+          0.5931712962962963
+        ],
+        "speakers_above_chance": 42
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5729166666666666,
+        "stability_interval_95": [
+          0.5526620370370371,
+          0.5949074074074074
+        ],
+        "speakers_above_chance": 36
+      }
+    },
+    "wavlmsv_L06": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5665509259259259,
+        "stability_interval_95": [
+          0.5503472222222222,
+          0.5821759259259259
+        ],
+        "speakers_above_chance": 43
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5885416666666666,
+        "stability_interval_95": [
+          0.5688657407407407,
+          0.6082175925925926
+        ],
+        "speakers_above_chance": 46
+      }
+    },
+    "wavlmsv_L06__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5642361111111112,
+        "stability_interval_95": [
+          0.5422453703703703,
+          0.5873842592592593
+        ],
+        "speakers_above_chance": 33
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5625,
+        "stability_interval_95": [
+          0.5410879629629629,
+          0.5856481481481481
+        ],
+        "speakers_above_chance": 32
+      }
+    },
+    "wavlmsv_L07": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5578703703703703,
+        "stability_interval_95": [
+          0.5416666666666666,
+          0.5740740740740741
+        ],
+        "speakers_above_chance": 39
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5792824074074074,
+        "stability_interval_95": [
+          0.5607638888888888,
+          0.5983796296296297
+        ],
+        "speakers_above_chance": 46
+      }
+    },
+    "wavlmsv_L07__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5457175925925926,
+        "stability_interval_95": [
+          0.5300925925925926,
+          0.5619212962962963
+        ],
+        "speakers_above_chance": 33
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5509259259259259,
+        "stability_interval_95": [
+          0.5347222222222222,
+          0.5677083333333334
+        ],
+        "speakers_above_chance": 32
+      }
+    },
+    "wavlmsv_L08": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5555555555555556,
+        "stability_interval_95": [
+          0.5399305555555556,
+          0.5711805555555556
+        ],
+        "speakers_above_chance": 42
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5653935185185185,
+        "stability_interval_95": [
+          0.5474537037037037,
+          0.5850694444444444
+        ],
+        "speakers_above_chance": 42
+      }
+    },
+    "wavlmsv_L08__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5277777777777778,
+        "stability_interval_95": [
+          0.5115740740740741,
+          0.5439814814814815
+        ],
+        "speakers_above_chance": 28
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5434027777777778,
+        "stability_interval_95": [
+          0.5277777777777778,
+          0.5601851851851852
+        ],
+        "speakers_above_chance": 29
+      }
+    },
+    "wavlmsv_L09": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5457175925925926,
+        "stability_interval_95": [
+          0.5324074074074074,
+          0.5596064814814815
+        ],
+        "speakers_above_chance": 38
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5410879629629629,
+        "stability_interval_95": [
+          0.5271990740740741,
+          0.5561342592592593
+        ],
+        "speakers_above_chance": 32
+      }
+    },
+    "wavlmsv_L09__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5306712962962963,
+        "stability_interval_95": [
+          0.5179398148148148,
+          0.5445601851851852
+        ],
+        "speakers_above_chance": 28
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5277777777777778,
+        "stability_interval_95": [
+          0.515625,
+          0.5405092592592593
+        ],
+        "speakers_above_chance": 27
+      }
+    },
+    "wavlmsv_L10": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5555555555555556,
+        "stability_interval_95": [
+          0.5422453703703703,
+          0.5694444444444444
+        ],
+        "speakers_above_chance": 40
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5445601851851852,
+        "stability_interval_95": [
+          0.5277777777777778,
+          0.5619212962962963
+        ],
+        "speakers_above_chance": 34
+      }
+    },
+    "wavlmsv_L10__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5451388888888888,
+        "stability_interval_95": [
+          0.53125,
+          0.5596064814814815
+        ],
+        "speakers_above_chance": 34
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5393518518518519,
+        "stability_interval_95": [
+          0.5237268518518519,
+          0.5561342592592593
+        ],
+        "speakers_above_chance": 31
+      }
+    },
+    "wavlmsv_L11": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5283564814814815,
+        "stability_interval_95": [
+          0.5150462962962963,
+          0.5428240740740741
+        ],
+        "speakers_above_chance": 23
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5277777777777778,
+        "stability_interval_95": [
+          0.5162037037037037,
+          0.5405092592592593
+        ],
+        "speakers_above_chance": 23
+      }
+    },
+    "wavlmsv_L11__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5289351851851852,
+        "stability_interval_95": [
+          0.515625,
+          0.5428240740740741
+        ],
+        "speakers_above_chance": 26
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5266203703703703,
+        "stability_interval_95": [
+          0.515625,
+          0.5381944444444444
+        ],
+        "speakers_above_chance": 25
+      }
+    },
+    "wavlmsv_L12": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5445601851851852,
+        "stability_interval_95": [
+          0.53125,
+          0.5584490740740741
+        ],
+        "speakers_above_chance": 34
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5491898148148148,
+        "stability_interval_95": [
+          0.5370370370370371,
+          0.5613425925925926
+        ],
+        "speakers_above_chance": 37
+      }
+    },
+    "wavlmsv_L12__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5480324074074074,
+        "stability_interval_95": [
+          0.5335648148148148,
+          0.5625
+        ],
+        "speakers_above_chance": 33
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5480324074074074,
+        "stability_interval_95": [
+          0.5358796296296297,
+          0.5607638888888888
+        ],
+        "speakers_above_chance": 38
+      }
+    },
+    "wavlmsv_xvector": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6221064814814815,
+        "stability_interval_95": [
+          0.5931712962962963,
+          0.6516203703703703
+        ],
+        "speakers_above_chance": 47
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6203703703703703,
+        "stability_interval_95": [
+          0.5885416666666666,
+          0.6527777777777778
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "wavlmsv_xvector__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.6076388888888888,
+        "stability_interval_95": [
+          0.5804398148148148,
+          0.6348379629629629
+        ],
+        "speakers_above_chance": 42
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.6163194444444444,
+        "stability_interval_95": [
+          0.5885416666666666,
+          0.6446759259259259
+        ],
+        "speakers_above_chance": 43
+      }
+    },
+    "whisper_enc": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5127314814814815,
+        "stability_interval_95": [
+          0.5023148148148148,
+          0.5237268518518519
+        ],
+        "speakers_above_chance": 17
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5069444444444444,
+        "stability_interval_95": [
+          0.49710648148148145,
+          0.5167824074074074
+        ],
+        "speakers_above_chance": 18
+      }
+    },
+    "whisper_enc__centred": {
+      "primary_mic1_to_mic2": {
+        "point": 0.5109953703703703,
+        "stability_interval_95": [
+          0.5011574074074074,
+          0.5219907407407407
+        ],
+        "speakers_above_chance": 18
+      },
+      "reverse_mic2_to_mic1": {
+        "point": 0.5052083333333334,
+        "stability_interval_95": [
+          0.49421296296296297,
+          0.5162037037037037
+        ],
+        "speakers_above_chance": 17
+      }
+    }
+  },
+  "readings": {
+    "Q1_non_sv_readouts_with_both_lower_endpoints_above_.70": [],
+    "Q1_reading": "NO_NON_SV_READOUT_CLEARS_.70",
+    "Q2_wavlmsv_layer_profile": {
+      "best_hidden_layer": "wavlmsv_L00",
+      "gap_over_xvector_head": [
+        0.00405092592592593,
+        -0.01909722222222221
+      ],
+      "reading": "NO_SUPPRESSION_EVIDENCE"
+    }
+  }
+}

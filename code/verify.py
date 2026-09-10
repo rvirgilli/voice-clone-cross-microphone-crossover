@@ -511,6 +511,28 @@ def main() -> int:
             raise AssertionError("second-generation census mismatch")
         close(speaker_weighted(table), gen2["readouts"][readout]["pooled"]["point"], f"second generation {readout}", 1e-9)
 
+    # Fresh-pair replication: the crossover repeated on a second metadata-selected pair for 53
+    # of the 54 speakers. The four points recompute from the released cosines under the
+    # 53 x 32 census, and the stored reading is the frozen five-clause rule.
+    fresh = load("fresh_pair_result.json")
+    fresh_speakers = set(fresh["counts"]["speaker_ids"])
+    if len(fresh_speakers) != 53 or fresh["counts"]["clones"] != 3392:
+        raise AssertionError("fresh-pair roster changed")
+    rows_fresh = read_tsv("fresh_pair_scores.tsv")
+    if len(rows_fresh) != 53 * 64 * 2:
+        raise AssertionError("fresh-pair comparison census mismatch")
+    for direction in DIRECTIONS:
+        for readout in ENCODERS:
+            table = {}
+            for row in rows_fresh:
+                if row["direction"] == direction and row["readout"] == readout:
+                    table.setdefault(row["speaker"], []).append(follow(float(row["cos_own_event"]), float(row["cos_other_event"])))
+            if set(table) != fresh_speakers or any(len(v) != 32 for v in table.values()):
+                raise AssertionError(f"fresh-pair census mismatch for {direction} {readout}")
+            close(speaker_weighted(table), fresh["directions"][direction][readout]["point"], f"fresh pair {direction} {readout}", 1e-9)
+    if fresh["replication"] != "REPLICATED" or fresh["headline_permission"] != "BIDIRECTIONAL_HEADLINE_PERMITTED":
+        raise AssertionError("fresh-pair replication reading changed")
+
     interv = load("intervention_result.json")
     rows = read_tsv("intervention_scores.tsv")
     for cond in ("flat", "stretch", "ltas"):
@@ -525,6 +547,18 @@ def main() -> int:
             close(speaker_weighted(table), interv["readouts"]["ecapa"][cond][arm]["point"], f"intervention {cond} {arm}", 1e-9)
     if interv["readings"] != {"flat": "SURVIVE", "stretch": "SURVIVE", "ltas": "SURVIVE"}:
         raise AssertionError("intervention readings changed")
+
+    # Readout roster (paper §5): fixed non-verification readouts on the primary grid. The
+    # features are not released; the summary must agree with the main recomputation on its
+    # pipeline-control cells and its predeclared reading must hold on the stored intervals.
+    roster = load("readout_roster.json")["readouts"]
+    for direction in DIRECTIONS:
+        close(roster["ecapa"][direction]["point"], result["directions"][direction]["ecapa"]["point"], f"roster ECAPA control {direction}", 1e-9)
+        close(roster["wavlmsv_xvector"][direction]["point"], result["directions"][direction]["wavlm"]["point"], f"roster WavLM control {direction}", 1e-9)
+    clearing = [name for name, cells in roster.items() if not name.startswith(("ecapa", "wavlmsv_xvector"))
+                and all(cells[d]["stability_interval_95"][0] >= 0.70 for d in DIRECTIONS)]
+    if clearing:
+        raise AssertionError(f"readout roster: non-verification readouts clear .70: {clearing}")
 
     # Bind the released manuscript source to the recomputed headline and channel evidence.
     tex_raw = (ROOT / "paper" / "F2" / "main.tex").read_text(encoding="utf-8")
@@ -561,6 +595,12 @@ def main() -> int:
         "clone-to-clone paragraph": "The correct candidate shares only the conditioning event",
         "post-hoc scope": "the remaining analyses are post-hoc and descriptive",
         "N-candidate sentence": "decreases from .935/.913 with two candidates to .635 [.545,.720]/.587",
+        "readout roster sentence": "cepstral average reaches .548/.549 and the best mean-pooled self-supervised layer .633/.631",
+        "fresh-pair paragraph": "The rule passes again: ECAPA .906 [.878,.931] and .909 [.883,.933], WavLM .666 and .644",
+        "fresh-pair agreement": "(ECAPA Pearson $r$ .061/.291), so per-speaker difficulty is not a stable speaker trait across pairs",
+        "fresh-pair abstract": "with the decision rule fixed before analysis, gives .906 and .909",
+        "fresh-pair table row": "& .805 [.780,.830] & .906 [.878,.931]",
+        "same-mic diagnostics sentence": "(ECAPA .938/.930, WavLM .631/.659, primary/reverse)",
         "second-generation sentence": "original event at .796 [.759,.832]",
         "intervention sentence": ".840 [.804,.874] after pitch/energy modification",
         "intervention scope": "do not isolate causal contributions",
