@@ -11,6 +11,9 @@ import numpy as np
 
 
 plt.rcParams["pdf.fonttype"] = 42
+# ICASSP requires at least 9-point type throughout; the figure is included at column
+# width, so the rendered size equals the size set here.
+plt.rcParams["font.size"] = 9
 plt.rcParams["ps.fonttype"] = 42
 
 
@@ -27,7 +30,7 @@ def main() -> int:
         ("WavLM\nP", "primary_mic1_to_mic2", "wavlm"),
         ("WavLM\nR", "reverse_mic2_to_mic1", "wavlm"),
     ]
-    fig, ax = plt.subplots(figsize=(3.35, 1.0))
+    fig, ax = plt.subplots(figsize=(3.269, 0.95))
     offsets = np.linspace(-0.16, 0.16, 54)
     # Deterministic permutation prevents stacked discrete speaker means without
     # implying an additional stochastic sample.
@@ -63,7 +66,7 @@ def main() -> int:
     ax.set_xticks(range(1, 5), [item[0] for item in groups])
     ax.set_yticks([0.4, 0.5, 0.6, 0.8, 1.0])
     ax.set_ylabel("attribution accuracy", labelpad=1)
-    ax.tick_params(axis="both", labelsize=7, length=2)
+    ax.tick_params(axis="both", labelsize=9, length=2)
     for spine in ("top", "right"):
         ax.spines[spine].set_visible(False)
     ax.spines["left"].set_linewidth(0.6)

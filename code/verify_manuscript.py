@@ -60,8 +60,16 @@ def main() -> int:
             # Page 5 may begin inside a reference entry that started on page 4; its whole
             # text must be the tail of the reference list, so no section can appear on it.
             full = " ".join(pdf_text(scratch / "main.pdf").split())
-            references = full[full.index("REFERENCES"):] if "REFERENCES" in page4 else ""
-            if not references.endswith(" ".join(page5.split())):
+            # The reference list may start on page 4 or at the top of page 5; either way the
+            # whole of page 5 must be its tail, so no section text can appear there.
+            references = full[full.index("REFERENCES"):] if "REFERENCES" in full else ""
+            tail = " ".join(page5.split())
+            if "REFERENCES" in tail:
+                heading, rest = tail.split("REFERENCES", 1)
+                if heading.strip(" .0123456789"):
+                    raise AssertionError("page 5 must contain references only")
+                tail = "REFERENCES" + rest
+            if not references.endswith(tail):
                 raise AssertionError("page 5 must contain references only")
         if pdf_text(scratch / "main.pdf") != pdf_text(PAPER / "main.pdf"):
             raise AssertionError("released PDF text does not match a clean build of released source")

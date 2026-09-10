@@ -533,6 +533,40 @@ def main() -> int:
     if fresh["replication"] != "REPLICATED" or fresh["headline_permission"] != "BIDIRECTIONAL_HEADLINE_PERMITTED":
         raise AssertionError("fresh-pair replication reading changed")
 
+    # Full-roster complement: the same crossover on the 54 speakers whose pairs passed the
+    # earlier ECAPA screen, and on the 108-speaker union of those with the primary roster.
+    # The tier points recompute from the released cosines under the 54 x 32 census; the union
+    # points recompute by concatenating the released per-speaker means of the primary result
+    # with the tier ones. Both readings are the frozen five-clause rule.
+    full = load("full_roster_result.json")
+    tier_speakers = set(full["tier_cohort"]["counts"]["speaker_ids"])
+    union_speakers = full["full_roster_union"]["counts"]["speaker_ids"]
+    primary_speakers = set(result["counts"]["speaker_ids"])
+    if len(tier_speakers) != 54 or full["clones"] != 3456 or full["dropped_speakers"]:
+        raise AssertionError("full-roster tier cohort changed")
+    if len(union_speakers) != 108 or set(union_speakers) != primary_speakers | tier_speakers:
+        raise AssertionError("full-roster union is not the disjoint union of the two cohorts")
+    rows_full = read_tsv("full_roster_scores.tsv")
+    if len(rows_full) != 54 * 64 * 2:
+        raise AssertionError("full-roster comparison census mismatch")
+    for direction in DIRECTIONS:
+        for readout in ENCODERS:
+            table = {}
+            for row in rows_full:
+                if row["direction"] == direction and row["readout"] == readout:
+                    table.setdefault(row["speaker"], []).append(follow(float(row["cos_own_event"]), float(row["cos_other_event"])))
+            if set(table) != tier_speakers or any(len(v) != 32 for v in table.values()):
+                raise AssertionError(f"full-roster census mismatch for {direction} {readout}")
+            tier_means = [float(np.mean(v)) for v in table.values()]
+            close(float(np.mean(tier_means)), full["tier_cohort"]["directions"][direction][readout]["point"],
+                  f"tier cohort {direction} {readout}", 1e-9)
+            union_means = result["directions"][direction][readout]["speaker_means"] + tier_means
+            close(float(np.mean(union_means)), full["full_roster_union"]["directions"][direction][readout]["point"],
+                  f"full roster union {direction} {readout}", 1e-9)
+    for cohort in ("tier_cohort", "full_roster_union"):
+        if full[cohort]["rule_met"] is not True or full[cohort]["headline_permission"] != "BIDIRECTIONAL_HEADLINE_PERMITTED":
+            raise AssertionError(f"full-roster reading changed for {cohort}")
+
     interv = load("intervention_result.json")
     rows = read_tsv("intervention_scores.tsv")
     for cond in ("flat", "stretch", "ltas"):
@@ -566,16 +600,16 @@ def main() -> int:
     required_manuscript = {
         "title": "Which Conditioning Recording Does a Voice Clone Follow?",
         "primary ECAPA": ".896 [.869,.921]",
-        "primary WavLM": ".622 [.593,.652]",
+        "primary WavLM": ".622 for WavLM",
         "reverse ECAPA": ".907 [.881,.931]",
-        "reverse WavLM": ".620 [.589,.653]",
+        "reverse WavLM": "and .620.",
         "channel census": "Across all 108 event captures",
         "channel aligned median": "reach $.92$ median",
         "channel residual range": "is $.38$ median (range $.21$--$.70$)",
         "channel injection maximum": "at most $.000000026$",
         "channel byte result": "no pair is byte-identical",
         "duplicate tolerance boundary": "not a universal perceptual threshold",
-        "artifact locator": "github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027-rc2",
+        "artifact locator": "github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027-rc3",
         "pre-specified plan wording": "pre-specified complete crossover",
         "known-positive triage scope": "known-positive two-recording set for human provenance review",
         "no arbitrary presence decision": "cannot decide whether an arbitrary queried recording was present",
@@ -584,22 +618,28 @@ def main() -> int:
         "rank-disclosure positioning": "\\cite{rankdisclosure2026,sterns2026}",
         "prior-intervention distinction": "None intervenes on which of two same-speaker recording events conditions a clone",
         "open-set boundary": "does not solve open-set recording-presence detection",
-        "presence ECAPA primary row": "ECAPA & mic1$\\rightarrow$mic2 & .337 & .980 & .667",
-        "presence ECAPA reverse row": "ECAPA & mic2$\\rightarrow$mic1 & .343 & .981 & .678",
-        "presence WavLM primary row": "WavLM & mic1$\\rightarrow$mic2 & .447 & 1.000 & .884",
-        "presence WavLM reverse row": "WavLM & mic2$\\rightarrow$mic1 & .451 & .998 & .889",
+        "presence ECAPA primary row": "ECAPA & P & .337 & .980 & .667",
+        "presence ECAPA reverse row": "ECAPA & R & .343 & .981 & .678",
+        "presence WavLM primary row": "WavLM & P & .447 & 1.000 & .884",
+        "presence WavLM reverse row": "WavLM & R & .451 & .998 & .889",
         "presence post-hoc label": "This post-hoc check is descriptive",
         "content audit": "no clone (0 of 3,456) was flagged",
         "content audit scope": "does not establish the absence of reference-speech repetition",
         "clone-to-clone abstract": "attribution remains .805 [.780,.830]",
         "clone-to-clone paragraph": "The correct candidate shares only the conditioning event",
-        "post-hoc scope": "the remaining analyses are post-hoc and descriptive",
+        "post-hoc scope": "The remaining analyses are post-hoc and descriptive",
         "N-candidate sentence": "decreases from .935/.913 with two candidates to .635 [.545,.720]/.587",
         "readout roster sentence": "reaches .548/.549, and mean-pooled WavLM layer 0, centred on the speaker's real-capture mean, reaches .633/.631 against .622/.620 for WavLM-SV",
-        "fresh-pair paragraph": "The rule passes again: ECAPA .906 [.878,.931] and .909 [.883,.933], WavLM .666 and .644",
+        "fresh-pair paragraph": "The rule passes again: ECAPA .906 [.878,.931] and .909 [.883,.933], WavLM .666 [.636,.696] and .644 [.616,.673]",
+        "development cohort": "gives ECAPA .922 [.895,.946] and .911 [.886,.935] and WavLM .656 and .630",
+        "pair overlap disclosure": "no selected pair repeats an earlier development pair, and two speakers share one utterance with theirs",
+        "cohort comparison is descriptive": "a descriptive comparison that does not isolate an effect of earlier screening",
+        "pooled full roster": "Pooling their speaker means with the original 54 gives ECAPA .909 [.890,.927] and .909 [.891,.926] and WavLM .639 [.617,.661] and .625 [.602,.648] over the complete 108-speaker paired-capture roster, with no speakers excluded by the earlier screen",
+        "full-roster abstract": "all 108 VCTK speakers with paired captures give pooled ECAPA .909/.909",
+        "additional-cohort timing": "specified before generating those clones, after the original and earlier development results were known",
+        "generation seed design": "Generation seeds are fixed by output-text index and shared across arms and speakers",
         "fresh-pair agreement": "correlations .061/.291 between the two utterance pairs; this descriptive comparison does not establish the stability of an underlying speaker effect",
-        "fresh-pair abstract": "with the decision rule fixed before analysis, gives .906 and .909",
-        "fresh-pair table row": "& .805 [.780,.830] & .906 [.878,.931]",
+        "fresh-pair table row": "ECAPA, P & \\textbf{.896} & .805 & .906 & .909",
         "same-mic diagnostics sentence": "(ECAPA .938/.930, WavLM .631/.659, primary/reverse)",
         "second-generation sentence": "original event at .796 [.759,.832]",
         "intervention sentence": ".840 [.804,.874] after pitch/energy modification",

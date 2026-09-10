@@ -76,6 +76,17 @@ table under the 53 × 32 census and checks the stored replication reading.
 As for the primary result, `input_hashes` in the fresh-pair result record the private
 files as they ran; the released manifest has its audio paths relativized to `inputs/`,
 so it does not hash to the recorded manifest value.
+The full paired-capture roster (the same crossover, systems, texts, readouts and decision
+rule on the 54 speakers whose pairs passed the earlier ECAPA screen, and on the complete
+108-speaker paired-capture roster obtained by adding them to the primary 54) is
+`data/full_roster_result.json`, with its comparison-level cosines in
+`data/full_roster_scores.tsv` and the outcome-blind pair manifest in
+`data/selection_manifest_213.json`; `verify.py` recomputes the four points of the added
+54 from that table under the 54 × 32 census, recomputes the four 108-speaker points by
+concatenating the released per-speaker means of the primary result with those, and checks
+the stored reading for both cohorts. Here too, `input_hashes` in the result record the
+private files as they ran, and the released manifest has its audio paths relativized to
+`inputs/`, so it does not hash to the recorded manifest value.
 The readout roster of §5 (fixed non-verification readouts on the primary grid) is
 `data/readout_roster.json`, produced by `code/extensions/extract_readouts.py` and
 `analyze_readouts.py`; its features are not released, so `verify.py` checks that its

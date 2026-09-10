@@ -3,7 +3,9 @@
 These scripts document the four post-hoc, descriptive analyses run on 2026-09-09 after
 the frozen crossover, the score export of the clone-to-clone crossover, and the fresh-pair
 replication run on 2026-09-10 (the crossover repeated, with readouts and decision rule
-fixed, on a second outcome-blind A/B pair for every speaker that admits one). The post-hoc
+fixed, on a second outcome-blind A/B pair for every speaker that admits one) and the
+full-roster run of the same day (the crossover on the 54 speakers whose pairs passed the
+earlier ECAPA screen, and on the complete 108-speaker paired-capture roster). The post-hoc
 analyses are not part of the release verifier's reproduction path: they need the original
 clone audio, the VCTK captures and GPU embedding extraction.
 `ICASSP_RUNS` and `ICASSP_EXPERIMENTS` point them at copies of the private run
@@ -19,6 +21,7 @@ directories and experiment tree; `HF_HUB_CACHE` at the model cache.
 | Table export | `export_scores.py` | writes the three tables | — |
 | Clone-to-clone crossover (§4.1) | `export_clone_to_clone_scores.py` | `data/clone_to_clone_scores.tsv` | `data/extension_result.json` |
 | Fresh-pair replication | `build_fresh_manifest.py`, `build_jobs_fresh_pair.py`, `gen_jobs.py`, `analyze_fresh_pair.py`, `run_fresh_pair.sh`, `export_fresh_pair_scores.py` | `data/fresh_pair_scores.tsv` | `data/fresh_pair_result.json`, `data/selection_manifest_fresh.json` |
+| Full paired-capture roster | `build_full_roster_manifest.py`, `build_jobs_full_roster.py`, `gen_jobs.py`, `analyze_full_roster.py`, `run_full_roster.sh`, `export_full_roster_scores.py` | `data/full_roster_scores.tsv` | `data/full_roster_result.json`, `data/selection_manifest_213.json` |
 
 Every printed point in the paper recomputes from the released tables by speaker-weighted
 averaging (see `code/verify.py`); the bootstrap intervals regenerate from the same rows

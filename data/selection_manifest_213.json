@@ -1,0 +1,3948 @@
+{
+  "schema": "exp213-full-roster-complement-manifest-v1",
+  "scope": "real_audio_metadata_and_text_only_no_clone_or_score_outcomes",
+  "corpus": {
+    "name": "CSTR VCTK Corpus",
+    "version": "0.92",
+    "doi": "10.7488/ds/2645",
+    "mic1": "DPA 4035 omni-directional microphone",
+    "mic2": "Sennheiser MKH 800 condenser microphone"
+  },
+  "selection": {
+    "roster": "the 54 EXP-204 tier-1 and tier-2 speakers: the complement of the EXP-205 roster within the 108 paired-capture VCTK speakers",
+    "duration_range_s": [
+      4.0,
+      10.0
+    ],
+    "max_pair_duration_gap_s_on_each_mic": 0.25,
+    "max_relative_seconds_per_utf8_byte_gap_on_each_mic": 0.05,
+    "ranking": [
+      "minimum maximum normalized gap across both microphones",
+      "minimum sum of all four normalized gaps",
+      "minimum maximum rate gap",
+      "minimum maximum duration gap",
+      "lexicographic path A then path B"
+    ],
+    "embedding_or_outcome_screening": false,
+    "excluded_per_speaker": [
+      "EXP-203 seed utterance (as in EXP-205)"
+    ],
+    "exp204_tier_pairs_excluded": false
+  },
+  "counts": {
+    "speakers": 54,
+    "seed_arms": 2,
+    "prompt_microphones": 2,
+    "generated_texts": 4,
+    "systems": 4,
+    "expected_clones": 3456,
+    "comparisons_per_speaker_per_direction": 32
+  },
+  "dropped_speakers": [],
+  "generation": {
+    "systems": [
+      "f5",
+      "xtts",
+      "cosy",
+      "seedvc"
+    ],
+    "rng_seed_base": 42,
+    "generated_texts": [
+      {
+        "index": 0,
+        "text": "Well, sir, we never make coffee but in the afternoon. Would you like a good bavaroise, or a decanter of orgeat?\"",
+        "utf8_bytes": 112,
+        "sha256_utf8": "ad748a7aabea548707cbbc378e556121dad83230ba64491a306a4bbcee0a2a73"
+      },
+      {
+        "index": 1,
+        "text": "Baletti's father, who had just recovered from a long illness, was not with us, but we had his father's sister, who was older than Mario.",
+        "utf8_bytes": 136,
+        "sha256_utf8": "1176ffc9e12e1f2ed1ec3fbbb2e99351d3e0cd4f2529825e542de448346cf159"
+      },
+      {
+        "index": 2,
+        "text": "First they took turns sweeping, as best they could, with a very ancient and frowsy broom, the thick, moth eaten carpet.",
+        "utf8_bytes": 119,
+        "sha256_utf8": "be8164923489e503ceaa7c3a0f1277c0c3c93ded689275acedf3211634281b98"
+      },
+      {
+        "index": 3,
+        "text": "I address him in Italian, and he answers very wittily, but his way of speaking makes me smile, and I tell him why.",
+        "utf8_bytes": 114,
+        "sha256_utf8": "ea373418658231b1caef548909a50d2a4f562bd02ed169b7a5d7e3466bc3524b"
+      }
+    ],
+    "seedvc_sources": [
+      {
+        "index": 0,
+        "path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000041_000001.wav",
+        "sha256": "85480534622a9c0d05b188086567f6225bab3b3ebf8d2932bfe4d7df092ec299",
+        "transcript_path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000041_000001.normalized.txt",
+        "transcript_sha256": "ad748a7aabea548707cbbc378e556121dad83230ba64491a306a4bbcee0a2a73",
+        "transcript": "Well, sir, we never make coffee but in the afternoon. Would you like a good bavaroise, or a decanter of orgeat?\"",
+        "generated_text_sha256_utf8": "ad748a7aabea548707cbbc378e556121dad83230ba64491a306a4bbcee0a2a73"
+      },
+      {
+        "index": 1,
+        "path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000003_000001.wav",
+        "sha256": "37e289f38ee7cfee08c1d41a247401f3c0e872b313638036b432a9dcb34a4b95",
+        "transcript_path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000003_000001.normalized.txt",
+        "transcript_sha256": "1176ffc9e12e1f2ed1ec3fbbb2e99351d3e0cd4f2529825e542de448346cf159",
+        "transcript": "Baletti's father, who had just recovered from a long illness, was not with us, but we had his father's sister, who was older than Mario.",
+        "generated_text_sha256_utf8": "1176ffc9e12e1f2ed1ec3fbbb2e99351d3e0cd4f2529825e542de448346cf159"
+      },
+      {
+        "index": 2,
+        "path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/6930/76324/6930_76324_000014_000003.wav",
+        "sha256": "ae9cc284858ed520888aebcc1d22628771f9976b5e03d62ecc5e6e794f55372a",
+        "transcript_path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/6930/76324/6930_76324_000014_000003.normalized.txt",
+        "transcript_sha256": "be8164923489e503ceaa7c3a0f1277c0c3c93ded689275acedf3211634281b98",
+        "transcript": "First they took turns sweeping, as best they could, with a very ancient and frowsy broom, the thick, moth eaten carpet.",
+        "generated_text_sha256_utf8": "be8164923489e503ceaa7c3a0f1277c0c3c93ded689275acedf3211634281b98"
+      },
+      {
+        "index": 3,
+        "path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000048_000001.wav",
+        "sha256": "664ccb2ff88c1cb149fac9a4273cdcdcc70c3099860240b446ef1dcdf2e47ee4",
+        "transcript_path": "inputs/data/corpora/speech-resources/LibriTTS-R/LibriTTS_R/test-clean/3729/6852/3729_6852_000048_000001.normalized.txt",
+        "transcript_sha256": "ea373418658231b1caef548909a50d2a4f562bd02ed169b7a5d7e3466bc3524b",
+        "transcript": "I address him in Italian, and he answers very wittily, but his way of speaking makes me smile, and I tell him why.",
+        "generated_text_sha256_utf8": "ea373418658231b1caef548909a50d2a4f562bd02ed169b7a5d7e3466bc3524b"
+      }
+    ]
+  },
+  "speakers": [
+    {
+      "speaker": "p225",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p225/p225_013_mic1.flac",
+          "sha256": "904c0dee950a43ba0c6ae471211c93366aab99ee66fa8af4a63ab82fa2cdb928",
+          "frames": 226498,
+          "samplerate_hz": 48000,
+          "duration_s": 4.718708333333334
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p225/p225_013_mic2.flac",
+          "sha256": "9c8855c7e8e28a8dae282fd796137c94a67170d8d43c13eb4b0b281cc5fb3afe",
+          "frames": 226498,
+          "samplerate_hz": 48000,
+          "duration_s": 4.718708333333334
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p225/p225_108_mic1.flac",
+          "sha256": "caf085ceebbb5cd8a9677b96dc956b88567fd116416b7b02f5d257932df95745",
+          "frames": 225908,
+          "samplerate_hz": 48000,
+          "duration_s": 4.706416666666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p225/p225_108_mic2.flac",
+          "sha256": "37b46126ade1a663bccc76a5cb1e6d17b689cfea7bd318268129940784b40205",
+          "frames": 225908,
+          "samplerate_hz": 48000,
+          "duration_s": 4.706416666666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p225/p225_013.txt",
+          "sha256": "3221acef01a827b90bec46df1557ba0557e2497c616e46fae80013e0f1881828",
+          "utf8_bytes": 64,
+          "text": "Some have accepted it as a miracle without physical explanation."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p225/p225_108.txt",
+          "sha256": "e28da61aa1d15dd55c8603e5c8d80889f32afd1a34eae46ca183ba9a96685e04",
+          "utf8_bytes": 64,
+          "text": "Mr Chisholm said the move was made on the advice of consultants."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.012291666666667034,
+        "duration_gap_mic2_s": 0.012291666666667034,
+        "relative_rate_gap_mic1": 0.0026082766364726264,
+        "relative_rate_gap_mic2": 0.0026082766364726264
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p225/p225_016_mic1.flac",
+        "sha256": "1da4054fe912f09319bff9318a5c19895d3c9a72c05aae190b2c9c33ab856497"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p225_019",
+            "p225_253"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p226",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p226/p226_033_mic1.flac",
+          "sha256": "db1b531347cb4ff882c200a71f0d939697721e966ead4b47117b3c636e2e36c5",
+          "frames": 225696,
+          "samplerate_hz": 48000,
+          "duration_s": 4.702
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p226/p226_033_mic2.flac",
+          "sha256": "107f697dfa542d4ad490233dff1c6b2a5fbb14815d5573f19f7a64e79c4eb502",
+          "frames": 225696,
+          "samplerate_hz": 48000,
+          "duration_s": 4.702
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p226/p226_261_mic1.flac",
+          "sha256": "8a707eb58a7a6d05701b59a7d4050273cec70724fe3f57453dea25726dfc4cdb",
+          "frames": 225264,
+          "samplerate_hz": 48000,
+          "duration_s": 4.693
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p226/p226_261_mic2.flac",
+          "sha256": "f255892e5472e6b537cbf58cef40b2a6919a94fd8ff2106d96b5c880bdcb8215",
+          "frames": 225264,
+          "samplerate_hz": 48000,
+          "duration_s": 4.693
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p226/p226_033.txt",
+          "sha256": "b48f62fdfc5eacf30bfd8927c160963f55c9933a5d98b7a4894cd4b64aaf5f8a",
+          "utf8_bytes": 58,
+          "text": "From that day on we started to look for another full back."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p226/p226_261.txt",
+          "sha256": "bd6e4f674c68151ce202b7d5102f8a056543f5188a0d251a96706e826862fefb",
+          "utf8_bytes": 58,
+          "text": "He has already suffered a good deal of unwanted attention."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.009000000000000341,
+        "duration_gap_mic2_s": 0.009000000000000341,
+        "relative_rate_gap_mic1": 0.001915912719531697,
+        "relative_rate_gap_mic2": 0.001915912719531697
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p226/p226_259_mic1.flac",
+        "sha256": "d33ffab7ba4305823833561c7538647f87e5cec3250076c785703b8b0966d5cd"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p226_071",
+            "p226_353"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p227",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p227/p227_002_mic1.flac",
+          "sha256": "f1677b30a096b061549c7437cad57c741a5e7b4924801c48d8c55f1957bd814f",
+          "frames": 204687,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2643125
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p227/p227_002_mic2.flac",
+          "sha256": "28cc073a6fc1d55475095eb866ba0059bb59fb3879d654329ca572f908050335",
+          "frames": 204687,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2643125
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p227/p227_093_mic1.flac",
+          "sha256": "cf7750aba8e36f8cda80b6262be17e39a326d469d6aad6669ba0796fc7d47ddb",
+          "frames": 205286,
+          "samplerate_hz": 48000,
+          "duration_s": 4.276791666666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p227/p227_093_mic2.flac",
+          "sha256": "002a99acdbf6cbd87e2ec61551ce6ea1467404dd184c54cb008f42f6d1afb919",
+          "frames": 205286,
+          "samplerate_hz": 48000,
+          "duration_s": 4.276791666666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p227/p227_002.txt",
+          "sha256": "cc089050d61d57f3e806b6cf2ffa31aee29b8d749aa3067ade1f45ec3773ca73",
+          "utf8_bytes": 54,
+          "text": "Ask her to bring these things with her from the store."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p227/p227_093.txt",
+          "sha256": "b7ded4e30787dd6f25d51fd8f76308dfedb13ed1350aa5826f781142c7c01e0d",
+          "utf8_bytes": 54,
+          "text": "Clark was desperate to return to the House of Commons."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.012479166666667041,
+        "duration_gap_mic2_s": 0.012479166666667041,
+        "relative_rate_gap_mic1": 0.002922143653362554,
+        "relative_rate_gap_mic2": 0.002922143653362554
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p227/p227_114_mic1.flac",
+        "sha256": "9e98eb8d0006dd444e788a545fe6e02a388685c2736772f9b8a7c709b816e59f"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p227_006",
+            "p227_192"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p228",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p228/p228_181_mic1.flac",
+          "sha256": "35e45aaa838f5033bbff4ccbf7c741da0f173d1448c7151973cee7981b5968ba",
+          "frames": 247922,
+          "samplerate_hz": 48000,
+          "duration_s": 5.165041666666666
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p228/p228_181_mic2.flac",
+          "sha256": "ecc567f0e63cfe89118bf683f76e7f70012dc77ca3d1f5ea14ca54f1aa164b20",
+          "frames": 247922,
+          "samplerate_hz": 48000,
+          "duration_s": 5.165041666666666
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p228/p228_223_mic1.flac",
+          "sha256": "92e230c0e4ef3d6635deb6d5b027da3e33b6920c52d6a345a6592e39541812da",
+          "frames": 247995,
+          "samplerate_hz": 48000,
+          "duration_s": 5.1665625
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p228/p228_223_mic2.flac",
+          "sha256": "9532786858167b6b9f25d70ce2590a47ce364f1c7e427c4b1433b5032151836e",
+          "frames": 247995,
+          "samplerate_hz": 48000,
+          "duration_s": 5.1665625
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p228/p228_181.txt",
+          "sha256": "5f9cd7f49f7e9797659fb0ad0c41c966573237781f3465ebcbad7384e42221c1",
+          "utf8_bytes": 66,
+          "text": "However, the figures were disputed by the Scottish Prison Service."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p228/p228_223.txt",
+          "sha256": "a61f0f06080b72179389aa37f766586621d5e499a904e7e0302b72cded43da85",
+          "utf8_bytes": 66,
+          "text": "The workers do not want to read about their futures in newspapers."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0015208333333340818,
+        "duration_gap_mic2_s": 0.0015208333333340818,
+        "relative_rate_gap_mic1": 0.0002944041039128022,
+        "relative_rate_gap_mic2": 0.0002944041039128022
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p228/p228_034_mic1.flac",
+        "sha256": "d9fc2e5694d2cb215def8ed894124bed2536612cb308bd53c3d0274acb7636f4"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p228_004",
+            "p228_214"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p230",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p230/p230_121_mic1.flac",
+          "sha256": "d1d758f658cebbd8cf4fa1c1a2814eaf99e98f5b69230e71bcbc78d6a912020f",
+          "frames": 194789,
+          "samplerate_hz": 48000,
+          "duration_s": 4.058104166666666
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p230/p230_121_mic2.flac",
+          "sha256": "1acd98639080cec36c08767e6660d1f5a338b47f6f116abce1611f89137d2a20",
+          "frames": 194789,
+          "samplerate_hz": 48000,
+          "duration_s": 4.058104166666666
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p230/p230_226_mic1.flac",
+          "sha256": "f206578515663cc67840703eacd911fb188f72a25e02403eb3e603f94fe677e6",
+          "frames": 194759,
+          "samplerate_hz": 48000,
+          "duration_s": 4.057479166666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p230/p230_226_mic2.flac",
+          "sha256": "77b3e5837ae1aff9c5444678b6714cd3608597ce892210170cda6b753b360254",
+          "frames": 194759,
+          "samplerate_hz": 48000,
+          "duration_s": 4.057479166666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p230/p230_121.txt",
+          "sha256": "499f133aefa95ecbe2fe13b9428475e42455cc2618704cb938abd4aee805cea0",
+          "utf8_bytes": 42,
+          "text": "The abuse of elderly people was appalling."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p230/p230_226.txt",
+          "sha256": "6db589db5a45e029579b318e0135977e1c87c1589ebbc5198af908b18327f5f9",
+          "utf8_bytes": 42,
+          "text": "However, Dundee deserved to win this game."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0006249999999994316,
+        "duration_gap_mic2_s": 0.0006249999999994316,
+        "relative_rate_gap_mic1": 0.00015402466448273755,
+        "relative_rate_gap_mic2": 0.00015402466448273755
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p230/p230_319_mic1.flac",
+        "sha256": "b54ebf509b50d665e779f783bcde0517512ce1a04aba189b5ec06711b714e2e4"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p230_148",
+            "p230_171"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p232",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p232/p232_123_mic1.flac",
+          "sha256": "aa6cf7880ca2a2cc3eb5a0dbf13cdd7dd2e6b51279f7e1dfa1b2f3f992dc0b47",
+          "frames": 195862,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0804583333333335
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p232/p232_123_mic2.flac",
+          "sha256": "8453cd2b258ef5ee654485850bf093c54ebff6dce7446d7c693f5c6f6df5d82a",
+          "frames": 195862,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0804583333333335
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p232/p232_303_mic1.flac",
+          "sha256": "f1ed728e0282c3f4750b5a2aa824aaf73396b701b3742324d6f0d3894f4193cc",
+          "frames": 194538,
+          "samplerate_hz": 48000,
+          "duration_s": 4.052875
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p232/p232_303_mic2.flac",
+          "sha256": "1b4fbf07a81f827c6cfacd50d0da23b13268e89dd4341742f762b1f1bc87f940",
+          "frames": 194538,
+          "samplerate_hz": 48000,
+          "duration_s": 4.052875
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p232/p232_123.txt",
+          "sha256": "c9730204be33adf85eb1ed4283ed4622e0c5b26d1bc5f0752faa76616adfc4df",
+          "utf8_bytes": 66,
+          "text": "An announcement on his replacement is expected within three weeks."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p232/p232_303.txt",
+          "sha256": "18fe52415c2f4544dc0130dc0759d5be6c382d6c78fe9dc82ac5dd161a030dcc",
+          "utf8_bytes": 66,
+          "text": "He was adamant that he was still ahead on everything that matters."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.027583333333333293,
+        "duration_gap_mic2_s": 0.027583333333333293,
+        "relative_rate_gap_mic1": 0.0067827868852458435,
+        "relative_rate_gap_mic2": 0.0067827868852458435
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p232/p232_350_mic1.flac",
+        "sha256": "098df38347d1aeabbc73cf946480ef58bd92c9da6520dd0f4e1283cfdd113d52"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p232_008",
+            "p232_235"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p233",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p233/p233_051_mic1.flac",
+          "sha256": "3dc9499213c32e39b870f51ed980e2c92eb9c2a24e53cfcd13040a3aaee79232",
+          "frames": 194540,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0529166666666665
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p233/p233_051_mic2.flac",
+          "sha256": "8f30df4a81127949648ed5d87c921323c146fcf4cbc4a22f00138e3a5ddd279a",
+          "frames": 194540,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0529166666666665
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p233/p233_246_mic1.flac",
+          "sha256": "c5d6ceb90e78204a9e8e59bfd4e38ee7cc4ca130ca0c51a96688921dd4d49cbf",
+          "frames": 194502,
+          "samplerate_hz": 48000,
+          "duration_s": 4.052125
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p233/p233_246_mic2.flac",
+          "sha256": "3a844df5b559b74e4dbe6f5395c297d66ec579690791976f45679aa0045b79d2",
+          "frames": 194502,
+          "samplerate_hz": 48000,
+          "duration_s": 4.052125
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p233/p233_051.txt",
+          "sha256": "80e4b3b196cdfabece19d75032f19bfd39ca208dc38a5c55824abc879b90c69a",
+          "utf8_bytes": 47,
+          "text": "But, after a dip in sales, growth was recorded."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p233/p233_246.txt",
+          "sha256": "cc132bf4764b00d305d33c0ee48a86c3fa192095e5cd4d4df5b4150a9f086e8f",
+          "utf8_bytes": 47,
+          "text": "We did not compete with any other local farmer."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0007916666666663019,
+        "duration_gap_mic2_s": 0.0007916666666663019,
+        "relative_rate_gap_mic1": 0.00019535165868967962,
+        "relative_rate_gap_mic2": 0.00019535165868967962
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p233/p233_220_mic1.flac",
+        "sha256": "7573409490c57eac406c5f12fd91bfa348a6b7c95a0aeaf81ae654ec709c5b24"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p233_248",
+            "p233_323"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p234",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p234/p234_034_mic1.flac",
+          "sha256": "b904b317a4eb7e2d3775fc6fea18c999a7ad3faa7e13a450a348296dbda8e731",
+          "frames": 227418,
+          "samplerate_hz": 48000,
+          "duration_s": 4.737875
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p234/p234_034_mic2.flac",
+          "sha256": "201bae7719718f186efb463d7bf0c45ee109968d721a14ff48a245e455d6d4b2",
+          "frames": 227418,
+          "samplerate_hz": 48000,
+          "duration_s": 4.737875
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p234/p234_068_mic1.flac",
+          "sha256": "447b23b225d8b0e32436653be703f97376cb738c3ec0f0d9ef00dbdb4355e58c",
+          "frames": 225992,
+          "samplerate_hz": 48000,
+          "duration_s": 4.708166666666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p234/p234_068_mic2.flac",
+          "sha256": "eaa7ac237ebab20bc2016325432b120fde80941c179d16d3ebe4142b3b9a63ba",
+          "frames": 225992,
+          "samplerate_hz": 48000,
+          "duration_s": 4.708166666666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p234/p234_034.txt",
+          "sha256": "eed07fcac9b8c41b7af8bff69ee04150da75669d7258fde126bd6859746f4617",
+          "utf8_bytes": 71,
+          "text": "It's really no great surprise, because the price difference is so much."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p234/p234_068.txt",
+          "sha256": "4ac039fb1ccff5a4f2cdbbee1e8ff67da1e6d685a848570a0c802a93db6878c2",
+          "utf8_bytes": 71,
+          "text": "Over time, with patience and precision, the terrorists will be pursued."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.02970833333333278,
+        "duration_gap_mic2_s": 0.02970833333333278,
+        "relative_rate_gap_mic1": 0.006290112701528275,
+        "relative_rate_gap_mic2": 0.006290112701528275
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p234/p234_277_mic1.flac",
+        "sha256": "5fe4caf2aa43afa3fa1175fb12819d172c76c3d10f79324365ec8ec4dc91fa38"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p234_057",
+            "p234_153"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p236",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p236/p236_015_mic1.flac",
+          "sha256": "48fe977ad6437b7bd7ae9d77813e6f9a91476806e5e85d5c08228069275c38c4",
+          "frames": 251917,
+          "samplerate_hz": 48000,
+          "duration_s": 5.248270833333334
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p236/p236_015_mic2.flac",
+          "sha256": "5502574ea9f2a1fd7b3899748b874f451afe46415ad40bc9c27057bbaccca628",
+          "frames": 251917,
+          "samplerate_hz": 48000,
+          "duration_s": 5.248270833333334
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p236/p236_018_mic1.flac",
+          "sha256": "cabd097924ca86a9fb67395bc492523ad9c3c5691a4d7851db2d494fd0477736",
+          "frames": 252096,
+          "samplerate_hz": 48000,
+          "duration_s": 5.252
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p236/p236_018_mic2.flac",
+          "sha256": "e676101dcf87da13514d0b01410544d700acba6726c66d9106063ccbaebc6885",
+          "frames": 252096,
+          "samplerate_hz": 48000,
+          "duration_s": 5.252
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p236/p236_015.txt",
+          "sha256": "d04330d9e63a43f5aa2a0472b9fc7edece91326f5b62e338235e29bbf65b372c",
+          "utf8_bytes": 90,
+          "text": "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p236/p236_018.txt",
+          "sha256": "1c139664be43dcdc559867ef2d1ab4059a81ea4ee6c418831f84d55229cf822f",
+          "utf8_bytes": 90,
+          "text": "Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.003729166666666117,
+        "duration_gap_mic2_s": 0.003729166666666117,
+        "relative_rate_gap_mic1": 0.0007102991391094023,
+        "relative_rate_gap_mic2": 0.0007102991391094023
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p236/p236_260_mic1.flac",
+        "sha256": "b13c653f26928529061a48cbeeae483476ded72604a7b0e255223b26966f190b"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p236_007",
+            "p236_024"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p237",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p237/p237_028_mic1.flac",
+          "sha256": "7730835a94433a0b1a07b6a652f4c9cf3246c3049b880f6553bbbaf71e2c6e06",
+          "frames": 204364,
+          "samplerate_hz": 48000,
+          "duration_s": 4.257583333333334
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p237/p237_028_mic2.flac",
+          "sha256": "b12afeac0db8d1b28f95ba26cda863b57ba09829a8f4423da116e5d625799976",
+          "frames": 204364,
+          "samplerate_hz": 48000,
+          "duration_s": 4.257583333333334
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p237/p237_314_mic1.flac",
+          "sha256": "44a72a3e32f0a49936cee9e4c648c0162c00e367fa1d1497e095ca73089e104f",
+          "frames": 204264,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2555
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p237/p237_314_mic2.flac",
+          "sha256": "3c1b12a98230b110300ef79fd21c03d38443b261b6f1f3107d05a79bca140d97",
+          "frames": 204264,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2555
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p237/p237_028.txt",
+          "sha256": "4c89a690f064039006e014051fd9c1520256f1fc8a454a312412600e13d8cbb3",
+          "utf8_bytes": 63,
+          "text": "They should have a major rethink about the event for next year."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p237/p237_314.txt",
+          "sha256": "4a8da2a9e0b9198cdc374d1c2f39f66380beb450b5f5418ee66a0bf6bd6e2d0a",
+          "utf8_bytes": 63,
+          "text": "I was concerned with the way they tried to justify his actions."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.002083333333334103,
+        "duration_gap_mic2_s": 0.002083333333334103,
+        "relative_rate_gap_mic1": 0.0004894427205186898,
+        "relative_rate_gap_mic2": 0.0004894427205186898
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p237/p237_057_mic1.flac",
+        "sha256": "12ab3ce3435a20f4892aa3d651c7d427386a42b3be8704046602b89bce8415dd"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p237_139",
+            "p237_305"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p238",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p238/p238_133_mic1.flac",
+          "sha256": "ab7979e19603fefae3593d1022494c327a02326189e971affb32fdf29d896dd5",
+          "frames": 207104,
+          "samplerate_hz": 48000,
+          "duration_s": 4.314666666666667
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p238/p238_133_mic2.flac",
+          "sha256": "1fdae473215d7cd3e240bba35d0062a65ea5563fc16248b0fc7b3cccfed4fbb0",
+          "frames": 207104,
+          "samplerate_hz": 48000,
+          "duration_s": 4.314666666666667
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p238/p238_342_mic1.flac",
+          "sha256": "fa07261532551b4b90f4df76ca5c3401f7dde56aec9b176c0e4841b58231122d",
+          "frames": 207104,
+          "samplerate_hz": 48000,
+          "duration_s": 4.314666666666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p238/p238_342_mic2.flac",
+          "sha256": "92e8c6e9e94349d24adad102b8ec6cd7c2044f424e33330d90e100b364235676",
+          "frames": 207104,
+          "samplerate_hz": 48000,
+          "duration_s": 4.314666666666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p238/p238_133.txt",
+          "sha256": "ebd0460681391527846cb0974aae03303788ccaecfc9f6bb8c58db23f5832431",
+          "utf8_bytes": 47,
+          "text": "We're very interested in opening up in Germany."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p238/p238_342.txt",
+          "sha256": "5ad771154dc0e5054380198cd8e5e7c43f8e5cae640a59c1c74f9fb4b522d42c",
+          "utf8_bytes": 47,
+          "text": "He is the son of former chairman, Lord Wolfson."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0,
+        "duration_gap_mic2_s": 0.0,
+        "relative_rate_gap_mic1": 0.0,
+        "relative_rate_gap_mic2": 0.0
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p238/p238_186_mic1.flac",
+        "sha256": "a0bc1b685b09fdafdb04c5057dc87a62bc384fd28c79beb5652358509000cccf"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p238_183",
+            "p238_263"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p239",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p239/p239_102_mic1.flac",
+          "sha256": "f78a8cb6dad8471d69ca705829f098ebf415b2a4d9df27e66351a8f533178a4e",
+          "frames": 192716,
+          "samplerate_hz": 48000,
+          "duration_s": 4.014916666666666
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p239/p239_102_mic2.flac",
+          "sha256": "1a8f5f9574c7ee89a62d418844c71be15d79cbb288291907b493ac1a681f4230",
+          "frames": 192716,
+          "samplerate_hz": 48000,
+          "duration_s": 4.014916666666666
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p239/p239_490_mic1.flac",
+          "sha256": "549afdf47c61cfac72d5cea5dc3c6d2ae9115c112e34186fcd4c7f54c299e395",
+          "frames": 192523,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0108958333333335
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p239/p239_490_mic2.flac",
+          "sha256": "f69285bff11279f9e6d4734f758f88d5ab689631185626387c264d932b6c5669",
+          "frames": 192523,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0108958333333335
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p239/p239_102.txt",
+          "sha256": "c1e78ec44257f05604352deebf1dde1ef2ea5fb22e010fe51f7b0cc18d939a64",
+          "utf8_bytes": 63,
+          "text": "But they also noted a partial strengthening of survey evidence."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p239/p239_490.txt",
+          "sha256": "d2796ba01b54d2ed389b4d8118818448ee41b034334299a2a5e1cc3ba013a5bd",
+          "utf8_bytes": 63,
+          "text": "They cannot operate without a licence from the local authority."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.004020833333332696,
+        "duration_gap_mic2_s": 0.004020833333332696,
+        "relative_rate_gap_mic1": 0.001001975397090842,
+        "relative_rate_gap_mic2": 0.001001975397090842
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p239/p239_321_mic1.flac",
+        "sha256": "eddabaafc55b011017aa7ca67b9a247a29fe09f83a3dbde1d2e7a78714163e38"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p239_172",
+            "p239_474"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p240",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p240/p240_164_mic1.flac",
+          "sha256": "d6c1ab0eace68f963ad1fb906db334eb291400a9e229efba9f5d713ca6d51e0b",
+          "frames": 227436,
+          "samplerate_hz": 48000,
+          "duration_s": 4.73825
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p240/p240_164_mic2.flac",
+          "sha256": "4ad38a230c792d048db3686115c9fb688ae44d006cf0f179c71bb0595ca58ea5",
+          "frames": 227436,
+          "samplerate_hz": 48000,
+          "duration_s": 4.73825
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p240/p240_258_mic1.flac",
+          "sha256": "54c4dd582aeeb7ff3823a1d0fa53a1609290d8e885bc14bbf4cf71e2647906ff",
+          "frames": 227384,
+          "samplerate_hz": 48000,
+          "duration_s": 4.737166666666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p240/p240_258_mic2.flac",
+          "sha256": "3b714d569429e79c4f519e173fa68cdd4b608e2a4c300afbadb17f099771c8e6",
+          "frames": 227384,
+          "samplerate_hz": 48000,
+          "duration_s": 4.737166666666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p240/p240_164.txt",
+          "sha256": "a0225678cf0ad6e0ac5018427738d60f46455978a29eba5076f658d6ff41afa8",
+          "utf8_bytes": 64,
+          "text": "However, the French government has a major dilemma on its hands."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p240/p240_258.txt",
+          "sha256": "aa0f6ccb00ad4b7b76bdbf29b4dec0803e93d035bf9ce9a403c84ffe039998f0",
+          "utf8_bytes": 64,
+          "text": "For the Scottish judges, the affair is very delicate and unique."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.001083333333332881,
+        "duration_gap_mic2_s": 0.001083333333332881,
+        "relative_rate_gap_mic1": 0.0002286618882194199,
+        "relative_rate_gap_mic2": 0.0002286618882194199
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p240/p240_072_mic1.flac",
+        "sha256": "0766bcbcbf23fdd5e3b7d62fa406bf41759823995c7ec6e1a24303dc975bd744"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p240_071",
+            "p240_150"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p241",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p241/p241_146_mic1.flac",
+          "sha256": "6ad99775de8409195ebc2b7ba8626f6f7cd78d29cdf31e2e40e0fd18b7c755c3",
+          "frames": 192706,
+          "samplerate_hz": 48000,
+          "duration_s": 4.014708333333333
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p241/p241_146_mic2.flac",
+          "sha256": "493bff8283606d062caa1b3b1ad9b8467505ba09ee0bc20eb67c4cfcb283ad04",
+          "frames": 192706,
+          "samplerate_hz": 48000,
+          "duration_s": 4.014708333333333
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p241/p241_237_mic1.flac",
+          "sha256": "d2ad96febcb478d5a347cf3106e91fad73aab5badd066542bcc69f2147cedb3e",
+          "frames": 192748,
+          "samplerate_hz": 48000,
+          "duration_s": 4.015583333333334
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p241/p241_237_mic2.flac",
+          "sha256": "469b95d7eb5e344c81f5c3489366e82d3671c4c8a2db331bb2b0393639222e8f",
+          "frames": 192748,
+          "samplerate_hz": 48000,
+          "duration_s": 4.015583333333334
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p241/p241_146.txt",
+          "sha256": "598c91d65e9ef4cd659f28ced3389d9f16ab86e1a94219a61a1949074c1f2a1a",
+          "utf8_bytes": 61,
+          "text": "It will include the Black Watch, the Royal Highland regiment."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p241/p241_237.txt",
+          "sha256": "55979a9448853f0c261df38b721587b5df766abf1f84ef84a09d94f864a9ce7e",
+          "utf8_bytes": 61,
+          "text": "We have spent the last couple of years with acting directors."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0008750000000006253,
+        "duration_gap_mic2_s": 0.0008750000000006253,
+        "relative_rate_gap_mic1": 0.00021792483668639054,
+        "relative_rate_gap_mic2": 0.00021792483668639054
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p241/p241_333_mic1.flac",
+        "sha256": "06e0c82118e18d5a1183068fbb8577e0425009630dd16a3f90ee68695da8a229"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p241_161",
+            "p241_258"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p243",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p243/p243_275_mic1.flac",
+          "sha256": "418c30aef2ddb8542c7a7b26d7cb051dfeb4bd8d31d735042b48aa72647fdaa7",
+          "frames": 197172,
+          "samplerate_hz": 48000,
+          "duration_s": 4.10775
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p243/p243_275_mic2.flac",
+          "sha256": "5b11ff310a7f29ddc372fa22c30f7d9dec1c4460915993dff7d4cf9af4b1dfca",
+          "frames": 197172,
+          "samplerate_hz": 48000,
+          "duration_s": 4.10775
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p243/p243_380_mic1.flac",
+          "sha256": "7176fc57ce58f0a43649dc4875c02807e5ca41041d703b30d02a15738c1e5bc7",
+          "frames": 197154,
+          "samplerate_hz": 48000,
+          "duration_s": 4.107375
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p243/p243_380_mic2.flac",
+          "sha256": "84d8407d6f8d7ddf4d1775e42b0feb9e7763d51de6ca639068d8937d3f255f8f",
+          "frames": 197154,
+          "samplerate_hz": 48000,
+          "duration_s": 4.107375
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p243/p243_275.txt",
+          "sha256": "3c423063c1e9def18f9d4adc6e78db96d79969693a48eb14a5f78e240903636e",
+          "utf8_bytes": 51,
+          "text": "It is also seeking a national mortgage rescue plan."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p243/p243_380.txt",
+          "sha256": "0181fa541fe55f90cb6902032a90ac22099b0113059e840b8c4846ae9edffa70",
+          "utf8_bytes": 51,
+          "text": "This is an audience determined to enjoy themselves."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0003750000000000142,
+        "duration_gap_mic2_s": 0.0003750000000000142,
+        "relative_rate_gap_mic1": 9.129501985651486e-05,
+        "relative_rate_gap_mic2": 9.129501985651486e-05
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p243/p243_142_mic1.flac",
+        "sha256": "11d9e205283372088d6ef6f2ad488605c0516114944b80245764a03b57bb2a11"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p243_075",
+            "p243_231"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p244",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p244/p244_224_mic1.flac",
+          "sha256": "9586e81f481cf97cd9aa2ec6689c99b8e32d4141dd96ef8d230ac5c7bdf1fcc5",
+          "frames": 192664,
+          "samplerate_hz": 48000,
+          "duration_s": 4.013833333333333
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p244/p244_224_mic2.flac",
+          "sha256": "63d683d639a634828f146d503147550303c4c2db4d79155f3fe1ac91635cc0bf",
+          "frames": 192664,
+          "samplerate_hz": 48000,
+          "duration_s": 4.013833333333333
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p244/p244_225_mic1.flac",
+          "sha256": "4238abda9242bf9ccb854a8dc79f4c06862b400a0e7a4f0177a815b071c0168a",
+          "frames": 192958,
+          "samplerate_hz": 48000,
+          "duration_s": 4.019958333333333
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p244/p244_225_mic2.flac",
+          "sha256": "26cacd5e65b5424e4c8b44aae5ed9584b42a30fe5c7f76de7038e049d1552270",
+          "frames": 192958,
+          "samplerate_hz": 48000,
+          "duration_s": 4.019958333333333
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p244/p244_224.txt",
+          "sha256": "ff586aabc033d162c07f34517c4761617a9dfc6a16c7bce96dab8ae5a01c5c16",
+          "utf8_bytes": 61,
+          "text": "Indeed, he sees a shortage of skilled workers on the horizon."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p244/p244_225.txt",
+          "sha256": "0b98c3fe6ed89fc26b587f941e29c551a39eb8aa790cf8f2d1b4665ca760cb19",
+          "utf8_bytes": 61,
+          "text": "Milk producers were in need of immediate assistance, he said."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.006124999999999936,
+        "duration_gap_mic2_s": 0.006124999999999936,
+        "relative_rate_gap_mic1": 0.0015248092691806981,
+        "relative_rate_gap_mic2": 0.0015248092691806981
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p244/p244_329_mic1.flac",
+        "sha256": "65272ce54ba31dbc7997e1e3c73d493b102308b1efe3ce764399df5fddb880e8"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p244_131",
+            "p244_277"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p245",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p245/p245_103_mic1.flac",
+          "sha256": "79224d632d6b03741e5dde86eedc7c819e686c697d621f4d87fc952ffb83c558",
+          "frames": 196344,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0905
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p245/p245_103_mic2.flac",
+          "sha256": "4bd57ed5c5939115c6c996b5e908007cc62024dfdd2bd3d1c84900ee2320b29c",
+          "frames": 196344,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0905
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p245/p245_276_mic1.flac",
+          "sha256": "4bf3ed41967b4843d539a5faad5514113883af4a1ad208830111e541976c93f2",
+          "frames": 196526,
+          "samplerate_hz": 48000,
+          "duration_s": 4.094291666666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p245/p245_276_mic2.flac",
+          "sha256": "95540a414304a1338049ff0e86c85cc29f2c8eaf1bf9ce32d7ad37a0382f2809",
+          "frames": 196526,
+          "samplerate_hz": 48000,
+          "duration_s": 4.094291666666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p245/p245_103.txt",
+          "sha256": "adc67814c4fe3bb1275622eccb801e55fc8c2c7a01d5fb0372b31a98b09e82c6",
+          "utf8_bytes": 42,
+          "text": "Among them was Gary Robertson from Dundee."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p245/p245_276.txt",
+          "sha256": "b14e2249f76b627ef3143802edf982623d8543dcad65567abea20b62fe38d42c",
+          "utf8_bytes": 42,
+          "text": "Certainly, the Taliban regime is finished."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.003791666666667304,
+        "duration_gap_mic2_s": 0.003791666666667304,
+        "relative_rate_gap_mic1": 0.0009265151322322664,
+        "relative_rate_gap_mic2": 0.0009265151322322664
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p245/p245_058_mic1.flac",
+        "sha256": "20452d7b165eac14d129220d6175fa2f045985256480fd7d414cdacd58e4cd50"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p245_203",
+            "p245_325"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p246",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p246/p246_157_mic1.flac",
+          "sha256": "29bd1ca6d077f67de95ce6f5880e28d4c64fe9ca790774fdc53fdae559dc11cf",
+          "frames": 196713,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0981875
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p246/p246_157_mic2.flac",
+          "sha256": "b37edf2bbace078a4bd8edcfa589b288d2fb0e16912a8e8eb60a9613cc6feb22",
+          "frames": 196713,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0981875
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p246/p246_280_mic1.flac",
+          "sha256": "f5c1dddf6d72f1c19a44cc42f088584a59a43fa9351cb556222f11e90964a0eb",
+          "frames": 196684,
+          "samplerate_hz": 48000,
+          "duration_s": 4.097583333333334
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p246/p246_280_mic2.flac",
+          "sha256": "ab8cac069608a9b631e7918d0fd10f312efb29e16e0a0b6bf99009343636f17e",
+          "frames": 196684,
+          "samplerate_hz": 48000,
+          "duration_s": 4.097583333333334
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p246/p246_157.txt",
+          "sha256": "43a9ff648f713d3c8d92e0810db6b01efb03b1ea65e191c52f85c4fa227a1e9f",
+          "utf8_bytes": 52,
+          "text": "This year, this month, will be special for Torrance."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p246/p246_280.txt",
+          "sha256": "faac6948a85dfdfe65ca0864b39ccea4d684a7c1a78af5350d8b10012b4fd778",
+          "utf8_bytes": 52,
+          "text": "In fact, he was talking about the survival business."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0006041666666662948,
+        "duration_gap_mic2_s": 0.0006041666666662948,
+        "relative_rate_gap_mic1": 0.0001474337628401138,
+        "relative_rate_gap_mic2": 0.0001474337628401138
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p246/p246_235_mic1.flac",
+        "sha256": "ec883939e724643ad9b856df646056698b9023052173c5fca85e3cc1bbf187ac"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p246_024",
+            "p246_187"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p247",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p247/p247_351_mic1.flac",
+          "sha256": "ca04f655c1a81501305e93768186bcc162b7ab22aa433091af64c30a0ec870e0",
+          "frames": 192834,
+          "samplerate_hz": 48000,
+          "duration_s": 4.017375
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p247/p247_351_mic2.flac",
+          "sha256": "605fc7631c2360560b539ecd321f7adeb207a372da78904a69a92c4c60c1d344",
+          "frames": 192834,
+          "samplerate_hz": 48000,
+          "duration_s": 4.017375
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p247/p247_463_mic1.flac",
+          "sha256": "855b11c5a1b1b9d5f96ebd8883ece2fc4853957c7cdf019ba23da2c4ef8da366",
+          "frames": 192654,
+          "samplerate_hz": 48000,
+          "duration_s": 4.013625
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p247/p247_463_mic2.flac",
+          "sha256": "a8ab224c4b2bd4cb858fed35122f921886aa4c1d3cd2578900e274f724bf0372",
+          "frames": 192654,
+          "samplerate_hz": 48000,
+          "duration_s": 4.013625
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p247/p247_351.txt",
+          "sha256": "ccd1eccd0d1ec0fc0f20789740763b9ddbc537d97fb8a64356cc6316f4defe95",
+          "utf8_bytes": 59,
+          "text": "Plans to celebrate the Queen's Golden Jubilee will proceed."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p247/p247_463.txt",
+          "sha256": "17f4041cdb25ba4bfa08b28584e983c8e1dd5bbe824043ffe87ebbc0d68222e9",
+          "utf8_bytes": 59,
+          "text": "The Edinburgh audience was able to understand the dialogue."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.003750000000000142,
+        "duration_gap_mic2_s": 0.003750000000000142,
+        "relative_rate_gap_mic1": 0.0009338812103101357,
+        "relative_rate_gap_mic2": 0.0009338812103101357
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p247/p247_244_mic1.flac",
+        "sha256": "e6925d3813aa9a247e099044cfd734eb33794912e385d40927bdfac33a29f9ad"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p247_006",
+            "p247_171"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p248",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p248/p248_301_mic1.flac",
+          "sha256": "f764b619e240de6aed27e42a730ffb15f734225f9611c7a0329cbe398f1484b9",
+          "frames": 213014,
+          "samplerate_hz": 48000,
+          "duration_s": 4.437791666666667
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p248/p248_301_mic2.flac",
+          "sha256": "7eff4b50c8b91180a829fb90bf0e80ce4f972159e19ac24cfe66af514e8cc8b0",
+          "frames": 213014,
+          "samplerate_hz": 48000,
+          "duration_s": 4.437791666666667
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p248/p248_338_mic1.flac",
+          "sha256": "58f74a555167fadf253085df6bd4dc6d0b8dce89f07102a8a7e4c7fa6169ac88",
+          "frames": 212914,
+          "samplerate_hz": 48000,
+          "duration_s": 4.435708333333333
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p248/p248_338_mic2.flac",
+          "sha256": "d5541593e5458280895ffe795d4ed4a06d218f3026e7c89de82e71c7496213f2",
+          "frames": 212914,
+          "samplerate_hz": 48000,
+          "duration_s": 4.435708333333333
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p248/p248_301.txt",
+          "sha256": "fe519bf15f9409f84053e331133a71f4a7ac44c4a5d85bd975a10bd2cd8256b8",
+          "utf8_bytes": 56,
+          "text": "However, he is a coach, and he remains a coach at heart."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p248/p248_338.txt",
+          "sha256": "dff3b5178a88c409d9c77060d8e26baf42bb5fa692d5c7b3fc3b0a1d974799f7",
+          "utf8_bytes": 56,
+          "text": "Despite his senior position, he did not know in advance."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.002083333333333215,
+        "duration_gap_mic2_s": 0.002083333333333215,
+        "relative_rate_gap_mic1": 0.0004695629308239874,
+        "relative_rate_gap_mic2": 0.0004695629308239874
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p248/p248_133_mic1.flac",
+        "sha256": "bb6c1251f098d855e47de82c90bf04cdb56d07d3158d5fcc922076f881d2fe40"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p248_008",
+            "p248_293"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p249",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p249/p249_026_mic1.flac",
+          "sha256": "5feb06dece03e7d0598703e1a7cd53798cb4ea533a1409590e830e37711e68a1",
+          "frames": 211113,
+          "samplerate_hz": 48000,
+          "duration_s": 4.3981875
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p249/p249_026_mic2.flac",
+          "sha256": "5dd8f8b584f65ab65b9e1b5e57ff621f28a918df32815d443ac033c329790b01",
+          "frames": 211113,
+          "samplerate_hz": 48000,
+          "duration_s": 4.3981875
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p249/p249_040_mic1.flac",
+          "sha256": "57f52ae970927d6fd311de6211f767b84b5cf8cec8d253dd8345bb9fa2cf37ba",
+          "frames": 211045,
+          "samplerate_hz": 48000,
+          "duration_s": 4.396770833333333
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p249/p249_040_mic2.flac",
+          "sha256": "38d55fb33fc7afb01df8ccae8636b01c4cd2549286e7fadfd54ce5ad425199e8",
+          "frames": 211045,
+          "samplerate_hz": 48000,
+          "duration_s": 4.396770833333333
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p249/p249_026.txt",
+          "sha256": "5ba5ee4f01e13f6933a8652ebafc7f9098b76c6cb552db76490fd355ed2f48f3",
+          "utf8_bytes": 66,
+          "text": "Police were called to the scene, according to the weekend reports."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p249/p249_040.txt",
+          "sha256": "735d3291bf5eae23a181d8ad052786119c2b4a5ec31a162d60569de126a65647",
+          "utf8_bytes": 66,
+          "text": "It is hard to avoid the conclusion that lessons have been learned."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0014166666666666217,
+        "duration_gap_mic2_s": 0.0014166666666666217,
+        "relative_rate_gap_mic1": 0.00032215426451704743,
+        "relative_rate_gap_mic2": 0.00032215426451704743
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p249/p249_075_mic1.flac",
+        "sha256": "a798c0706c2c812929478e649512294c34af3c401fb591b358a13fdbbc2ec612"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p249_183",
+            "p249_190"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p250",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p250/p250_004_mic1.flac",
+          "sha256": "78165c42377dddc42c6176154260fe621eb3b70a2ca02d858387fd139702a954",
+          "frames": 201885,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2059375
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p250/p250_004_mic2.flac",
+          "sha256": "1e6142b427f4d1eb18c4567947819a060b3f05bb72b853d67dcb1139af56a349",
+          "frames": 201885,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2059375
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p250/p250_331_mic1.flac",
+          "sha256": "f1ba431ee91cbb1727bdae783c80b012be56da9d020115c23bdec5cc5c86f000",
+          "frames": 200760,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1825
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p250/p250_331_mic2.flac",
+          "sha256": "cb4653908451cb26fe686c578ca37820621ca8488b01dc1d5c2ba04d5c021d25",
+          "frames": 200760,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1825
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p250/p250_004.txt",
+          "sha256": "8327d56c1034275ff816a5095aeb0049aca0fc24294b87a62a6ccc48526b5471",
+          "utf8_bytes": 67,
+          "text": "We also need a small plastic snake and a big toy frog for the kids."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p250/p250_331.txt",
+          "sha256": "a140f98c6ef0d60189c1d2f772b4732a0a9d628450eb4d4bdeb517a8e3a091e5",
+          "utf8_bytes": 67,
+          "text": "A police inquiry began about two weeks before the General Election."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0234375,
+        "duration_gap_mic2_s": 0.0234375,
+        "relative_rate_gap_mic1": 0.005588049025816885,
+        "relative_rate_gap_mic2": 0.005588049025816885
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p250/p250_431_mic1.flac",
+        "sha256": "59f3e8b62e1f8f5a1e95407bf68a25fa3ec43b6c82a43263da89c05639fbac4e"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p250_007",
+            "p250_015"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p251",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p251/p251_064_mic1.flac",
+          "sha256": "2a4c4c9b74824e221112f11a3af6a606cdf7b931bd7d87f42d73c78337e99208",
+          "frames": 204186,
+          "samplerate_hz": 48000,
+          "duration_s": 4.253875
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p251/p251_064_mic2.flac",
+          "sha256": "eef189b52c5f3d4336e36b098c6f95608e9ea37587a9520c6391a3b8032a82aa",
+          "frames": 204186,
+          "samplerate_hz": 48000,
+          "duration_s": 4.253875
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p251/p251_163_mic1.flac",
+          "sha256": "60a109d4a0f0a2ad0b95112f696a06b681bc5a90f93b27b15696082b03b3f72c",
+          "frames": 204672,
+          "samplerate_hz": 48000,
+          "duration_s": 4.264
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p251/p251_163_mic2.flac",
+          "sha256": "b1dc38d20f1e81a725074ffc2fed0b01328a67173dd24883af7a4aed4ea6b719",
+          "frames": 204672,
+          "samplerate_hz": 48000,
+          "duration_s": 4.264
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p251/p251_064.txt",
+          "sha256": "dc3a0eaa6b61f5b11ebeadff5c3010f20d1155144c9a70955c155e179efea6a8",
+          "utf8_bytes": 64,
+          "text": "An appeal against the sentence was dismissed the following year."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p251/p251_163.txt",
+          "sha256": "a0225678cf0ad6e0ac5018427738d60f46455978a29eba5076f658d6ff41afa8",
+          "utf8_bytes": 64,
+          "text": "However, the French government has a major dilemma on its hands."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.010125000000000384,
+        "duration_gap_mic2_s": 0.010125000000000384,
+        "relative_rate_gap_mic1": 0.002377353506596512,
+        "relative_rate_gap_mic2": 0.002377353506596512
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p251/p251_329_mic1.flac",
+        "sha256": "ffa887f77ca3e1d09cbc5cb07fb47a47d8ca79e46dbff3af54f93e6cec2fff21"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p251_225",
+            "p251_290"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p252",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p252/p252_039_mic1.flac",
+          "sha256": "6c82f4f9b9412aa7ce4f1ce45ca05776dc322aa82ec14a094048426b1a1094a6",
+          "frames": 202930,
+          "samplerate_hz": 48000,
+          "duration_s": 4.227708333333333
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p252/p252_039_mic2.flac",
+          "sha256": "e3d188094d93c5adc27de3ed8225cd82f7c2235b125b6fdca145b6752a965ac4",
+          "frames": 202930,
+          "samplerate_hz": 48000,
+          "duration_s": 4.227708333333333
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p252/p252_361_mic1.flac",
+          "sha256": "ce527b56357ac047c89bfb81eb0887bfee74e768134bb5f975d3f0956f5b1f49",
+          "frames": 203338,
+          "samplerate_hz": 48000,
+          "duration_s": 4.236208333333333
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p252/p252_361_mic2.flac",
+          "sha256": "3927dd01c0563cfcf06c491f616cefed41c8b09702383fcdebed4b768a592bb1",
+          "frames": 203338,
+          "samplerate_hz": 48000,
+          "duration_s": 4.236208333333333
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p252/p252_039.txt",
+          "sha256": "8428582633e3b03d0825ad9b51d2e637fdfc6fa8ab32ac6d491d7d62ff61b1d3",
+          "utf8_bytes": 62,
+          "text": "Everyone has to prove a point when they cross that white line."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p252/p252_361.txt",
+          "sha256": "12055bb168ceecf190c2fa1a40a8ca9b5c133b7d60f6fa238b169a21a07eb6d8",
+          "utf8_bytes": 62,
+          "text": "Employees are entitled to follow their contract to the letter."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.00849999999999973,
+        "duration_gap_mic2_s": 0.00849999999999973,
+        "relative_rate_gap_mic1": 0.002008526391446003,
+        "relative_rate_gap_mic2": 0.002008526391446003
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p252/p252_139_mic1.flac",
+        "sha256": "b2ac9351179f4783aa1f19ffb73fbee8c68a8886670a0f2f3a4e5485368a1501"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p252_006",
+            "p252_372"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p253",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p253/p253_035_mic1.flac",
+          "sha256": "782a5bf0e56c2a7cb63b7b95e6963f96889fc4e72c96139c97e79fae6231e8da",
+          "frames": 197016,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1045
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p253/p253_035_mic2.flac",
+          "sha256": "fef90be7cf16832af251cd4204c612aecde4e1d530ad123b84336ee3ec580aea",
+          "frames": 197016,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1045
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p253/p253_213_mic1.flac",
+          "sha256": "5faf7526b36aeac154c733e8667a7dddccada34faab9d158b3125a1aa932006b",
+          "frames": 196811,
+          "samplerate_hz": 48000,
+          "duration_s": 4.100229166666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p253/p253_213_mic2.flac",
+          "sha256": "9f11bc396659761fd66f7918a51933532ca76dd160feb78115905cf96d6b4b8e",
+          "frames": 196811,
+          "samplerate_hz": 48000,
+          "duration_s": 4.100229166666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p253/p253_035.txt",
+          "sha256": "7e0f016076bc176c20fba6b786c58522487652892ba6201510cb31b256f65488",
+          "utf8_bytes": 65,
+          "text": "Other members of the family were too upset to comment last night."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p253/p253_213.txt",
+          "sha256": "3a9209f5e743943610549301cdd92abbb2e58da4ea3ecf31597ba4a33e737220",
+          "utf8_bytes": 65,
+          "text": "On a technical level, they were not afraid to play good football."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.004270833333333002,
+        "duration_gap_mic2_s": 0.004270833333333002,
+        "relative_rate_gap_mic1": 0.0010410662549797285,
+        "relative_rate_gap_mic2": 0.0010410662549797285
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p253/p253_052_mic1.flac",
+        "sha256": "4fc3b204c0fdf6b604fed6e712a490688d53f0d2fa280c7dcbeab95c629a086c"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p253_180",
+            "p253_349"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p254",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p254/p254_012_mic1.flac",
+          "sha256": "9af5b567b2edbbbe68bb3f980892b2570300c6c4a49b8fef2a0488dccbde2340",
+          "frames": 213574,
+          "samplerate_hz": 48000,
+          "duration_s": 4.449458333333333
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p254/p254_012_mic2.flac",
+          "sha256": "86f48dd8ab84a4dd4b62cc2f81f50f14e65183e6515a574972f178be1a12be1f",
+          "frames": 213574,
+          "samplerate_hz": 48000,
+          "duration_s": 4.449458333333333
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p254/p254_268_mic1.flac",
+          "sha256": "8b5a63b72a3f04272480aaf78b8c8ed9ba323f440814845493c2cfbe69bc1bef",
+          "frames": 213206,
+          "samplerate_hz": 48000,
+          "duration_s": 4.441791666666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p254/p254_268_mic2.flac",
+          "sha256": "262221e04a8472357483ef4dc3d90e6949427eb67e5681d98c49d25b85864932",
+          "frames": 213206,
+          "samplerate_hz": 48000,
+          "duration_s": 4.441791666666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p254/p254_012.txt",
+          "sha256": "94562618c83ea66f16ed6335b517bc6e20a582d17ec607cac41b6670a47e244d",
+          "utf8_bytes": 75,
+          "text": "Throughout the centuries people have explained the rainbow in various ways."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p254/p254_268.txt",
+          "sha256": "9710c2d419212eee74e666c0ae9b6dcae9aeb59422315e35d92a0b381dedc82d",
+          "utf8_bytes": 75,
+          "text": "He claimed his insurance company contested the damages, not the restaurant."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.007666666666666266,
+        "duration_gap_mic2_s": 0.007666666666666266,
+        "relative_rate_gap_mic1": 0.00172454191855271,
+        "relative_rate_gap_mic2": 0.00172454191855271
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p254/p254_364_mic1.flac",
+        "sha256": "a525e36bdec6bdf2874f0c93aed5864a60d3a0a589f5e6523e3b5764b9eda132"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p254_006",
+            "p254_011"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p255",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p255/p255_083_mic1.flac",
+          "sha256": "a96323b84ce5e630bd3053197f2aa7e1b5f2b16176b3efc90c43048917dec4ce",
+          "frames": 204920,
+          "samplerate_hz": 48000,
+          "duration_s": 4.269166666666667
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p255/p255_083_mic2.flac",
+          "sha256": "8dfd6ecc333959ed01a6e7dd912eac762f457434977ded67242430d93fc99259",
+          "frames": 204920,
+          "samplerate_hz": 48000,
+          "duration_s": 4.269166666666667
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p255/p255_194_mic1.flac",
+          "sha256": "c64d343a861761d05546ff3159befabc42bdb0051a9649fd9095ef60e6ec4b7f",
+          "frames": 204906,
+          "samplerate_hz": 48000,
+          "duration_s": 4.268875
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p255/p255_194_mic2.flac",
+          "sha256": "fbe1fbebe979a07ab89ac2e35267541d131bee5060fa8a9b36129c73e4f9c776",
+          "frames": 204906,
+          "samplerate_hz": 48000,
+          "duration_s": 4.268875
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p255/p255_083.txt",
+          "sha256": "067fef66f1a727afbd9d6ae12d4ba2931edeb91e1164b09dbb59d7c640a8873f",
+          "utf8_bytes": 64,
+          "text": "It just shows the arrogance of Labour and the Liberal Democrats."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p255/p255_194.txt",
+          "sha256": "7ef4b3dcf7850c8d02a095b9b6a80a1cb7c7a0ee7b46c1e6861e74dadbfe52f5",
+          "utf8_bytes": 64,
+          "text": "Everyone is in favour of the need for welfare reform in general."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.00029166666666657903,
+        "duration_gap_mic2_s": 0.00029166666666657903,
+        "relative_rate_gap_mic1": 6.832167798039066e-05,
+        "relative_rate_gap_mic2": 6.832167798039066e-05
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p255/p255_358_mic1.flac",
+        "sha256": "843bf2210843c6c81f286584f3875b5ef4e762edd8dbcdfe56d359acf3de3b93"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p255_028",
+            "p255_342"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p256",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p256/p256_036_mic1.flac",
+          "sha256": "93a82e2b03469c484c4bb882bc9fd2dd2932750505979f0adca7ea8a8ffa1398",
+          "frames": 233407,
+          "samplerate_hz": 48000,
+          "duration_s": 4.862645833333334
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p256/p256_036_mic2.flac",
+          "sha256": "ba93c9a82841c7729386705665d0b26a621a6c8fd52f06d664b69a29d1738887",
+          "frames": 233407,
+          "samplerate_hz": 48000,
+          "duration_s": 4.862645833333334
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p256/p256_306_mic1.flac",
+          "sha256": "ab8d51097dde1721b931f4f98e7fa405eedd51f12ddc1c5d6e9aa1f10975b05f",
+          "frames": 233496,
+          "samplerate_hz": 48000,
+          "duration_s": 4.8645
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p256/p256_306_mic2.flac",
+          "sha256": "a333367d3cdb720fe953e71674f71c866b086550d61d9d1d86a4ce122faf193b",
+          "frames": 233496,
+          "samplerate_hz": 48000,
+          "duration_s": 4.8645
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p256/p256_036.txt",
+          "sha256": "7e0f016076bc176c20fba6b786c58522487652892ba6201510cb31b256f65488",
+          "utf8_bytes": 65,
+          "text": "Other members of the family were too upset to comment last night."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p256/p256_306.txt",
+          "sha256": "ff131e91288c11a0e17552af30184f1bff5a3f63cc3caf245a482ef6a59df2bd",
+          "utf8_bytes": 65,
+          "text": "Funding for the science centre has come from a number of sources."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0018541666666660461,
+        "duration_gap_mic2_s": 0.0018541666666660461,
+        "relative_rate_gap_mic1": 0.0003812355028774151,
+        "relative_rate_gap_mic2": 0.0003812355028774151
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p256/p256_244_mic1.flac",
+        "sha256": "9356871daeb72a4a0b014b5b58546bef153c53f0ee58d626f42c6b7f4eb8b44a"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p256_004",
+            "p256_264"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p258",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p258/p258_013_mic1.flac",
+          "sha256": "ddeaa7c9903b58ce877cf078a0d2426a4558d6440ea95cc62d669e375357097f",
+          "frames": 214264,
+          "samplerate_hz": 48000,
+          "duration_s": 4.4638333333333335
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p258/p258_013_mic2.flac",
+          "sha256": "ca03ac43498918ebc6eede2a1cc23d1b9182d554c015327516aef4a996dda3ca",
+          "frames": 214264,
+          "samplerate_hz": 48000,
+          "duration_s": 4.4638333333333335
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p258/p258_300_mic1.flac",
+          "sha256": "f8a47ca8b4350b600cfdad887557770fcd995e6fec088d173faa94e371a93ccd",
+          "frames": 213650,
+          "samplerate_hz": 48000,
+          "duration_s": 4.451041666666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p258/p258_300_mic2.flac",
+          "sha256": "5697f01ec16b3deb951e1d312fa26464ad1514618353f7341b46f77431f3e369",
+          "frames": 213650,
+          "samplerate_hz": 48000,
+          "duration_s": 4.451041666666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p258/p258_013.txt",
+          "sha256": "4ae7da9b279a73483f230d89f4be30e1f758c2772808c083361666284b4005b3",
+          "utf8_bytes": 64,
+          "text": "Some have accepted it as a miracle without physical explanation."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p258/p258_300.txt",
+          "sha256": "515c71e62db65411247fea749f7df5bbc6f3269224a6972b2a66ceb0863046c7",
+          "utf8_bytes": 64,
+          "text": "In spite of recent advances, the language is still under threat."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.012791666666666757,
+        "duration_gap_mic2_s": 0.012791666666666757,
+        "relative_rate_gap_mic1": 0.0028697355076020147,
+        "relative_rate_gap_mic2": 0.0028697355076020147
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p258/p258_336_mic1.flac",
+        "sha256": "430c1fb939a1df7692ddd92d9bd14b1b95246dc5723126d2125347c17c974eb5"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 1,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p258_013",
+            "p258_410"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p259",
+      "tier": "tier1",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p259/p259_120_mic1.flac",
+          "sha256": "f896144405a015d7ca45bdd9c3c978e5b6ab711ad07d1d04e52c6ce8c2d0a575",
+          "frames": 227911,
+          "samplerate_hz": 48000,
+          "duration_s": 4.748145833333333
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p259/p259_120_mic2.flac",
+          "sha256": "16bd8cf492ea5d72c36cc63e20321cdb4a23e800ed696ff42d4bf12cf73c5acc",
+          "frames": 227911,
+          "samplerate_hz": 48000,
+          "duration_s": 4.748145833333333
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p259/p259_370_mic1.flac",
+          "sha256": "e0a2adf2cc6a2a24c65167dd7084f0233aa083636fa0cc8db446be99e73acc08",
+          "frames": 227835,
+          "samplerate_hz": 48000,
+          "duration_s": 4.7465625
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p259/p259_370_mic2.flac",
+          "sha256": "41740119d75f3bf2ae6cba66d1a32064ac268636ba2ef15c85687757f022a70d",
+          "frames": 227835,
+          "samplerate_hz": 48000,
+          "duration_s": 4.7465625
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p259/p259_120.txt",
+          "sha256": "c97f47796160a03db61efcd3aad3be76e762749fedf2a4c43263d585722c31da",
+          "utf8_bytes": 67,
+          "text": "Strathclyde Police are expected to make an announcement next month."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p259/p259_370.txt",
+          "sha256": "b84c65ffc1a43de0490178e4371677665e2e5b395240e0c1cad91d3ff24b2815",
+          "utf8_bytes": 67,
+          "text": "Shoppers were attracted by the heavy discounting on selected items."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.001583333333333492,
+        "duration_gap_mic2_s": 0.001583333333333492,
+        "relative_rate_gap_mic1": 0.0003335191093285307,
+        "relative_rate_gap_mic2": 0.0003335191093285307
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p259/p259_430_mic1.flac",
+        "sha256": "33ad4cb879fd67d57660c1c16dd0fe5e0e1e82c06e000b661870650412993960"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p259_218",
+            "p259_367"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p262",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p262/p262_121_mic1.flac",
+          "sha256": "6d9a8e4af90a51972f554fd753f418040a4736976a61707775491bc27fd45b94",
+          "frames": 192703,
+          "samplerate_hz": 48000,
+          "duration_s": 4.014645833333334
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p262/p262_121_mic2.flac",
+          "sha256": "ca3ca76671ec97b2bd76b1e52cf4ff4efe17d31ff3fafceec7b8024a407e4082",
+          "frames": 192703,
+          "samplerate_hz": 48000,
+          "duration_s": 4.014645833333334
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p262/p262_213_mic1.flac",
+          "sha256": "a4b6f2c8377cd9cc46689dbe2e62d511cc742141378742750105956fea6a8837",
+          "frames": 192671,
+          "samplerate_hz": 48000,
+          "duration_s": 4.013979166666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p262/p262_213_mic2.flac",
+          "sha256": "2930c8e0a30cfcd1928fe8f385f2c60c9db5acbc67696f78ec607ea2ff6e829b",
+          "frames": 192671,
+          "samplerate_hz": 48000,
+          "duration_s": 4.013979166666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p262/p262_121.txt",
+          "sha256": "0f03b8a1eccf033aa81daa35e17493cc6ce7bf3af0502c141e4fbda9bccc1239",
+          "utf8_bytes": 50,
+          "text": "So the European elections are extremely important."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p262/p262_213.txt",
+          "sha256": "9155eafd807fd7d3a4d1e92c3390bd6b9e14a48a9c08eb328bccdcc37a9b8fc7",
+          "utf8_bytes": 50,
+          "text": "I have wanted to buy one for the National Gallery."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0006666666666665932,
+        "duration_gap_mic2_s": 0.0006666666666665932,
+        "relative_rate_gap_mic1": 0.00016607243872174298,
+        "relative_rate_gap_mic2": 0.00016607243872174298
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p262/p262_297_mic1.flac",
+        "sha256": "d72e046bcb4240f64d4a927abbd0ef6c81b371b8e7b242209be89ac4c8e8f2d0"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p262_210",
+            "p262_236"
+          ],
+          [
+            "p262_098",
+            "p262_127"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p263",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p263/p263_149_mic1.flac",
+          "sha256": "3436d4f7d41e65af17a7eca28177e4a0858c16bd1535cda511549b59b079764f",
+          "frames": 194759,
+          "samplerate_hz": 48000,
+          "duration_s": 4.057479166666667
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p263/p263_149_mic2.flac",
+          "sha256": "f2fd689e291ccebc073ee2e58d64d05470d620e23ac62e3c3c71740c5e4a9007",
+          "frames": 194759,
+          "samplerate_hz": 48000,
+          "duration_s": 4.057479166666667
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p263/p263_208_mic1.flac",
+          "sha256": "e318c967f7a7c82dde43d10e691480a73cd8271f1618d5bf2eaa5cf98154a160",
+          "frames": 194789,
+          "samplerate_hz": 48000,
+          "duration_s": 4.058104166666666
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p263/p263_208_mic2.flac",
+          "sha256": "642460a12f40dbad25c8f9b36ac949637604d0d5351b8ee099287c4334364747",
+          "frames": 194789,
+          "samplerate_hz": 48000,
+          "duration_s": 4.058104166666666
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p263/p263_149.txt",
+          "sha256": "a6ab2289e5650520ea6f857033b5956668abd2c1978981f9dd7d7986f4ccbdcf",
+          "utf8_bytes": 63,
+          "text": "And the Farmer is worried about another aspect of farming life."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p263/p263_208.txt",
+          "sha256": "ca6a9d6333dccff6f8b81869d929b501cff966eadf31acb69dc09f0f254e57fe",
+          "utf8_bytes": 63,
+          "text": "It is difficult to comment on the prospects for the year ahead."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0006249999999994316,
+        "duration_gap_mic2_s": 0.0006249999999994316,
+        "relative_rate_gap_mic1": 0.00015402466448280935,
+        "relative_rate_gap_mic2": 0.00015402466448280935
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p263/p263_018_mic1.flac",
+        "sha256": "d3c651c7057c1e5b9da01712045e614d9ecc2361c24c067fea720f8c8ea8799b"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p263_007",
+            "p263_009"
+          ],
+          [
+            "p263_009",
+            "p263_215"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p264",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p264/p264_181_mic1.flac",
+          "sha256": "1f1ac44223049dbf50ffd1354406c035c237f4a40b05aea23585c7c236563863",
+          "frames": 196836,
+          "samplerate_hz": 48000,
+          "duration_s": 4.10075
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p264/p264_181_mic2.flac",
+          "sha256": "132d0eb1f1b5a324428e577dbefdd2d93ff839c330165dc01c72a2fcbe3be53b",
+          "frames": 196836,
+          "samplerate_hz": 48000,
+          "duration_s": 4.10075
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p264/p264_246_mic1.flac",
+          "sha256": "a88fa10eaf484f82b93c1a53f6d9104f40532ebb08cc3502b1dea9c7d7091958",
+          "frames": 196778,
+          "samplerate_hz": 48000,
+          "duration_s": 4.099541666666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p264/p264_246_mic2.flac",
+          "sha256": "2ef158320332a49332d98228fd5df7adcc636e34a91cecc3fdb67056f87a05ea",
+          "frames": 196778,
+          "samplerate_hz": 48000,
+          "duration_s": 4.099541666666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p264/p264_181.txt",
+          "sha256": "4e3f2b1da7b9a3d657795082183d57a5e9cd6d194ccad769cfd42a635ebbb713",
+          "utf8_bytes": 43,
+          "text": "Neil has worked hard throughout his career."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p264/p264_246.txt",
+          "sha256": "21a0cb292b527b1f995f17ac6837e01b29fe32137f152824f2b919e906ea1df0",
+          "utf8_bytes": 43,
+          "text": "It is based on population rather than need."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0012083333333325896,
+        "duration_gap_mic2_s": 0.0012083333333325896,
+        "relative_rate_gap_mic1": 0.00029470496476231514,
+        "relative_rate_gap_mic2": 0.00029470496476231514
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p264/p264_302_mic1.flac",
+        "sha256": "d52eb07796c6dacbc9e13c6c710600ffc2f2343933ab93fb7bfb35cacc161dd1"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p264_019",
+            "p264_379"
+          ],
+          [
+            "p264_021",
+            "p264_081"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p265",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p265/p265_070_mic1.flac",
+          "sha256": "46a62dce54af9cbd037c1696976819d7d6b19663659353551db47c1ccb0614a8",
+          "frames": 231569,
+          "samplerate_hz": 48000,
+          "duration_s": 4.824354166666667
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p265/p265_070_mic2.flac",
+          "sha256": "13c3b280a9c4734c518e9ea97859d28c378a5ef2bf1cdc9a3411bbcfe37d1137",
+          "frames": 231569,
+          "samplerate_hz": 48000,
+          "duration_s": 4.824354166666667
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p265/p265_340_mic1.flac",
+          "sha256": "ff11d43297bd8ef4157b8ecc5180445bae514ebd0c6a66c999db16902224fd4f",
+          "frames": 231692,
+          "samplerate_hz": 48000,
+          "duration_s": 4.8269166666666665
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p265/p265_340_mic2.flac",
+          "sha256": "e4ee1fd1e648a3d605df5b66f5140ec13eb2a7cf0789f904228c0e4b73da6b97",
+          "frames": 231692,
+          "samplerate_hz": 48000,
+          "duration_s": 4.8269166666666665
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p265/p265_070.txt",
+          "sha256": "17809c5eb5f9d89e6e0e54915ed4eacb8af6c9a457206aa52b40b3cb46c0643b",
+          "utf8_bytes": 48,
+          "text": "It is not long term, but I need time to recover."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p265/p265_340.txt",
+          "sha256": "ccab688053d47cb90990381e88172965bc07f432830795e2a91ea02977681e41",
+          "utf8_bytes": 48,
+          "text": "On fuel, the Chancellor has a number of options."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.002562499999999801,
+        "duration_gap_mic2_s": 0.002562499999999801,
+        "relative_rate_gap_mic1": 0.0005310181517545852,
+        "relative_rate_gap_mic2": 0.0005310181517545852
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p265/p265_074_mic1.flac",
+        "sha256": "183210966d2864cbc34c133d56639808bb161dc18c2539d2e22a5c15e97b8fa0"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p265_159",
+            "p265_345"
+          ],
+          [
+            "p265_069",
+            "p265_192"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p266",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p266/p266_193_mic1.flac",
+          "sha256": "967cc1d91593b81a6bb98bff8ac018988f07da29504dd9545ea76541692aeef8",
+          "frames": 194609,
+          "samplerate_hz": 48000,
+          "duration_s": 4.054354166666666
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p266/p266_193_mic2.flac",
+          "sha256": "d36cf2822755579fe34852e1988e5f43c631ae26e75ee37868bf1234f6289a85",
+          "frames": 194609,
+          "samplerate_hz": 48000,
+          "duration_s": 4.054354166666666
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p266/p266_409_mic1.flac",
+          "sha256": "a5211982377217b1f0a77588c3c463ac8c0275034703f5eac19fe8a9c599bc44",
+          "frames": 194564,
+          "samplerate_hz": 48000,
+          "duration_s": 4.053416666666666
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p266/p266_409_mic2.flac",
+          "sha256": "7c0d44662cb8c895d4d96b4e49020fe30fa63fd10bbe09eeffcefdaa2eb51f32",
+          "frames": 194564,
+          "samplerate_hz": 48000,
+          "duration_s": 4.053416666666666
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p266/p266_193.txt",
+          "sha256": "3a8611170dbb4fb67440917493b93b3ef820ba23184a39b88e37c05b09c657dc",
+          "utf8_bytes": 67,
+          "text": "The modern approach will also be reflected in the terms of address."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p266/p266_409.txt",
+          "sha256": "ec74891edd9b9258888a5820493c8682d1a44bd13351be82e4132a91ad55e7e0",
+          "utf8_bytes": 67,
+          "text": "Quality Meat Scotland was vigorous in its defence of the labelling."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0009375000000000355,
+        "duration_gap_mic2_s": 0.0009375000000000355,
+        "relative_rate_gap_mic1": 0.0002312596197578166,
+        "relative_rate_gap_mic2": 0.0002312596197578166
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p266/p266_230_mic1.flac",
+        "sha256": "05ddf8985ddbec0e7e40067d106f77b2ca6fc13b8837000ca736f795a0fd2b56"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p266_270",
+            "p266_273"
+          ],
+          [
+            "p266_004",
+            "p266_212"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p268",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p268/p268_185_mic1.flac",
+          "sha256": "ffaf710cd79677b2f68ccfbbfffac5831bd0362ef4da34c3138d9550a61d06b1",
+          "frames": 199265,
+          "samplerate_hz": 48000,
+          "duration_s": 4.151354166666667
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p268/p268_185_mic2.flac",
+          "sha256": "f597db579e7fdd8a068e8eff1bf9bd34205de705cb65d1daed61cb294005ab98",
+          "frames": 199265,
+          "samplerate_hz": 48000,
+          "duration_s": 4.151354166666667
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p268/p268_230_mic1.flac",
+          "sha256": "aa516c151b346ee0dab9d091ddc8919e0a9c43a0f523ae9758e7da89a4b51a83",
+          "frames": 199244,
+          "samplerate_hz": 48000,
+          "duration_s": 4.150916666666666
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p268/p268_230_mic2.flac",
+          "sha256": "0bf797bc2f57634bde77f37ac6da6e6fa7f4ce5cc823557d69d5997c559b0cbe",
+          "frames": 199244,
+          "samplerate_hz": 48000,
+          "duration_s": 4.150916666666666
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p268/p268_185.txt",
+          "sha256": "bd340f4d0c996e136af88bbc184fae9a4951094fc360c0ddc7b6227b71f05f88",
+          "utf8_bytes": 48,
+          "text": "The culture is extremely widespread and vibrant."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p268/p268_230.txt",
+          "sha256": "0236cb47565ec0d447e827a260eea4b4d803e3c74494fc21fa42d2fd49dd710c",
+          "utf8_bytes": 48,
+          "text": "That proved enough to settle the home side down."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.00043750000000031264,
+        "duration_gap_mic2_s": 0.00043750000000031264,
+        "relative_rate_gap_mic1": 0.00010539285185525894,
+        "relative_rate_gap_mic2": 0.00010539285185525894
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p268/p268_283_mic1.flac",
+        "sha256": "7624a039fc89d3e9739bcef43a3f9623d90107196f59ac01ab7400d391033ecf"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p268_017",
+            "p268_018"
+          ],
+          [
+            "p268_018",
+            "p268_339"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p269",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p269/p269_020_mic1.flac",
+          "sha256": "23cbd772f573316945d59c88b2574ddb62cfc3692a10fec6c5851ffbad98f662",
+          "frames": 200787,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1830625
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p269/p269_020_mic2.flac",
+          "sha256": "9f68d5c481d5140384dd9980608bcee3480eb40c60d2f8e7ad2de2c0ff839412",
+          "frames": 200787,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1830625
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p269/p269_400_mic1.flac",
+          "sha256": "0926fdcf70bb7d55220b61d848e23f509db43f8ba18e4face49f838e920381a7",
+          "frames": 200513,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1773541666666665
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p269/p269_400_mic2.flac",
+          "sha256": "1c60955477287ac4135baf6b62aa6791ea8e15f074fa8a8a98b36aafeb8ea1f8",
+          "frames": 200513,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1773541666666665
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p269/p269_020.txt",
+          "sha256": "22e72ffdf0700afb3f2d432d1d3046e04578f7a4164f6ead9d58fb069712c4bb",
+          "utf8_bytes": 58,
+          "text": "Many complicated ideas about the rainbow have been formed."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p269/p269_400.txt",
+          "sha256": "ef9cf0295295eaf3c046f09f3f2673911d1a58c67bba518656e77cd196f8ddb0",
+          "utf8_bytes": 58,
+          "text": "By then, a massive legal battle is likely to have started."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.005708333333333648,
+        "duration_gap_mic2_s": 0.005708333333333648,
+        "relative_rate_gap_mic1": 0.0013655619237479015,
+        "relative_rate_gap_mic2": 0.0013655619237479015
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p269/p269_321_mic1.flac",
+        "sha256": "095c84f30f7d90b72ff4a3dc1b0304d36183f6807faafb12d4f4faa41881b5a2"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p269_214",
+            "p269_357"
+          ],
+          [
+            "p269_013",
+            "p269_097"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p270",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p270/p270_014_mic1.flac",
+          "sha256": "9c749787980e10380432dc1788f88989e07eb5c062d482c3b26d2a89330491a3",
+          "frames": 254117,
+          "samplerate_hz": 48000,
+          "duration_s": 5.294104166666667
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p270/p270_014_mic2.flac",
+          "sha256": "5410bf8e5a2efc2e69825e8da3633f786d8055c66e0cac3f4fd506c710e7d743",
+          "frames": 254117,
+          "samplerate_hz": 48000,
+          "duration_s": 5.294104166666667
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p270/p270_086_mic1.flac",
+          "sha256": "13bdf169c943397ef03b61d1bd33eb6bd26ffd08b0c3e20be340c4b5a9bec0a0",
+          "frames": 254850,
+          "samplerate_hz": 48000,
+          "duration_s": 5.309375
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p270/p270_086_mic2.flac",
+          "sha256": "8b75a689859de04b55e8237bab14a7a56d551ba2ca672c32a404ef040ac6db1e",
+          "frames": 254850,
+          "samplerate_hz": 48000,
+          "duration_s": 5.309375
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p270/p270_014.txt",
+          "sha256": "c5dbac4d15d253a8e441949e269741e39cd85beda8a5a86d5f26a2ba9c5cfdd1",
+          "utf8_bytes": 75,
+          "text": "To the Hebrews it was a token that there would be no more universal floods."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p270/p270_086.txt",
+          "sha256": "f9b912d08368f39c5d809d9b485cb9bad717b12f79e5f70bdc5754837cb6b5d7",
+          "utf8_bytes": 75,
+          "text": "The commission initiated the necessary changes in the financial regulation."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.015270833333333123,
+        "duration_gap_mic2_s": 0.015270833333333123,
+        "relative_rate_gap_mic1": 0.0028803439122772434,
+        "relative_rate_gap_mic2": 0.0028803439122772434
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p270/p270_188_mic1.flac",
+        "sha256": "95c157eeb03885d9d87ea96d0ba933fef455565a80888edc78ecdd37ea1f146a"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p270_011",
+            "p270_017"
+          ],
+          [
+            "p270_011",
+            "p270_389"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p271",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p271/p271_122_mic1.flac",
+          "sha256": "f960200188cf488dc5ec1520951b6eb25962afb53fbd7cee0c11bc5c34c1d330",
+          "frames": 240708,
+          "samplerate_hz": 48000,
+          "duration_s": 5.01475
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p271/p271_122_mic2.flac",
+          "sha256": "f33a6a633947a5737d8a9ed9accb4302996e7a809b42e097e1ef39d289e15a0e",
+          "frames": 240708,
+          "samplerate_hz": 48000,
+          "duration_s": 5.01475
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p271/p271_320_mic1.flac",
+          "sha256": "15d1377a30e9bbb19b6de228342e4cdce55b4c36941153e7d6124860b49a1dc6",
+          "frames": 240811,
+          "samplerate_hz": 48000,
+          "duration_s": 5.016895833333334
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p271/p271_320_mic2.flac",
+          "sha256": "ce95cc205bb0929909bfb9047574c434632a43dee94685c0943ed08a675839e9",
+          "frames": 240811,
+          "samplerate_hz": 48000,
+          "duration_s": 5.016895833333334
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p271/p271_122.txt",
+          "sha256": "6b2793f9fb244d7636eb51fd160e5eb098c3ee962cda6a67130fbd7532683de4",
+          "utf8_bytes": 66,
+          "text": "That was the lesson to be learned from the European Championships."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p271/p271_320.txt",
+          "sha256": "43aaab49151d76c93c4ca3771d5727e62161f521c1983a8e7e111374742cfefb",
+          "utf8_bytes": 66,
+          "text": "It will decide today whether he should be struck off the register."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0021458333333335133,
+        "duration_gap_mic2_s": 0.0021458333333335133,
+        "relative_rate_gap_mic1": 0.0004278128173552249,
+        "relative_rate_gap_mic2": 0.0004278128173552249
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p271/p271_403_mic1.flac",
+        "sha256": "3e3320c1550d6cb953004f2b8e27908b83b2385d959f02355e63c1c7deec9be3"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p271_143",
+            "p271_174"
+          ],
+          [
+            "p271_088",
+            "p271_382"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p285",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p285/p285_159_mic1.flac",
+          "sha256": "95c62def7428fb3d4053ad49f29a1f81eadcebd579630470e121c5142dfc944a",
+          "frames": 193973,
+          "samplerate_hz": 48000,
+          "duration_s": 4.041104166666667
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p285/p285_159_mic2.flac",
+          "sha256": "669c692537b47816f947a890f1f370b0e45b4f907d7abb2e2f540b6800a022fc",
+          "frames": 193973,
+          "samplerate_hz": 48000,
+          "duration_s": 4.041104166666667
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p285/p285_238_mic1.flac",
+          "sha256": "d119813181676142989ebb31e7390db652dfb42d385abbab4b858b15ac57c45e",
+          "frames": 194550,
+          "samplerate_hz": 48000,
+          "duration_s": 4.053125
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p285/p285_238_mic2.flac",
+          "sha256": "2b4fc1c7dc38b18bded99ee810f780f08cd730edb1491d7ae5ba4f01c3148fc4",
+          "frames": 194550,
+          "samplerate_hz": 48000,
+          "duration_s": 4.053125
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p285/p285_159.txt",
+          "sha256": "26bdc807f1d4130c957542e8064e56f8c486501af297c957c6134900d3e227a6",
+          "utf8_bytes": 70,
+          "text": "Councillors are expected to take a decision within the next few weeks."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p285/p285_238.txt",
+          "sha256": "ea397847e9e505c858d7828fc0d4961ae524781f2e1f3d8d82eb3bed05ebb3da",
+          "utf8_bytes": 70,
+          "text": "The Home Office would not release any further details about the group."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.012020833333332703,
+        "duration_gap_mic2_s": 0.012020833333332703,
+        "relative_rate_gap_mic1": 0.002970223127073385,
+        "relative_rate_gap_mic2": 0.002970223127073385
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p285/p285_330_mic1.flac",
+        "sha256": "980053c7e3f19278b3cd3c1198b5c9f943359340826ecc85a263d3d44898ced2"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p285_006",
+            "p285_008"
+          ],
+          [
+            "p285_008",
+            "p285_379"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p293",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p293/p293_067_mic1.flac",
+          "sha256": "1baad1bacf3ea0e72f53a6d793672bd411d138d2588d0401937fbe53938475f2",
+          "frames": 231552,
+          "samplerate_hz": 48000,
+          "duration_s": 4.824
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p293/p293_067_mic2.flac",
+          "sha256": "f390104a543f77a232015ddee89bd0767ece0850eefb7e331c108ae1d37221cb",
+          "frames": 231552,
+          "samplerate_hz": 48000,
+          "duration_s": 4.824
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p293/p293_334_mic1.flac",
+          "sha256": "b55fae9abfa38178baa10c3e847d4ca449adfb0c69ea25f2b0898812e0b3907d",
+          "frames": 231659,
+          "samplerate_hz": 48000,
+          "duration_s": 4.826229166666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p293/p293_334_mic2.flac",
+          "sha256": "171fba910f19beb6865ff343f68fb31afc2dea7e9301e8e92e6945c5ef2b3cf7",
+          "frames": 231659,
+          "samplerate_hz": 48000,
+          "duration_s": 4.826229166666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p293/p293_067.txt",
+          "sha256": "200a45dcdbcb48f49688c7cce16345165c95faf4b6e09372455cea3eaa582c99",
+          "utf8_bytes": 49,
+          "text": "A lot of people had to wait, and people still do."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p293/p293_334.txt",
+          "sha256": "f27cfd51ff70254ad4e1155cad2ff0c33851b285ae1fdf73f226f2a1342afae3",
+          "utf8_bytes": 49,
+          "text": "For his opposite number, this was a just triumph."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0022291666666669485,
+        "duration_gap_mic2_s": 0.0022291666666669485,
+        "relative_rate_gap_mic1": 0.0004619924829073325,
+        "relative_rate_gap_mic2": 0.0004619924829073325
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p293/p293_102_mic1.flac",
+        "sha256": "7a921025a888f332c85c8071f689abf00aa227ce6ef785af3a92c826563838d7"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p293_007",
+            "p293_009"
+          ],
+          [
+            "p293_009",
+            "p293_116"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p298",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p298/p298_325_mic1.flac",
+          "sha256": "da7c2cb5c1a2fdc97aa23a06199dba40c1b123d328f2f3ea7eb134950cf75dbc",
+          "frames": 221231,
+          "samplerate_hz": 48000,
+          "duration_s": 4.608979166666667
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p298/p298_325_mic2.flac",
+          "sha256": "b199f3b2f2bcd86b83f8799cea550daae847143f738e6433a34fe7ab648af499",
+          "frames": 221231,
+          "samplerate_hz": 48000,
+          "duration_s": 4.608979166666667
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p298/p298_351_mic1.flac",
+          "sha256": "72faa09caf1d870dbddb1c2c145a07790a005f7aa404561d45f3e5b86653a5d8",
+          "frames": 221202,
+          "samplerate_hz": 48000,
+          "duration_s": 4.608375
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p298/p298_351_mic2.flac",
+          "sha256": "444b8c7e079c23326cf4e9bb4bc91297df13241c60bfad8b15d0f7d01364cbab",
+          "frames": 221202,
+          "samplerate_hz": 48000,
+          "duration_s": 4.608375
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p298/p298_325.txt",
+          "sha256": "45ff21a55e908d0ef044989472011ff781b689ca5de186e6f4b25c24c41100d1",
+          "utf8_bytes": 53,
+          "text": "I wanted, really, to deal with two opposite energies."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p298/p298_351.txt",
+          "sha256": "0ba2448fb2819454e8e024b11c787a91bcee7a72414e0deeb80dd56fd705661a",
+          "utf8_bytes": 53,
+          "text": "An internal inquiry was launched into the procedures."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.000604166666667183,
+        "duration_gap_mic2_s": 0.000604166666667183,
+        "relative_rate_gap_mic1": 0.0001310932954820525,
+        "relative_rate_gap_mic2": 0.0001310932954820525
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p298/p298_116_mic1.flac",
+        "sha256": "e163a64610c8fc4a34ff53b20343a73c983217eb852e0c8db8d41ee8ae897fbe"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p298_005",
+            "p298_009"
+          ],
+          [
+            "p298_237",
+            "p298_368"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p300",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p300/p300_010_mic1.flac",
+          "sha256": "cf6cdca34702cfe8c2cae90ab958c5a98e116510b00803aea596f90fa46f5421",
+          "frames": 196663,
+          "samplerate_hz": 48000,
+          "duration_s": 4.097145833333333
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p300/p300_010_mic2.flac",
+          "sha256": "8c03a7035159a2fe1561139ce55d9af9a8ada90eb2d2946d95a12f3642d4f652",
+          "frames": 196663,
+          "samplerate_hz": 48000,
+          "duration_s": 4.097145833333333
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p300/p300_258_mic1.flac",
+          "sha256": "7a6bb4275f5ba35e1b6e3ccbe6acb6c885e68c9b36f3b0b07ac10bdbb1286232",
+          "frames": 196666,
+          "samplerate_hz": 48000,
+          "duration_s": 4.097208333333334
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p300/p300_258_mic2.flac",
+          "sha256": "1acd606c2fae06f97cf2e866f8872ce563bd4d219ece09c9ecd79ab7b3cbbb00",
+          "frames": 196666,
+          "samplerate_hz": 48000,
+          "duration_s": 4.097208333333334
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p300/p300_010.txt",
+          "sha256": "57c41df3f8d7b2514b97a29ce675e1f225aaa0c43dc5d9e1750aa43d91eb19cd",
+          "utf8_bytes": 38,
+          "text": "People look, but no one ever finds it."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p300/p300_258.txt",
+          "sha256": "8021c4ef4358725b552e7a56ef21d53411ee8be21b8f0debe37faa09fe341e8d",
+          "utf8_bytes": 38,
+          "text": "Today's meeting was open and friendly."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 6.250000000029843e-05,
+        "duration_gap_mic2_s": 6.250000000029843e-05,
+        "relative_rate_gap_mic1": 1.5254405345189373e-05,
+        "relative_rate_gap_mic2": 1.5254405345189373e-05
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p300/p300_061_mic1.flac",
+        "sha256": "897371ab1f2a1467dee5235f200beb0d7acdd675fd7dab257f67bbabd3be003f"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p300_167",
+            "p300_312"
+          ],
+          [
+            "p300_002",
+            "p300_377"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p301",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p301/p301_198_mic1.flac",
+          "sha256": "4b2f54d557bad1ab8a85c81b25d949028efc85dd936850272fb9ddc9bd7510a0",
+          "frames": 204053,
+          "samplerate_hz": 48000,
+          "duration_s": 4.251104166666667
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p301/p301_198_mic2.flac",
+          "sha256": "8586c6d5cc5ae9279a71cf7a364740bb272f1a3054753e2517e95c3f98c2fc93",
+          "frames": 204053,
+          "samplerate_hz": 48000,
+          "duration_s": 4.251104166666667
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p301/p301_299_mic1.flac",
+          "sha256": "e90d16579b7d01ad2e852d32f1ad92f4d327d7cb187f27e2acbcfe4e4fc36391",
+          "frames": 204063,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2513125
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p301/p301_299_mic2.flac",
+          "sha256": "8b4f482e535bd1eed62eccf2834330995809b0974af2715f3cecbf11fecdffe3",
+          "frames": 204063,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2513125
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p301/p301_198.txt",
+          "sha256": "7b489f0baf1e7705e3f9d45abd90ee2e85ba987edd9e1c7a1f2658d16033e955",
+          "utf8_bytes": 51,
+          "text": "Her condition last night was described as critical."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p301/p301_299.txt",
+          "sha256": "f253d2aacb1f14cd38e0fdf1b019400e65dc88ce96cd44538aca1b6d913f33c0",
+          "utf8_bytes": 51,
+          "text": "That is the first job of the director - leadership."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.00020833333333314386,
+        "duration_gap_mic2_s": 0.00020833333333314386,
+        "relative_rate_gap_mic1": 4.90056748570484e-05,
+        "relative_rate_gap_mic2": 4.90056748570484e-05
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p301/p301_314_mic1.flac",
+        "sha256": "9cb07e8ba9f6d99da4b505920547f112a3809f311e6eb08750924e777673ed17"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p301_326",
+            "p301_404"
+          ],
+          [
+            "p301_092",
+            "p301_254"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p303",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p303/p303_281_mic1.flac",
+          "sha256": "597afcc7f56eb394ea348b94ac1cf668a63ac4ab46f8322b313b7dbf492b7004",
+          "frames": 196388,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0914166666666665
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p303/p303_281_mic2.flac",
+          "sha256": "7e363e487c85549d186ee2b197a7f9aaae98c23b6ba61b54f2e9995912b18fe3",
+          "frames": 196388,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0914166666666665
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p303/p303_335_mic1.flac",
+          "sha256": "31b4f0ee89f9b38410079c39cdac873c6ade5359d265eae6cb621b8c3b098939",
+          "frames": 196390,
+          "samplerate_hz": 48000,
+          "duration_s": 4.091458333333334
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p303/p303_335_mic2.flac",
+          "sha256": "136f8226dae4afffc6a494d174f5aec2a3e8e031a453a0933a15f861bde59908",
+          "frames": 196390,
+          "samplerate_hz": 48000,
+          "duration_s": 4.091458333333334
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p303/p303_281.txt",
+          "sha256": "0c5fde2b50e023969bbc09324f3387ab6dbfea1611dca1f694f86a024e3cf962",
+          "utf8_bytes": 40,
+          "text": "What is the Working Families Tax Credit?"
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p303/p303_335.txt",
+          "sha256": "b0642e9e97325eb3063cc3613acfa709d1cc3994d666dc9e71a8c70b12538f5f",
+          "utf8_bytes": 40,
+          "text": "Last year, it was ligaments in his knee."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 4.166666666716168e-05,
+        "duration_gap_mic2_s": 4.166666666716168e-05,
+        "relative_rate_gap_mic1": 1.018386976887579e-05,
+        "relative_rate_gap_mic2": 1.018386976887579e-05
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p303/p303_236_mic1.flac",
+        "sha256": "a7df9631ab38130da6267e474d83dca33429f267860c0379fbb3ffcff7ee32a8"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p303_079",
+            "p303_296"
+          ],
+          [
+            "p303_254",
+            "p303_325"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p306",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p306/p306_188_mic1.flac",
+          "sha256": "fed33e69ceca764cfb90f0492957dc9728eb798f7aaf7d558fb0c9d204b0be12",
+          "frames": 230212,
+          "samplerate_hz": 48000,
+          "duration_s": 4.796083333333334
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p306/p306_188_mic2.flac",
+          "sha256": "70bdc9884c0f96e0494f25d291b846b948e042773a9e57bf93b8f560fff66992",
+          "frames": 230212,
+          "samplerate_hz": 48000,
+          "duration_s": 4.796083333333334
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p306/p306_338_mic1.flac",
+          "sha256": "297cdf91361c91da1b9a669eb1a50717fa1463e06de3481d295e07d6d7876684",
+          "frames": 230295,
+          "samplerate_hz": 48000,
+          "duration_s": 4.7978125
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p306/p306_338_mic2.flac",
+          "sha256": "80af2c98564b4aac485d040397c9e8577864f388aac539e6c596123f628881df",
+          "frames": 230295,
+          "samplerate_hz": 48000,
+          "duration_s": 4.7978125
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p306/p306_188.txt",
+          "sha256": "443f4ea3326f39411bcd818f16d231569b2e69978e01d509ac3aaebc91c29cab",
+          "utf8_bytes": 42,
+          "text": "The faith of large numbers remain unknown."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p306/p306_338.txt",
+          "sha256": "bf5b188617df057de71781c3a06921148cb6452fefa30824979034cdf9afc581",
+          "utf8_bytes": 42,
+          "text": "That decision was applauded by Williamson."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0017291666666663374,
+        "duration_gap_mic2_s": 0.0017291666666663374,
+        "relative_rate_gap_mic1": 0.00036047226209363247,
+        "relative_rate_gap_mic2": 0.00036047226209363247
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p306/p306_191_mic1.flac",
+        "sha256": "8f4080242d922aab50daf7debfc9e5286eb8c4d3ab60414fcf380a071c480b55"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p306_051",
+            "p306_210"
+          ],
+          [
+            "p306_048",
+            "p306_325"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p307",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p307/p307_034_mic1.flac",
+          "sha256": "6a9be00c246a87d9e03b110b69e1b4dd1be2b0d9192b2f4a4b8be92109220719",
+          "frames": 215086,
+          "samplerate_hz": 48000,
+          "duration_s": 4.480958333333334
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p307/p307_034_mic2.flac",
+          "sha256": "01c40832af232f302703c532635ea647e4be3540bb3cd8b20d6c8aa668615c23",
+          "frames": 215086,
+          "samplerate_hz": 48000,
+          "duration_s": 4.480958333333334
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p307/p307_245_mic1.flac",
+          "sha256": "321f1fc509ab27a4d61633e4fd2fefef6fcd3985e63751d06d22cb8c5b1e0209",
+          "frames": 215096,
+          "samplerate_hz": 48000,
+          "duration_s": 4.481166666666667
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p307/p307_245_mic2.flac",
+          "sha256": "ae0bc8cfcea73786810dad9f1a4d1329ce18aca66998440d83d59023ac68cc34",
+          "frames": 215096,
+          "samplerate_hz": 48000,
+          "duration_s": 4.481166666666667
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p307/p307_034.txt",
+          "sha256": "74292aa160c0e60df62cdf5028533b4e1a5a8b6fcc93785f7367c22c18fb67ba",
+          "utf8_bytes": 30,
+          "text": "I kept my side of the bargain."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p307/p307_245.txt",
+          "sha256": "d128090844a37b643ce67f1e2c1dd0ed77ed66518b5043db9d3ad2179a07eb08",
+          "utf8_bytes": 30,
+          "text": "Which perhaps is just as well."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.00020833333333314386,
+        "duration_gap_mic2_s": 0.00020833333333314386,
+        "relative_rate_gap_mic1": 4.649194991880449e-05,
+        "relative_rate_gap_mic2": 4.649194991880449e-05
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p307/p307_381_mic1.flac",
+        "sha256": "5f50d1008d62c169040c9c1d7e49575446a5dd7fb70935f08f7e95acb3c2ea45"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p307_015",
+            "p307_030"
+          ],
+          [
+            "p307_015",
+            "p307_298"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p308",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p308/p308_184_mic1.flac",
+          "sha256": "26d6b0f2fc9e68a5d8e71c64a93f857fd9bed48d08c5cb69d2ff75dcfec452e8",
+          "frames": 196817,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1003541666666665
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p308/p308_184_mic2.flac",
+          "sha256": "1b023793263c4e720724c459ff3834f56eab4ab48ff83de4ac99b957c643c3f6",
+          "frames": 196817,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1003541666666665
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p308/p308_290_mic1.flac",
+          "sha256": "4dd22db677faea83a612e7161c919d88cdb37225f71721d1cc704a2106030805",
+          "frames": 196819,
+          "samplerate_hz": 48000,
+          "duration_s": 4.100395833333334
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p308/p308_290_mic2.flac",
+          "sha256": "36ae37b357741dda39ac1c78c72c28c6d0efbf5cb77340cf90c2101dd6e6cb4e",
+          "frames": 196819,
+          "samplerate_hz": 48000,
+          "duration_s": 4.100395833333334
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p308/p308_184.txt",
+          "sha256": "b67b1af1713295c3d41ba89b8576f54cd6ee725557fc972d2bded955ac0c4805",
+          "utf8_bytes": 38,
+          "text": "No, it's actually in a block of flats."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p308/p308_290.txt",
+          "sha256": "4da92a47767479960f67ab43b8dbfad9e0560f25ad539261f95cdd744030c33a",
+          "utf8_bytes": 38,
+          "text": "Holyrood is just a part of the jigsaw."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 4.166666666716168e-05,
+        "duration_gap_mic2_s": 4.166666666716168e-05,
+        "relative_rate_gap_mic1": 1.016167220497997e-05,
+        "relative_rate_gap_mic2": 1.016167220497997e-05
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p308/p308_124_mic1.flac",
+        "sha256": "9e1a58a87bbb01f3d5569bfbd1d5e0ca34cb87db767f8e7fd93d180d7b8c3d4b"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 1,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p308_022",
+            "p308_116"
+          ],
+          [
+            "p308_123",
+            "p308_290"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p310",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p310/p310_044_mic1.flac",
+          "sha256": "476d556cef122e4768c7ae6ffdaa839c9b733861146f1605d1521aa9b2ba313b",
+          "frames": 199115,
+          "samplerate_hz": 48000,
+          "duration_s": 4.148229166666667
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p310/p310_044_mic2.flac",
+          "sha256": "2136fc6688170dcb102ccb41aa58da1ed678b7eabb665dc13bc8132cbc4c4411",
+          "frames": 199115,
+          "samplerate_hz": 48000,
+          "duration_s": 4.148229166666667
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p310/p310_284_mic1.flac",
+          "sha256": "e6a3a720bf5c22c8fd60a00478c1b1ed2b3458aac12035fec4e88da661ccabee",
+          "frames": 199281,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1516875
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p310/p310_284_mic2.flac",
+          "sha256": "dd3938e07171d49e809160bf5c71f00a4253d6a6f705917758a7ebd677319a28",
+          "frames": 199281,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1516875
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p310/p310_044.txt",
+          "sha256": "05bfce0666d0d0be00efeabcb19c067fe10ef3f80e20b6293959809af23ba08f",
+          "utf8_bytes": 40,
+          "text": "Normally, they have been a pack of lies."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p310/p310_284.txt",
+          "sha256": "c7039a3e65761bda6257c4fc1610ab45126260b736a80df455d2dd899462e159",
+          "utf8_bytes": 40,
+          "text": "Charles Kennedy had an effective outing."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.003458333333333563,
+        "duration_gap_mic2_s": 0.003458333333333563,
+        "relative_rate_gap_mic1": 0.0008333417002178488,
+        "relative_rate_gap_mic2": 0.0008333417002178488
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p310/p310_382_mic1.flac",
+        "sha256": "57020fa4e9d77f894d3b2db9ce3d51485d6c76bc536dcba54c1265696027901e"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p310_002",
+            "p310_006"
+          ],
+          [
+            "p310_006",
+            "p310_068"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p318",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p318/p318_162_mic1.flac",
+          "sha256": "3244983b33c30652ce2171e5b5b31f212542e7fcb77b8900b3328095b594cc6a",
+          "frames": 204915,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2690625
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p318/p318_162_mic2.flac",
+          "sha256": "a52e0f81ab74d687e0c45b0248c8f35cb0eec09d959447c7d10018625cc1d65e",
+          "frames": 204915,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2690625
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p318/p318_215_mic1.flac",
+          "sha256": "01e1543fb7d5b2df6b6233e64736c9dcf07c1658463381249bf162037902ca06",
+          "frames": 204921,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2691875
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p318/p318_215_mic2.flac",
+          "sha256": "e4735b9ffad16bbb266e2366ff4f3b9a48f521177ca48fd8f34e68afa5f311c2",
+          "frames": 204921,
+          "samplerate_hz": 48000,
+          "duration_s": 4.2691875
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p318/p318_162.txt",
+          "sha256": "91cc92010a62b2b35c6b390216f3a1c03b14e96f555c4c5f7921fefc765bb587",
+          "utf8_bytes": 40,
+          "text": "The General Election is all to play for."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p318/p318_215.txt",
+          "sha256": "de35494dfab9dce026090dadc775118f8a8b9c70bda9fb86a2093e25f15522d6",
+          "utf8_bytes": 40,
+          "text": "Bill Clinton always had an idea to sell."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.00012499999999970868,
+        "duration_gap_mic2_s": 0.00012499999999970868,
+        "relative_rate_gap_mic1": 2.928000468473251e-05,
+        "relative_rate_gap_mic2": 2.928000468473251e-05
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p318/p318_096_mic1.flac",
+        "sha256": "067ee57bca57543fe9b8c52a2151fd71695ec764ec9bb5ac4fd4b891d800b369"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p318_020",
+            "p318_024"
+          ],
+          [
+            "p318_024",
+            "p318_031"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p330",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p330/p330_213_mic1.flac",
+          "sha256": "7db39c19dfffc9534cfcbdb75a7cb451711bfb7fa6ff38d61d5c31c0b50c264b",
+          "frames": 198553,
+          "samplerate_hz": 48000,
+          "duration_s": 4.136520833333333
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p330/p330_213_mic2.flac",
+          "sha256": "840952e266cdbd85433a9ff56cb630c1793bd03cbabb8af2cc667beb85615947",
+          "frames": 198553,
+          "samplerate_hz": 48000,
+          "duration_s": 4.136520833333333
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p330/p330_411_mic1.flac",
+          "sha256": "95bc57f32a80f0d8eb9ce6ddf06b3aa5fb2e93c40f64e7c97843edb13cc055fa",
+          "frames": 198882,
+          "samplerate_hz": 48000,
+          "duration_s": 4.143375
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p330/p330_411_mic2.flac",
+          "sha256": "c8426c078b357dc1f0868006469db582e73fcfb1d52cb2e6e5de5dd03ab268ab",
+          "frames": 198882,
+          "samplerate_hz": 48000,
+          "duration_s": 4.143375
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p330/p330_213.txt",
+          "sha256": "ba054fa70b6d5b8d859b10a4fd246a54b81846e66233eed2ba38f35d6e82946a",
+          "utf8_bytes": 51,
+          "text": "There is certainly no single outstanding candidate."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p330/p330_411.txt",
+          "sha256": "385a8dc8bcd40eb744276c44ad937f1bd32132b5fa6052ec40ea5775a5f751a9",
+          "utf8_bytes": 51,
+          "text": "You know, he was struggling with his game all week."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.006854166666666828,
+        "duration_gap_mic2_s": 0.006854166666666828,
+        "relative_rate_gap_mic1": 0.0016556166417150532,
+        "relative_rate_gap_mic2": 0.0016556166417150532
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p330/p330_153_mic1.flac",
+        "sha256": "6c571af43372ed62ccb3464be319b5783d152ce4b5021010d3706184d0f79ac3"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p330_013",
+            "p330_317"
+          ],
+          [
+            "p330_050",
+            "p330_282"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p341",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p341/p341_176_mic1.flac",
+          "sha256": "5fd951d82f833361ec955297cbd9ceb131e273711b9b31925ccbe56c52dac989",
+          "frames": 198334,
+          "samplerate_hz": 48000,
+          "duration_s": 4.131958333333333
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p341/p341_176_mic2.flac",
+          "sha256": "b1b849eec2ba0494e326849055186585b13929344d4ab7734f80c753f62b7d1b",
+          "frames": 198334,
+          "samplerate_hz": 48000,
+          "duration_s": 4.131958333333333
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p341/p341_246_mic1.flac",
+          "sha256": "8d74f71a013c43eb685564de5a385cfe3ad3908328adef22ac3ab74ff928fff2",
+          "frames": 198245,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1301041666666665
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p341/p341_246_mic2.flac",
+          "sha256": "4802a7eb4e8967e38aaf9e0c94b1cd12676e764e172f775d36c32a92ab63d3b9",
+          "frames": 198245,
+          "samplerate_hz": 48000,
+          "duration_s": 4.1301041666666665
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p341/p341_176.txt",
+          "sha256": "efccc11bfab780f4311c0ab3e2e4dfd60a11ac50b8708f15da8e51601deedd6e",
+          "utf8_bytes": 37,
+          "text": "This is a very positive step forward."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p341/p341_246.txt",
+          "sha256": "b95ed3092d53892f9f8fdf0433d2b6edde1a7e461d39bc966e80e186521eca65",
+          "utf8_bytes": 37,
+          "text": "I think however, he was having a fit!"
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.0018541666666669343,
+        "duration_gap_mic2_s": 0.0018541666666669343,
+        "relative_rate_gap_mic1": 0.00044883869292126,
+        "relative_rate_gap_mic2": 0.00044883869292126
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p341/p341_080_mic1.flac",
+        "sha256": "11d2749ddf5ef2b1c9b7ab70ba04534d9f257ed0bdfba9303704491c4ccac273"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p341_207",
+            "p341_352"
+          ],
+          [
+            "p341_207",
+            "p341_263"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "p345",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p345/p345_191_mic1.flac",
+          "sha256": "18a019ac5490e3f102384e2d1cde12aaeecd0186464e63b17032306a17b9ff23",
+          "frames": 193387,
+          "samplerate_hz": 48000,
+          "duration_s": 4.028895833333333
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p345/p345_191_mic2.flac",
+          "sha256": "92c4f5e47acf2436a2448e10fedc90a04085048cb780baa5c0fc493ab21cdbe1",
+          "frames": 193387,
+          "samplerate_hz": 48000,
+          "duration_s": 4.028895833333333
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p345/p345_195_mic1.flac",
+          "sha256": "412523c2362bb8aa85eac5de3896e5984ac803b299b99fd65ae6b2cb2b7eacaf",
+          "frames": 193963,
+          "samplerate_hz": 48000,
+          "duration_s": 4.040895833333333
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/p345/p345_195_mic2.flac",
+          "sha256": "e172a6b175d4edf214f6b0ea329bb6afdb9d8b83592344f26064899760bd5480",
+          "frames": 193963,
+          "samplerate_hz": 48000,
+          "duration_s": 4.040895833333333
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/p345/p345_191.txt",
+          "sha256": "c258a8a53b90b28d139b101277114c630e6f77e064ebbe42f3c11d1ab4c5115d",
+          "utf8_bytes": 34,
+          "text": "It's not only my respect for them."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/p345/p345_195.txt",
+          "sha256": "dfdbbb2566400a0e9ae9b58c678df1bf857e0a6af1d98caa06319918560f25fc",
+          "utf8_bytes": 34,
+          "text": "I never want to have any children."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.011999999999999567,
+        "duration_gap_mic2_s": 0.011999999999999567,
+        "relative_rate_gap_mic1": 0.0029740544726990707,
+        "relative_rate_gap_mic2": 0.0029740544726990707
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/p345/p345_113_mic1.flac",
+        "sha256": "cad96f7507af2fd9476acb43290612372df0028a9f3f86ac341d9400ca1be2f1"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "p345_015",
+            "p345_019"
+          ],
+          [
+            "p345_005",
+            "p345_248"
+          ]
+        ]
+      }
+    },
+    {
+      "speaker": "s5",
+      "tier": "tier2",
+      "audio": {
+        "A_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/s5/s5_113_mic1.flac",
+          "sha256": "dceb369aa5248c14191c14a88479a6bd74cd5f29f57952ab54fb472be623597a",
+          "frames": 196689,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0976875
+        },
+        "A_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/s5/s5_113_mic2.flac",
+          "sha256": "cbc11565a3c3bf4b252563b0acb0ccd188fe81d3eeb8f9a21b065ba33fdb5ba4",
+          "frames": 196689,
+          "samplerate_hz": 48000,
+          "duration_s": 4.0976875
+        },
+        "B_mic1": {
+          "path": "inputs/vctk/wav48_silence_trimmed/s5/s5_327_mic1.flac",
+          "sha256": "5842f495cc2003a794b151d99ef3b746e1ec6952b3c4dc9546ad5c2dbc8ad434",
+          "frames": 196681,
+          "samplerate_hz": 48000,
+          "duration_s": 4.097520833333333
+        },
+        "B_mic2": {
+          "path": "inputs/vctk/wav48_silence_trimmed/s5/s5_327_mic2.flac",
+          "sha256": "8ad9adb885565ad8f3fb69e71b8ef15c3b4df2085d8836ec121dffa0fe839deb",
+          "frames": 196681,
+          "samplerate_hz": 48000,
+          "duration_s": 4.097520833333333
+        }
+      },
+      "transcripts": {
+        "A": {
+          "path": "inputs/vctk/txt/s5/s5_113.txt",
+          "sha256": "1e6918af2273b9648aa09cc832afe1d746459fda3269c958902dbfb17799529c",
+          "utf8_bytes": 50,
+          "text": "The newspapers, by contrast, had held their value."
+        },
+        "B": {
+          "path": "inputs/vctk/txt/s5/s5_327.txt",
+          "sha256": "9ee83981a823a2e0b34967a45cdb826e046aab5b74b1a3a03299f6eeda791b2d",
+          "utf8_bytes": 50,
+          "text": "You get better at putting on a face for the world."
+        }
+      },
+      "match": {
+        "duration_gap_mic1_s": 0.00016666666666687036,
+        "duration_gap_mic2_s": 0.00016666666666687036,
+        "relative_rate_gap_mic1": 4.067417444146276e-05,
+        "relative_rate_gap_mic2": 4.067417444146276e-05
+      },
+      "excluded_exp203_seed": {
+        "path": "inputs/vctk/wav48_silence_trimmed/s5/s5_328_mic1.flac",
+        "sha256": "21b21a54b5ecc6bb592b60ce982c8ba2c0d3827367175230335cae9017c18850"
+      },
+      "selection_without_seed_exclusion": "same",
+      "historical_tier_pair_overlap": {
+        "shared_utterances_with_closest_tier_pair": 0,
+        "coincides_with_tier_pair": false,
+        "tier_pairs": [
+          [
+            "s5_359",
+            "s5_396"
+          ],
+          [
+            "s5_010",
+            "s5_282"
+          ]
+        ]
+      }
+    }
+  ],
+  "input_hashes": {
+    "exp205_manifest": "4b879491f02badf252365aa4d2b3caa22402c04301c60ed5e02bd06d43f19b2d",
+    "feasibility_source": "95e243aba7f901773f0e7b42729aea7c2160e0919869479a5e7a5b4af2f392d1",
+    "exp212_builder": "12bb7c0d443f91af1d52bdb269efdb10024eb90e63c85d79e789515a722ebb70",
+    "exp204_tier1": "0ec8e8515ce4e478d4ccf37d3aca2c9f9d787d98ab813ee41321f85dab0d62d4",
+    "exp204_tier2": "428d51bff3511beef37b39886cb36161ccf7969703f6829714f5c99143e16d53",
+    "exp203_pool": "8ef413f1cf9fb493516c54ed27c925710605b388341453fa69a436401ee16d7a",
+    "builder": "535dcc498cfa3dc72136b702c7c0978cf6b62a85556c20e411aff97a25f05c1a"
+  }
+}
