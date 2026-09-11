@@ -80,13 +80,16 @@ a 54-speaker complement inherited from ECAPA-informed development rosters; all
 speakers in it are retained, and metadata alone determines pair selection
 without clone outcomes.
 
-We make three contributions. (1) The complete A/B crossover tests whether a
-clone follows its conditioning recording after a pickup-path change. (2) The
-evaluation, whose analysis plan and decision rule were fixed before outcomes
-were inspected, covers 3,456 clones, 54 speakers, four systems and two fixed
-representations. (3) The boundary is explicit: recording-event attribution is
-consistent in a two-candidate closed set, but the experiment identifies neither
-the physical carrier nor deployable recording-presence detection.
+The complete A/B crossover, whose analysis plan and decision rule were fixed
+before outcomes were inspected, tests whether a clone follows its conditioning
+recording after a pickup-path change over 3,456 clones, 54 speakers, four
+systems and two fixed representations. Attribution then persists when both
+candidates are themselves clones made with a different generator and a
+different output text from the query: ECAPA reaches .805 in both microphone
+directions, with prompt microphones crossed and speaker identity held fixed.
+The boundary is explicit: recording-event attribution is consistent in a
+two-candidate closed set, but the experiment identifies neither the physical
+carrier nor deployable recording-presence detection.
 
 \section{Related work}
 \textbf{Attribution and provenance.} Generator tracing, shared-generator
@@ -286,7 +289,7 @@ candidate shares only the conditioning event. Attribution remains .805
 information survives a change of generator, output text, microphone and
 candidate medium.
 
-\textbf{Fresh pairs.} A replication with the decision rule fixed before
+\textbf{Other rosters.} A replication with the decision rule fixed before
 analysis re-runs the crossover on a second utterance pair per speaker, chosen
 by the same metadata-only rule after excluding the original pair (53 speakers;
 one admits no second pair; 3,392 clones). The rule passes again: ECAPA .906
@@ -295,7 +298,7 @@ one admits no second pair; 3,392 clones). The rule passes again: ECAPA .906
 correlations .061/.291 between the two utterance pairs; this descriptive
 comparison does not establish the stability of an underlying speaker effect.
 
-\textbf{Full roster.} The same protocol applied to the 54 earlier-development
+The same protocol applied to the 54 earlier-development
 speakers, whose historical pairs passed ECAPA-based selection criteria, gives
 ECAPA .922 [.895,.946] and .911 [.886,.935] and WavLM .656 and .630; no
 selected pair repeats an earlier development pair, and two speakers share one
@@ -396,12 +399,10 @@ No cell has a separate interval or multiplicity-adjusted test.
 
 \subsection{What changed relative to earlier evidence}
 An earlier exploratory two-reference crossover (30 speakers, 960 trials)
-obtained .806 [.757,.854] on one pickup path with favorable reference pairs
-and missed its frozen .90 point bar; we retain it as positive discovery, not
-confirmation. The present experiment is a separate test (54-speaker complement,
-all speakers retained, metadata-only A/B pairs, balanced labels,
-opposite-microphone candidates, fixed readouts) with its own frozen .80/.70
-ECAPA bar; passing it does not retroactively change the earlier .90 miss.
+obtained .806 [.757,.854] on one pickup path with favorable reference pairs and
+missed its frozen .90 point bar. The present experiment is a separate test with
+its own frozen .80/.70 ECAPA bar; passing it does not retroactively change the
+earlier .90 miss.
 
 \section{Boundary and limitations}
 \textbf{Attribution is not presence detection.} The crossover is a closed-set
