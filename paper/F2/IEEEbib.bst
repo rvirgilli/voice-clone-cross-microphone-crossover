@@ -24,7 +24,6 @@ ENTRY
     series
     title
     type
-    url
     volume
     year
   }
@@ -603,14 +602,6 @@ FUNCTION {format.incoll.inproc.crossref}
   " \cite{" * crossref * "}" *
 }
 
-FUNCTION {format.url}
-{ url empty$
-    { "" }
-    { new.block "\url{" url * "}" * }
-  if$
-}
-
-
 FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
@@ -827,10 +818,8 @@ FUNCTION {misc}
   title howpublished new.block.checkb
   format.title ",''" * output
   new.nccont
-  publisher output
   howpublished new.block.checka
   howpublished output
-  format.url output
   format.date output
   new.block
   note output

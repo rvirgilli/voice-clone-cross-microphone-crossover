@@ -3,9 +3,9 @@
 \documentclass[10pt,twocolumn,letterpaper]{article}
 \IfFileExists{spconf.sty}{\usepackage{spconf}\newcommand{\usingspconf}{}}{}
 \usepackage{amsmath,amssymb,graphicx,booktabs,multirow,url}
+\usepackage[hidelinks,breaklinks]{hyperref}
 \renewcommand{\UrlBreaks}{\do\/\do\-\do\.}
 \setlength{\textfloatsep}{3pt plus 2pt minus 2pt}
-\setlength{\floatsep}{3pt plus 2pt minus 2pt}
 \setlength{\intextsep}{3pt plus 2pt minus 2pt}
 \setlength{\abovecaptionskip}{3pt}
 \setlength{\belowcaptionskip}{2pt}
@@ -18,8 +18,8 @@
 \fi
 
 \title{Which Conditioning Recording Does a Voice Clone Follow?\\A Balanced Cross-Microphone Crossover}
-\name{\shortstack{Rafaello Virgilli, Lucas Alc\^antara Souza, Alexandre Costa Ferro Filho, Daniel Tunnermann,\\
-Gustavo dos Reis Oliveira, Arlindo Rodrigues Galv\~ao Filho, and Anderson da Silva Soares}}
+\name{\shortstack{Rafaello Virgilli \quad Lucas Alc\^antara Souza \quad Alexandre Costa Ferro Filho \quad Daniel Tunnermann\\[3pt]
+Gustavo dos Reis Oliveira \quad Arlindo Rodrigues Galv\~ao Filho \quad Anderson da Silva Soares}}
 \address{Advanced Knowledge Center in Immersive Technologies (AKCIT)\\
 Federal University of Goi\'as (UFG), Goi\^ania, GO, Brazil}
 
@@ -29,21 +29,21 @@ Federal University of Goi\'as (UFG), Goi\^ania, GO, Brazil}
 
 \begin{abstract}
 Which of two same-speaker recordings supplied a voice clone's conditioning
-input? In a pre-specified complete crossover over 54 VCTK speakers selected after
-earlier ECAPA-based screening, we clone from each of two utterances and compare
-each clone with both, recorded through the other microphone; four systems and
-four texts give 3,456 clones. Generation and
-attribution use opposite microphones, so speaker identity, generated text,
-exact waveform and a shared microphone fingerprint cannot decide the label.
+input? In a pre-specified complete crossover over 54 VCTK speakers selected
+after earlier ECAPA-based screening, we clone from each of two utterances and
+compare each clone with both, recorded through the other microphone; four
+systems and four texts give 3,456 clones. Generation and attribution use
+opposite microphones, so speaker identity, generated text, exact waveform and a
+shared microphone fingerprint cannot decide the label.
 With fixed speaker-verification encoders, speaker-averaged two-alternative
 attribution accuracy for mic1$\rightarrow$mic2 is .896 [.869,.921] for ECAPA
 and .622 for WavLM; reversing the microphones gives .907 [.881,.931] and .620.
 When both candidates are themselves clones from a different system and text,
 ECAPA attribution remains .805 [.780,.830] and .805 [.780,.831]; all 108 VCTK
 speakers with paired captures give pooled ECAPA .909/.909. Brackets are 95\%
-whole-speaker bootstrap intervals.
-The main evaluation compares two same-speaker candidates known to include the
-source event; prompt transformations do not identify or exclude the carrier.
+whole-speaker bootstrap intervals. The main evaluation compares two
+same-speaker candidates known to include the source event; prompt
+transformations do not identify or exclude the carrier.
 \end{abstract}
 
 \begin{keywords}
@@ -56,7 +56,7 @@ that recording was used without consent, identifying the generator or cloned
 speaker does not answer the narrower provenance question: \emph{which recording
 was used?} Existing source tracing attributes a synthesis pipeline
 \cite{stopa,negroni2026forensic}, and clone attribution identifies an enrolled
-speaker \cite{kato2026floor,avatar2026,vcsource2022}. Recording-level evidence
+speaker \cite{kato2026floor,avatar2026}. Recording-level evidence
 would instead connect an output to one conditioning event among other
 recordings of the same voice.
 
@@ -64,8 +64,8 @@ That target is easy to confound: a clone and candidate share speaker identity,
 one candidate may be intrinsically closer to every clone, recording session,
 duration or microphone can reveal the answer, and generated content may
 overlap. Prior prompt-transfer work shows preservation of prosody and acoustic
-environment \cite{restyletts2026,noiserobust2024,denoise2025}, while speaker
-embeddings encode session and channel \cite{xvecprobe2019,svprobe2026}, so high
+environment \cite{restyletts2026,noiserobust2024}, while speaker
+embeddings encode session and channel \cite{xvecprobe2019}, so high
 retrieval from a same-speaker pool does not by itself show that the target
 follows the recording used for conditioning.
 
@@ -111,7 +111,7 @@ the prompt recording within speaker while changing the candidate pickup path.
 attribution uses frozen representations \cite{tada2025,pirlogeanu2026}, and
 recording-related nuisance in speaker embeddings motivates cross-recording
 sampling \cite{ssps2025}. Prompt-conditioned systems transfer prosody and
-environment \cite{restyletts2026,noiserobust2024,icl2026}, although cloning
+environment \cite{restyletts2026,noiserobust2024}, although cloning
 also alters style systematically \cite{stylecloning2026}; prompt cosine is a
 standard synthesis metric \cite{simo}. Exact prosody
 cloning transfers reference prosody \cite{prosodyclone2022}. Source-voiceprint
@@ -175,23 +175,12 @@ used for the attribution candidates.}
 \label{fig:design}
 \end{figure}
 
-\begin{table}[t]
-\centering
-\caption{What the crossover blocks, and the residual scientific boundary.}
-\label{tab:controls}
-{\small
-\begin{tabular}{lll}
-\toprule
-Shortcut & Design response & Residual \\
-\midrule
-Speaker identity & A/B within speaker & none for the label \\
-Candidate bias & both signed arms & arm interactions \\
-Content & four texts, A/B & texts fixed \\
-Waveform/device & opposite microphone & event acoustics \\
-Duration/length & metadata-matched & other local cues \\
-\bottomrule
-\end{tabular}}
-\end{table}
+The design addresses five shortcuts and names the residual of each: A/B within
+speaker removes speaker identity, both signed arms remove a fixed candidate
+bias and leave arm interactions, four texts shared across A and B remove
+generated content and stay fixed rather than sampled, the opposite microphone
+removes the exact waveform and device and leaves event acoustics, and
+metadata-matched pairs limit duration and length cues but not other local ones.
 
 \subsection{Frozen roster and generation}
 VCTK v0.92 documents DPA 4035 and Sennheiser MKH 800 microphones in a fixed
@@ -335,7 +324,8 @@ WavLM, R & \textbf{.620} & .612 & .644 & .625 \\
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{fig_exp205_speakers.pdf}
-\caption{Fixed-roster speaker means (54 dots/group; 32 comparisons per dot).
+\caption{Fixed-roster per-speaker attribution accuracy (54 dots/group; 32
+comparisons per dot).
 Diamonds and bars are pooled points and 95\% speaker-resampling stability intervals;
 the dashed line is chance. P/R: primary/reverse.}
 \label{fig:speakers}
@@ -415,7 +405,7 @@ two-candidate threat model it is .67/.68 and .88/.89. This post-hoc check is
 descriptive: a score can order A above B while no global threshold separates
 the two.
 
-\begin{table}[t]
+\begin{table}[bp]
 \centering
 \caption{Within-speaker one-to-one verification, one global threshold. Target:
 clone versus its own event; non-target: clone versus the speaker's other event;
@@ -472,16 +462,15 @@ subsets.
 
 \textbf{Release and misuse.} Code, score-level data, provenance metadata and
 aggregate/per-speaker results are at \url{https://github.com/rvirgilli/voice-clone-cross-microphone-crossover/tree/f2-icassp2027-rc3};
-model weights, source audio and
-playable impersonations are not redistributed.
+model weights, source audio and playable impersonations are not redistributed.
 Recording attribution can assist provenance audits, but it can also deanonymize
-speakers; licensing alone does not settle consent.
+speakers, and licensing alone does not settle consent.
 
 \section{Conclusion}
 In this fixed roster, clones preferentially match the other-microphone capture
-of their conditioning event across the two tested microphone paths. ECAPA meets the frozen large-effect
-criterion, and WavLM shows a smaller effect in the same direction. That
-direction persists when the microphone roles are reversed, when both
+of their conditioning event across the two tested microphone paths. ECAPA meets
+the frozen large-effect criterion and WavLM shows a smaller effect in the same
+direction, and that direction persists when the microphone roles are reversed, when both
 candidates are clones from another system and text (.805), on a second
 utterance pair per speaker (.906/.909), over the complete 108-speaker
 paired-capture roster (.909/.909), and after a second synthesis (.796), all
@@ -489,6 +478,25 @@ ECAPA points. The primary and
 reverse pooled estimates weight the four fixed systems equally. This is a large closed-set signal between two
 tested microphone paths; its physical carrier remains unidentified, and the
 experiment does not solve open-set recording-presence detection.
+
+\section{Acknowledgment}
+Funded by the project Research and Development of Algorithms for Construction of
+Digital Human Technological Components, supported by the Advanced Knowledge
+Center in Immersive Technologies (AKCIT), with financial resources from the PPI
+IoT of the MCTI grant 057/2023, signed with EMBRAPII. The authors declare no
+competing interests.
+
+During preparation, the authors used a large language model (Anthropic Claude)
+to help write and edit the text throughout the manuscript, the LaTeX layout and
+the supporting code. The
+authors reviewed all assisted content and take full responsibility.
+
+\section{Compliance with Ethical Standards}
+This study used only previously collected, publicly available recordings, under
+the licence and terms of use of the VCTK corpus, for non-commercial academic
+research. It involved no new recording and no interaction with human
+participants, and required no ethical approval. Synthetic speech is not
+redistributed in playable form.
 
 \let\oldthebibliography\thebibliography
 \renewcommand{\thebibliography}[1]{\oldthebibliography{#1}%

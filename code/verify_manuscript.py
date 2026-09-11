@@ -57,18 +57,23 @@ def main() -> int:
                                    cwd=scratch, text=True, capture_output=True, check=True).stdout
             page5 = subprocess.run(["pdftotext", "-f", "5", "-l", "5", "main.pdf", "-"],
                                    cwd=scratch, text=True, capture_output=True, check=True).stdout
-            # Page 5 may begin inside a reference entry that started on page 4; its whole
-            # text must be the tail of the reference list, so no section can appear on it.
+            # ICASSP 2027 allows references, funding acknowledgements and the compliance
+            # statement on page 5. Everything from the acknowledgement onward must be the
+            # tail of the document, so no technical content can appear there.
             full = " ".join(pdf_text(scratch / "main.pdf").split())
             # The reference list may start on page 4 or at the top of page 5; either way the
             # whole of page 5 must be its tail, so no section text can appear there.
-            references = full[full.index("REFERENCES"):] if "REFERENCES" in full else ""
+            marker = next((m for m in ("ACKNOWLEDGMENT", "COMPLIANCE WITH ETHICAL STANDARDS", "REFERENCES")
+                           if m in full), None)
+            references = full[full.index(marker):] if marker else ""
             tail = " ".join(page5.split())
-            if "REFERENCES" in tail:
-                heading, rest = tail.split("REFERENCES", 1)
-                if heading.strip(" .0123456789"):
-                    raise AssertionError("page 5 must contain references only")
-                tail = "REFERENCES" + rest
+            for heading_name in ("ACKNOWLEDGMENT", "COMPLIANCE WITH ETHICAL STANDARDS", "REFERENCES"):
+                if heading_name in tail:
+                    heading, rest = tail.split(heading_name, 1)
+                    if heading.strip(" .0123456789"):
+                        raise AssertionError("page 5 carries content the venue does not allow there")
+                    tail = heading_name + rest
+                    break
             if not references.endswith(tail):
                 raise AssertionError("page 5 must contain references only")
         if pdf_text(scratch / "main.pdf") != pdf_text(PAPER / "main.pdf"):

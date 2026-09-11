@@ -25,13 +25,13 @@ OUT = HERE / "fig_exp205_speakers.pdf"
 def main() -> int:
     result = json.loads(RESULT.read_text(encoding="utf-8"))
     groups = [
-        ("ECAPA\nP", "primary_mic1_to_mic2", "ecapa"),
-        ("ECAPA\nR", "reverse_mic2_to_mic1", "ecapa"),
-        ("WavLM\nP", "primary_mic1_to_mic2", "wavlm"),
-        ("WavLM\nR", "reverse_mic2_to_mic1", "wavlm"),
+        ("ECAPA P", "primary_mic1_to_mic2", "ecapa"),
+        ("ECAPA R", "reverse_mic2_to_mic1", "ecapa"),
+        ("WavLM P", "primary_mic1_to_mic2", "wavlm"),
+        ("WavLM R", "reverse_mic2_to_mic1", "wavlm"),
     ]
-    fig, ax = plt.subplots(figsize=(3.269, 0.95))
-    offsets = np.linspace(-0.16, 0.16, 54)
+    fig, ax = plt.subplots(figsize=(3.269, 1.0))
+    offsets = np.linspace(-0.24, 0.24, 54)
     # Deterministic permutation prevents stacked discrete speaker means without
     # implying an additional stochastic sample.
     offsets = offsets[np.random.default_rng(2052027).permutation(54)]
@@ -41,7 +41,7 @@ def main() -> int:
         ax.scatter(
             x + offsets,
             values,
-            s=8,
+            s=6,
             facecolors="white" if encoder == "wavlm" else "0.65",
             edgecolors="0.2",
             linewidths=0.35,
@@ -62,17 +62,16 @@ def main() -> int:
         )
     ax.axhline(0.5, color="0.25", linestyle="--", linewidth=0.7, zorder=1)
     ax.set_xlim(0.55, 4.45)
-    ax.set_ylim(0.34, 1.025)
+    ax.set_ylim(0.33, 1.125)
     ax.set_xticks(range(1, 5), [item[0] for item in groups])
-    ax.set_yticks([0.4, 0.5, 0.6, 0.8, 1.0])
-    ax.set_ylabel("attribution accuracy", labelpad=1)
+    ax.set_yticks([0.5, 0.75, 1.0])
     ax.tick_params(axis="both", labelsize=9, length=2)
     for spine in ("top", "right"):
         ax.spines[spine].set_visible(False)
     ax.spines["left"].set_linewidth(0.6)
     ax.spines["bottom"].set_linewidth(0.6)
-    fig.tight_layout(pad=0.25)
-    fig.savefig(OUT, bbox_inches="tight")
+    fig.tight_layout(pad=0.15)
+    fig.savefig(OUT, bbox_inches="tight", pad_inches=0.01)
     print(OUT)
     return 0
 
